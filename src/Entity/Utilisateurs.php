@@ -112,7 +112,7 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $status;
+        private $status;
 
     /**
      * @ORM\Column(type="json")

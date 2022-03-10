@@ -51,6 +51,7 @@
 							<th>
 								Login
 							</th>
+<th>Status</th>
 							<th>
 								Role
 							</th>
@@ -72,6 +73,9 @@
 						</td>
 						<td>{{ utilisateur.login }}</td>
 						<td>
+<td>{{ utilisateur.status }}</td>
+						
+
 						{# affichage du role de l'utilisateur #}
 						{% for role in utilisateur.roles %}
 							

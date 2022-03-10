@@ -42,7 +42,7 @@ class UtilisateursFixtures extends Fixture
                 ->setPays($faker->pays)
                 ->setTelephone($faker->telephone)
                 ->setPeriode($faker->periode)
-                ->setStatus($status[0])
+                    ->setStatus($status[0])
                 ->setRoles($roles[0]);
                                     
             $manager->persist($utilisateurs);
