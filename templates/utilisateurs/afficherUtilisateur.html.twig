@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+afficher utilisateur :
+{% endblock %}
+
+{% block content %}
+    <h1>
+    Afficher utilisateur :
+    </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                 <th>Civilité</th>
+                 <th> Date de naissance</th> 
+                 <th>Adresse</th> 
+                 <th>Email</th> 
+</tr>
+        </thead>
+        <tbody>
+            <tr>
+<td>{{ utilisateur.civilite }}
+						</td>
+						<td>{{ utilisateur.nom|upper }}
+						</td>
+						<td>{{ utilisateur.prenom }}
+						</td>
+						<td>{{ utilisateur.dateNaiss|date("d/m/Y") }}
+						</td>
+						<td>{{ utilisateur.pays }}
+						</td>
+						<td>{{ utilisateur.telephone }}</td>
+						<td>{{ utilisateur.email }}</td>
+						<td>{{ utilisateur.periode }}</td>
+						<td>{{ utilisateur.login }}</td>
+						<td>{{ utilisateur.password }}</td>
+						
+						{# affichage du role de l'utilisateur #}
+						{% for role in utilisateur.roles %}
+							<td>
+								{{ role }}
+							</td>
+						{% endfor %}
+
+
+        </tr>
+        </tbody>
+    </table>
+
+    {% endblock %}

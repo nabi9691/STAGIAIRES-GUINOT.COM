@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+afficher message :
+{% endblock %}
+
+{% block content %}
+    <h1>
+    Afficher message :
+    </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th> Titre </th>
+                <th> Résumé </th>
+                <th> Pays </th>
+                 <th> Status </th>
+                <th> Date </th>
+                 </tr>
+        </thead>
+        <tbody>
+            <tr>
+<td>{{ message.id }}
+</td>
+<td>{{ message.titre }}
+						</td>
+						
+                        <td>{{ message.resume }}
+						</td>
+<td>{{ message.pays }}
+</td>
+<td>{{ message.status }}
+</td>
+						<td>{{ message.createdAt|date("d/m/Y") }}
+						</td>
+                        </tr>
+        </tbody>
+    </table>
+
+    {% endblock %}

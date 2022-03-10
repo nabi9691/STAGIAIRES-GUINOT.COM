@@ -1,0 +1,18 @@
+
+    
+{{ form_start(formMessage) }}
+
+Titre: {{ form_widget(formMessage.titre) }}<br>
+Résumé: {{ form_widget(formMessage.resume) }} <br>
+Pays: {{ form_widget(formMessage.pays) }} <br>
+Status: {{ form_widget(formMessage.status) }} <br>
+createdAt: {{ form_widget(formMessage.createdAt) }} <br>
+utilisateur: {{ form_widget(formMessage.utilisateur) }} <br>
+
+
+
+<button type="submit" class="btn btn-success">envoyer</button>
+
+
+      
+    {{ form_end(formMessage) }}

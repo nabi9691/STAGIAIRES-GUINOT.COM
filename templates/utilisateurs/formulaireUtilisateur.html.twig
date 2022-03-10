@@ -1,0 +1,17 @@
+
+    
+{{ form_start(formUtilisateur) }}
+
+Nom: {{ form_widget(formUtilisateur.nom) }}<br>
+Prénom: {{ form_widget(formUtilisateur.prenom) }} <br>
+Civilité: {{ form_widget(formUtilisateur.civilite) }} <br>
+Email: {{ form_widget(formUtilisateur.login) }} <br>
+
+Mot de passe: {{ form_widget(formUtilisateur.password) }} <br>
+
+
+<button type="submit" class="btn btn-success">envoyer</button>
+
+
+      
+    {{ form_end(formUtilisateur) }}

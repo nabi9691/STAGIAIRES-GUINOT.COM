@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des utilisateurs!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.contenu {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+
+		.contenu code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+<br/><br/>
+
+{% block content %}
+	<div class="container">
+
+<a href="{{ path('nouvelUtilisateur_index') }}">Nouvelle utilisateur</a>
+
+<br/><br/>
+		<h1>
+			Liste des utilisateurs :
+		</h1>
+		<br/><br/>
+		<hr/>
+		<br/>
+
+		<table border="1">
+					<thead>
+						<tr>
+							<th>
+								Civilité
+							</th>
+							<th>
+								Nom
+							</th>
+							<th>
+								Prénom
+							</th>
+							<th>
+								Date de naissance
+							</th>
+						
+							<th>
+								Login
+							</th>
+							<th>
+								Role
+							</th>
+							<th>Modifier</th>
+							<th>Afficher</th>
+							<th>Supprimer</th>
+</tr>
+					</thead>
+					<tbody>
+{% for utilisateur in utilisateur %}
+<tr>
+						<td>{{ utilisateur.civilite }}
+						</td>
+						<td>{{ utilisateur.nom|upper }}
+						</td>
+						<td>{{ utilisateur.prenom }}
+						</td>
+						<td>{{ utilisateur.dateNaiss|date("d/m/Y") }}
+						</td>
+						<td>{{ utilisateur.login }}</td>
+						<td>
+						{# affichage du role de l'utilisateur #}
+						{% for role in utilisateur.roles %}
+							
+										{{ role }}, 
+							
+						{% endfor %}
+						</td>
+							
+<td><a href="{{ path('modifierUtilisateur_index', {'id': utilisateur.id }) }}">Modifier</a></td>
+<td><a href="{{ path('afficherUtilisateur_index', {'id': utilisateur.id }) }}">afficher</a></td>
+<td><a href="{{ path('supprimerUtilisateur_index', {'id': utilisateur.id }) }}">Supprimer</a></td>
+</tr>
+
+					{% else %}
+						<tr>
+							<td>
+								Vous n'avez pas d'enregistrement!
+							</td>
+						</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
+		{% endblock %}
+
+		<br/><br/>
+
+	
+	{% endblock %}
