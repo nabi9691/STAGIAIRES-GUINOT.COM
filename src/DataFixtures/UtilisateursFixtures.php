@@ -20,15 +20,17 @@ class UtilisateursFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
         
         // Liste des utilisateurs :
-        for ($i = 1; $i < 200; $i++) 
+        for ($i = 1; $i < 20; $i++) 
         {
             $utilisateurs = new Utilisateurs();
             $civilite = ["Femme", "Homme"];
             shuffle($civilite);
             $status = ['connecter', 'déconnecter', 'anonyme'];
             shuffle($status);
-    $roles = ['Anonymes', 'Utilisateurs', 'Usagers', 'Utilisateur connectés', 'Administrateurs'];
+    $roles = ['ROLE_ANONYMOUSE', 'ROLE_USER', 'ROLE_ADMIN', 'ROLE_ABONNER'];
             shuffle($roles);
+
+$email = $faker->email;
 
             $utilisateurs
                 ->setCivilite($civilite[0])
@@ -36,19 +38,22 @@ class UtilisateursFixtures extends Fixture
                 ->setPrenom($faker->firstName)
         ->setDateNaiss(new \DateTime())
         ->setAdresse($faker->address)
-        ->setEmail($faker->email)
-                ->setVille($faker->ville)
-                                ->setCodePostal($faker->codePostal)
-                ->setPays($faker->pays)
-                ->setTelephone($faker->telephone)
-                ->setPeriode($faker->periode)
+        ->setEmail($email)
+        ->setIsVerified(true)
+        ->setLogin($email)
+        ->setPassword($faker->password())
+                ->setVille($faker->city)
+                                ->setCodePostal($faker->postcode)
+                ->setPays($faker->city)
+                ->setTelephone($faker->phoneNumber)
+                ->setPeriode($faker->date())
                     ->setStatus($status[0])
                 ->setRoles($roles[0]);
                                     
             $manager->persist($utilisateurs);
     
         // Liste des messages :
-        for ($j=1; $j<150 ; $j++ ) 
+        for ($j=1; $j<20 ; $j++ ) 
     {
         $status = ['Nouveau Message', 'Ancien message', 'Message Privé', 'Message Annonyme', 'Message Archivé', 'Message Professionnel', 'Message Publicitaire'];
         shuffle($status);
@@ -66,7 +71,9 @@ class UtilisateursFixtures extends Fixture
             
                         $manager->persist($messages);
                     }        
-        $manager->flush();
+       
     }
-    }   
+    $manager->flush();  
+    }
+     
 }

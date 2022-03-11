@@ -117,7 +117,7 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $role = [];
+    private $roles = [];
 
     /**
      * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="utilisateur", orphanRemoval=true)

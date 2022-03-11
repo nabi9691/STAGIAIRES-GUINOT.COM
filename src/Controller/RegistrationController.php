@@ -88,10 +88,20 @@ class RegistrationController extends AbstractController
             );
 
             $user->setRoles('ROLE_ADMIN');
-            $user->setIsVerified(true);
+            //  $user->setIsVerified(true);
 
             $entityManager->persist($user);
             $entityManager->flush();
+
+            $this->emailVerifier->sendEmailConfirmation(
+                'app_verify_email',
+                $user,
+                (new TemplatedEmail())
+                    ->from(new Address('ndao6516@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
+                    ->to($user->getLogin())
+                    ->subject('Veuillez confirmer votre email')
+                    ->htmlTemplate('registration/confirmation_email.html.twig')
+            );
 
             return $this->redirectToRoute('app_login');
         }

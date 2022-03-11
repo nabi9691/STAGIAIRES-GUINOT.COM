@@ -26,60 +26,22 @@
                     <li><a href="{{ path('index') }}"> accueil </a></li>
 
                     <li><a href="{{ path('messages_index') }}"> Liste des messages </a> </li>
-
-
-{% if is_granted('ROLE_ADMIN') %}
-                            <h1> Espace Réservé au administrateurs :</h1>
-                            <li><a href="{{ path('index') }}"> accueil </a></li>
-<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a> </li>
-{% endif %}
-                    
-
-{% if is_granted('ROLE_ABONNER') %}
-<h1> Bien venu sur votre espace personnel !</h1>
-<li><a href="{{ path('pageAccueilEspacePerso_index') }}">Page d'accueil de votre espace perso ! </a> </li>
-<li><a href="{{ path('monEspacePersonel_index') }}">Mon espace personnel : </a> </li>
-{% endif %}
-
-
-                    
                     <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 
                     
 
+{% if is_granted('ROLE_ABONNER') %}
+<li><a href="{{ path('pageAccueilEspacePerso_index') }}">Page d'accueil de votre espace perso ! </a> </li>
+<li><a href="{{ path('monEspacePersonel_index') }}">Mon espace personnel : </a> </li>
+{% endif %}
+
                     {% else %}
-<h1> Bien venu sur le site Retrouvailles.com ! </h1>
+
+ <li><a href="{{ path('index') }}"> accueil </a></li>
                     
-                    <li><a href="{{ path('index') }}"> accueil </a></li>
-                    
-                    <li><a href="{{ path('app_register')}}"> S'inscrire : </a> </li>
-                    <li><a href="{{ path('app_login')}}"> Se connecter : </a></li>
+                    <li><a href="{{ path('app_login') }}"> Se connecter </a> </li>
+                    <li><a href="{{ path('app_register') }}"> Création de compte </a> </li>
 
-<h1> Retrouvailles et Témoignages ! </h1>
-<div>
-<a href="https://youtu.be/vk-wuWhyCsw">Retrouvailles plutôt inhabituelles dans un tribunal ! </a>
-<p>
-MIAMI – 30 juin 2015 – Retrouvailles plutôt inhabituelles dans un tribunal de Miami. La juge a en face d'elle un prévenu. Accusé de plusieurs cambriolages, l'homme écoute tête baissée. Jusqu'à cette incroyable scène : "M. Booth, j'ai une question. Êtes-vous allé à l'école Nautilus ?"  l'interroge Mindy Glazer, la juge. "Je suis désolée de vous voir ici. Je me suis toujours demandée ce que vous étiez devenu." poursuit-elle. L'homme éclate en sanglots, répétant la tête entre les mains "Oh mon dieu ".
-"Il était le meilleur à l'école. Je jouais au foot avec lui. Comme tous les enfants . Et regardez ce qui arrive. Je suis désolée de voir cela. M. Booth, j'espère que vous serez capable de changer 
-votre comportement. Bonne chance à vous. " a conclu la juge.
-</p>
-<br/><br/>
-
-<a href="https://youtu.be/kY-RibxCgyQ"> On s'était dit rendez-vous dans 10 ans !   </a>
-<p>
-Aujourd’hui on se replonge dans nos années lycée ! Marqués par des amis 
-ou des professeurs, ils se sont donnés rendez-vous comme dans la chanson : dans 10, 
-20 ou même 30 ans. 
-des hommes et des femmes qui évoquent des événements marquants de leur existence.
-» diffusée le 11/12/2019 à 13.50 sur France 2.
-</p>
-<br/><br/>
-
-<a href="https://youtu.be/mm42WPo5U9g"> retrouvailles 75 ans après  ! </a>
-<p>
-Découvrez l'histoire de deux sœurs séparées pendant la seconde guerre mondiale et réunies grâce aux efforts de nos équipes du Rétablissement des Liens Familiaux (RLF)
-</p>        
-                    </div>
                                         {% endif %}
 
                     {% if 'register' == app.request.attributes.get('_route') %}
