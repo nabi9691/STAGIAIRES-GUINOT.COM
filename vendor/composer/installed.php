@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'cd1002ca621dbf4831db1ec4f70545af6bf7eee8',
+        'reference' => 'cbb7fea74fd0009581e9ad6aeab57e7196f3e7df',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'cd1002ca621dbf4831db1ec4f70545af6bf7eee8',
+            'reference' => 'cbb7fea74fd0009581e9ad6aeab57e7196f3e7df',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -281,12 +281,12 @@
             'dev_requirement' => false,
         ),
         'monolog/monolog' => array(
-            'pretty_version' => '1.26.1',
-            'version' => '1.26.1.0',
+            'pretty_version' => '1.27.0',
+            'version' => '1.27.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../monolog/monolog',
             'aliases' => array(),
-            'reference' => 'c6b00f05152ae2c9b04a448f99c7590beb6042f5',
+            'reference' => '52ebd235c1f7e0d5e1b16464b695a28335f8e44a',
             'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
@@ -508,8 +508,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0',
             ),
         ),
         'psr/simple-cache-implementation' => array(

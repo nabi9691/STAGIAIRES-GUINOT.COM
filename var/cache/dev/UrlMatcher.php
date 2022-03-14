@@ -20,6 +20,9 @@ return [
             [['_route' => 'contacts_index', '_controller' => 'App\\Controller\\HomeController::contacts'], null, null, null, true, false, null],
             [['_route' => 'temoignages_index', '_controller' => 'App\\Controller\\HomeController::temoignages'], null, null, null, true, false, null],
         ],
+        '/mediats' => [[['_route' => 'mediats_index', '_controller' => 'App\\Controller\\MediatsController::index'], null, null, null, true, false, null]],
+        '/mediats/formulaireMediats' => [[['_route' => 'formulaireMediats_index', '_controller' => 'App\\Controller\\MediatsController::formulaireMediats'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/mediats/nouveauMediats' => [[['_route' => 'nouveauMediats_index', '_controller' => 'App\\Controller\\MediatsController::nouveauMediats'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/messages' => [[['_route' => 'messages_index', '_controller' => 'App\\Controller\\MessagesController::index'], null, null, null, true, false, null]],
         '/messages/formulaireMessages' => [[['_route' => 'formulaireMessages_index', '_controller' => 'App\\Controller\\MessagesController::formulaireMessages'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/messages/nouveauMessages' => [[['_route' => 'nouveauMessage_index', '_controller' => 'App\\Controller\\MessagesController::nouveauMessages'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -55,20 +58,28 @@ return [
                     .')'
                 .')'
                 .'|/m(?'
-                    .'|essages/(?'
-                        .'|rechercheMessages/([^/]++)(*:211)'
-                        .'|afficherMessage/([^/]++)(*:243)'
-                        .'|modifierMessage/([^/]++)(*:275)'
-                        .'|supprimerUtilisateur/([^/]++)(*:312)'
+                    .'|e(?'
+                        .'|diats/(?'
+                            .'|rechercheMediats/([^/]++)(*:212)'
+                            .'|afficherMediats/([^/]++)(*:244)'
+                            .'|modifierMediats/([^/]++)(*:276)'
+                            .'|supprimerMediats/([^/]++)(*:309)'
+                        .')'
+                        .'|ssages/(?'
+                            .'|rechercheMessages/([^/]++)(*:354)'
+                            .'|afficherMessage/([^/]++)(*:386)'
+                            .'|modifierMessage/([^/]++)(*:418)'
+                            .'|supprimerMessages/([^/]++)(*:452)'
+                        .')'
                     .')'
-                    .'|odifierUtilisateur/([^/]++)(*:348)'
+                    .'|odifierUtilisateur/([^/]++)(*:489)'
                 .')'
-                .'|/rechercheUtilisateur/([^/]++)(*:387)'
-                .'|/afficherUtilisateur/([^/]++)(*:424)'
-                .'|/supprimerUtilisateur/([^/]++)(*:462)'
+                .'|/rechercheUtilisateur/([^/]++)(*:528)'
+                .'|/afficherUtilisateur/([^/]++)(*:565)'
+                .'|/supprimerUtilisateur/([^/]++)(*:603)'
                 .'|/e(?'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:511)'
-                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:554)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:652)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:695)'
                 .')'
             .')/?$}sD',
     ],
@@ -80,16 +91,20 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        211 => [[['_route' => 'rechercheMessages_index', '_controller' => 'App\\Controller\\MessagesController::rechercheMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        243 => [[['_route' => 'afficherMessage_index', '_controller' => 'App\\Controller\\MessagesController::afficherMessage'], ['id'], ['GET' => 0], null, false, true, null]],
-        275 => [[['_route' => 'modifierMessage_index', '_controller' => 'App\\Controller\\MessagesController::modifierMessage'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        312 => [[['_route' => 'supprimerMessage_index', '_controller' => 'App\\Controller\\MessagesController::supprimerMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        348 => [[['_route' => 'modifierUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::modifierUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        387 => [[['_route' => 'rechercheUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::rechercheUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        424 => [[['_route' => 'afficherUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::afficherUtilisateur'], ['id'], ['GET' => 0], null, false, true, null]],
-        462 => [[['_route' => 'supprimerUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        511 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        554 => [
+        212 => [[['_route' => 'rechercheMediats_index', '_controller' => 'App\\Controller\\MediatsController::rechercheMediats'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        244 => [[['_route' => 'afficherMediats_index', '_controller' => 'App\\Controller\\MediatsController::afficherMediats'], ['id'], ['GET' => 0], null, false, true, null]],
+        276 => [[['_route' => 'modifierMediats_index', '_controller' => 'App\\Controller\\MediatsController::modifierMediats'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        309 => [[['_route' => 'supprimerMediats_index', '_controller' => 'App\\Controller\\MediatsController::supprimerMediats'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        354 => [[['_route' => 'rechercheMessages_index', '_controller' => 'App\\Controller\\MessagesController::rechercheMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        386 => [[['_route' => 'afficherMessage_index', '_controller' => 'App\\Controller\\MessagesController::afficherMessage'], ['id'], ['GET' => 0], null, false, true, null]],
+        418 => [[['_route' => 'modifierMessage_index', '_controller' => 'App\\Controller\\MessagesController::modifierMessage'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        452 => [[['_route' => 'supprimerMessages_index', '_controller' => 'App\\Controller\\MessagesController::supprimerMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        489 => [[['_route' => 'modifierUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::modifierUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        528 => [[['_route' => 'rechercheUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::rechercheUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        565 => [[['_route' => 'afficherUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::afficherUtilisateur'], ['id'], ['GET' => 0], null, false, true, null]],
+        603 => [[['_route' => 'supprimerUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        652 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        695 => [
             [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

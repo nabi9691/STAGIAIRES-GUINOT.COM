@@ -37,7 +37,7 @@ class MessagesController extends AbstractController
         $messages = $messagesRepository-> findByMessagesCivilite();
     return $this->render('messages/rechercheMessage.html.twig', [
         'id' => $messages ->getId(),
-        'message' => $messages,
+        'messages' => $messages,
     ]);
 }
     
@@ -61,8 +61,8 @@ class MessagesController extends AbstractController
         }
 
         return $this->render('messages/formulaireMessages.html.twig', [
-            'message' => $messages,
-            'formMessage' => $form->createView(),
+            'messages' => $messages,
+            'formMessages' => $form->createView(),
         ]);
     }
 
@@ -84,7 +84,7 @@ class MessagesController extends AbstractController
             return $this->redirectToRoute('messages_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('utilisateurs/nouvelUtilisateur.html.twig', [
+        return $this->render('messages/nouvelMessage.html.twig', [
             'message' => $messages,
             'formMessages' => $form->createView(),
         ]);
@@ -96,7 +96,7 @@ class MessagesController extends AbstractController
     public function afficherMessage(Messages $messages): Response
     {
         return $this->render('messages/afficherMessage.html.twig', [
-            'message' => $messages,
+            'messages' => $messages,
         ]);
     }
 
@@ -120,13 +120,13 @@ class MessagesController extends AbstractController
 
         return $this->render('messages/modifierMessage.html.twig', [
             'messages' => $messages,
-            'formMessage' => $form->createView(),
+            'formMessages' => $form->createView(),
         ]);
     }
 
-// SUPPRESSION DES UTILISATEURS
+// SUPPRESSION DES messages :
     /**
-     * @Route("/supprimerUtilisateur/{id}" , name="supprimerMessage_index", methods= {"GET","POST"})
+     * @Route("/supprimerMessages/{id}" , name="supprimerMessages_index", methods= {"GET","POST"})
      */
     public function supprimerMessages(Request $request, Messages $messages , EntityManagerInterface $entityManager) : Response 
     {           

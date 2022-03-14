@@ -36,7 +36,8 @@ $email = $faker->email;
                 ->setCivilite($civilite[0])
                 ->setNom($faker->lastName)
                 ->setPrenom($faker->firstName)
-        ->setDateNaiss(new \DateTime())
+        
+                ->setDateNaiss(new \DateTime())
         ->setAdresse($faker->address)
         ->setEmail($email)
         ->setIsVerified(true)
