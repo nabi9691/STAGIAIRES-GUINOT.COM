@@ -41,9 +41,8 @@
                     
                     <li><a href="{{ path('app_login') }}"> Se connecter </a> </li>
                     <li><a href="{{ path('app_register') }}"> Création de compte </a> </li>
-<li><a href="{{ path('mediats_index') }}"> Liste des médiats ! </a></li>
-    
-                                        {% endif %}
+<li><a href="{{ path('temoignages_index') }}"> Retrouvailles et Témoignages  ! </a></li>
+                                            {% endif %}
 
                     {% if 'register' == app.request.attributes.get('_route') %}
                     <li><a href="{{ path('index') }}"> accueil </a></li>

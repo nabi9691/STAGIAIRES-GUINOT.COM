@@ -63,7 +63,7 @@ class UtilisateursController extends AbstractController
 
         return $this->render('utilisateurs/formulaireUtilisateur.html.twig', [
             'utilisateur' => $utilisateurs,
-            'formUti        lisateur' => $form->createView(),
+            'formUtilisateur' => $form->createView(),
         ]);
     }
 
@@ -163,6 +163,9 @@ class UtilisateursController extends AbstractController
     {
         return $this->render('utilisateurs/pageAccueilEspacePerso.html.twig', []);
     }
+
+
+    
 
 
     }

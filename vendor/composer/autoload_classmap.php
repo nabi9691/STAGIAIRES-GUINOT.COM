@@ -657,6 +657,7 @@ return array(
     'elFinderPluginNormalizer' => $vendorDir . '/studio-42/elfinder/php/plugins/Normalizer/plugin.php',
     'elFinderPluginSanitizer' => $vendorDir . '/studio-42/elfinder/php/plugins/Sanitizer/plugin.php',
     'elFinderPluginWatermark' => $vendorDir . '/studio-42/elfinder/php/plugins/Watermark/plugin.php',
+    'elFinderPluginWinRemoveTailDots' => $vendorDir . '/studio-42/elfinder/php/plugins/WinRemoveTailDots/plugin.php',
     'elFinderSession' => $vendorDir . '/studio-42/elfinder/php/elFinderSession.php',
     'elFinderSessionInterface' => $vendorDir . '/studio-42/elfinder/php/elFinderSessionInterface.php',
     'elFinderTriggerException' => $vendorDir . '/studio-42/elfinder/php/elFinder.class.php',

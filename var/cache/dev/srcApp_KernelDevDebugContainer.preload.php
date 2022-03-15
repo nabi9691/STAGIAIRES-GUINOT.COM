@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerNBp552e/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/Container8dyLTxf/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -39,6 +39,7 @@ $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Controller\AdminsController';
 $classes[] = 'App\Controller\AuthentificationController';
+$classes[] = 'App\Controller\ContactsController';
 $classes[] = 'App\Controller\HomeController';
 $classes[] = 'App\Controller\MediatsController';
 $classes[] = 'App\Controller\MessagesController';
@@ -52,12 +53,14 @@ $classes[] = 'Symfony\Component\Mailer\Mailer';
 $classes[] = 'Symfony\Component\Mailer\Transport\Transports';
 $classes[] = 'Symfony\Component\Mailer\Transport';
 $classes[] = 'App\Controller\UtilisateursController';
+$classes[] = 'App\Form\ContactsType';
 $classes[] = 'App\Form\MediatsType';
 $classes[] = 'App\Form\MessagesType';
 $classes[] = 'App\Form\RegistrationFormEditType';
 $classes[] = 'App\Form\RegistrationFormType';
 $classes[] = 'App\Repository\AdminsRepository';
 $classes[] = 'App\Repository\ComptesRepository';
+$classes[] = 'App\Repository\ContactsRepository';
 $classes[] = 'App\Repository\MediatsRepository';
 $classes[] = 'App\Repository\MessagesRepository';
 $classes[] = 'App\Repository\UtilisateursRepository';
@@ -180,6 +183,7 @@ $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\Proxy\EnsureProductionSetti
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader';
 $classes[] = 'App\DataFixtures\AppFixtures';
+$classes[] = 'App\DataFixtures\ContactsFixtures';
 $classes[] = 'App\DataFixtures\MediatsFixtures';
 $classes[] = 'App\DataFixtures\UtilisateursFixtures';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory';

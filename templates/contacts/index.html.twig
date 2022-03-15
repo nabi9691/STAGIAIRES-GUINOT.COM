@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+ Liste des contacts : 
+ {% endblock %}
+
+
+{% block body %}
+
+{% block content %}
+<div>
+    <h1>
+     bienvenu(e) !
+     Liste des contacts :
+     </h1>
+
+    <br /><br />
+    <hr />
+    <br />
+    <a href="{{ path('nouveauContacts_index') }}">Ajouter Un Nouveau contact ! </a>
+<br /><br />
+    
+    <table border="1">
+            
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Nom </th>
+                    <th> Prénom </th>
+                    <th> Date de naissance </th>
+                    <th> Téléphone </th>
+                                        <th> Email </th>
+                    <th> Fax : </th>
+<th> Civilité </th>
+                                        <th> Adresse </th>
+                    <th> Code-Postal </th>
+                    <th> Villes </th>
+                <th> Départements </th>
+                    <th> Pays </th>
+                    <th> Status </th>
+                    
+<th> Modifier </th>
+<th> Afficher </th>
+<th> Supprimer </t  h>
+</tr>
+            </thead>
+            {% for contacts in contacts %}
+<tbody>
+        <tr>
+                <td> {{ contact.id }} </td>
+                <td> {{ contact.nom }} </td>
+                <td> {{ contact.prenom }} </td>
+                <td> {{ contact.date|date("d/m/Y") }} </td>
+<td> {{ contact.telephone }} </td>
+<td> {{ contact.email }} </td>
+<td> {{ contact.fax }} </td>
+<td> {{ contact.civilite }} </td>
+<td> {{ contact.adresse }} </td>
+<td> {{ contact.code-Postal }} </td>
+                <td> {{ contact.villes }} </td>
+<td> {{ contact.departements }} </td>
+<td> {{ contact.pays }} </td>
+<td> {{ contact.status }} </td>
+<td><a href="{{ path('modifierContacts_index', {'id': contact.id }) }}">Modifier</a></td>
+<td><a href="{{ path('afficherContacts_index', {'id': contact.id }) }}">afficher</a></td>
+<td><a href="{{ path('supprimerContacts_index', {'id': contact.id }) }}">Supprimer</a></td>
+                {% else %}
+                <td colspan="5">
+                    Vous n'avez pas de contacts enregistré dans votre base de données !
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}
+
+<br/><br/>
+
+{% block footer %}
+<div>
+<h1> Contactez nous ... </h1>
+
+</div>
+
+
+
+{% endblock %}
+
+{% endblock %}

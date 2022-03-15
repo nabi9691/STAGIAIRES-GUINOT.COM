@@ -135,6 +135,15 @@ class MediatsController extends AbstractController
             return $this->redirectToRoute('mediats_index'); 
     }
 
+/**
+     * @Route("temoignages", name="temoignages_index", methods={"GET"})
+     */
+    public function temoignage(): Response
+    {
+        return $this->render('mediats/temoignages.html.twig', [
+            ]);
+    }
+
 
 
 

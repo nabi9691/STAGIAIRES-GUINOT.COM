@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Modifier un contact :
+{% endblock %}
+
+{% block content %}
+    
+    
+    <h1>
+        Modifier un contact :
+        </h1>
+
+{{ form_start(formContacts) }}
+
+Nom: {{ form_widget(formContacts.nom) }}<br>
+Prénom: {{ form_widget(formContacts.prenom) }} <br>
+Date de naissance: {{ form_widget(formContacts.date) }} <br>
+Civilité: {{ form_widget(formContacts.civilite) }} <br>
+Téléphone: {{ form_widget(formContacts.telephone) }} <br>
+Email: {{ form_widget(formContacts.email) }} <br>
+Fax: {{ form_widget(formContacts.fax) }} <br>
+Adresse: {{ form_widget(formContacts.adresse) }} <br>
+Code-Postal: {{ form_widget(formContacts.code-Postal) }} <br>
+Villes: {{ form_widget(formContacts.villes) }} <br>
+Départements: {{ form_widget(formContacts.departements) }} <br>
+Pays: {{ form_widget(formContacts.pays) }} <br>
+
+<button type="submit" class="btn btn-success">envoyer</button>
+
+
+      
+    {{ form_end(formContacts) }}
+
+
+
+
+
+    {% endblock %}

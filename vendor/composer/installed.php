@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'cbb7fea74fd0009581e9ad6aeab57e7196f3e7df',
+        'reference' => '0ca95296506d95c85088dc790ed80fd87749d066',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'cbb7fea74fd0009581e9ad6aeab57e7196f3e7df',
+            'reference' => '0ca95296506d95c85088dc790ed80fd87749d066',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -173,12 +173,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/persistence' => array(
-            'pretty_version' => '2.3.0',
-            'version' => '2.3.0.0',
+            'pretty_version' => '2.4.0',
+            'version' => '2.4.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/persistence',
             'aliases' => array(),
-            'reference' => 'f8af155c1e7963f3d2b4415097d55757bbaa53d8',
+            'reference' => 'e7c8edcf98e819638af00e7b3cbbbd7734b9b2fb',
             'dev_requirement' => false,
         ),
         'doctrine/sql-formatter' => array(
@@ -508,8 +508,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0',
+                0 => '1.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache-implementation' => array(
@@ -681,12 +681,12 @@
             'dev_requirement' => false,
         ),
         'studio-42/elfinder' => array(
-            'pretty_version' => '2.1.60',
-            'version' => '2.1.60.0',
+            'pretty_version' => '2.1.61',
+            'version' => '2.1.61.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../studio-42/elfinder',
             'aliases' => array(),
-            'reference' => 'e5ca28f04d37b98d82df92dbdd4ad7cb8ef76911',
+            'reference' => '33bee2654615db62e9b722efb4fdd2a21844fbb2',
             'dev_requirement' => false,
         ),
         'symfony/apache-pack' => array(
