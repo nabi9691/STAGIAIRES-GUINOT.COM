@@ -22,24 +22,12 @@ class ContactsController extends AbstractController
     /**
      * @Route("/", name="contacts_index")
      */
-    public function index(Contacts $contactsRepository): Response
+    public function index(ContactsRepository $contactsRepository): Response
     {
         return $this->render('contacts/index.html.twig', [
-            'contacts' => $contactsRepository->findAll(),
+            'contact' => $contactsRepository->findAll(),
         ]);
     }
-
-/**
-     * @Route("/rechercheContacts/{id}", name="rechercheContacts_index", methods={"GET","POST"})
-     */
-    public function rechercheContacts(Contacts $contactsRepository): Response
-    {
-        //$contacts = contactsRepository->findBy();
-    return $this->render('contacts/rechercheContacts.html.twig', [
-        //'id' => $mediats ->getId(),
-        //'contacts' => $mediats,
-    ]);
-}
     
 /**
      * @Route("/formulaireContacts", name = "formulaireContacts_index", methods={"GET","POST"})
@@ -61,7 +49,7 @@ class ContactsController extends AbstractController
         }
 
         return $this->render('contacts/formulaireContacts.html.twig', [
-            'contacts' => $contacts,
+            'contact' => $contacts,
             'formContacts' => $form->createView(),
         ]);
     }
@@ -85,7 +73,7 @@ class ContactsController extends AbstractController
         }
 
         return $this->render('contacts/nouveauContacts.html.twig', [
-            'contacts' => $contacts,
+            'contact' => $contacts,
             'formContacts' => $form->createView(),
         ]);
     }
@@ -96,7 +84,7 @@ class ContactsController extends AbstractController
     public function afficherContacts(Contacts $contacts): Response
     {
         return $this->render('contacts/afficherContacts.html.twig', [
-            'contacts' => $contacts,
+            'contact' => $contacts,
         ]);
     }
 
@@ -119,7 +107,7 @@ class ContactsController extends AbstractController
         }
 
         return $this->render('contacts/modifierContacts.html.twig', [
-            'contacts' => $contacts,
+            'contact' => $contacts,
             'formContacts' => $form->createView(),
         ]);
     }
@@ -134,9 +122,6 @@ class ContactsController extends AbstractController
             $entityManager->flush();
             return $this->redirectToRoute('contacts_index'); 
     }
-
-
-
 
 
 }

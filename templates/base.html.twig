@@ -23,12 +23,16 @@
                     
                     {% if app.user %}
                     
-                    <li><a href="{{ path('index') }}"> accueil </a></li>
+                    <li><a href="{{ path('accueil_index') }}"> accueil </a></li>
 
-                    <li><a href="{{ path('messages_index') }}"> Liste des messages </a> </li>
                     <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 
-                    
+{% if is_granted('ROLE_ADMIN') %}
+<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
+<li><a href="{{ path('contacts_index') }}"> Liste des contacts ! </a></li>
+<li><a href="{{ path('message_index') }}"> Liste des messages : </a></li>
+{% endif %}
+
 
 {% if is_granted('ROLE_ABONNER') %}
 <li><a href="{{ path('pageAccueilEspacePerso_index') }}">Page d'accueil de votre espace perso ! </a> </li>
@@ -37,26 +41,33 @@
 
                     {% else %}
 
- <li><a href="{{ path('index') }}"> accueil </a></li>
+ <li><a href="{{ path('accueil_index') }}"> accueil </a></li>
                     
                     <li><a href="{{ path('app_login') }}"> Se connecter </a> </li>
                     <li><a href="{{ path('app_register') }}"> Création de compte </a> </li>
+                    <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
+
 <li><a href="{{ path('temoignages_index') }}"> Retrouvailles et Témoignages  ! </a></li>
+<li><a href="{{ path('mediats_index') }}"> Liste des médiats ! </a></li>
+<li><a href="{{ path('contacts_index') }}"> Liste des contacts ! </a></li>
+<li><a href="{{ path('message_index') }}"> Liste des messages : </a></li>
+<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
+                                            
                                             {% endif %}
 
                     {% if 'register' == app.request.attributes.get('_route') %}
-                    <li><a href="{{ path('index') }}"> accueil </a></li>
-                    
-                    <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a> </li>
-                    <li><a href="{{ path('messages_index') }}"> Liste des messages </a> </li>
+<li><a href="{{ path('message_index') }}"> Liste des messages </a> </li>
 
+                    <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a> </li>
+                    
+                    
                     {% endif %}
                         {% if 'login' == app.request.attributes.get('_route') %}
-                        
-                    <li><a href="{{ path('index') }}"> accueil </a></li>
+<li><a href="{{ path('message_index') }}"> Liste des messages </a> </li>
 
                     <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a> </li>
-                    <li><a href="{{ path('messages_index') }}"> Liste des messages </a> </li>
+                        
+
                     
                     {% endif %}
                 </ul>

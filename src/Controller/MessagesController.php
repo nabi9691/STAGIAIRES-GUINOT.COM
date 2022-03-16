@@ -20,12 +20,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class MessagesController extends AbstractController
 {
     /**
-     * @Route("/", name="messages_index")
+     * @Route("/", name="message_index")
      */
     public function index(MessagesRepository $messagesRepository): Response
     {
         return $this->render('messages/index.html.twig', [
-            'messages' => $messagesRepository->findAll(),
+            'message' => $messagesRepository->findAll(),
         ]);
     }
 
@@ -57,11 +57,11 @@ class MessagesController extends AbstractController
             $entityManager->persist($messages);
             $entityManager->flush();
 
-            return $this->redirectToRoute('messages_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('message_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('messages/formulaireMessages.html.twig', [
-            'messages' => $messages,
+            'message' => $messages,
             'formMessages' => $form->createView(),
         ]);
     }
@@ -81,7 +81,7 @@ class MessagesController extends AbstractController
             $entityManager->persist($messages);
             $entityManager->flush();
 
-            return $this->redirectToRoute('messages_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('message_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('messages/nouvelMessage.html.twig', [
@@ -96,7 +96,7 @@ class MessagesController extends AbstractController
     public function afficherMessage(Messages $messages): Response
     {
         return $this->render('messages/afficherMessage.html.twig', [
-            'messages' => $messages,
+            'message' => $messages,
         ]);
     }
 
@@ -119,20 +119,20 @@ class MessagesController extends AbstractController
         }
 
         return $this->render('messages/modifierMessage.html.twig', [
-            'messages' => $messages,
+            'message' => $messages,
             'formMessages' => $form->createView(),
         ]);
     }
 
 // SUPPRESSION DES messages :
     /**
-     * @Route("/supprimerMessages/{id}" , name="supprimerMessages_index", methods= {"GET","POST"})
+     * @Route("/supprimerMessages/{id}" , name="supprimerMessage_index", methods= {"GET","POST"})
      */
     public function supprimerMessages(Request $request, Messages $messages , EntityManagerInterface $entityManager) : Response 
     {           
             $entityManager->remove($messages);
             $entityManager->flush();
-            return $this->redirectToRoute('messages_index'); 
+            return $this->redirectToRoute('message_index'); 
     }
 
 

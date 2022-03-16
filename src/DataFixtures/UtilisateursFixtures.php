@@ -72,9 +72,7 @@ $email = $faker->email;
             
                         $manager->persist($messages);
                     }        
-       
+       $manager->flush();  
     }
-    $manager->flush();  
-    }
-     
+    }     
 }

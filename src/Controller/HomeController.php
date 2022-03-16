@@ -22,32 +22,13 @@ use Gedmo\Mapping\Annotation\Slug;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="accueil_index")
      */
     public function index(): Response
     {
         return $this->render('home/index.html.twig', []);
     }
 
-    /**
-     * @Route("/", name="contacts_index")
-     */
-    public function contacts(): Response
-    {
-        return $this->render('home/contacts.html.twig', []);
-    }
-
-    /**
-     * @Route("/", name="temoignages_index")
-     */
-    public function temoignages(): Response
-    {
-        return $this->render('home/temoignages.html.twig', []);
-    }
-
-
-
-
-
+        
 
     }

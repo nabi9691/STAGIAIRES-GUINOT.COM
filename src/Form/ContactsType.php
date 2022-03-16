@@ -63,7 +63,7 @@ class ContactsType extends AbstractType
             'label' => 'Adresse du contact :',
             'required' => true
         ])
-        ->add('code-Postal', TextType::class, [
+        ->add('codePostal', TextType::class, [
             'label' => 'Le Code-Postal du contact :',
             'required' => true
         ])

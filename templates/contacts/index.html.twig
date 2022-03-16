@@ -1,10 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-
- Liste des contacts : 
+Liste des contacts : 
  {% endblock %}
-
 
 {% block body %}
 
@@ -39,13 +37,12 @@
                 <th> Départements </th>
                     <th> Pays </th>
                     <th> Status </th>
-                    
-<th> Modifier </th>
+                    <th> Modifier </th>
 <th> Afficher </th>
 <th> Supprimer </t  h>
 </tr>
             </thead>
-            {% for contacts in contacts %}
+            {% for contact in contact %}
 <tbody>
         <tr>
                 <td> {{ contact.id }} </td>
@@ -57,7 +54,7 @@
 <td> {{ contact.fax }} </td>
 <td> {{ contact.civilite }} </td>
 <td> {{ contact.adresse }} </td>
-<td> {{ contact.code-Postal }} </td>
+<td> {{ contact.codePostal }} </td>
                 <td> {{ contact.villes }} </td>
 <td> {{ contact.departements }} </td>
 <td> {{ contact.pays }} </td>
@@ -80,13 +77,6 @@
 <br/><br/>
 
 {% block footer %}
-<div>
-<h1> Contactez nous ... </h1>
-
-</div>
-
-
-
 {% endblock %}
 
 {% endblock %}

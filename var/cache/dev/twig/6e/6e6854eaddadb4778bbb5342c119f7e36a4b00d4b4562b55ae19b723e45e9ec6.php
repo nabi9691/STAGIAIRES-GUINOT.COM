@@ -160,7 +160,7 @@ class __TwigTemplate_b0d1095b04d303201a7c5f37134fa6d7e464a22d397eafbe7824ced23f8
 ";
         // line 56
         $this->displayBlock('footer', $context, $blocks);
-        // line 73
+        // line 71
         echo "
 ";
         
@@ -193,12 +193,7 @@ Cliquer ici pour plus de informations !
         // line 64
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mediats_index");
         echo "\"> Liste des médiats ! </a></li>
-<li><a href=\"";
-        // line 65
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contacts_index");
-        echo "\"> Liste des contacts ! </a></li>
-
-</lu>
+        </lu>
     <p>
     nos équipes du ... !
     </p>        
@@ -224,7 +219,7 @@ Cliquer ici pour plus de informations !
 
     public function getDebugInfo()
     {
-        return array (  198 => 65,  194 => 64,  185 => 57,  175 => 56,  164 => 73,  162 => 56,  128 => 24,  109 => 23,  92 => 8,  82 => 7,  71 => 4,  61 => 3,  38 => 1,);
+        return array (  194 => 64,  185 => 57,  175 => 56,  164 => 71,  162 => 56,  128 => 24,  109 => 23,  92 => 8,  82 => 7,  71 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -293,9 +288,7 @@ Cliquer ici pour plus de informations !
 </h3>
 <lu>
     <li><a href=\"{{ path('mediats_index') }}\"> Liste des médiats ! </a></li>
-<li><a href=\"{{ path('contacts_index') }}\"> Liste des contacts ! </a></li>
-
-</lu>
+        </lu>
     <p>
     nos équipes du ... !
     </p>        
