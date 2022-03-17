@@ -21,7 +21,7 @@ class UtilisateursController extends AbstractController
 {
     /**
      * @Route("utilisateur", name="utilisateur_index", methods={"GET"})
-     * @ISGranted("ROLE_ADMIN")
+     //* @ISGranted("ROLE_ADMIN")
      */
     public function index(UtilisateursRepository $utilisateursRepository): Response
     {

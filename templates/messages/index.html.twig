@@ -18,38 +18,35 @@
     <a href="{{ path('nouveauMessage_index') }}">Nouveau message </a>
 <br /><br />
     
-    
     <table border="1">
-        <tbody>
-            
             <thead>
                 <tr>
+                    <th> Id </th>
                     <th> Titre </th>
                     <th> Résumé </th>
                     <th> Date </th>
                     <th> Pays </th>
                     <th> Status </th>
-                    <th> utilisateur </th>
-                <th> Modifier </th>
+                    <th> Modifier </th>
 <th> Afficher </th>
 <th> Supprimer </t  h>
-
-                </tr>
+</tr>
             </thead>
-            {% for message in messages %}
+            {% for message in message %}
+<tbody>
 <tr>
-                <td> {{ message.titre }} </td>
+                                <td> {{ message.id }} </td>
+<td> {{ message.titre }} </td>
                 <td> {{ message.resume }} </td>
-                <td> {{ message.pays }} </td>
-                <td> {{ message.status }} </td>
                 <td> {{ message.createdAt|date("d/m/Y") }} </td>
-                <td> {{ message.utilisateur.nom ~ ' ' ~ message.utilisateur.prenom }} </td>
-<td><a href="{{ path('modifierMessage_index', {'id': message.id }) }}">Modifier</a></td>
+<td> {{ message.pays }} </td>
+                <td> {{ message.status }} </td>
+                                <td><a href="{{ path('modifierMessage_index', {'id': message.id }) }}">Modifier</a></td>
 <td><a href="{{ path('afficherMessage_index', {'id': message.id }) }}">afficher</a></td>
 <td><a href="{{ path('supprimerMessage_index', {'id': message.id }) }}">Supprimer</a></td>
-                
-
+                </tr>
                 {% else %}
+                <tr>
                 <td colspan="5">
                     Vous n'avez pas de messages enregistré dans votre base de données !
                 </td>
@@ -64,5 +61,8 @@
 <br/><br/>
 
 {% block footer %}
+<p>
+pied de page !
+</p>
 {% endblock %}
 {% endblock %}

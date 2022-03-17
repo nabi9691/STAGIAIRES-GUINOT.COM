@@ -28,18 +28,6 @@ class MessagesController extends AbstractController
             'message' => $messagesRepository->findAll(),
         ]);
     }
-
-/**
-     * @Route("/rechercheMessages/{id}", name="rechercheMessages_index", methods={"GET","POST"})
-     */
-    public function rechercheMessages(MessagesRepository $messagesRepository): Response
-    {
-        $messages = $messagesRepository-> findByMessagesCivilite();
-    return $this->render('messages/rechercheMessage.html.twig', [
-        'id' => $messages ->getId(),
-        'messages' => $messages,
-    ]);
-}
     
 /**
      * @Route("/formulaireMessages", name = "formulaireMessages_index", methods={"GET","POST"})
@@ -84,7 +72,7 @@ class MessagesController extends AbstractController
             return $this->redirectToRoute('message_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('messages/nouvelMessage.html.twig', [
+        return $this->render('messages/nouveauMessage.html.twig', [
             'message' => $messages,
             'formMessages' => $form->createView(),
         ]);
@@ -100,22 +88,21 @@ class MessagesController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/modifierMessage/{id}", name="modifierMessage_index", methods={"GET","POST"})
+/**
+     * @Route("/modifierMessages/{id}", name="modifierMessage_index", methods={"GET","POST"})
      */
-    public function modifierMessage(Request $request, Messages $messages): Response
+    public function modifierMessages(Request $request, Messages $messages): Response
     {
         $form = $this->createForm(MessagesType::class, $messages);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //$this->getDoctrine()->getManager()->flush();
-
+            
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($messages);
             $entityManager->flush();
 
-            return $this->redirectToRoute('messages_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('message_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('messages/modifierMessage.html.twig', [
@@ -123,6 +110,7 @@ class MessagesController extends AbstractController
             'formMessages' => $form->createView(),
         ]);
     }
+
 
 // SUPPRESSION DES messages :
     /**

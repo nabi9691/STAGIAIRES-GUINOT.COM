@@ -1,13 +1,12 @@
 
     
-{{ form_start(formMessage) }}
+{{ form_start(formMessages) }}
 
-Titre: {{ form_widget(formMessage.titre) }}<br>
-Résumé: {{ form_widget(formMessage.resume) }} <br>
-Pays: {{ form_widget(formMessage.pays) }} <br>
-Status: {{ form_widget(formMessage.status) }} <br>
-createdAt: {{ form_widget(formMessage.createdAt) }} <br>
-utilisateur: {{ form_widget(formMessage.utilisateur) }} <br>
+Titre: {{ form_widget(formMessages.titre) }}<br>
+Résumé: {{ form_widget(formMessages.resume) }} <br>
+Pays: {{ form_widget(formMessages.pays) }} <br>
+Status: {{ form_widget(formMessages.status) }} <br>
+createdAt: {{ form_widget(formMessages.createdAt) }} <br>
 
 
 
@@ -15,4 +14,4 @@ utilisateur: {{ form_widget(formMessage.utilisateur) }} <br>
 
 
       
-    {{ form_end(formMessage) }}
+    {{ form_end(formMessages) }}

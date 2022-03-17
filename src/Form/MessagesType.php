@@ -3,10 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Messages;
-//use Symfony\Component\Form\AbstractType;
+use App\Entity\Utilisateurs;
+
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-//use Symfony\Component\Form\FormBuilderInterface;
-//use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
@@ -20,7 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-// use Symfony\Component\Form\Extension\Core\Type\RadioType;
+
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 
@@ -35,8 +34,18 @@ class MessagesType extends AbstractType
             'label' => 'Le titre du message !',
             'required' => false
         ])
-        ->add('message', TextType::class, [
-            'label' => 'Le contenu de votre message :',
+        ->add('pays', TextType::class, [
+            'label' => 'Le pays de votre message :',
+            'required' => false
+        ])
+        ->add('status', TextType::class, [
+            'label' => 'Le status de votre message :',
+            'required' => false
+        ])
+        
+
+        ->add('resume', TextType::class, [
+            'label' => 'Le résumé de votre message :',
             'required' => false
         ])
         

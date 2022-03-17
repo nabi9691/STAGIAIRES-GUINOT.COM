@@ -88,7 +88,7 @@ class RegistrationController extends AbstractController
             );
 
             $user->setRoles('ROLE_ADMIN');
-            //  $user->setIsVerified(true);
+              $user->setIsVerified(true);
 
             $entityManager->persist($user);
             $entityManager->flush();
@@ -175,8 +175,7 @@ class RegistrationController extends AbstractController
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
         $this->addFlash('success', 'Votre adresse mail a bien été vérifié. Merci!');
 
-        return $this->redirectToRoute('messages_index');
-//        app_login');
+        return $this->redirectToRoute('app_login');
     }
 
 

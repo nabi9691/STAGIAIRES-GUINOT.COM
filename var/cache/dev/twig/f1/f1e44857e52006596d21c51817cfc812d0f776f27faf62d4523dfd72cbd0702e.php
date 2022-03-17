@@ -68,7 +68,7 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
                 
                 <!-- <a href=\"";
         // line 21
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
         echo "\"> Accueil </a> -->
                 <ul id=\"nav-mobile\" class=\"right hide-on-med-and-down\">
                     
@@ -82,119 +82,128 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
             echo "\"> accueil </a></li>
 
-                    <li><a href=\"";
+<li><a href=\"";
             // line 28
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("temoignages_index");
+            echo "\"> Retrouvailles et Témoignages  ! </a></li>
+<li><a href=\"";
+            // line 29
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mediats_index");
+            echo "\"> Liste des médiats ! </a></li>
+<li><a href=\"";
+            // line 30
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contacts_index");
+            echo "\"> Liste des contacts ! </a></li>
+
+<li><a href=\"";
+            // line 32
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_index");
+            echo "\"> Liste des messages : </a></li>
+<li><a href=\"";
+            // line 33
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("utilisateur_index");
+            echo "\"> Liste des utilisateurs : </a></li>
+
+                    <li><a href=\"";
+            // line 35
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\"> se déconnecter </a></li>
 
 ";
-            // line 30
+            // line 37
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 31
-                echo "<li><a href=\"";
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("utilisateur_index");
-                echo "\"> Liste des utilisateurs : </a></li>
-<li><a href=\"";
-                // line 32
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contacts_index");
-                echo "\"> Liste des contacts ! </a></li>
-<li><a href=\"";
-                // line 33
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_index");
-                echo "\"> Liste des messages : </a></li>
-";
             }
-            // line 35
+            // line 39
             echo "
 
 ";
-            // line 37
+            // line 41
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ABONNER")) {
-                // line 38
+                // line 42
                 echo "<li><a href=\"";
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pageAccueilEspacePerso_index");
                 echo "\">Page d'accueil de votre espace perso ! </a> </li>
 <li><a href=\"";
-                // line 39
+                // line 43
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("monEspacePersonel_index");
                 echo "\">Mon espace personnel : </a> </li>
 ";
             }
-            // line 41
+            // line 45
             echo "
                     ";
         } else {
-            // line 43
+            // line 47
             echo "
  <li><a href=\"";
-            // line 44
+            // line 48
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
             echo "\"> accueil </a></li>
                     
                     <li><a href=\"";
-            // line 46
+            // line 50
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\"> Se connecter </a> </li>
                     <li><a href=\"";
-            // line 47
+            // line 51
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             echo "\"> Création de compte </a> </li>
                     <li><a href=\"";
-            // line 48
+            // line 52
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\"> se déconnecter </a></li>
 
 <li><a href=\"";
-            // line 50
+            // line 54
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("temoignages_index");
             echo "\"> Retrouvailles et Témoignages  ! </a></li>
 <li><a href=\"";
-            // line 51
+            // line 55
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mediats_index");
             echo "\"> Liste des médiats ! </a></li>
 <li><a href=\"";
-            // line 52
+            // line 56
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contacts_index");
             echo "\"> Liste des contacts ! </a></li>
 <li><a href=\"";
-            // line 53
+            // line 57
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_index");
             echo "\"> Liste des messages : </a></li>
 <li><a href=\"";
-            // line 54
+            // line 58
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("utilisateur_index");
             echo "\"> Liste des utilisateurs : </a></li>
                                             
                                             ";
         }
-        // line 57
+        // line 61
         echo "
                     ";
-        // line 58
-        if ((0 === twig_compare("register", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 58, $this->source); })()), "request", [], "any", false, false, false, 58), "attributes", [], "any", false, false, false, 58), "get", [0 => "_route"], "method", false, false, false, 58)))) {
-            // line 59
+        // line 62
+        if ((0 === twig_compare("register", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 62, $this->source); })()), "request", [], "any", false, false, false, 62), "attributes", [], "any", false, false, false, 62), "get", [0 => "_route"], "method", false, false, false, 62)))) {
+            // line 63
             echo "<li><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_index");
             echo "\"> Liste des messages </a> </li>
 
                     <li><a href=\"";
-            // line 61
+            // line 65
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("utilisateur_index");
             echo "\"> Liste des utilisateurs </a> </li>
                     
                     
                     ";
         }
-        // line 65
+        // line 69
         echo "                        ";
-        if ((0 === twig_compare("login", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 65, $this->source); })()), "request", [], "any", false, false, false, 65), "attributes", [], "any", false, false, false, 65), "get", [0 => "_route"], "method", false, false, false, 65)))) {
-            // line 66
+        if ((0 === twig_compare("login", twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "request", [], "any", false, false, false, 69), "attributes", [], "any", false, false, false, 69), "get", [0 => "_route"], "method", false, false, false, 69)))) {
+            // line 70
             echo "<li><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_index");
             echo "\"> Liste des messages </a> </li>
 
                     <li><a href=\"";
-            // line 68
+            // line 72
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("utilisateur_index");
             echo "\"> Liste des utilisateurs </a> </li>
                         
@@ -202,21 +211,21 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
                     
                     ";
         }
-        // line 73
+        // line 77
         echo "                </ul>
             </div>
         </div>
     </nav>
 
     ";
-        // line 78
+        // line 82
         $this->displayBlock('content', $context, $blocks);
-        // line 81
+        // line 85
         echo "
     ";
-        // line 82
+        // line 86
         $this->displayBlock('scripts', $context, $blocks);
-        // line 90
+        // line 94
         echo "</body>
 
 </html>
@@ -277,7 +286,7 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
 
     }
 
-    // line 78
+    // line 82
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -287,7 +296,7 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 79
+        // line 83
         echo "
     ";
         
@@ -298,7 +307,7 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
 
     }
 
-    // line 82
+    // line 86
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -308,7 +317,7 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 83
+        // line 87
         echo "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js\"></script>
 
@@ -336,7 +345,7 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
 
     public function getDebugInfo()
     {
-        return array (  312 => 83,  302 => 82,  291 => 79,  281 => 78,  269 => 12,  265 => 11,  262 => 10,  252 => 9,  233 => 5,  220 => 90,  218 => 82,  215 => 81,  213 => 78,  206 => 73,  198 => 68,  192 => 66,  189 => 65,  182 => 61,  176 => 59,  174 => 58,  171 => 57,  165 => 54,  161 => 53,  157 => 52,  153 => 51,  149 => 50,  144 => 48,  140 => 47,  136 => 46,  131 => 44,  128 => 43,  124 => 41,  119 => 39,  114 => 38,  112 => 37,  108 => 35,  103 => 33,  99 => 32,  94 => 31,  92 => 30,  87 => 28,  82 => 26,  79 => 25,  77 => 24,  71 => 21,  62 => 14,  60 => 9,  53 => 5,  47 => 1,);
+        return array (  321 => 87,  311 => 86,  300 => 83,  290 => 82,  278 => 12,  274 => 11,  271 => 10,  261 => 9,  242 => 5,  229 => 94,  227 => 86,  224 => 85,  222 => 82,  215 => 77,  207 => 72,  201 => 70,  198 => 69,  191 => 65,  185 => 63,  183 => 62,  180 => 61,  174 => 58,  170 => 57,  166 => 56,  162 => 55,  158 => 54,  153 => 52,  149 => 51,  145 => 50,  140 => 48,  137 => 47,  133 => 45,  128 => 43,  123 => 42,  121 => 41,  117 => 39,  114 => 37,  109 => 35,  104 => 33,  100 => 32,  95 => 30,  91 => 29,  87 => 28,  82 => 26,  79 => 25,  77 => 24,  71 => 21,  62 => 14,  60 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -361,19 +370,23 @@ class __TwigTemplate_c81830bd1ff97e2bcc9ca131f20f53df70a725f569bb22fc63b0057e55e
         <div class=\"nav-wrapper\">
             <div class=\"container\">
                 
-                <!-- <a href=\"{{ path('index') }}\"> Accueil </a> -->
+                <!-- <a href=\"{{ path('accueil_index') }}\"> Accueil </a> -->
                 <ul id=\"nav-mobile\" class=\"right hide-on-med-and-down\">
                     
                     {% if app.user %}
                     
                     <li><a href=\"{{ path('accueil_index') }}\"> accueil </a></li>
 
+<li><a href=\"{{ path('temoignages_index') }}\"> Retrouvailles et Témoignages  ! </a></li>
+<li><a href=\"{{ path('mediats_index') }}\"> Liste des médiats ! </a></li>
+<li><a href=\"{{ path('contacts_index') }}\"> Liste des contacts ! </a></li>
+
+<li><a href=\"{{ path('message_index') }}\"> Liste des messages : </a></li>
+<li><a href=\"{{ path('utilisateur_index') }}\"> Liste des utilisateurs : </a></li>
+
                     <li><a href=\"{{ path('app_logout') }}\"> se déconnecter </a></li>
 
 {% if is_granted('ROLE_ADMIN') %}
-<li><a href=\"{{ path('utilisateur_index') }}\"> Liste des utilisateurs : </a></li>
-<li><a href=\"{{ path('contacts_index') }}\"> Liste des contacts ! </a></li>
-<li><a href=\"{{ path('message_index') }}\"> Liste des messages : </a></li>
 {% endif %}
 
 

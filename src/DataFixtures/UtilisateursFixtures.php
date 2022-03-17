@@ -60,6 +60,8 @@ $email = $faker->email;
         shuffle($status);
         $pays = ['France', 'Espagne', 'Royaume-Uni', 'Italie', 'Allemagne', 'Russie', 'Nigeria', 'Danemark', 'Irlande', 'Argentine', ];
         shuffle($pays);
+$utilisateurs = ['Gilles', 'Paul', 'Marie', 'Richard', 'Bernard', 'Julie', 'Omar', 'Sidi', 'Pierre', 'Caroline'];
+shuffle($utilisateurs);
         
             $messages = new Messages();
             $messages
@@ -67,9 +69,9 @@ $email = $faker->email;
             ->setResume($faker->sentence())
             ->setCreatedAt(new \DateTime())
             ->setPays($pays[0])
-            ->setStatus($status[0])
-->setUtilisateur($utilisateurs);
-            
+            ->setStatus($status[0]);
+//->setUtilisateur($utilisateurs);
+                
                         $manager->persist($messages);
                     }        
        $manager->flush();  

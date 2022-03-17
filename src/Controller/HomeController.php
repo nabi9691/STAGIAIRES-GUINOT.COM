@@ -16,10 +16,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\DBAL\Types\TextType;
 use Gedmo\Mapping\Annotation\Slug;
 
-/**
- * @Route("/home")
- */
-class HomeController extends AbstractController
+ class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="accueil_index")
