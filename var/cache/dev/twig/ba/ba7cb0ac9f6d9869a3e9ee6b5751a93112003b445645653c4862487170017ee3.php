@@ -67,7 +67,7 @@ class __TwigTemplate_dcaad807a49e752c297281366eaae3415fbe2784c2f84c13f91308d42c2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
-        echo "Bienvenu(e) sur le site retrouvailles.com !
+        echo "Bienvenu(e) sur le site : ANCIENS RETROUVAILLES DE GUINOT !
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -95,18 +95,20 @@ class __TwigTemplate_dcaad807a49e752c297281366eaae3415fbe2784c2f84c13f91308d42c2
 <br/>
 
 <h1>
-Retrouvez vos souvenirs les plus lointains !    
+Retrouvez les anciens stagiaires de Guinot !    
     </h1>
 <br/>
-
+<hr/>
+<br/>
+<h3> Nos stagiaires d'aujourd'hui, sont nos formateurs de demain !</h3> 
     </div>
 
 <br/><br/>
 
 ";
-        // line 23
+        // line 25
         $this->displayBlock('footer', $context, $blocks);
-        // line 32
+        // line 42
         echo "
 
 ";
@@ -118,7 +120,7 @@ Retrouvez vos souvenirs les plus lointains !
 
     }
 
-    // line 23
+    // line 25
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -128,15 +130,23 @@ Retrouvez vos souvenirs les plus lointains !
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 24
+        // line 26
         echo "<div>
-
-Cliquer ici pour plus de informations !
-<lu>
-    <li><a href=\"";
+<h1>Cliquer ici pour plus de informations !</h1>
+<a href=\"";
         // line 28
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mediats_index");
-        echo "\"> Liste des médiats ! </a></li>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("historiqueGuinot_index");
+        echo "\"> Qui somme nous ?</a></li>
+<lu>
+    <li>Formations :</li>
+    <li>  Masseur-Kinésithérapeute !</li>
+    <li>  Conseiller Relation Client à Distance !</li>
+<li>  Développeur Web et Web Mobile  !</li>
+<li> 24-26 bd Chastenet de Géry </li>
+<li> 94814 Villejuif Cedex </li>
+<li> Tél : 01 46 78 01 00 </li>
+<li> Fax : 01 46 78 50 35</li>
+<li> paul   guinot@guinot.asso.fr </li>
 </lu>
 </div>
 ";
@@ -160,7 +170,7 @@ Cliquer ici pour plus de informations !
 
     public function getDebugInfo()
     {
-        return array (  138 => 28,  132 => 24,  122 => 23,  110 => 32,  108 => 23,  91 => 8,  81 => 7,  70 => 4,  60 => 3,  37 => 1,);
+        return array (  138 => 28,  134 => 26,  124 => 25,  112 => 42,  110 => 25,  91 => 8,  81 => 7,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -168,7 +178,7 @@ Cliquer ici pour plus de informations !
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}
-Bienvenu(e) sur le site retrouvailles.com !
+Bienvenu(e) sur le site : ANCIENS RETROUVAILLES DE GUINOT !
 {% endblock %}
 
 {% block content %}
@@ -179,26 +189,36 @@ Bienvenu(e) sur le site retrouvailles.com !
 <br/>
 
 <h1>
-Retrouvez vos souvenirs les plus lointains !    
+Retrouvez les anciens stagiaires de Guinot !    
     </h1>
 <br/>
-
+<hr/>
+<br/>
+<h3> Nos stagiaires d'aujourd'hui, sont nos formateurs de demain !</h3> 
     </div>
 
 <br/><br/>
 
 {% block footer %}
 <div>
-
-Cliquer ici pour plus de informations !
+<h1>Cliquer ici pour plus de informations !</h1>
+<a href=\"{{ path('historiqueGuinot_index') }}\"> Qui somme nous ?</a></li>
 <lu>
-    <li><a href=\"{{ path('mediats_index') }}\"> Liste des médiats ! </a></li>
+    <li>Formations :</li>
+    <li>  Masseur-Kinésithérapeute !</li>
+    <li>  Conseiller Relation Client à Distance !</li>
+<li>  Développeur Web et Web Mobile  !</li>
+<li> 24-26 bd Chastenet de Géry </li>
+<li> 94814 Villejuif Cedex </li>
+<li> Tél : 01 46 78 01 00 </li>
+<li> Fax : 01 46 78 50 35</li>
+<li> paul   guinot@guinot.asso.fr </li>
 </lu>
 </div>
 {% endblock %}
 
 
 {% endblock %}
-", "home/index.html.twig", "C:\\wamp64\\www\\Retrouvailles_NABI.com\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\wamp64\\www\\ANCIENS-RETROUVAILLES-GUINOT\\templates\\home\\index.html.twig");
     }
 }

@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '57775ae4bd011f4125ca3f12cc1a45ab7df12d4c',
+        'reference' => '8f89e5a4b1b3c24a24a07057adc9ba152bce4d3f',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '57775ae4bd011f4125ca3f12cc1a45ab7df12d4c',
+            'reference' => '8f89e5a4b1b3c24a24a07057adc9ba152bce4d3f',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -218,12 +218,12 @@
             'dev_requirement' => false,
         ),
         'gedmo/doctrine-extensions' => array(
-            'pretty_version' => 'v3.5.0',
-            'version' => '3.5.0.0',
+            'pretty_version' => 'v3.6.0',
+            'version' => '3.6.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../gedmo/doctrine-extensions',
             'aliases' => array(),
-            'reference' => 'dd1a1438a10e92910e5c510f631a568c19e6c00e',
+            'reference' => '20e682c5c376faa4c88421453707741e1dd1f131',
             'dev_requirement' => false,
         ),
         'helios-ag/fm-elfinder-bundle' => array(

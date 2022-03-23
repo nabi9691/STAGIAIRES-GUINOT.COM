@@ -138,13 +138,91 @@ class MediatsController extends AbstractController
     }
 
 /**
-     * @Route("temoignages", name="temoignages_index", methods={"GET"})
+     * @Route("pageAccueilGuinot", name="pageAccueilGuinot_index", methods={"GET"})
      */
-    public function temoignage(): Response
+    public function pageAccueilGuinot(): Response
     {
-        return $this->render('mediats/temoignages.html.twig', [
+        return $this->render('mediats/guinot/pageAccueilGuinot.html.twig', [
             ]);
     }
+
+
+
+/**
+     * @Route("motDuPresidentDeGuinot", name="motDuPresidentDeGuinot_index", methods={"GET"})
+     */
+    public function motDuPresidentDeGuinot(): Response
+    {
+        return $this->render('mediats/guinot/motDuPresidentDeGuinot.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("historique", name="historiqueGuinot_index", methods={"GET"})
+     */
+    public function historiqueGuinot(): Response
+    {
+        return $this->render('mediats/guinot/historiqueGuinot.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("introductionGuinot", name="introductionGuinot_index", methods={"GET"})
+     */
+    public function introductionGuinot(): Response
+    {
+        return $this->render('mediats/guinot/introductionGuinot.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("masseurGuinot", name="masseurGuinot_index", methods={"GET"})
+     */
+    public function masseurGuinot(): Response
+    {
+        return $this->render('mediats/guinot/masseurGuinot.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("formationGuinot", name="formationGuinot_index", methods={"GET"})
+     */
+    public function formationGuinot(): Response
+    {
+        return $this->render('mediats/guinot/formationGuinot.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("developpeurGuinot", name="developpeurGuinot_index", methods={"GET"})
+     */
+    public function developpeurGuinot(): Response
+    {
+        return $this->render('mediats/guinot/developpeurGuinot.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("conseillerGuinot", name="conseillerGuinot_index", methods={"GET"})
+     */
+    public function conseillerGuinot(): Response
+    {
+        return $this->render('mediats/guinot/conseillerGuinot.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("temoignage", name="temoignages_index", methods={"GET"})
+     */
+    public function temoignages(): Response
+    {
+        return $this->render('mediats/guinot/temoignages.html.twig', [
+            ]);
+    }
+
+
+
+
 
 
 

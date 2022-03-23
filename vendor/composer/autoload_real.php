@@ -65,11 +65,16 @@ class ComposerAutoloaderInitf04bc284c67574d004f2e19e2e6c7cb1
     }
 }
 
+/**
+ * @param string $fileIdentifier
+ * @param string $file
+ * @return void
+ */
 function composerRequiref04bc284c67574d004f2e19e2e6c7cb1($fileIdentifier, $file)
 {
     if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
-        require $file;
-
         $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
+
+        require $file;
     }
 }
