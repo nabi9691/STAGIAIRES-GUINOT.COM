@@ -2,12 +2,13 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Messages;
-use App\Entity\Utilisateurs;
-
 use Faker; 
 use Faker\Factory;
 
+//use App\Entity\mediats;
+use App\Entity\Mediats;
+
+use App\Entity\Utilisateurs;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\Security\Core\Role\Role;
@@ -18,63 +19,55 @@ class UtilisateursFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = Faker\Factory::create('fr_FR');
-        
+
         // Liste des utilisateurs :
-        for ($i = 1; $i < 20; $i++) 
+        for ($i = 1; $i < 150; $i++) 
         {
-            $utilisateurs = new Utilisateurs();
-            $civilite = ["Femme", "Homme"];
-            shuffle($civilite);
-            $status = ['connecter', 'déconnecter', 'anonyme'];
-            shuffle($status);
-    $roles = ['ROLE_ANONYMOUSE', 'ROLE_USER', 'ROLE_ADMIN', 'ROLE_ABONNER'];
-            shuffle($roles);
+        $utilisateurs = new Utilisateurs();
+
+    $civilite = ["Femme", "Homme"];
+    shuffle($civilite);
+    $status = ['connecter', 'déconnecter', 'anonyme'];
+    shuffle($status);
+$roles = ['ROLE_ANONYMOUSE', 'ROLE_USER', 'ROLE_ADMIN', 'ROLE_ABONNER'];
+    shuffle($roles);
 
 $email = $faker->email;
 
-            $utilisateurs
-                ->setCivilite($civilite[0])
+    $utilisateurs
                 ->setNom($faker->lastName)
-                ->setPrenom($faker->firstName)
-        
-                ->setDateNaiss(new \DateTime())
-        ->setAdresse($faker->address)
+        ->setPrenom($faker->firstName)
+        ->setCivilite($civilite[0])
+        ->setDateDeNaissance(new \DateTime())
+        ->setTelephone($faker->phoneNumber)
         ->setEmail($email)
-        ->setIsVerified(true)
+        ->setAdresse($faker->address)
+        ->setCodePostal($faker->postcode)
+        ->setVille($faker->city)
+        //->setDepartement($faker->city)
+                        ->setPays($faker->city)
         ->setLogin($email)
-        ->setPassword($faker->password())
-                ->setVille($faker->city)
-                                ->setCodePostal($faker->postcode)
-                ->setPays($faker->city)
-                ->setTelephone($faker->phoneNumber)
-                ->setPeriode($faker->date())
-                    ->setStatus($status[0])
-                ->setRoles($roles[0]);
-                                    
-            $manager->persist($utilisateurs);
+->setPassword($faker->password())
+//->setIsVerified(true)
+            ->setStatus($status[0])
+            ->setRoles($roles[0]);
+                            
+    $manager->persist($utilisateurs);
+
+            // Liste des médias :
+for ($j = 1; $j < 100; $j++) 
+{
+    $mediats = new Mediats();
+
+            $mediats
+            ->setImageName($faker->name)
+            ->setContenu($faker->sentence())
+            ->setDate(new \DateTime())
+            ->setUtilisateurs($utilisateurs);
     
-        // Liste des messages :
-        for ($j=1; $j<20 ; $j++ ) 
-    {
-        $status = ['Nouveau Message', 'Ancien message', 'Message Privé', 'Message Annonyme', 'Message Archivé', 'Message Professionnel', 'Message Publicitaire'];
-        shuffle($status);
-        $pays = ['France', 'Espagne', 'Royaume-Uni', 'Italie', 'Allemagne', 'Russie', 'Nigeria', 'Danemark', 'Irlande', 'Argentine', ];
-        shuffle($pays);
-$utilisateurs = ['Gilles', 'Paul', 'Marie', 'Richard', 'Bernard', 'Julie', 'Omar', 'Sidi', 'Pierre', 'Caroline'];
-shuffle($utilisateurs);
-        
-            $messages = new Messages();
-            $messages
-            ->setTitre($faker->name)
-            ->setResume($faker->sentence())
-            ->setCreatedAt(new \DateTime())
-            ->setPays($pays[0])
-            ->setStatus($status[0]);
-//->setUtilisateur($utilisateurs);
-                
-                        $manager->persist($messages);
-                    }        
-       $manager->flush();  
+                        $manager->persist($mediats);
+}
+    $manager->flush();  
+        }
     }
-    }     
 }

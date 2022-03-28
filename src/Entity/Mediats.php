@@ -3,10 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\MediatsRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=MediatsRepository::class)
+ * @Vich\Uploadable
  */
 class Mediats
 {
@@ -19,8 +23,14 @@ class Mediats
 
     /**
      * @ORM\Column(type="string", length=255)
-     */
-    private $titre;
+          */
+    private $imageName;
+
+     /**
+      * @Vich\UploadableField(mapping="document_images", fileNameProperty="imageName")
+          * @ORM\JoinColumn(nullable=false)
+*/
+    private $imageFile;
 
 /**
      * @ORM\Column(type="string", length=255)
@@ -28,49 +38,28 @@ class Mediats
     private $contenu;
 
 /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
-
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="medias")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $status;
+    private $utilisateurs;
 
+    
 
-/**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $categories;
+    public function __construct(){
+        $this->date = new \DateTime();
+    }
 
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $auteurs;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $utilisateur;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitre(): ?string
-    {
-        return $this->titre;
-    }
-
-    public function setTitre(string $titre): self
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
 
     public function getContenu(): ?string
     {
@@ -96,53 +85,43 @@ class Mediats
         return $this;
     }
 
-    public function getStatus(): ?string
+    public function getImageName(): ?string
     {
-        return $this->status;
+        return $this->imageName;
     }
 
-    public function setStatus(string $status): self
+    public function setImageName(string $imageName): self
     {
-        $this->status = $status;
+        $this->imageName = $imageName;
 
         return $this;
     }
 
-
-    public function getCategories(): ?string
+    public function setImageFile(File $image = null)
     {
-        return $this->categories;
+        $this->imageFile = $image;
+
+        if ($image) {
+            $this->update_at = new \DateTime('now');
+        }
     }
 
-    public function setCategories(string $categories): self
+    public function getImageFile()
     {
-        $this->categories = $categories;
+        return $this->imageFile;
+    }
+
+    public function getUtilisateurs(): ?Utilisateurs
+    {
+        return $this->utilisateurs;
+    }
+
+    public function setUtilisateurs(?Utilisateurs $utilisateurs): self
+    {
+        $this->utilisateurs = $utilisateurs;
 
         return $this;
     }
 
-    public function getAuteurs(): ?string
-    {
-        return $this->auteurs;
-    }
+       }
 
-    public function setAuteurs(string $auteurs): self
-    {
-        $this->auteurs = $auteurs;
-
-        return $this;
-    }
-
-    
-    public function getUtilisateur(): ?string
-    {
-        return $this->utilisateur;
-    }
-
-    public function setUtilisateur(string $utilisateur): self
-    {
-        $this->utilisateur = $utilisateur;
-
-        return $this;
-    }
-}

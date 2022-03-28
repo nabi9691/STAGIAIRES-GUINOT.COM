@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 // use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -52,6 +53,10 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ]
+            ])
+            ->add('medias', MediatsType::class, [
+                'mapped' => false,
+                'by_reference' => false,
             ])
             // ->add('confirmepassword', PasswordType::class, [
                 // 'mapped' => false,

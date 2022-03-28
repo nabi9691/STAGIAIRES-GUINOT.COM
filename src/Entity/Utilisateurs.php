@@ -33,11 +33,6 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $civilite;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $nom;
 
     /**
@@ -48,7 +43,12 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private $dateNaiss;
+    private $date_de_naissance;
+
+/**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $civilite;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -58,7 +58,7 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $codePostal;
+    private $code_postal;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -83,7 +83,7 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $periode;
+    private $departement;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -120,20 +120,36 @@ class Utilisateurs implements UserInterface
     private $roles = [];
 
     /**
-     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="utilisateur", orphanRemoval=true)
-     */
-    private $message;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
 
+    
+    
+
+    /**
+     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="expediteur", orphanRemoval=true)
+     */
+    private $message_envoyer;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="destinataire", orphanRemoval=true)
+     */
+    private $message_reçu;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Mediats::class, mappedBy="utilisateurs", orphanRemoval=true)
+     */
+    private $medias;
+
+    
 
     public function __construct()
     {
-        $this->message = new ArrayCollection();
-    }
+        $this->message_envoyer = new ArrayCollection();
+        $this->message_reçu = new ArrayCollection();
+        $this->medias = new ArrayCollection();
+        }
 
 
     public function getId(): ?int
@@ -165,7 +181,6 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-
     /**
      * A visual identifier that represents this user.
      *
@@ -179,11 +194,14 @@ class Utilisateurs implements UserInterface
     /**
      * @see UserInterface
      */
+
     public function getRoles(): array
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        //garantir que chaque utilisateur a au moins ROLE_USER
+         
+         $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
@@ -220,7 +238,9 @@ class Utilisateurs implements UserInterface
 
     /**
      * Returning a salt is only needed, if you are not using a modern
-     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *Le retour d'un sel n'est nécessaire que si vous n'utilisez pas un
+      *algorithme de hachage (par exemple bcrypt ou sodium) dans votre security.yaml.
+      * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
      *
      * @see UserInterface
      */
@@ -231,10 +251,13 @@ class Utilisateurs implements UserInterface
 
     /**
      * @see UserInterface
+     *effacer les identifiants 
      */
     public function eraseCredentials()
     {
         // If you store any temporary, sensitive data on the user, clear it here
+        // Si vous stockez des données temporaires et sensibles sur l'utilisateur, effacez-les ici
+         //
         // $this->Password = null;
     }
 
@@ -262,14 +285,14 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-    public function getDateNaiss(): ?\DateTimeInterface
+    public function getDateDeNaissance(): ?\DateTimeInterface
     {
-        return $this->dateNaiss;
+        return $this->date_de_naissance;
     }
 
-    public function setDateNaiss(?\DateTimeInterface $dateNaiss): self
+    public function setDateDeNaissance(?\DateTimeInterface $date_de_naissance): self
     {
-        $this->dateNaiss = $dateNaiss;
+        $this->date_de_naissance = $date_de_naissance;
 
         return $this;
     }
@@ -288,12 +311,12 @@ class Utilisateurs implements UserInterface
 
     public function getCodePostal(): ?string
     {
-        return $this->codePostal;
+        return $this->code_postal;
     }
 
-    public function setCodePostal(?string $codePostal): self
+    public function setCodePostal(?string $code_postal): self
     {
-        $this->codePostal = $codePostal;
+        $this->code_postal = $code_postal;
 
         return $this;
     }
@@ -318,18 +341,6 @@ class Utilisateurs implements UserInterface
     public function setPays(string $pays): self
     {
         $this->pays = $pays;
-
-        return $this;
-    }
-
-    public function getPeriode(): ?string
-    {
-        return $this->periode;
-    }
-
-    public function setPeriode(?string $periode): self
-    {
-        $this->periode = $periode;
 
         return $this;
     }
@@ -382,36 +393,6 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|Messages[]
-     */
-    public function getMessage(): Collection
-    {
-        return $this->message;
-    }
-
-    public function addMessage(Messages $message): self
-    {
-        if (!$this->message->contains($message)) {
-            $this->message[] = $message;
-            $message->setUtilisateur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMessage(Messages $message): self
-    {
-        if ($this->message->removeElement($message)) {
-            // set the owning side to null (unless already changed)
-            if ($message->getUtilisateur() === $this) {
-                $message->setUtilisateur(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function isVerified(): bool
     {
         return $this->isVerified;
@@ -423,4 +404,100 @@ class Utilisateurs implements UserInterface
 
         return $this;
     }
+
+    
+
+    /**
+     * @return Collection<int, Messages>
+     */
+    public function getMessageEnvoyer(): Collection
+    {
+        return $this->message_envoyer;
+    }
+
+    public function addMessageEnvoyer(Messages $messageEnvoyer): self
+    {
+        if (!$this->message_envoyer->contains($messageEnvoyer)) {
+            $this->message_envoyer[] = $messageEnvoyer;
+            $messageEnvoyer->setExpediteur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessageEnvoyer(Messages $messageEnvoyer): self
+    {
+        if ($this->message_envoyer->removeElement($messageEnvoyer)) {
+            // set the owning side to null (unless already changed)
+            if ($messageEnvoyer->getExpediteur() === $this) {
+                $messageEnvoyer->setExpediteur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Messages>
+     */
+    public function getMessageReçu(): Collection
+    {
+        return $this->message_reçu;
+    }
+
+    public function addMessageReU(Messages $messageReU): self
+    {
+        if (!$this->message_reçu->contains($messageReU)) {
+            $this->message_reçu[] = $messageReU;
+            $messageReU->setDestinataire($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessageReU(Messages $messageReU): self
+    {
+        if ($this->message_reçu->removeElement($messageReU)) {
+            // set the owning side to null (unless already changed)
+            if ($messageReU->getDestinataire() === $this) {
+                $messageReU->setDestinataire(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Mediats>
+     */
+    public function getMedias(): Collection
+    {
+        return $this->medias;
+    }
+
+    public function addMedia(Mediats $media): self
+    {
+        if (!$this->medias->contains($media)) {
+            $this->medias[] = $media;
+            $media->setUtilisateurs($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMedia(Mediats $media): self
+    {
+        if ($this->medias->removeElement($media)) {
+            // set the owning side to null (unless already changed)
+            if ($media->getUtilisateurs() === $this) {
+                $media->setUtilisateurs(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+
+
 }

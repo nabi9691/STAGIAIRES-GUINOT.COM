@@ -22,12 +22,9 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     
                     {% if app.user %}
-                    
                     <li><a href="{{ path('accueil_index') }}"> accueil </a></li>
 
-<li><a href="{{ path('introductionGuinot_index') }}"> introduction sur Guinot ! </a></li>
-<li><a href="{{ path('motDuPresidentDeGuinot_index') }}"> Mot du président de Guinot ! </a></li>
-<li><a href="{{ path('historiqueGuinot_index') }}"> D'écouvrez l'historique de Guinot ! </a></li>
+<li><a href="{{ path('pageAccueilGuinot_index') }}"> Page d'accueil de GUINOT ! </a></li>
 
 <li><a href="{{ path('mediats_index') }}"> Liste des médiats ! </a></li>
 <li><a href="{{ path('contacts_index') }}"> Liste des contacts ! </a></li>
@@ -37,9 +34,10 @@
 
                     <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 
+
 {% if is_granted('ROLE_ADMIN') %}
-<li><a href="{{ path('message_index') }}"> Liste des messages : </a></li>
 <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
+<li><a href="{{ path('message_index') }}"> Liste des messages : </a></li>
 {% endif %}
 
 
@@ -48,34 +46,35 @@
 <li><a href="{{ path('monEspacePersonel_index') }}">Mon espace personnel : </a> </li>
 {% endif %}
 
-                    {% else %}
 
- <li><a href="{{ path('accueil_index') }}"> accueil </a></li>
+                    {% else %}
+<li><a href="{{ path('accueil_index') }}"> accueil </a></li>
                     
                     <li><a href="{{ path('app_login') }}"> Se connecter </a> </li>
                     <li><a href="{{ path('app_register') }}"> Création de compte </a> </li>
-                    <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
+                                <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 
 <li><a href="{{ path('pageAccueilGuinot_index') }}"> Page d'accueil de GUINOT ! </a></li>
 
 <li><a href="{{ path('mediats_index') }}"> Liste des médiats ! </a></li>
 <li><a href="{{ path('contacts_index') }}"> Liste des contacts ! </a></li>
+
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public !</a></li>
 <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
                                             
                                             {% endif %}
 
                     {% if 'register' == app.request.attributes.get('_route') %}
-<li><a href="{{ path('message_index') }}"> Liste des messages </a> </li>
+<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
 
-                    <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a> </li>
-                    
+<li><a href="{{ path('message_index') }}"> Liste des messages </a> </li>
                     
                     {% endif %}
+                        
                         {% if 'login' == app.request.attributes.get('_route') %}
+<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
 <li><a href="{{ path('message_index') }}"> Liste des messages </a> </li>
 
-                    <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a> </li>
                         
 
                     

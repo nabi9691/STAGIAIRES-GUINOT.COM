@@ -9,7 +9,7 @@
 <div>
     <h1>
      bienvenu(e) !
-     Liste des messages:
+     Messagerie de Guinot :
      </h1>
 
     <br /><br />
@@ -22,11 +22,13 @@
             <thead>
                 <tr>
                     <th> Id </th>
-                    <th> Titre </th>
-                    <th> Résumé </th>
-                    <th> Date </th>
-                    <th> Pays </th>
-                    <th> Status </th>
+                    <th> Titre du message </th>
+                    <th> Contenu du message </th>
+                    <th> Creer date </th>
+                    <th> Si le message est lu </th>
+                    <th> Message envoyer </th>
+                    <th> Message reçu </th>
+                    <th> Utilisateur </th>
                     <th> Modifier </th>
 <th> Afficher </th>
 <th> Supprimer </t  h>
@@ -36,11 +38,13 @@
 <tbody>
 <tr>
                                 <td> {{ message.id }} </td>
-<td> {{ message.titre }} </td>
-                <td> {{ message.resume }} </td>
-                <td> {{ message.createdAt|date("d/m/Y") }} </td>
-<td> {{ message.pays }} </td>
-                <td> {{ message.status }} </td>
+<td> {{ message.titre_message }} </td>
+                <td> {{ message.contenu_message }} </td>
+                <td> {{ message.creer_date|date("d/m/Y") }} </td>
+<td> {{ message.si_messageLu }} </td>
+                <td> {{ message.message_envoyer }} </td>
+                <td> {{ message.message_reçu }} </td>
+                                <td> {{ message.utilisateur }} </td>
                                 <td><a href="{{ path('modifierMessage_index', {'id': message.id }) }}">Modifier</a></td>
 <td><a href="{{ path('afficherMessage_index', {'id': message.id }) }}">afficher</a></td>
 <td><a href="{{ path('supprimerMessage_index', {'id': message.id }) }}">Supprimer</a></td>

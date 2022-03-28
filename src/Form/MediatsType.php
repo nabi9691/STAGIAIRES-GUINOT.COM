@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 // use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -31,41 +32,13 @@ class MediatsType extends AbstractType
     {
         $builder
             
-        ->add('titre', TextType::class, [
-            'label' => 'Le titre du médiats !',
-            'required' => false
-        ])
-        ->add('contenu', TextType::class, [
-            'label' => 'Le contenu de votre médiats :',
-            'required' => false
-        ])
-        
-        ->add('date', BirthdayType::class, [
-            'label' => 'Date de la création du médiats :',
-            'required' => false,
-            'widget' => 'single_text'
-        ])
-        ->add('status', TextType::class, [
-            'label' => 'Le status du médiats :',
+        ->add('imageFile', FileType::class, [
+            'label' => 'Uploader votre image :',
             'required' => true
         ])
-        ->add('categories', TextType::class, [
-            'label' => 'La catégorie du médiat :',
-            'required' => true
-        ])
-        ->add('auteurs', TextType::class, [
-            'label' => 'auteur du médiat :',
-            'required' => true
-        ])
-        ->add('utilisateur', TextType::class, [
-            'label' => 'Nom de l utilisateur :',
-            'required' => true
-        ])
-        
-
-
+        ->add('contenu', TextareaType::class)
         ;
-        }
+    }
 
     public function configureOptions(OptionsResolver $resolver): void
     {

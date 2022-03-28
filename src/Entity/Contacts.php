@@ -82,6 +82,11 @@ class Contacts
      */
     private $status;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="contacts")
+     */
+    private $utilisateurs;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -239,6 +244,18 @@ class Contacts
     public function setStatus(string $status): self
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getUtilisateurs(): ?Utilisateurs
+    {
+        return $this->utilisateurs;
+    }
+
+    public function setUtilisateurs(?Utilisateurs $utilisateurs): self
+    {
+        $this->utilisateurs = $utilisateurs;
 
         return $this;
     }

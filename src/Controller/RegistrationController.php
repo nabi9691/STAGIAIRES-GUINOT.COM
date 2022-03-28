@@ -38,6 +38,15 @@ class RegistrationController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // Si le media existe on le stock
+            $medias = $form->get('medias')->getData();
+            if ($medias) {
+                $entityManager->persist($medias);
+                
+                $user->addMedia($medias);
+            }
+
             // encode the password
             $user->setPassword(
                 $userPasswordEncoder->encodePassword(
@@ -54,7 +63,7 @@ class RegistrationController extends AbstractController
                 'app_verify_email',
                 $user,
                 (new TemplatedEmail())
-                    ->from(new Address('ndao6516@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
+                    ->from(new Address('nabiabib31@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
                     ->to($user->getLogin())
                     ->subject('Veuillez confirmer votre email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
@@ -117,7 +126,8 @@ class RegistrationController extends AbstractController
      */
     public function registerAbonner(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
     {
-         $user = new Utilisateurs();
+
+        $user = new Utilisateurs();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -160,6 +170,7 @@ class RegistrationController extends AbstractController
 
         if (null === $user) {
             return $this->redirectToRoute('app_register');
+
         }
 
         // validate email confirmation link, sets User::isVerified=true and persists

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+ Enregistrement d'un nouveau message 
+ {% endblock %}
+
+{% block content %}
+ <br> <br>
+ 
+    <h1> Enregistrement d'un nouveau message</h1>
+
+    {{ include('messages/formulaireMessage.html.twig') }}<br>
+
+    <a href="{{ path('message_index') }}">Liste des messages :</a><br>
+
+
+{% endblock %}

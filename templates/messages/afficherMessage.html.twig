@@ -13,30 +13,27 @@ afficher message :
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th> Titre </th>
-                <th> Résumé </th>
-                <th> Pays </th>
-                 <th> Status </th>
-                <th> Date </th>
-                 </tr>
+                                     <th> Id </th>
+                    <th> Titre du message </th>
+                    <th> Contenu du message </th>
+                    <th> Creer date </th>
+                    <th> Si le message est lu </th>
+                    <th> Message envoyer </th>
+                    <th> Message reçu </th>
+                    <th> Utilisateur </th>
+</tr>
         </thead>
         <tbody>
             <tr>
-<td>{{ message.id }}
-</td>
-<td>{{ message.titre }}
-						</td>
-						
-                        <td>{{ message.resume }}
-						</td>
-<td>{{ message.pays }}
-</td>
-<td>{{ message.status }}
-</td>
-						<td>{{ message.createdAt|date("d/m/Y") }}
-						</td>
-                        </tr>
+<td> {{ message.id }} </td>
+<td> {{ message.titre_message }} </td>
+                <td> {{ message.contenu_message }} </td>
+                <td> {{ message.creer_date|date("d/m/Y") }} </td>
+<td> {{ message.si_messageLu }} </td>
+                <td> {{ message.message_envoyer }} </td>
+                <td> {{ message.message_reçu }} </td>
+                                <td> {{ message.utilisateur }} </td>
+                                        </tr>
         </tbody>
     </table>
 

@@ -44,7 +44,7 @@ class RegistrationFormEditType extends AbstractType
                 'required' => false,
                 'widget' => 'single_text'
             ])
-
+    
             // ->add('confirmepassword', PasswordType::class, [
                 // 'mapped' => false,
             //     'required' => true,
