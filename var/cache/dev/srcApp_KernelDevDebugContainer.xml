@@ -618,12 +618,6 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\UtilisateursController"/>
       </call>
     </service>
-    <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
-    <service id="App\DataFixtures\UtilisateursFixtures" class="App\DataFixtures\UtilisateursFixtures" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
     <service id="App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1563,6 +1557,11 @@
       <argument></argument>
       <argument type="service" id="assets.empty_version_strategy"/>
       <argument type="service" id="assets.context"/>
+    </service>
+    <service id="psr18.http_client" class="Symfony\Component\HttpClient\Psr18Client">
+      <argument type="service" id=".debug.http_client"/>
+      <argument>null</argument>
+      <argument>null</argument>
     </service>
     <service id="mailer.mailer" class="Symfony\Component\Mailer\Mailer">
       <argument type="service" id="mailer.transports"/>
@@ -5495,16 +5494,7 @@
     <service id="doctrine.fixtures.loader" class="Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader" public="false">
       <argument type="service" id="service_container"/>
       <call method="addFixtures">
-        <argument type="collection">
-          <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\AppFixtures"/>
-            <argument key="groups" type="collection"/>
-          </argument>
-          <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\UtilisateursFixtures"/>
-            <argument key="groups" type="collection"/>
-          </argument>
-        </argument>
+        <argument type="collection"/>
       </call>
     </service>
     <service id="doctrine.fixtures.purger.orm_purger_factory" class="Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory" public="false">
@@ -5872,10 +5862,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UtilisateursFixtures" class="App\DataFixtures\UtilisateursFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\UtilisateursFixtures" class="App\DataFixtures\UtilisateursFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MediatsType" class="App\Form\MediatsType" autowire="true" abstract="true"/>
@@ -7178,6 +7164,7 @@
     <service id="form.choice_list_factory" alias="form.choice_list_factory.cached" public="false"/>
     <service id="Symfony\Component\Asset\Packages" alias="assets.packages" public="false"/>
     <service id="Symfony\Contracts\HttpClient\HttpClientInterface" alias=".debug.http_client"/>
+    <service id="Psr\Http\Client\ClientInterface" alias="psr18.http_client"/>
     <service id="mailer" alias="mailer.mailer"/>
     <service id="Symfony\Component\Mailer\MailerInterface" alias="mailer.mailer"/>
     <service id="Symfony\Component\Mailer\Transport\TransportInterface" alias="mailer.default_transport"/>

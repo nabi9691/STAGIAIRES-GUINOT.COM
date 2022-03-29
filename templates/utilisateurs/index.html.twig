@@ -37,6 +37,7 @@
 <thead>
 <tr>
 <th> Id </th>
+<th> Formation </th>
 <th> Nom </th>
 <th> Prénom </th>
 <th> Civilité </th>
@@ -59,6 +60,7 @@
 {% for utilisateur in utilisateur %}
 <tr>
 <td>{{ utilisateur.id }}</td>
+<td>{{ utilisateur.formation }}</td>
 <td>{{ utilisateur.nom|upper }}</td>
 <td>{{ utilisateur.prenom }}</td>
 <td>{{ utilisateur.civilite }}</td>

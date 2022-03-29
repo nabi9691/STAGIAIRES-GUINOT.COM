@@ -30,6 +30,15 @@ class Utilisateurs implements UserInterface
      */
     private $id;
 
+
+
+
+/**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $formation;
+
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -260,6 +269,21 @@ class Utilisateurs implements UserInterface
          //
         // $this->Password = null;
     }
+
+    public function getFormation(): ?string
+    {
+        return $this->formation;
+    }
+
+    public function setFormation(string $formation): self
+    {
+        $this->formation = $formation;
+
+        return $this;
+    }
+
+
+
 
     public function getNom(): ?string
     {

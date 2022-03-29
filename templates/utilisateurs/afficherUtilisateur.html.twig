@@ -14,9 +14,10 @@ afficher utilisateur :
         <thead>
             <tr>
                 <th>Id</th>
+                <th> Formation </th>
+                 <th>Civilité</th>
                 <th>Nom</th>
                 <th>Prenom</th>
-                 <th>Civilité</th>
                  <th> Date de naissance</th> 
                  <th>Adresse</th> 
                  <th>Email</th> 
@@ -24,9 +25,10 @@ afficher utilisateur :
         </thead>
         <tbody>
             <tr>
-<td>{{ utilisateur.civilite }}
-						</td>
-						<td>{{ utilisateur.nom|upper }}
+<td>{{ utilisateur.id }}</td>
+<td>{{ utilisateur.formation }}</td>
+<td>{{ utilisateur.civilite }}</td>
+                        <td>{{ utilisateur.nom|upper }}
 						</td>
 						<td>{{ utilisateur.prenom }}
 						</td>

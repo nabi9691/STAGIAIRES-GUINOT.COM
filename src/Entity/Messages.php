@@ -4,8 +4,8 @@ namespace App\Entity;
 
 use DateTimeInterface;
 use App\Entity\Utilisateurs;
-//use Doctrine\Common\Collections\ArrayCollection;
-//use Doctrine\Common\Collections\Collection;
+    use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\MessagesRepository;
 use Gedmo\Mapping\Annotation as Gedmo;

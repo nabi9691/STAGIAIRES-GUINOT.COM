@@ -23,12 +23,20 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+
+                ->add('formation', ChoiceType::class, [
+                'label' => 'Votre formation :',
+                'required' => true,
+                'choices' => ["PINFO" => "PINFO", "DA" => "DA", "PREPA" => "PREPA", "CRCD" => "CRCD", "EAA" => "EAA", "DWWM" => "DWWM", "PMTA" => "PMTA", "AAI" => "AAI"],
+                'multiple' => false,
+            ])
             ->add('civilite', ChoiceType::class, [
                 'label' => 'Votre civilité',
                 'required' => true,
-                'choices' => ["Femme" => "Femme", "Homme" => "Homme"],
+                'choices' => ["Madame" => "Madame", "Monsieur" => "Monsieur"],
                 'multiple' => false,
             ])
+
             ->add('nom', TextType::class, [
                 'label' => 'Votre nom',
                 'required' => true
@@ -37,6 +45,21 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Votre prénom',
                 'required' => true
             ])
+            
+            ->add('adresse', TextType::class, [
+                'label' => 'Votre adresse :',
+                'required' => true
+            ])
+            
+            ->add('ville', TextType::class, [
+                'label' => 'Votre ville :',
+                'required' => true
+            ])
+            ->add('telephone', TextType::class, [
+                'label' => 'Votre téléphone :',
+                'required' => true
+            ])
+            
             ->add('login', TextType::class, [
                 'label' => 'Votre login',
                 'required' => true
@@ -54,7 +77,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ]
             ])
-            ->add('medias', MediatsType::class, [
+            ->add('media', MediatsType::class, [
                 'mapped' => false,
                 'by_reference' => false,
             ])
