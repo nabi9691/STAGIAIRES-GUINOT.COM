@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerAUMe3i9/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerZLwOKdh/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -54,6 +54,7 @@ $classes[] = 'Symfony\Component\Mailer\Mailer';
 $classes[] = 'Symfony\Component\Mailer\Transport\Transports';
 $classes[] = 'Symfony\Component\Mailer\Transport';
 $classes[] = 'App\Controller\UtilisateursController';
+$classes[] = 'App\Data\ImportUserCommand';
 $classes[] = 'App\Form\ContactsType';
 $classes[] = 'App\Form\MediatsType';
 $classes[] = 'App\Form\MessagesType';
@@ -193,6 +194,7 @@ $classes[] = 'Doctrine\Bundle\DoctrineBundle\ConnectionFactory';
 $classes[] = 'Doctrine\DBAL\Configuration';
 $classes[] = 'Doctrine\DBAL\Logging\LoggerChain';
 $classes[] = 'Symfony\Bridge\Doctrine\Logger\DbalLogger';
+$classes[] = 'Doctrine\DBAL\Logging\Middleware';
 $classes[] = 'Symfony\Bridge\Doctrine\ContainerAwareEventManager';
 $classes[] = 'Doctrine\DBAL\Logging\DebugStack';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\Proxy\EnsureProductionSettingsDoctrineCommand';
@@ -212,8 +214,6 @@ $classes[] = 'Doctrine\Migrations\Configuration\EntityManager\ManagerRegistryEnt
 $classes[] = 'Doctrine\ORM\Mapping\Driver\AnnotationDriver';
 $classes[] = 'Doctrine\ORM\EntityManager';
 $classes[] = 'Doctrine\ORM\Configuration';
-$classes[] = 'Doctrine\Common\Cache\CacheProvider';
-$classes[] = 'Doctrine\Common\Cache\Psr6\DoctrineProvider';
 $classes[] = 'Doctrine\Persistence\Mapping\Driver\MappingDriverChain';
 $classes[] = 'Doctrine\ORM\Mapping\UnderscoreNamingStrategy';
 $classes[] = 'Doctrine\ORM\Mapping\DefaultQuoteStrategy';
@@ -529,8 +529,8 @@ $classes[] = 'Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor';
 $classes[] = 'Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\EnvironmentConfigurator';
 $classes[] = 'Symfony\Bridge\Twig\Command\DebugCommand';
 $classes[] = 'Symfony\Bundle\TwigBundle\Command\LintCommand';
-$classes[] = 'Symfony\Component\Form\FormRenderer';
 $classes[] = 'Symfony\Bridge\Twig\Form\TwigRendererEngine';
+$classes[] = 'Symfony\Component\Form\FormRenderer';
 $classes[] = 'Symfony\Component\Mailer\EventListener\MessageListener';
 $classes[] = 'Symfony\Bridge\Twig\Mime\BodyRenderer';
 $classes[] = 'Twig\Profiler\Profile';

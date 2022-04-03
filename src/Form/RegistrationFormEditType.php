@@ -26,7 +26,7 @@ class RegistrationFormEditType extends AbstractType
             ->add('civilite', ChoiceType::class, [
                 'label' => 'Votre civilité',
                 'required' => false,
-                'choices' => ["Mme" => "Mme", "Mlle" => "Mlle", "M." => "M."],
+                'choices' => ["Madame" => "Madame", "Monsieur" => "Monsieur"],
                 'multiple' => false,
             ])
 
@@ -39,8 +39,8 @@ class RegistrationFormEditType extends AbstractType
                 'label' => 'Votre prénom',
                 'required' => false
             ])
-            ->add('dateNaiss', BirthdayType::class, [
-                'label' => 'Date Naissance',
+            ->add('dateDeNaissance', BirthdayType::class, [
+                'label' => 'Votre date de Naissance',
                 'required' => false,
                 'widget' => 'single_text'
             ])

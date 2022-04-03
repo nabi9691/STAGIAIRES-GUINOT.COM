@@ -30,22 +30,19 @@ class Utilisateurs implements UserInterface
      */
     private $id;
 
-
-
-
 /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $formation;
 
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $prenom;
 
@@ -55,7 +52,7 @@ class Utilisateurs implements UserInterface
     private $date_de_naissance;
 
 /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $civilite;
 
@@ -133,8 +130,8 @@ class Utilisateurs implements UserInterface
      */
     private $isVerified = false;
 
-    
-    
+
+
 
     /**
      * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="expediteur", orphanRemoval=true)
@@ -151,7 +148,7 @@ class Utilisateurs implements UserInterface
      */
     private $medias;
 
-    
+
 
     public function __construct()
     {
@@ -183,7 +180,7 @@ class Utilisateurs implements UserInterface
         return $this->status;
     }
 
-    public function setStatus(string $status): self
+    public function setStatus(?string $status): self
     {
         $this->status = $status;
 
@@ -209,7 +206,7 @@ class Utilisateurs implements UserInterface
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         //garantir que chaque utilisateur a au moins ROLE_USER
-         
+
          $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
@@ -260,7 +257,7 @@ class Utilisateurs implements UserInterface
 
     /**
      * @see UserInterface
-     *effacer les identifiants 
+     *effacer les identifiants
      */
     public function eraseCredentials()
     {
@@ -275,7 +272,7 @@ class Utilisateurs implements UserInterface
         return $this->formation;
     }
 
-    public function setFormation(string $formation): self
+    public function setFormation(?string $formation): self
     {
         $this->formation = $formation;
 
@@ -290,7 +287,7 @@ class Utilisateurs implements UserInterface
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    public function setNom(?string $nom): self
     {
         $this->nom = $nom;
 
@@ -302,7 +299,7 @@ class Utilisateurs implements UserInterface
         return $this->prenom;
     }
 
-    public function setPrenom(string $prenom): self
+    public function setPrenom(?string $prenom): self
     {
         $this->prenom = $prenom;
 
@@ -326,7 +323,7 @@ class Utilisateurs implements UserInterface
         return $this->adresse;
     }
 
-    public function setAdresse(string $adresse): self
+    public function setAdresse(?string $adresse): self
     {
         $this->adresse = $adresse;
 
@@ -350,7 +347,7 @@ class Utilisateurs implements UserInterface
         return $this->ville;
     }
 
-    public function setVille(string $ville): self
+    public function setVille(?string $ville): self
     {
         $this->ville = $ville;
 
@@ -362,7 +359,7 @@ class Utilisateurs implements UserInterface
         return $this->pays;
     }
 
-    public function setPays(string $pays): self
+    public function setPays(?string $pays): self
     {
         $this->pays = $pays;
 
@@ -374,7 +371,7 @@ class Utilisateurs implements UserInterface
         return $this->telephone;
     }
 
-    public function setTelephone(string $telephone): self
+    public function setTelephone(?string $telephone): self
     {
         $this->telephone = $telephone;
 
@@ -386,7 +383,7 @@ class Utilisateurs implements UserInterface
         return $this->civilite;
     }
 
-    public function setCivilite(string $civilite): self
+    public function setCivilite(?string $civilite): self
     {
         $this->civilite = $civilite;
 
@@ -429,7 +426,7 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-    
+
 
     /**
      * @return Collection<int, Messages>

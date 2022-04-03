@@ -77,7 +77,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ]
             ])
-            ->add('media', MediatsType::class, [
+            ->add('medias', MediatsType::class, [
                 'mapped' => false,
                 'by_reference' => false,
             ])
