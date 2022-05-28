@@ -1,20 +1,71 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MediasController!{% endblock %}
+{% block title %}
+Liste des médiats : 
+ {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block content %}
+<div>
+    <h1>
+     bienvenu(e) !
+     Liste des médiats :
+     </h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/Anciens-Stagiaires-Guinot/src/Controller/MediasController.php'|file_link(0) }}">src/Controller/MediasController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/Anciens-Stagiaires-Guinot/templates/medias/index.html.twig'|file_link(0) }}">templates/medias/index.html.twig</a></code></li>
-    </ul>
+    <br /><br />
+    <hr />
+    <br />
+    <a href="{{ path('nouveauMediats_index') }}">Ajouter Un Nouveau Médiats ! </a>
+<br /><br />
+    
+    
+    <table border="1">
+            
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th> Titre </th>
+                    <th> Contenu </th>
+                    <th> Date </th>
+                    <th> Status </th>
+                    <th> Catégories </th>
+<th> Auteur </th>
+                    <th> utilisateur </th>
+                <th> Modifier </th>
+<th> Afficher </th>
+<th> Supprimer </t  h>
+</tr>
+            </thead>
+            {% for mediats in mediats %}
+<tbody>
+        <tr>
+                <td> {{ mediats.id }} </td>
+                <td> {{ mediats.titre }} </td>
+                <td> {{ mediats.contenu }} </td>
+                <td> {{ mediats.date|date("d/m/Y") }} </td>
+<td> {{ mediats.status }} </td>
+<td> {{ mediats.categories }} </td>
+                <td> {{ mediats.auteurs }} </td>
+<td> {{ mediats.utilisateur }} </td>
+<td><a href="{{ path('modifierMediats_index', {'id': mediats.id }) }}">Modifier</a></td>
+<td><a href="{{ path('afficherMediats_index', {'id': mediats.id }) }}">afficher</a></td>
+<td><a href="{{ path('supprimerMediats_index', {'id': mediats.id }) }}">Supprimer</a></td>
+                {% else %}
+                <td colspan="5">
+                    Vous n'avez pas de médiats enregistré dans votre base de données !
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
 </div>
+{% endblock %}
+
+<br/><br/>
+
+{% block footer %}
+{% endblock %}
+
 {% endblock %}

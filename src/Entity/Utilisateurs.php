@@ -136,19 +136,33 @@ class Utilisateurs implements UserInterface
     private $message_envoyer;
 
     /**
-     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="destinataire", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="destinataires")
      */
-    private $message_reçu;
+    private $message_recu;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Medias::class, mappedBy="utilisateurs")
+     */
+    private $medias;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Contacts::class, mappedBy="utilisateur")
+     */
+    private $contacts;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Activites::class, mappedBy="utilisateur")
+     */
+    private $activites;
 
     public function __construct()
     {
         $this->message_envoyer = new ArrayCollection();
-        $this->message_reçu = new ArrayCollection();
+        $this->message_recu = new ArrayCollection();
+        $this->medias = new ArrayCollection();
+        $this->contacts = new ArrayCollection();
+        $this->activites = new ArrayCollection();
         }
-
 
     public function getId(): ?int
     {
@@ -180,6 +194,8 @@ class Utilisateurs implements UserInterface
     }
 
     /**
+     * Un identifiant visuel qui représente cet utilisateur.
+      *
      * A visual identifier that represents this user.
      *
      * @see UserInterface
@@ -270,9 +286,6 @@ class Utilisateurs implements UserInterface
 
         return $this;
     }
-
-
-
 
     public function getNom(): ?string
     {
@@ -419,7 +432,6 @@ class Utilisateurs implements UserInterface
     }
 
 
-
     /**
      * @return Collection<int, Messages>
      */
@@ -453,34 +465,123 @@ class Utilisateurs implements UserInterface
     /**
      * @return Collection<int, Messages>
      */
-    public function getMessageReçu(): Collection
+    public function getMessageRecu(): Collection
     {
-        return $this->message_reçu;
+        return $this->message_recu;
     }
 
-    public function addMessageReU(Messages $messageReU): self
+    public function addMessageRecu(Messages $messageRecu): self
     {
-        if (!$this->message_reçu->contains($messageReU)) {
-            $this->message_reçu[] = $messageReU;
-            $messageReU->setDestinataire($this);
+        if (!$this->message_recu->contains($messageRecu)) {
+            $this->message_recu[] = $messageRecu;
+            $messageRecu->setDestinataires($this);
         }
 
         return $this;
     }
 
-    public function removeMessageReU(Messages $messageReU): self
+    public function removeMessageRecu(Messages $messageRecu): self
     {
-        if ($this->message_reçu->removeElement($messageReU)) {
+        if ($this->message_recu->removeElement($messageRecu)) {
             // set the owning side to null (unless already changed)
-            if ($messageReU->getDestinataire() === $this) {
-                $messageReU->setDestinataire(null);
+            if ($messageRecu->getDestinataires() === $this) {
+                $messageRecu->setDestinataires(null);
             }
         }
 
         return $this;
     }
 
-    
+    /**
+     * @return Collection<int, Medias>
+     */
+    public function getMedias(): Collection
+    {
+        return $this->medias;
+    }
+
+    public function addMedia(Medias $media): self
+    {
+        if (!$this->medias->contains($media)) {
+            $this->medias[] = $media;
+            $media->setUtilisateurs($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMedia(Medias $media): self
+    {
+        if ($this->medias->removeElement($media)) {
+            // set the owning side to null (unless already changed)
+            if ($media->getUtilisateurs() === $this) {
+                $media->setUtilisateurs(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Contacts>
+     */
+    public function getContacts(): Collection
+    {
+        return $this->contacts;
+    }
+
+    public function addContact(Contacts $contact): self
+    {
+        if (!$this->contacts->contains($contact)) {
+            $this->contacts[] = $contact;
+            $contact->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContact(Contacts $contact): self
+    {
+        if ($this->contacts->removeElement($contact)) {
+            // set the owning side to null (unless already changed)
+            if ($contact->getUtilisateur() === $this) {
+                $contact->setUtilisateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Activites>
+     */
+    public function getActivites(): Collection
+    {
+        return $this->activites;
+    }
+
+    public function addActivite(Activites $activite): self
+    {
+        if (!$this->activites->contains($activite)) {
+            $this->activites[] = $activite;
+            $activite->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActivite(Activites $activite): self
+    {
+        if ($this->activites->removeElement($activite)) {
+            // set the owning side to null (unless already changed)
+            if ($activite->getUtilisateur() === $this) {
+                $activite->setUtilisateur(null);
+            }
+        }
+
+        return $this;
+    }
+
 
 
 }

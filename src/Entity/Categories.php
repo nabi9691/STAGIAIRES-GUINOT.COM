@@ -29,8 +29,16 @@ class Categories
      */
     private $contenu_categorie;
 
-    
-    
+    /**
+     * @ORM\OneToMany(targetEntity=Medias::class, mappedBy="categories")
+     */
+    private $medias;
+
+    public function __construct()
+    {
+        $this->medias = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,5 +67,36 @@ class Categories
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Medias>
+     */
+    public function getMedias(): Collection
+    {
+        return $this->medias;
+    }
+
+    public function addMedia(Medias $media): self
+    {
+        if (!$this->medias->contains($media)) {
+            $this->medias[] = $media;
+            $media->setCategories($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMedia(Medias $media): self
+    {
+        if ($this->medias->removeElement($media)) {
+            // set the owning side to null (unless already changed)
+            if ($media->getCategories() === $this) {
+                $media->setCategories(null);
+            }
+        }
+
+        return $this;
+    }
+
 
 }

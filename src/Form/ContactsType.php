@@ -79,7 +79,7 @@ class ContactsType extends AbstractType
             'label' => 'Le pays du contact :',
             'required' => true
         ])
-        ->add('status', TextType::class, [
+            ->add('status', TextType::class, [
             'label' => 'Le status du contact :',
             'required' => true
         ])

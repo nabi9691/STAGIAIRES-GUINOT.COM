@@ -62,6 +62,26 @@ class Messages
      * @ORM\JoinColumn(nullable=true)
      */
     private $destinataire;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu")
+     */
+    private $utilisateurs;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu")
+     */
+    private $destinateur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu")
+     */
+    private $medias;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu")
+     */
+    private $destinataires;
     
     public function __construct()
     {
@@ -154,6 +174,54 @@ class Messages
     public function setDestinataire(?Utilisateurs $destinataire): self
     {
         $this->destinataire = $destinataire;
+
+        return $this;
+    }
+
+    public function getUtilisateurs(): ?Utilisateurs
+    {
+        return $this->utilisateurs;
+    }
+
+    public function setUtilisateurs(?Utilisateurs $utilisateurs): self
+    {
+        $this->utilisateurs = $utilisateurs;
+
+        return $this;
+    }
+
+    public function getDestinateur(): ?Utilisateurs
+    {
+        return $this->destinateur;
+    }
+
+    public function setDestinateur(?Utilisateurs $destinateur): self
+    {
+        $this->destinateur = $destinateur;
+
+        return $this;
+    }
+
+    public function getMedias(): ?Utilisateurs
+    {
+        return $this->medias;
+    }
+
+    public function setMedias(?Utilisateurs $medias): self
+    {
+        $this->medias = $medias;
+
+        return $this;
+    }
+
+    public function getDestinataires(): ?Utilisateurs
+    {
+        return $this->destinataires;
+    }
+
+    public function setDestinataires(?Utilisateurs $destinataires): self
+    {
+        $this->destinataires = $destinataires;
 
         return $this;
     }

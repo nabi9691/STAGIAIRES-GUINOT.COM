@@ -3,6 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Utilisateurs;
+use App\Entity\Messages;
+
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -51,7 +56,7 @@ class RegistrationFormType extends AbstractType
                 'required' => true
             ])
             
-            ->add('ville', TextType::class, [
+            ->add('villes', TextType::class, [
                 'label' => 'Votre ville :',
                 'required' => true
             ])
@@ -77,7 +82,39 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ]
             ])
-            ->add('medias', MediatsType::class, [
+            
+            ->add('message_envoyer', EntityType::class, [
+                'label' => 'Votre message envoyer :',
+                     //'placeholder' => 'Sélectionner',
+                     // looks for choices from this entity
+                     'class' =>Messages::class,
+                     // Sur quelle propriete je fais le choix
+                     'choice_label' => 'titre_message',
+                     'mapped' => false,
+
+                     // used to render a select box, check boxes or radios
+                 // 'multiple' => false,
+                    //'expanded' => true,)
+    //            'required' => false
+            ])
+            
+            ->add('message_recu', EntityType::class, [
+                'label' => 'Votre message reçu :',
+                     //'placeholder' => 'Sélectionner',
+                     // looks for choices from this entity
+                     'class' =>Messages::class,
+                     // Sur quelle propriete je fais le choix
+                     'choice_label' => 'titre_message',
+                     
+                     // used to render a select box, check boxes or radios
+                     'mapped' => false,
+
+                     // 'multiple' => true,
+                    //'expanded' => true,)
+    //            'required' => true
+            ])
+        
+            ->add('medias', MediasType::class, [
                 'mapped' => false,
                 'by_reference' => false,
             ])

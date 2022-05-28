@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerORNBqQA/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerDF69q6n/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -39,9 +39,7 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerName
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Command\ImportUserCommand';
-$classes[] = 'App\Controller\ActivitesController';
 $classes[] = 'App\Controller\AdminsController';
-$classes[] = 'App\Controller\AuteursController';
 $classes[] = 'App\Controller\AuthentificationController';
 $classes[] = 'App\Controller\ContactsController';
 $classes[] = 'App\Controller\HomeController';
@@ -58,15 +56,20 @@ $classes[] = 'Symfony\Component\Mailer\Transport\Transports';
 $classes[] = 'Symfony\Component\Mailer\Transport';
 $classes[] = 'App\Controller\UtilisateursController';
 $classes[] = 'App\Form\ContactsType';
+$classes[] = 'App\Form\MediasType';
 $classes[] = 'App\Form\MessagesType';
 $classes[] = 'App\Form\RegistrationFormEditType';
 $classes[] = 'App\Form\RegistrationFormType';
 $classes[] = 'App\Repository\ActivitesRepository';
+$classes[] = 'App\Repository\AdminsRepository';
 $classes[] = 'App\Repository\AuteursRepository';
 $classes[] = 'App\Repository\CategoriesRepository';
+$classes[] = 'App\Repository\ComptesRepository';
 $classes[] = 'App\Repository\ContactsRepository';
 $classes[] = 'App\Repository\MediasRepository';
+$classes[] = 'App\Repository\MediatsRepository';
 $classes[] = 'App\Repository\MessagesRepository';
+$classes[] = 'App\Repository\MessagesclsRepository';
 $classes[] = 'App\Repository\UtilisateursRepository';
 $classes[] = 'App\Security\AuthentificationAuthenticator';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController';

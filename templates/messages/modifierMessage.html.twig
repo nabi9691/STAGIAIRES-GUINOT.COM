@@ -1,38 +1,20 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}
-Modifier un message :
-{% endblock %}
+Modification  du message 
+ {% endblock %}
 
 {% block content %}
-    
-    
+ <br> <br>
+ 
     <h1>
-        Modifier un message :
-        </h1>
+Modification  du message 
+    </h1>
 
-{{ form_start(formMessages) }}
+    {{ include('messages/formulaireMessage.html.twig') }}<br>
 
-Titre du message: {{ form_widget(formMessages.titre_message) }}<br>
-Contenu_message: {{ form_widget(formMessages.contenu_message) }} <br>
-Créer date: {{ form_widget(formMessages.creer_date) }} <br>
-Si le message est lu: {{ form_widget(formMessages.si_messageLu) }} <br>
-Message envoyer: {{ form_widget(formMessages.message_envoyer) }} <br>
-Message reçu: {{ form_widget(formMessages.message_reçu) }} <br>
-Utilisateur: {{ form_widget(formMessages.utilisateur) }} <br>
+    <a href="{{ path('message_index') }}"> Retour à la liste des messages :</a><br>
 
 
-
-
-
-<button type="submit" class="btn btn-success">envoyer</button>
-
-
-      
-    {{ form_end(formMessages) }}
-
-
-
-
-
-    {% endblock %}
+{% endblock %}

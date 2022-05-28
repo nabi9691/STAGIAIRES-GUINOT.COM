@@ -87,6 +87,16 @@ class Contacts
      */
     private $utilisateurs;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="contacts")
+     */
+    private $contacts;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="contacts")
+     */
+    private $utilisateur;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -256,6 +266,30 @@ class Contacts
     public function setUtilisateurs(?Utilisateurs $utilisateurs): self
     {
         $this->utilisateurs = $utilisateurs;
+
+        return $this;
+    }
+
+    public function getContacts(): ?Utilisateurs
+    {
+        return $this->contacts;
+    }
+
+    public function setContacts(?Utilisateurs $contacts): self
+    {
+        $this->contacts = $contacts;
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?Utilisateurs
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?Utilisateurs $utilisateur): self
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
