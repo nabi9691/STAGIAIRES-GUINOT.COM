@@ -136,7 +136,8 @@ class Utilisateurs implements UserInterface
     private $message_envoyer;
 
     /**
-     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="destinataires")
+     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="destinataires", cascade={"persist"})
+)
      */
     private $message_recu;
 

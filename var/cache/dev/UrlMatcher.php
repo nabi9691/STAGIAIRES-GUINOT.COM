@@ -99,9 +99,11 @@ return [
                 .'|/afficherUtilisateur/([^/]++)(*:672)'
                 .'|/supprimerUtilisateur/([^/]++)(*:710)'
                 .'|/e(?'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:759)'
-                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:802)'
+                    .'|xpediteur/([^/]++)(*:741)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:785)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:828)'
                 .')'
+                .'|/destinataire/([^/]++)(*:859)'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -127,9 +129,11 @@ return [
         635 => [[['_route' => 'rechercheUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::rechercheUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         672 => [[['_route' => 'afficherUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::afficherUtilisateur'], ['id'], ['GET' => 0], null, false, true, null]],
         710 => [[['_route' => 'supprimerUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        759 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        802 => [
-            [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
+        741 => [[['_route' => 'expediteur_index', '_controller' => 'App\\Controller\\UtilisateursController::expediteur'], ['id'], null, null, false, true, null]],
+        785 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        828 => [[['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        859 => [
+            [['_route' => 'destinataire_index', '_controller' => 'App\\Controller\\UtilisateursController::destinataire'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

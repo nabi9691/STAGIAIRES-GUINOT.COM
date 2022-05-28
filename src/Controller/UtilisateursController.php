@@ -164,6 +164,55 @@ class UtilisateursController extends AbstractController
         return $this->render('utilisateurs/pageAccueilEspacePerso.html.twig', []);
     }
 
+/**
+     * @Route("/expediteur/{id}", name="expediteur_index")
+     */
+    public function expediteur(Request $request, Utilisateurs $utilisateurs): Response
+    {
+        $utilisateurs = new Utilisateurs();
+        $form = $this->createForm(RegisterType::class, $utilisateurs);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $utilisateurs->setMessageEnvoyer($this->getUser());
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($utilisateurs);
+            $entityManager->flush();
+
+                    $this->addFlash("message", "Expediteur affiché avec succès.");
+            return $this->redirectToRoute("utilisateur_index");
+        }
+
+        return $this->render("utilisateurs/index.html.twig", [
+            "formUtilisateurs" => $form->createView()
+        ]);
+    }
+
+/**
+     * @Route("/destinataire/{id}", name="destinataire_index")
+     */
+    public function destinataire(Request $request, Utilisateurs $utilisateurs): Response
+    {
+        $utilisateurs = new Utilisateurs();
+        $form = $this->createForm(RegisterType::class, $utilisateurs);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $utilisateurs->setMessageRecu($this->getUser());
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($utilisateurs);
+            $entityManager->flush();
+
+                    $this->addFlash("message", "Destinataire affiché avec succès.");
+            return $this->redirectToRoute("utilisateur_index");
+        }
+
+        return $this->render("utilisateurs/index.html.twig", [
+            "formUtilisateurs" => $form->createView()
+        ]);
+    }
 
     
 

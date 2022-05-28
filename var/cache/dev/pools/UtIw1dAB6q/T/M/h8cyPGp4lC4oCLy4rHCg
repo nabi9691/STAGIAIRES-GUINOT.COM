@@ -8,10 +8,15 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'stdClass' => [
             'mappedBy' => [
-                'destinataire',
+                'destinataires',
             ],
             'targetEntity' => [
                 'App\\Entity\\Messages',
+            ],
+            'cascade' => [
+                [
+                    'persist',
+                ],
             ],
         ],
     ],

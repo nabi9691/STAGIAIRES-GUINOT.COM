@@ -64,6 +64,8 @@ return [
     'supprimerUtilisateur_index' => [['id'], ['_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/supprimerUtilisateur']], [], []],
     'monEspacePersonel_index' => [[], ['_controller' => 'App\\Controller\\UtilisateursController::monEspacePersonnel'], [], [['text', '/abonner']], [], []],
     'pageAccueilEspacePerso_index' => [[], ['_controller' => 'App\\Controller\\UtilisateursController::pageAccueilEspacePersonnel'], [], [['text', '/abonner']], [], []],
+    'expediteur_index' => [['id'], ['_controller' => 'App\\Controller\\UtilisateursController::expediteur'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/expediteur']], [], []],
+    'destinataire_index' => [['id'], ['_controller' => 'App\\Controller\\UtilisateursController::destinataire'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/destinataire']], [], []],
     'ef_connect' => [['instance', 'homeFolder'], ['_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], [], [['variable', '/', '[^/]++', 'homeFolder'], ['variable', '/', '[^/]++', 'instance'], ['text', '/efconnect']], [], []],
     'ef_main_js' => [[], ['_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::mainJS'], [], [['text', '/elfinder.main.js']], [], []],
     'elfinder' => [['instance', 'homeFolder'], ['_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], [], [['variable', '/', '[^/]++', 'homeFolder'], ['variable', '/', '[^/]++', 'instance'], ['text', '/elfinder']], [], []],

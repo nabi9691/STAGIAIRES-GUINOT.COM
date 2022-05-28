@@ -35,9 +35,9 @@ $utilisateurs = new Utilisateurs();
             ->setTitreMessage($faker->name)
             ->setContenuMessage($faker->sentence())
             ->setCreerDate(new \DateTime())
-            ->setSiMessageLu($faker->sentence());
-            //->setExpediteur($utilisateurs[])
-            //->setDestinataire($utilisateurs[]);
+            ->setSiMessageLu($faker->sentence())
+            ->setExpediteur($utilisateurs)
+            ->setDestinataire($utilisateurs);
             
             $manager->persist($messages);
     

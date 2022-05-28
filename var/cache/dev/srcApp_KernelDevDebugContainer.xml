@@ -6329,7 +6329,7 @@
         <argument key="session" type="service_closure" id="session"/>
       </argument>
     </service>
-    <service id=".service_locator.aBVKWaC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.tDwvBdL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthentificationController::login" type="service_closure" id=".service_locator.g.xob4v"/>
@@ -6352,6 +6352,8 @@
         <argument key="App\Controller\RegistrationController::registerAdmin" type="service_closure" id=".service_locator.CoC3nYr"/>
         <argument key="App\Controller\RegistrationController::verifyUserEmail" type="service_closure" id=".service_locator.hx1SB0L"/>
         <argument key="App\Controller\UtilisateursController::afficherUtilisateur" type="service_closure" id=".service_locator.30Q.gCU"/>
+        <argument key="App\Controller\UtilisateursController::destinataire" type="service_closure" id=".service_locator.30Q.gCU"/>
+        <argument key="App\Controller\UtilisateursController::expediteur" type="service_closure" id=".service_locator.30Q.gCU"/>
         <argument key="App\Controller\UtilisateursController::index" type="service_closure" id=".service_locator.hx1SB0L"/>
         <argument key="App\Controller\UtilisateursController::modifierUtilisateur" type="service_closure" id=".service_locator.30Q.gCU"/>
         <argument key="App\Controller\UtilisateursController::nouvelUtilisateur" type="service_closure" id=".service_locator.qZ_VNPK"/>
@@ -6378,6 +6380,8 @@
         <argument key="App\Controller\RegistrationController:registerAdmin" type="service_closure" id=".service_locator.CoC3nYr"/>
         <argument key="App\Controller\RegistrationController:verifyUserEmail" type="service_closure" id=".service_locator.hx1SB0L"/>
         <argument key="App\Controller\UtilisateursController:afficherUtilisateur" type="service_closure" id=".service_locator.30Q.gCU"/>
+        <argument key="App\Controller\UtilisateursController:destinataire" type="service_closure" id=".service_locator.30Q.gCU"/>
+        <argument key="App\Controller\UtilisateursController:expediteur" type="service_closure" id=".service_locator.30Q.gCU"/>
         <argument key="App\Controller\UtilisateursController:index" type="service_closure" id=".service_locator.hx1SB0L"/>
         <argument key="App\Controller\UtilisateursController:modifierUtilisateur" type="service_closure" id=".service_locator.30Q.gCU"/>
         <argument key="App\Controller\UtilisateursController:nouvelUtilisateur" type="service_closure" id=".service_locator.qZ_VNPK"/>
@@ -6888,12 +6892,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.aBVKWaC"/>
+      <argument type="service" id=".service_locator.tDwvBdL"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.aBVKWaC"/>
+      <argument type="service" id=".service_locator.tDwvBdL"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7329,7 +7333,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.aBVKWaC"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.tDwvBdL"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
