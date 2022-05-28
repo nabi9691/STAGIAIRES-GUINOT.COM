@@ -69,7 +69,7 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $ville;
+    private $villes;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -130,9 +130,6 @@ class Utilisateurs implements UserInterface
      */
     private $isVerified = false;
 
-
-
-
     /**
      * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="expediteur", orphanRemoval=true)
      */
@@ -143,10 +140,6 @@ class Utilisateurs implements UserInterface
      */
     private $message_reçu;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Mediats::class, mappedBy="utilisateurs", orphanRemoval=true)
-     */
-    private $medias;
 
 
 
@@ -154,7 +147,6 @@ class Utilisateurs implements UserInterface
     {
         $this->message_envoyer = new ArrayCollection();
         $this->message_reçu = new ArrayCollection();
-        $this->medias = new ArrayCollection();
         }
 
 
@@ -342,14 +334,14 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-    public function getVille(): ?string
+    public function getVilles(): ?string
     {
-        return $this->ville;
+        return $this->villes;
     }
 
-    public function setVille(?string $ville): self
+    public function setVilles(?string $villes): self
     {
-        $this->ville = $ville;
+        $this->villes = $villes;
 
         return $this;
     }
@@ -488,37 +480,7 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Mediats>
-     */
-    public function getMedias(): Collection
-    {
-        return $this->medias;
-    }
-
-    public function addMedia(Mediats $media): self
-    {
-        if (!$this->medias->contains($media)) {
-            $this->medias[] = $media;
-            $media->setUtilisateurs($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMedia(Mediats $media): self
-    {
-        if ($this->medias->removeElement($media)) {
-            // set the owning side to null (unless already changed)
-            if ($media->getUtilisateurs() === $this) {
-                $media->setUtilisateurs(null);
-            }
-        }
-
-        return $this;
-    }
-
-
+    
 
 
 }

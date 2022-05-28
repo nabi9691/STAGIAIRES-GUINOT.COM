@@ -29,16 +29,8 @@ class Categories
      */
     private $contenu_categorie;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Mediats::class, mappedBy="categories")
-     */
-    private $mediats;
-
-    public function __construct()
-    {
-        $this->mediats = new ArrayCollection();
-    }
-
+    
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -68,33 +60,4 @@ class Categories
         return $this;
     }
 
-    /**
-     * @return Collection<int, Mediats>
-     */
-    public function getMediats(): Collection
-    {
-        return $this->mediats;
-    }
-
-    public function addMediat(Mediats $mediat): self
-    {
-        if (!$this->mediats->contains($mediat)) {
-            $this->mediats[] = $mediat;
-            $mediat->setCategories($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMediat(Mediats $mediat): self
-    {
-        if ($this->mediats->removeElement($mediat)) {
-            // set the owning side to null (unless already changed)
-            if ($mediat->getCategories() === $this) {
-                $mediat->setCategories(null);
-            }
-        }
-
-        return $this;
-    }
 }
