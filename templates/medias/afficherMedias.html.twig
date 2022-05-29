@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+afficher médias :
+{% endblock %}
+
+{% block content %}
+    <h1>
+    Afficher médias :
+    </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th> Titre </th>
+                <th> Contenu </th>
+                <th> Date </th>
+                 <th> Catégories </th>
+                </tr>
+        </thead>
+        <tbody>
+            <tr>
+<td>{{ medias.id }}</td>
+<td>{{ medias.imageFile }}</td>
+                        <td>{{ medias.contenu }}</td>
+<td>{{ medias.date|date("d/m/Y") }}</td>
+<td>{{ medias.categories     }}</td>
+                        </tr>
+        </tbody>
+    </table>
+
+    {% endblock %}

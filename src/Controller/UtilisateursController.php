@@ -21,7 +21,7 @@ class UtilisateursController extends AbstractController
 {
     /**
      * @Route("utilisateur", name="utilisateur_index", methods={"GET"})
-     //* @ISGranted("ROLE_ADMIN")
+     // @ISGranted("ROLE_ADMIN")
      */
     public function index(UtilisateursRepository $utilisateursRepository): Response
     {
@@ -69,7 +69,7 @@ class UtilisateursController extends AbstractController
 
     /**
      * @Route("/nouvelUtilisateur", name="nouvelUtilisateur_index", methods={"GET","POST"})
-     * @ISGranted("ROLE_ADMIN")
+     // @ISGranted("ROLE_ADMIN")
      */
     public function nouvelUtilisateur(Request $request, UserPasswordEncoderInterface $userPasswordEncoder): Response
     {
@@ -113,7 +113,7 @@ class UtilisateursController extends AbstractController
 
     /**
      * @Route("/modifierUtilisateur/{id}", name="modifierUtilisateur_index", methods={"GET","POST"})
-     * @ISGranted("ROLE_ADMIN")
+     // @ISGranted("ROLE_ADMIN")
      */
     public function modifierUtilisateur(Request $request, Utilisateurs $utilisateurs): Response
     {
@@ -139,7 +139,7 @@ class UtilisateursController extends AbstractController
 // SUPPRESSION DES UTILISATEURS
     /**
      * @Route("/supprimerUtilisateur/{id}" , name="supprimerUtilisateur_index", methods= {"GET","POST"})
-     * @ISGranted("ROLE_ADMIN")
+     // @ISGranted("ROLE_ADMIN")
      */
     public function supprimerUtilisateur(Request $request, Utilisateurs $utilisateurs , EntityManagerInterface $entityManager) : Response 
     {           
@@ -170,11 +170,11 @@ class UtilisateursController extends AbstractController
     public function expediteur(Request $request, Utilisateurs $utilisateurs): Response
     {
         $utilisateurs = new Utilisateurs();
-        $form = $this->createForm(RegisterType::class, $utilisateurs);
+        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $utilisateurs->setMessageEnvoyer($this->getUser());
+            $utilisateurs->setMessageEnvoyer($this->getExpediteur());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($utilisateurs);
@@ -195,11 +195,11 @@ class UtilisateursController extends AbstractController
     public function destinataire(Request $request, Utilisateurs $utilisateurs): Response
     {
         $utilisateurs = new Utilisateurs();
-        $form = $this->createForm(RegisterType::class, $utilisateurs);
+        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $utilisateurs->setMessageRecu($this->getUser());
+            $utilisateurs->setMessageRecu($this->getDestinataire());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($utilisateurs);

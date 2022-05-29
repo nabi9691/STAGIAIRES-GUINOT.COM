@@ -132,7 +132,7 @@ class MessagesController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $messages->setExpediteur($this->getUser());
+            $messages->setExpediteur($this->getUtilisateurs());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($messages);
@@ -142,8 +142,9 @@ class MessagesController extends AbstractController
             return $this->redirectToRoute("message_index");
         }
 
-        return $this->render("messages/messagesEnvoyer.html.twig", [
-            "formMessages" => $form->createView()
+        return $this->render("messages/index.html.twig", [
+            'message' => $messages,
+                        "formMessages" => $form->createView()
         ]);
     }
 

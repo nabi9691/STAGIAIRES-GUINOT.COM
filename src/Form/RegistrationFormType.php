@@ -67,7 +67,7 @@ class RegistrationFormType extends AbstractType
             
             ->add('login', TextType::class, [
                 'label' => 'Votre login',
-                'required' => true
+                'required' => false
             ])
             ->add('password', PasswordType::class, [
                  'mapped' => false,

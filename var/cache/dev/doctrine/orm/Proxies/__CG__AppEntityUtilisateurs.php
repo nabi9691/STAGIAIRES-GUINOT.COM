@@ -67,10 +67,10 @@ class Utilisateurs extends \App\Entity\Utilisateurs implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'formation', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'date_de_naissance', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'civilite', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'code_postal', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'villes', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'pays', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'telephone', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'departement', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'login', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'status', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'isVerified', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'message_envoyer', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'message_recu', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'medias', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'contacts', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'activites'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'formation', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'date_de_naissance', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'civilite', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'code_postal', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'villes', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'pays', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'telephone', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'departement', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'login', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'status', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'isVerified', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'message_envoyer', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'medias', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'contacts', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'activites', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'message_recu'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'formation', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'date_de_naissance', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'civilite', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'code_postal', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'villes', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'pays', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'telephone', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'departement', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'login', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'status', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'isVerified', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'message_envoyer', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'message_recu', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'medias', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'contacts', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'activites'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'formation', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'date_de_naissance', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'civilite', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'code_postal', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'villes', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'pays', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'telephone', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'departement', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'login', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'status', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'isVerified', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'message_envoyer', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'medias', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'contacts', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'activites', '' . "\0" . 'App\\Entity\\Utilisateurs' . "\0" . 'message_recu'];
     }
 
     /**
@@ -635,39 +635,6 @@ class Utilisateurs extends \App\Entity\Utilisateurs implements \Doctrine\ORM\Pro
     /**
      * {@inheritDoc}
      */
-    public function getMessageRecu(): \Doctrine\Common\Collections\Collection
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMessageRecu', []);
-
-        return parent::getMessageRecu();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addMessageRecu(\App\Entity\Messages $messageRecu): \App\Entity\Utilisateurs
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addMessageRecu', [$messageRecu]);
-
-        return parent::addMessageRecu($messageRecu);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeMessageRecu(\App\Entity\Messages $messageRecu): \App\Entity\Utilisateurs
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeMessageRecu', [$messageRecu]);
-
-        return parent::removeMessageRecu($messageRecu);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getMedias(): \Doctrine\Common\Collections\Collection
     {
 
@@ -762,6 +729,39 @@ class Utilisateurs extends \App\Entity\Utilisateurs implements \Doctrine\ORM\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeActivite', [$activite]);
 
         return parent::removeActivite($activite);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMessageRecu(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMessageRecu', []);
+
+        return parent::getMessageRecu();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addMessageRecu(\App\Entity\Messages $messageRecu): \App\Entity\Utilisateurs
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addMessageRecu', [$messageRecu]);
+
+        return parent::addMessageRecu($messageRecu);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeMessageRecu(\App\Entity\Messages $messageRecu): \App\Entity\Utilisateurs
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeMessageRecu', [$messageRecu]);
+
+        return parent::removeMessageRecu($messageRecu);
     }
 
 }

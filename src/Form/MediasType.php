@@ -2,7 +2,10 @@
 
 namespace App\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Medias;
+
+use App\Entity\Categories;
 //use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 //use Symfony\Component\Form\FormBuilderInterface;
@@ -35,6 +38,27 @@ class MediasType extends AbstractType
             'required' => true
         ])
         ->add('contenu', TextareaType::class)
+        ->add('date', BirthdayType::class, [
+            'label' => 'Votre date importation ',
+            'required' => false,
+            'widget' => 'single_text'
+        ])
+
+        ->add('categories', EntityType::class, [
+            'label' => 'Catégorie du médias :',
+                 //'placeholder' => 'Sélectionner',
+                 // looks for choices from this entity
+                 'class' =>Categories::class,
+                 // Sur quelle propriete je fais le choix
+                 'choice_label' => 'nom',
+                 'mapped' => false,
+
+                 // used to render a select box, check boxes or radios
+             // 'multiple' => false,
+                //'expanded' => true,)
+//            'required' => false
+        ])
+        
         ;
     }
 

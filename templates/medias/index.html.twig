@@ -16,7 +16,7 @@ Liste des médiats :
     <br /><br />
     <hr />
     <br />
-    <a href="{{ path('nouveauMediats_index') }}">Ajouter Un Nouveau Médiats ! </a>
+    <a href="{{ path('nouveauMedias_index') }}">Ajouter Un Nouveau Médiats ! </a>
 <br /><br />
     
     
@@ -28,29 +28,23 @@ Liste des médiats :
                     <th> Titre </th>
                     <th> Contenu </th>
                     <th> Date </th>
-                    <th> Status </th>
-                    <th> Catégories </th>
-<th> Auteur </th>
-                    <th> utilisateur </th>
+                                        <th> Catégories </th>
                 <th> Modifier </th>
 <th> Afficher </th>
 <th> Supprimer </t  h>
 </tr>
             </thead>
-            {% for mediats in mediats %}
+            {% for medias in medias %}
 <tbody>
         <tr>
-                <td> {{ mediats.id }} </td>
-                <td> {{ mediats.titre }} </td>
-                <td> {{ mediats.contenu }} </td>
-                <td> {{ mediats.date|date("d/m/Y") }} </td>
-<td> {{ mediats.status }} </td>
-<td> {{ mediats.categories }} </td>
-                <td> {{ mediats.auteurs }} </td>
-<td> {{ mediats.utilisateur }} </td>
-<td><a href="{{ path('modifierMediats_index', {'id': mediats.id }) }}">Modifier</a></td>
-<td><a href="{{ path('afficherMediats_index', {'id': mediats.id }) }}">afficher</a></td>
-<td><a href="{{ path('supprimerMediats_index', {'id': mediats.id }) }}">Supprimer</a></td>
+                <td> {{ medias.id }} </td>
+                <td> {{ medias.imageFile }} </td>
+                <td> {{ medias.contenu }} </td>
+                <td> {{ medias.date|date("d/m/Y") }} </td>
+<td> {{ medias.categories }} </td>
+                <td><a href="{{ path('modifierMedias_index', {'id': medias.id }) }}">Modifier</a></td>
+<td><a href="{{ path('afficherMedias_index', {'id': medias.id }) }}">afficher</a></td>
+<td><a href="{{ path('supprimerMedias_index', {'id': medias.id }) }}">Supprimer</a></td>
                 {% else %}
                 <td colspan="5">
                     Vous n'avez pas de médiats enregistré dans votre base de données !

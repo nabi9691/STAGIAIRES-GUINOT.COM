@@ -94,7 +94,8 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
-     */
+* @ORM\Column(nullable=false)
+*/
     private $login;
 
     /**
@@ -135,11 +136,6 @@ class Utilisateurs implements UserInterface
      */
     private $message_envoyer;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="destinataires", cascade={"persist"})
-)
-     */
-    private $message_recu;
 
     /**
      * @ORM\OneToMany(targetEntity=Medias::class, mappedBy="utilisateurs")
@@ -156,13 +152,18 @@ class Utilisateurs implements UserInterface
      */
     private $activites;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="destinataire")
+     */
+    private $message_recu;
+
     public function __construct()
     {
         $this->message_envoyer = new ArrayCollection();
-        $this->message_recu = new ArrayCollection();
         $this->medias = new ArrayCollection();
         $this->contacts = new ArrayCollection();
         $this->activites = new ArrayCollection();
+        $this->message_recu = new ArrayCollection();
         }
 
     public function getId(): ?int
@@ -463,35 +464,6 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Messages>
-     */
-    public function getMessageRecu(): Collection
-    {
-        return $this->message_recu;
-    }
-
-    public function addMessageRecu(Messages $messageRecu): self
-    {
-        if (!$this->message_recu->contains($messageRecu)) {
-            $this->message_recu[] = $messageRecu;
-            $messageRecu->setDestinataires($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMessageRecu(Messages $messageRecu): self
-    {
-        if ($this->message_recu->removeElement($messageRecu)) {
-            // set the owning side to null (unless already changed)
-            if ($messageRecu->getDestinataires() === $this) {
-                $messageRecu->setDestinataires(null);
-            }
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Medias>
@@ -577,6 +549,36 @@ class Utilisateurs implements UserInterface
             // set the owning side to null (unless already changed)
             if ($activite->getUtilisateur() === $this) {
                 $activite->setUtilisateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Messages>
+     */
+    public function getMessageRecu(): Collection
+    {
+        return $this->message_recu;
+    }
+
+    public function addMessageRecu(Messages $messageRecu): self
+    {
+        if (!$this->message_recu->contains($messageRecu)) {
+            $this->message_recu[] = $messageRecu;
+            $messageRecu->setDestinataire($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessageRecu(Messages $messageRecu): self
+    {
+        if ($this->message_recu->removeElement($messageRecu)) {
+            // set the owning side to null (unless already changed)
+            if ($messageRecu->getDestinataire() === $this) {
+                $messageRecu->setDestinataire(null);
             }
         }
 

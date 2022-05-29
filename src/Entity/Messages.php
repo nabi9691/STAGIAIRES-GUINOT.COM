@@ -52,36 +52,20 @@ class Messages
     private $si_messageLu = 0;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_envoyer")
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_envoyer", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $expediteur;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_reçu")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $destinataire;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu")
-     */
-    private $utilisateurs;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu")
-     */
-    private $destinateur;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu")
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu", cascade={"persist"})
      */
     private $medias;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu")
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu", cascade={"persist"})
      */
-    private $destinataires;
+    private $destinataire;
     
     public function __construct()
     {
@@ -166,42 +150,6 @@ class Messages
         return $this;
     }
 
-    public function getDestinataire(): ?Utilisateurs
-    {
-        return $this->destinataire;
-    }
-
-    public function setDestinataire(?Utilisateurs $destinataire): self
-    {
-        $this->destinataire = $destinataire;
-
-        return $this;
-    }
-
-    public function getUtilisateurs(): ?Utilisateurs
-    {
-        return $this->utilisateurs;
-    }
-
-    public function setUtilisateurs(?Utilisateurs $utilisateurs): self
-    {
-        $this->utilisateurs = $utilisateurs;
-
-        return $this;
-    }
-
-    public function getDestinateur(): ?Utilisateurs
-    {
-        return $this->destinateur;
-    }
-
-    public function setDestinateur(?Utilisateurs $destinateur): self
-    {
-        $this->destinateur = $destinateur;
-
-        return $this;
-    }
-
     public function getMedias(): ?Utilisateurs
     {
         return $this->medias;
@@ -214,20 +162,18 @@ class Messages
         return $this;
     }
 
-    public function getDestinataires(): ?Utilisateurs
+    public function getDestinataire(): ?Utilisateurs
     {
-        return $this->destinataires;
+        return $this->destinataire;
     }
 
-    public function setDestinataires(?Utilisateurs $destinataires): self
+    public function setDestinataire(?Utilisateurs $destinataire): self
     {
-        $this->destinataires = $destinataires;
+        $this->destinataire = $destinataire;
 
         return $this;
     }
 
     
-        
-
 
 }

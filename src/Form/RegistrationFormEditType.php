@@ -23,7 +23,14 @@ class RegistrationFormEditType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('civilite', ChoiceType::class, [
+        ->add('formation', ChoiceType::class, [
+            'label' => 'Votre formation :',
+            'required' => true,
+            'choices' => ["PINFO" => "PINFO", "DA" => "DA", "PREPA" => "PREPA", "CRCD" => "CRCD", "EAA" => "EAA", "DWWM" => "DWWM", "PMTA" => "PMTA", "AAI" => "AAI"],
+            'multiple' => false,
+        ])
+        
+        ->add('civilite', ChoiceType::class, [
                 'label' => 'Votre civilité',
                 'required' => false,
                 'choices' => ["Madame" => "Madame", "Monsieur" => "Monsieur"],
@@ -44,7 +51,76 @@ class RegistrationFormEditType extends AbstractType
                 'required' => false,
                 'widget' => 'single_text'
             ])
-    
+
+            ->add('adresse', TextType::class, [
+                'label' => 'Votre adresse :',
+                'required' => true
+            ])
+            
+            ->add('villes', TextType::class, [
+                'label' => 'Votre ville :',
+                'required' => true
+            ])
+            ->add('telephone', TextType::class, [
+                'label' => 'Votre téléphone :',
+                'required' => true
+            ])
+            
+            ->add('login', TextType::class, [
+                'label' => 'Votre login',
+                'required' => false
+            ])
+            ->add('password', PasswordType::class, [
+                 'mapped' => false,
+                'required' => true,
+                'label' => 'Entrez votre mot de passe',
+                'constraints' => [
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'ça suffit {{ limit }} caractères !',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 4096,
+                    ]),
+                ]
+            ])
+            
+            ->add('message_envoyer', EntityType::class, [
+                'label' => 'Votre message envoyer :',
+                     //'placeholder' => 'Sélectionner',
+                     // looks for choices from this entity
+                     'class' =>Messages::class,
+                     // Sur quelle propriete je fais le choix
+                     'choice_label' => 'titre_message',
+                     'mapped' => false,
+
+                     // used to render a select box, check boxes or radios
+                 // 'multiple' => false,
+                    //'expanded' => true,)
+    //            'required' => false
+            ])
+            
+            ->add('message_recu', EntityType::class, [
+                'label' => 'Votre message reçu :',
+                     //'placeholder' => 'Sélectionner',
+                     // looks for choices from this entity
+                     'class' =>Messages::class,
+                     // Sur quelle propriete je fais le choix
+                     'choice_label' => 'titre_message',
+                     
+                     // used to render a select box, check boxes or radios
+                     'mapped' => false,
+
+                     // 'multiple' => true,
+                    //'expanded' => true,)
+    //            'required' => true
+            ])
+        
+            ->add('medias', MediasType::class, [
+                'mapped' => false,
+                'by_reference' => false,
+            ])
+
+
             // ->add('confirmepassword', PasswordType::class, [
                 // 'mapped' => false,
             //     'required' => true,
