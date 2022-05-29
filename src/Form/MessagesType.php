@@ -35,7 +35,17 @@ class MessagesType extends AbstractType
             
         ->add('titre_message', TextType::class, [
             'label' => 'Le titre de votre message !',
-            'required' => false
+            'attr' => ['placeholder' => 'Titre'],
+                'constraints' => [
+                    new Length([
+                    'min' => 2 ,
+                    'max' => 20
+                ]),
+                    new NotBlank([
+                        'message' => 'Entrez votre titre',
+                    ]),
+                ],
+                'required' => true
         ])
         ->add('contenu_message', TextType::class, [
             'label' => 'Le contenu de votre message :',

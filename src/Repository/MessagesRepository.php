@@ -3,8 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Messages;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+
+//  use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+//use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method Messages|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +22,12 @@ class MessagesRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Messages::class);
     }
+
+    public function findWithPagination() :Query {
+        return$this->createQueryBuilder('m')
+        ->getQuery();
+    }
+
 
     // /**
     //  * @return Messages[] Returns an array of Messages objects

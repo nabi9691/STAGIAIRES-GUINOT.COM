@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerJC308om/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerEtt9UA9/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -61,15 +61,11 @@ $classes[] = 'App\Form\MessagesType';
 $classes[] = 'App\Form\RegistrationFormEditType';
 $classes[] = 'App\Form\RegistrationFormType';
 $classes[] = 'App\Repository\ActivitesRepository';
-$classes[] = 'App\Repository\AdminsRepository';
 $classes[] = 'App\Repository\AuteursRepository';
 $classes[] = 'App\Repository\CategoriesRepository';
-$classes[] = 'App\Repository\ComptesRepository';
 $classes[] = 'App\Repository\ContactsRepository';
 $classes[] = 'App\Repository\MediasRepository';
-$classes[] = 'App\Repository\MediatsRepository';
 $classes[] = 'App\Repository\MessagesRepository';
-$classes[] = 'App\Repository\MessagesclsRepository';
 $classes[] = 'App\Repository\UtilisateursRepository';
 $classes[] = 'App\Security\AuthentificationAuthenticator';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController';
