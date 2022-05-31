@@ -126,6 +126,6 @@ Destinataire: {{ form_widget(formMessages.destinataire) }} <br>
 
       
     {{ form_end(formMessages) }}
-", "messages/formulaireMessage.html.twig", "C:\\wamp64\\www\\Symfony\\STAGIAIRES-GUINOT.COM\\templates\\messages\\formulaireMessage.html.twig");
+", "messages/formulaireMessage.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\messages\\formulaireMessage.html.twig");
     }
 }

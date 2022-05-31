@@ -150,6 +150,6 @@ Modification  du message
 
 
 {% endblock %}
-", "messages/modifierMessage.html.twig", "C:\\wamp64\\www\\Symfony\\STAGIAIRES-GUINOT.COM\\templates\\messages\\modifierMessage.html.twig");
+", "messages/modifierMessage.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\messages\\modifierMessage.html.twig");
     }
 }

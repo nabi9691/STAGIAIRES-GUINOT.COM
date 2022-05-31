@@ -341,6 +341,6 @@ class __TwigTemplate_97cffe2785488297b7a93d24e0e46f9b6ccfb5d891db96f7f3b8cbfcc02
 </p>
 {% endblock %}
 {% endblock %}
-", "messages/index.html.twig", "C:\\wamp64\\www\\Symfony\\STAGIAIRES-GUINOT.COM\\templates\\messages\\index.html.twig");
+", "messages/index.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\messages\\index.html.twig");
     }
 }

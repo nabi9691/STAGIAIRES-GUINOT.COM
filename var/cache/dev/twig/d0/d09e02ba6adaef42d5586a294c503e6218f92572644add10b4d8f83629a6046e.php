@@ -258,6 +258,6 @@ Retrouvez les anciens stagiaires de Guinot !
 
 
 {% endblock %}
-", "home/index.html.twig", "C:\\wamp64\\www\\Symfony\\STAGIAIRES-GUINOT.COM\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\home\\index.html.twig");
     }
 }
