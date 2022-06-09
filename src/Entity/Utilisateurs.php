@@ -132,7 +132,7 @@ class Utilisateurs implements UserInterface
     private $isVerified = false;
 
     /**
-     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="expediteur", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Messages::class, mappedBy="expediteur", orphanRemoval=true, cascade={"persist"})
      */
     private $message_envoyer;
 
@@ -215,7 +215,7 @@ class Utilisateurs implements UserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        //garantir que chaque utilisateur a au moins ROLE_USER
+        //garantir que chaque utilisateur a au moins un ROLE_USER
 
          $roles[] = 'ROLE_USER';
 

@@ -626,6 +626,12 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\UtilisateursController"/>
       </call>
     </service>
+    <service id="App\DataFixtures\ContactsFixtures" class="App\DataFixtures\ContactsFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+    </service>
+    <service id="App\DataFixtures\MediasFixtures" class="App\DataFixtures\MediasFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+    </service>
     <service id="App\DataFixtures\MessagesFixtures" class="App\DataFixtures\MessagesFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
@@ -636,6 +642,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\MessagesType" class="App\Form\MessagesType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PersoFormType" class="App\Form\PersoFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RegistrationFormEditType" class="App\Form\RegistrationFormEditType" autowire="true" autoconfigure="true">
@@ -1110,6 +1119,7 @@
         <argument>App\Form\ContactsType</argument>
         <argument>App\Form\MediasType</argument>
         <argument>App\Form\MessagesType</argument>
+        <argument>App\Form\PersoFormType</argument>
         <argument>App\Form\RegistrationFormEditType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -1448,7 +1458,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.CT3BwOR"/>
+      <argument type="service" id=".service_locator.Yqmjyjl"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3261,8 +3271,9 @@
         <argument>class_exists</argument>
       </call>
     </service>
-    <service id="annotations.cached_reader" class="Doctrine\Common\Annotations\PsrCachedReader" public="true">
+    <service id="annotations.cached_reader" class="Doctrine\Common\Annotations\PsrCachedReader" public="false">
       <tag name="annotations.cached_reader"/>
+      <tag name="container.do_not_inline"/>
       <argument type="service" id="annotations.reader"/>
       <argument type="service">
         <service class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
@@ -4386,7 +4397,7 @@
         <argument type="collection">
           <argument type="service">
             <service class="Doctrine\DBAL\Logging\Middleware">
-              <argument type="service" id="monolog.logger.doctrine" on-invalid="null"/>
+              <argument type="service" id="monolog.logger.doctrine"/>
             </service>
           </argument>
         </argument>
@@ -4444,9 +4455,8 @@
     </service>
     <service id="doctrine.dbal.logging_middleware" class="Doctrine\DBAL\Logging\Middleware" abstract="true">
       <tag name="monolog.logger" channel="doctrine"/>
-      <tag name="doctrine.middleware"/>
       <tag name="doctrine.middleware" connection="default"/>
-      <argument type="service" id="monolog.logger.doctrine" on-invalid="null"/>
+      <argument type="service" id="monolog.logger.doctrine"/>
     </service>
     <service id=".1_ServiceLocator~4sbqIkj" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <argument type="collection"/>
@@ -5100,6 +5110,7 @@
     <service id="security.authentication.success_handler" class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false" abstract="true">
       <argument type="service" id="security.http_utils"/>
       <argument type="collection"/>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
     </service>
     <service id="security.authentication.custom_failure_handler" class="Symfony\Component\Security\Http\Authentication\CustomAuthenticationFailureHandler" public="false" abstract="true">
       <argument></argument>
@@ -5523,6 +5534,14 @@
       <call method="addFixtures">
         <argument type="collection">
           <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\ContactsFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+          <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\MediasFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+          <argument type="collection">
             <argument key="fixture" type="service" id="App\DataFixtures\MessagesFixtures"/>
             <argument key="groups" type="collection"/>
           </argument>
@@ -5896,6 +5915,10 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\ContactsFixtures" class="App\DataFixtures\ContactsFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\ContactsFixtures" class="App\DataFixtures\ContactsFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\MediasFixtures" class="App\DataFixtures\MediasFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\MediasFixtures" class="App\DataFixtures\MediasFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\MessagesFixtures" class="App\DataFixtures\MessagesFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\MessagesFixtures" class="App\DataFixtures\MessagesFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" abstract="true"/>
@@ -5904,6 +5927,8 @@
     <service id=".abstract.instanceof.App\Form\MediasType" class="App\Form\MediasType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MessagesType" class="App\Form\MessagesType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\MessagesType" class="App\Form\MessagesType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PersoFormType" class="App\Form\PersoFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PersoFormType" class="App\Form\PersoFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormEditType" class="App\Form\RegistrationFormEditType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormEditType" class="App\Form\RegistrationFormEditType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -6306,7 +6331,7 @@
         <argument key="session" type="service_closure" id="session"/>
       </argument>
     </service>
-    <service id=".service_locator.iuWLQok" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ujAQD1y" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthentificationController::login" type="service_closure" id=".service_locator.g.xob4v"/>
@@ -6329,8 +6354,8 @@
         <argument key="App\Controller\MessagesController::modifierMessages" type="service_closure" id=".service_locator.K.CkPf1"/>
         <argument key="App\Controller\MessagesController::supprimerMessages" type="service_closure" id=".service_locator.MdJVq9u"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.CoC3nYr"/>
-        <argument key="App\Controller\RegistrationController::registerAbonner" type="service_closure" id=".service_locator.CoC3nYr"/>
         <argument key="App\Controller\RegistrationController::registerAdmin" type="service_closure" id=".service_locator.CoC3nYr"/>
+        <argument key="App\Controller\RegistrationController::registerStagiaire" type="service_closure" id=".service_locator.CoC3nYr"/>
         <argument key="App\Controller\RegistrationController::verifyUserEmail" type="service_closure" id=".service_locator.hx1SB0L"/>
         <argument key="App\Controller\UtilisateursController::afficherUtilisateur" type="service_closure" id=".service_locator.30Q.gCU"/>
         <argument key="App\Controller\UtilisateursController::destinataire" type="service_closure" id=".service_locator.30Q.gCU"/>
@@ -6361,8 +6386,8 @@
         <argument key="App\Controller\MessagesController:modifierMessages" type="service_closure" id=".service_locator.K.CkPf1"/>
         <argument key="App\Controller\MessagesController:supprimerMessages" type="service_closure" id=".service_locator.MdJVq9u"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.CoC3nYr"/>
-        <argument key="App\Controller\RegistrationController:registerAbonner" type="service_closure" id=".service_locator.CoC3nYr"/>
         <argument key="App\Controller\RegistrationController:registerAdmin" type="service_closure" id=".service_locator.CoC3nYr"/>
+        <argument key="App\Controller\RegistrationController:registerStagiaire" type="service_closure" id=".service_locator.CoC3nYr"/>
         <argument key="App\Controller\RegistrationController:verifyUserEmail" type="service_closure" id=".service_locator.hx1SB0L"/>
         <argument key="App\Controller\UtilisateursController:afficherUtilisateur" type="service_closure" id=".service_locator.30Q.gCU"/>
         <argument key="App\Controller\UtilisateursController:destinataire" type="service_closure" id=".service_locator.30Q.gCU"/>
@@ -6434,12 +6459,13 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.CT3BwOR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Yqmjyjl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ContactsType" type="service_closure" id="App\Form\ContactsType"/>
         <argument key="App\Form\MediasType" type="service_closure" id="App\Form\MediasType"/>
         <argument key="App\Form\MessagesType" type="service_closure" id="App\Form\MessagesType"/>
+        <argument key="App\Form\PersoFormType" type="service_closure" id="App\Form\PersoFormType"/>
         <argument key="App\Form\RegistrationFormEditType" type="service_closure" id="App\Form\RegistrationFormEditType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="FM\ElfinderBundle\Form\Type\ElFinderType" type="service_closure" id="fm_elfinder.form.type"/>
@@ -6628,7 +6654,7 @@
       </argument>
     </service>
     <service id="doctrine.dbal.logging_middleware.default" class="Doctrine\DBAL\Logging\Middleware">
-      <argument type="service" id="monolog.logger.doctrine" on-invalid="null"/>
+      <argument type="service" id="monolog.logger.doctrine"/>
     </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
       <argument type="service" id="security.access.authenticated_voter"/>
@@ -6873,12 +6899,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.iuWLQok"/>
+      <argument type="service" id=".service_locator.ujAQD1y"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.iuWLQok"/>
+      <argument type="service" id=".service_locator.ujAQD1y"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7314,7 +7340,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.iuWLQok"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ujAQD1y"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
@@ -7330,7 +7356,7 @@
     <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
     <service id="Symfony\Component\String\Slugger\SluggerInterface" alias="slugger"/>
     <service id=".service_locator.tHpW6v3" alias=".service_locator.Y7gDuDN" public="false"/>
-    <service id=".service_locator.a3TgZII" alias=".service_locator.CT3BwOR" public="false"/>
+    <service id=".service_locator.blvQWSG" alias=".service_locator.Yqmjyjl" public="false"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default" public="false"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>

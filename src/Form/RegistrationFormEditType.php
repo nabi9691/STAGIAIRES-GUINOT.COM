@@ -66,24 +66,7 @@ class RegistrationFormEditType extends AbstractType
                 'required' => true
             ])
             
-            ->add('login', TextType::class, [
-                'label' => 'Votre login',
-                'required' => false
-            ])
-            ->add('password', PasswordType::class, [
-                 'mapped' => false,
-                'required' => true,
-                'label' => 'Entrez votre mot de passe',
-                'constraints' => [
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'ça suffit {{ limit }} caractères !',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
-                ]
-            ])
-            
+
             ->add('message_envoyer', EntityType::class, [
                 'label' => 'Votre message envoyer :',
                      //'placeholder' => 'Sélectionner',

@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-Page d'accueil de votre espace perso !
+Bien venu sur la page d'accueil de votre espace perso !
  {% endblock %}
 
 {% block body %}
@@ -9,9 +9,15 @@ Page d'accueil de votre espace perso !
 <br/><br/>
 {% block content %}
 <div>
-    
+    <a href="{{ path('medias_index') }}">Liste de mes médias : </a>
+<a href="{{ path('contacts_index') }}"> Liste de mes contacts :</a>
+
+<a href="{{ path('message_index') }}"> Liste de mes messages personnels :</a>
+
     <h1>
-    Page d'accueil de votre espace perso !
+    Bien venu ! 
+    
+    Page d'accueil de votre espace personnel :
 
 </h1>
     <h3> Vous êtes dans votre page d'accueil </h3>
@@ -25,5 +31,8 @@ Page d'accueil de votre espace perso !
 <br><br>
 
 {% block footer %}
+<a href="{{ path('accueil_index') }}"> Retour à la page d'accueil !</a>
+
+
 {% endblock %}
 {% endblock %}

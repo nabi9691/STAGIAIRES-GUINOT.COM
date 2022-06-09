@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Medias;
+use App\Entity\Utilisateurs;
+
 use App\Form\MediasType;
 
 //use Symfony\Component\Mime\Medias;
@@ -72,12 +74,18 @@ class MediasController extends AbstractController
     public function nouveauMedias(Request $request): Response
     {
         $medias = new Medias();
+        //$user = new Utilisateurs();
+        
         $form = $this->createForm(MediasType::class, $medias);
         
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            //if ($user) {
+//$entityManager->persist($utilisateurs);
+            //}            
+            
             $entityManager->persist($medias);
             $entityManager->flush();
 

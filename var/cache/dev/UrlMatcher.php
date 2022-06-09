@@ -44,15 +44,14 @@ return [
         '/messages/listeMessagesRecu' => [[['_route' => 'listeMessagesRecu_index', '_controller' => 'App\\Controller\\MessagesController::listeMessagesRecu'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/register-admin' => [[['_route' => 'app_register_admin', '_controller' => 'App\\Controller\\RegistrationController::registerAdmin'], null, null, null, false, false, null]],
-        '/register-abonner' => [[['_route' => 'app_register_abonner', '_controller' => 'App\\Controller\\RegistrationController::registerAbonner'], null, null, null, false, false, null]],
+        '/register-stagiaire' => [[['_route' => 'app_register_stagiaire', '_controller' => 'App\\Controller\\RegistrationController::registerStagiaire'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
         '/utilisateur' => [[['_route' => 'utilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::index'], null, ['GET' => 0], null, false, false, null]],
         '/formulaireUtilisateur' => [[['_route' => 'formulaireUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::formulaireUtilisateur'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/nouvelUtilisateur' => [[['_route' => 'nouvelUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::nouvelUtilisateur'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/abonner' => [
-            [['_route' => 'monEspacePersonel_index', '_controller' => 'App\\Controller\\UtilisateursController::monEspacePersonnel'], null, null, null, false, false, null],
-            [['_route' => 'pageAccueilEspacePerso_index', '_controller' => 'App\\Controller\\UtilisateursController::pageAccueilEspacePersonnel'], null, null, null, false, false, null],
-        ],
+        '/stagiaire' => [[['_route' => 'pageAccueilEspacePerso_index', '_controller' => 'App\\Controller\\UtilisateursController::pageAccueilEspacePersonnel'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/expediteur' => [[['_route' => 'expediteur_index', '_controller' => 'App\\Controller\\UtilisateursController::expediteur'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/destinataire' => [[['_route' => 'destinataire_index', '_controller' => 'App\\Controller\\UtilisateursController::destinataire'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/elfinder.main.js' => [[['_route' => 'ef_main_js', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::mainJS'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
@@ -100,11 +99,9 @@ return [
                 .'|/afficherUtilisateur/([^/]++)(*:672)'
                 .'|/supprimerUtilisateur/([^/]++)(*:710)'
                 .'|/e(?'
-                    .'|xpediteur/([^/]++)(*:741)'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:785)'
-                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:828)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:759)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:802)'
                 .')'
-                .'|/destinataire/([^/]++)(*:859)'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -130,11 +127,9 @@ return [
         635 => [[['_route' => 'rechercheUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::rechercheUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         672 => [[['_route' => 'afficherUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::afficherUtilisateur'], ['id'], ['GET' => 0], null, false, true, null]],
         710 => [[['_route' => 'supprimerUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        741 => [[['_route' => 'expediteur_index', '_controller' => 'App\\Controller\\UtilisateursController::expediteur'], ['id'], null, null, false, true, null]],
-        785 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        828 => [[['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        859 => [
-            [['_route' => 'destinataire_index', '_controller' => 'App\\Controller\\UtilisateursController::destinataire'], ['id'], null, null, false, true, null],
+        759 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        802 => [
+            [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

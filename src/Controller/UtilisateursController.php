@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Utilisateurs;
+use App\Entity\Messages;
 use App\Form\RegistrationFormEditType;
 use App\Form\RegistrationFormType;
+use App\Form\PersoFormType;
+
 use App\Repository\UtilisateursRepository;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,7 +24,7 @@ class UtilisateursController extends AbstractController
 {
     /**
      * @Route("utilisateur", name="utilisateur_index", methods={"GET"})
-     // @ISGranted("ROLE_ADMIN")
+     
      */
     public function index(UtilisateursRepository $utilisateursRepository): Response
     {
@@ -148,24 +151,33 @@ class UtilisateursController extends AbstractController
             return $this->redirectToRoute('utilisateur_index'); 
     }
 
+        
 /**
-     * @Route("/abonner", name="monEspacePersonel_index")
-     */
-    public function monEspacePersonnel(): Response
-    {
-        return $this->render('utilisateurs/monEspacePersonnel.html.twig', []);
-    }
-
-/**
-     * @Route("/abonner", name="pageAccueilEspacePerso_index")
+     * @Route("/stagiaire", name="pageAccueilEspacePerso_index", methods={"GET","POST"})
      */
     public function pageAccueilEspacePersonnel(): Response
     {
-        return $this->render('utilisateurs/pageAccueilEspacePerso.html.twig', []);
-    }
+        //$utilisateurs = new Utilisateurs();
+        //$form = $this->createForm(PersoFormType::class, $utilisateurs);
+        //$form->handleRequest($request);
+
+        //if($form->isSubmitted() && $form->isValid()){
+            //$utilisateurs->setMessageEnvoyer($this->getUser());
+
+            //$entityManager = $this->getDoctrine()->getManager();
+            //$entityManager->persist($utilisateurs);
+            //$entityManager->flush();
+
+                    //$this->addFlash("message", "Expediteur affiché avec succès.");
+            //return $this->redirectToRoute("utilisateur_index");
+        //}
+return $this->render('utilisateurs/pageAccueilEspacePerso.html.twig', [
+//"formUtilisateurs" => $form->createView()
+]);
+}
 
 /**
-     * @Route("/expediteur/{id}", name="expediteur_index")
+     * @Route("/expediteur", name="expediteur_index", methods={"GET","POST"})
      */
     public function expediteur(Request $request, Utilisateurs $utilisateurs): Response
     {
@@ -174,7 +186,7 @@ class UtilisateursController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $utilisateurs->setMessageEnvoyer($this->getExpediteur());
+            $utilisateurs->setMessageEnvoyer($this->getUser());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($utilisateurs);
@@ -184,13 +196,13 @@ class UtilisateursController extends AbstractController
             return $this->redirectToRoute("utilisateur_index");
         }
 
-        return $this->render("utilisateurs/index.html.twig", [
+        return $this->render("utilisateurs/expediteur.html.twig", [
             "formUtilisateurs" => $form->createView()
         ]);
     }
 
 /**
-     * @Route("/destinataire/{id}", name="destinataire_index")
+     * @Route("/destinataire", name="destinataire_index", methods={"GET","POST"})
      */
     public function destinataire(Request $request, Utilisateurs $utilisateurs): Response
     {
@@ -199,7 +211,7 @@ class UtilisateursController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $utilisateurs->setMessageRecu($this->getDestinataire());
+            $utilisateurs->setMessageRecu($this->getUser());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($utilisateurs);
@@ -209,7 +221,7 @@ class UtilisateursController extends AbstractController
             return $this->redirectToRoute("utilisateur_index");
         }
 
-        return $this->render("utilisateurs/index.html.twig", [
+        return $this->render("utilisateurs/destinataire.html.twig", [
             "formUtilisateurs" => $form->createView()
         ]);
     }

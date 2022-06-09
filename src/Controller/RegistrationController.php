@@ -77,7 +77,6 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-
     
     /**
      * @Route("/register-admin", name="app_register_admin")
@@ -106,7 +105,8 @@ class RegistrationController extends AbstractController
                 'app_verify_email',
                 $user,
                 (new TemplatedEmail())
-                    ->from(new Address('ndao6516@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
+                    ->from(new Address('nabiabib31@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
+                    
                     ->to($user->getLogin())
                     ->subject('Veuillez confirmer votre email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
@@ -122,9 +122,9 @@ class RegistrationController extends AbstractController
 
 
 /**
-     * @Route("/register-abonner", name="app_register_abonner")
+     * @Route("/register-stagiaire", name="app_register_stagiaire")
      */
-    public function registerAbonner(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
+    public function registerStagiaire(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
     {
 
         $user = new Utilisateurs();
@@ -139,13 +139,13 @@ class RegistrationController extends AbstractController
                 )
             );
 
-            $user->setRoles('ROLE_ABONNER');
+            $user->setRoles('ROLE_STAGIAIRE');
             $user->setIsVerified(true);
 
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('pageAccueilEspacePerso_index');
         }
 
         return $this->render('registration/register.html.twig', [
@@ -174,6 +174,7 @@ class RegistrationController extends AbstractController
         }
 
         // validate email confirmation link, sets User::isVerified=true and persists
+         // valide le lien de confirmation de l'e-mail, définit User::isVerified=true et persiste
         try {
             $this->emailVerifier->handleEmailConfirmation($request, $user, $id);
         } catch (VerifyEmailExceptionInterface $exception) {
@@ -184,15 +185,11 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
+        // @TODO Modifiez la redirection en cas de succès et gérez ou supprimez le message flash dans vos modèles
         $this->addFlash('success', 'Votre adresse mail a bien été vérifié. Merci!');
 
-        return $this->redirectToRoute('app_login');
+        return $this->redirectToRoute('accueil_index');
     }
-
-
-
-
-
 
 
 }

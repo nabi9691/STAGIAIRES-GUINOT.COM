@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+ Le nom de l'expéditeur :
+{% endblock %}
+
+{% block content %}
+    <h1>
+Le nom de l'expéditeur :
+{
+    </h1>
+<div>
+
+<p>{{ app.utilisateur.expediteur.nom  }}</p>
+    
+
+    </div>
+    {% endblock %}

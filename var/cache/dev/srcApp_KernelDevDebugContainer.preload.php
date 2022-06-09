@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerIJljU6I/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerHZ43O8J/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -58,6 +58,7 @@ $classes[] = 'App\Controller\UtilisateursController';
 $classes[] = 'App\Form\ContactsType';
 $classes[] = 'App\Form\MediasType';
 $classes[] = 'App\Form\MessagesType';
+$classes[] = 'App\Form\PersoFormType';
 $classes[] = 'App\Form\RegistrationFormEditType';
 $classes[] = 'App\Form\RegistrationFormType';
 $classes[] = 'App\Repository\ActivitesRepository';
@@ -199,6 +200,8 @@ $classes[] = 'Doctrine\DBAL\Logging\DebugStack';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\Proxy\EnsureProductionSettingsDoctrineCommand';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader';
+$classes[] = 'App\DataFixtures\ContactsFixtures';
+$classes[] = 'App\DataFixtures\MediasFixtures';
 $classes[] = 'App\DataFixtures\MessagesFixtures';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\Proxy\ConvertMappingDoctrineCommand';

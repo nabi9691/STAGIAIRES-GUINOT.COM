@@ -77,25 +77,11 @@ class Contacts
      */
     private $pays;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $status;
 
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="contacts")
      */
     private $utilisateurs;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="contacts")
-     */
-    private $contacts;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="contacts")
-     */
-    private $utilisateur;
 
     public function getId(): ?int
     {
@@ -246,18 +232,6 @@ class Contacts
         return $this;
     }
 
-    public function getStatus(): ?string
-    {
-        return $this->status;
-    }
-
-    public function setStatus(string $status): self
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
     public function getUtilisateurs(): ?Utilisateurs
     {
         return $this->utilisateurs;
@@ -270,27 +244,5 @@ class Contacts
         return $this;
     }
 
-    public function getContacts(): ?Utilisateurs
-    {
-        return $this->contacts;
-    }
-
-    public function setContacts(?Utilisateurs $contacts): self
-    {
-        $this->contacts = $contacts;
-
-        return $this;
-    }
-
-    public function getUtilisateur(): ?Utilisateurs
-    {
-        return $this->utilisateur;
-    }
-
-    public function setUtilisateur(?Utilisateurs $utilisateur): self
-    {
-        $this->utilisateur = $utilisateur;
-
-        return $this;
-    }
+    
 }

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Utilisateurs;
 use App\Repository\MediasRepository;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
@@ -43,7 +44,7 @@ class Medias
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="medias")
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="medias", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateurs;
