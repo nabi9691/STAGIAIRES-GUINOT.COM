@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerIqHpdqO/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/Container8URaUhy/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -42,6 +42,7 @@ $classes[] = 'App\Command\ImportUserCommand';
 $classes[] = 'App\Controller\AdminsController';
 $classes[] = 'App\Controller\AuthentificationController';
 $classes[] = 'App\Controller\ContactsController';
+$classes[] = 'App\Controller\FormationsController';
 $classes[] = 'App\Controller\HomeController';
 $classes[] = 'App\Controller\MediasController';
 $classes[] = 'App\Controller\MessagesController';
@@ -56,6 +57,7 @@ $classes[] = 'Symfony\Component\Mailer\Transport\Transports';
 $classes[] = 'Symfony\Component\Mailer\Transport';
 $classes[] = 'App\Controller\UtilisateursController';
 $classes[] = 'App\Form\ContactsType';
+$classes[] = 'App\Form\FormationsFormType';
 $classes[] = 'App\Form\MediasType';
 $classes[] = 'App\Form\MessagesType';
 $classes[] = 'App\Form\PersoFormType';
@@ -65,6 +67,7 @@ $classes[] = 'App\Repository\ActivitesRepository';
 $classes[] = 'App\Repository\AuteursRepository';
 $classes[] = 'App\Repository\CategoriesRepository';
 $classes[] = 'App\Repository\ContactsRepository';
+$classes[] = 'App\Repository\FormationsRepository';
 $classes[] = 'App\Repository\MediasRepository';
 $classes[] = 'App\Repository\MessagesRepository';
 $classes[] = 'App\Repository\UtilisateursRepository';
@@ -198,9 +201,11 @@ $classes[] = 'Doctrine\DBAL\Logging\DebugStack';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\Proxy\EnsureProductionSettingsDoctrineCommand';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader';
+$classes[] = 'App\DataFixtures\ActivitesFixtures';
+$classes[] = 'App\DataFixtures\AuteursFixtures';
+$classes[] = 'App\DataFixtures\CategoriesFixtures';
 $classes[] = 'App\DataFixtures\ContactsFixtures';
-$classes[] = 'App\DataFixtures\MediasFixtures';
-$classes[] = 'App\DataFixtures\MessagesFixtures';
+$classes[] = 'App\DataFixtures\FormationsFixtures';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\Proxy\ConvertMappingDoctrineCommand';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\ImportMappingDoctrineCommand';

@@ -13,6 +13,7 @@ Modifier un contact :
 
 {{ form_start(formContacts) }}
 
+Formations: {{ form_widget(formContacts.formation) }}<br>
 Nom: {{ form_widget(formContacts.nom) }}<br>
 Prénom: {{ form_widget(formContacts.prenom) }} <br>
 Date de naissance: {{ form_widget(formContacts.date) }} <br>
@@ -25,7 +26,6 @@ Code-Postal: {{ form_widget(formContacts.codePostal) }} <br>
 Villes: {{ form_widget(formContacts.villes) }} <br>
 Départements: {{ form_widget(formContacts.departements) }} <br>
 Pays: {{ form_widget(formContacts.pays) }} <br>
-Status: {{ form_widget(formContacts.status) }} <br>
 
 
 

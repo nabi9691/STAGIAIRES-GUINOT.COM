@@ -45,7 +45,7 @@ class Medias
 
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="medias", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $utilisateurs;
 
@@ -53,8 +53,6 @@ class Medias
      * @ORM\ManyToOne(targetEntity=Categories::class, inversedBy="medias")
      */
     private $categories;
-
-    
 
     public function __construct(){
         $this->date = new \DateTime();

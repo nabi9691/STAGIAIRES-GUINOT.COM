@@ -17,6 +17,12 @@ class Contacts
      */
     private $id;
 
+/**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $formation;
+
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -88,6 +94,19 @@ class Contacts
         return $this->id;
     }
 
+    public function getFormation(): ?string
+    {
+        return $this->formation;
+    }
+
+    public function setFormation(?string $formation): self
+    {
+        $this->formation = $formation;
+
+        return $this;
+    }
+
+
     public function getNom(): ?string
     {
         return $this->nom;
@@ -111,7 +130,6 @@ class Contacts
 
         return $this;
     }
-
     public function getDate(): ?\DateTimeInterface
     {
         return $this->date;

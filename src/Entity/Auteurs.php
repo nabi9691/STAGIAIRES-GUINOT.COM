@@ -22,6 +22,22 @@ class Auteurs
      */
     private $nom;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $resume;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $status;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -38,4 +54,42 @@ class Auteurs
 
         return $this;
     }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(string $resume): self
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): self
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+
 }

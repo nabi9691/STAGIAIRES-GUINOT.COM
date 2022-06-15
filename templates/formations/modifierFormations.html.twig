@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Modifier une formation  :
+{% endblock %}
+
+{% block content %}
+    
+    
+    <h1>
+        Modifier une formation :
+        </h1>
+
+{{ form_start(formFormations) }}
+
+Nom du stagiaire: {{ form_widget(formFormations.nom) }}<br>
+Prénom du stagiaire: {{ form_widget(formFormations.prenom) }}<br>
+Numéro de téléphone: {{ form_widget(formFormations.telephone) }}<br>
+Email: {{ form_widget(formFormations.email) }}<br>
+Nom de la formation: {{ form_widget(formFormations.nom_formation) }}<br>
+Civilité: {{ form_widget(formFormations.civilite) }} <br>
+Objectif de la formation: {{ form_widget(formFormations.objectif_formation) }} <br>
+Durée de la formation: {{ form_widget(formFormations.date_formation) }} <br>
+Cout de la formation: {{ form_widget(formFormations.cout_formation) }} <br>
+Titre professionnel: {{ form_widget(formFormations.titre_professionnel) }} <br>
+Vos prérequis: {{ form_widget(formFormations.preRequis) }} <br>
+Session de formation: {{ form_widget(formFormations.sessions) }} <br>
+Status: {{ form_widget(formFormations.status) }} <br>
+
+
+
+
+    
+
+<button type="submit" class="btn btn-success">envoyer</button>
+
+
+      
+    {{ form_end(formFormations) }}
+
+
+
+
+
+    {% endblock %}

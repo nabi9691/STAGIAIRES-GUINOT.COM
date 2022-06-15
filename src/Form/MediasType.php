@@ -4,6 +4,7 @@ namespace App\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Medias;
+use App\Entity\Utilisateurs;
 
 use App\Entity\Categories;
 //use Symfony\Component\Form\AbstractType;
@@ -55,9 +56,25 @@ class MediasType extends AbstractType
 
                  // used to render a select box, check boxes or radios
              // 'multiple' => false,
-                //'expanded' => true,)
+                //'expanded' => true,
 //            'required' => false
         ])
+        
+        ->add('utilisateurs', EntityType::class, [
+            'label' => 'Utilisateur du médias :',
+                 //'placeholder' => 'Sélectionner',
+                 // looks for choices from this entity
+                 'class' =>Utilisateurs::class,
+                 // Sur quelle propriete je fais le choix
+                 'choice_label' => 'nom',
+                 'mapped' => false,
+
+                 // used to render a select box, check boxes or radios
+             // 'multiple' => false,
+                //'expanded' => true,
+//            'required' => false
+        ])
+        
         
         ;
     }

@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+A propos de BIOInformatique :
+{% endblock %}
+
+{% block body %}
+	<style>
+		.contenu {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+
+		.contenu code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+<br/><br/>
+
+{% block content %}
+
+ <div class="container">
+<br/><br/>
+      
+    <h1> A propos de BIOInformatique  :</h1>
+<br/><br/>
+    
+    <div>
+    <h1>
+BIOINFORMATIQUE
+</h1>
+    
+    <p>
+Projet  de l’organisme de formation BIOGESOFT :
+
+Afin de Compléter le projet  de fin de stage de Mohammed NABI,
+
+Le module ‘Formations’ a été ajouté 
+
+Cet extension du projet consiste à mettre en Place un Système d’inscription  des  candidats  dans différentes formations proposées par BIOGESOFT   suivant  le processus suivant :
+A partir d’une page d’accueil de l’école on a un catalogue 
+où on peut consulter toutes les formations  existantes .
+
+pour chacune des  formations, on a :
+
+ le nom de  formation, 
+sa durée, 
+le coût de la formation , 
+titre, 
+objectif, 
+prérequis.
+
+ Chacune des formations  est  organisée en sessions :  
+soit  2 sessions par année . 
+
+Chaque formation est  composée de plusieurs  modules  
+Chacun  de  ces  modules  est composé de plusieurs  cours :  
+cours théoriques , 
+travaux pratiques , 
+exercices.   
+
+Prévoir aussi des cours sous forme de vidéo que le candidat peut visualiser sans interagir 
+en direct avec son formateur (juste visualise la vidéo).
+
+Voici  quelques  contraintes :
+
+Un  cours  quelconque (théorique, pratique, exercice ou vidéo)  peut  figurer  dans un ou plusieurs modules de formation. 
+Chaque module a un nom, une durée , un coefficient, objectif.
+Chaque cours a un nom, une durée, un contenu  de plusieurs pages en PDF  ou  une  Vidéo.
+Un candidat  peut être dispensé de certains modules  compte tenu de son niveau prérequis et cette dispense est déterminée  par l’organisme de formation. Le candidat peut seulement choisir une formation   et  la session.  
+La mise à jour du catalogue des formations, des  modules  et de leurs contenus  est  confiée   à l’administration.
+Cette  extension  va servir  surtout   aux élèves de BIOGESOFT  de suivre des cours à distance en  éditant chez eux les cours ou les vidéos  mis en ligne.
+
+Remarque :
+
+On peut toujours ajouter  des attributs  dans  chaque  classe objets   ou  table relationnelle de la base de données celant les exigences et les besoins du client.
+
+compte tenu du temps restant, nous n’intéresserons pas  à  la formulation des  demandes  d’inscription  avec  l’automatisation des réponses positives ou refus. On suppose que le candidat peut s’inscrire directement en ligne pour une seule formation de son choix et l’inscription est validée  lorsque le candidat joint  avec  son inscription  les documents demandés (pièce d’identité, justificatif de son niveau de formation si demandé, un RIB.
+
+    </p>
+    
+<br/><br/>
+
+{% block footer %}
+<div>
+<h3>
+Pied de page :
+
+Cliquer ici pour plus de informations !
+</h3>
+<lu>
+    <li><a href="{{ path('listeDesFormations_index') }}"> Découvrez nos formations !</a></li>
+        </lu>	
+    
+</div>
+{% endblock %}
+
+{% endblock %}
+{% endblock %}

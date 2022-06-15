@@ -33,14 +33,16 @@ class Activites
     private $resume;
 
     /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
+
+    /**
      * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="acitivites")
      */
     private $utilisateurs;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="activites")
-     */
-    private $utilisateur;
 
     public function getId(): ?int
     {
@@ -83,6 +85,19 @@ class Activites
         return $this;
     }
 
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+
     public function getUtilisateurs(): ?Utilisateurs
     {
         return $this->utilisateurs;
@@ -95,15 +110,6 @@ class Activites
         return $this;
     }
 
-    public function getUtilisateur(): ?Utilisateurs
-    {
-        return $this->utilisateur;
-    }
 
-    public function setUtilisateur(?Utilisateurs $utilisateur): self
-    {
-        $this->utilisateur = $utilisateur;
 
-        return $this;
-    }
 }

@@ -19,6 +19,16 @@ return [
         '/contacts' => [[['_route' => 'contacts_index', '_controller' => 'App\\Controller\\ContactsController::index'], null, null, null, true, false, null]],
         '/contacts/formulaireContacts' => [[['_route' => 'formulaireContacts_index', '_controller' => 'App\\Controller\\ContactsController::formulaireContacts'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/contacts/nouveauContacts' => [[['_route' => 'nouveauContacts_index', '_controller' => 'App\\Controller\\ContactsController::nouveauContacts'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/formations' => [[['_route' => 'formations_index', '_controller' => 'App\\Controller\\FormationsController::index'], null, null, null, true, false, null]],
+        '/formations/formulaireFormations' => [[['_route' => 'formulaireFormations_index', '_controller' => 'App\\Controller\\FormationsController::formulaireFormations'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/formations/nouvelleFormation' => [[['_route' => 'nouvelleFormation_index', '_controller' => 'App\\Controller\\FormationsController::nouvelleFormation'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/formationspageAccueilBIOInformatique' => [[['_route' => 'pageAccueilBIOInformatique_index', '_controller' => 'App\\Controller\\FormationsController::pageAccueilBIOInformatique'], null, ['GET' => 0], null, false, false, null]],
+        '/formationsformationPHP' => [[['_route' => 'formationPHP_index', '_controller' => 'App\\Controller\\FormationsController::formationPHP'], null, ['GET' => 0], null, false, false, null]],
+        '/formationsformationJAVA' => [[['_route' => 'formationJAVA_index', '_controller' => 'App\\Controller\\FormationsController::formationJAVA'], null, ['GET' => 0], null, false, false, null]],
+        '/formationsformationDeveloppeurWEB' => [[['_route' => 'developpeurWEB_index', '_controller' => 'App\\Controller\\FormationsController::developpeurWEB'], null, ['GET' => 0], null, false, false, null]],
+        '/formationsformationSymfony' => [[['_route' => 'formationSymfony_index', '_controller' => 'App\\Controller\\FormationsController::formationSymfony'], null, ['GET' => 0], null, false, false, null]],
+        '/formationslisteFormations' => [[['_route' => 'listeDesFormations_index', '_controller' => 'App\\Controller\\FormationsController::listeDesFormations'], null, ['GET' => 0], null, false, false, null]],
+        '/formationsaProposFormations' => [[['_route' => 'aProposBioInformatique_index', '_controller' => 'App\\Controller\\FormationsController::aProposBioInformatique'], null, ['GET' => 0], null, false, false, null]],
         '/' => [
             [['_route' => 'accueil_index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null],
             [['_route' => 'index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null],
@@ -76,31 +86,36 @@ return [
                     .'|modifierContacts/([^/]++)(*:240)'
                     .'|supprimerContacts/([^/]++)(*:274)'
                 .')'
+                .'|/formations/(?'
+                    .'|afficherFormations/([^/]++)(*:325)'
+                    .'|modifierFormations/([^/]++)(*:360)'
+                    .'|supprimerFormations/([^/]++)(*:396)'
+                .')'
                 .'|/m(?'
                     .'|e(?'
                         .'|dias/(?'
-                            .'|recherchesMedias/([^/]++)(*:325)'
-                            .'|afficherMedias/([^/]++)(*:356)'
-                            .'|modifierMedias/([^/]++)(*:387)'
-                            .'|supprimerMedias/([^/]++)(*:419)'
+                            .'|recherchesMedias/([^/]++)(*:447)'
+                            .'|afficherMedias/([^/]++)(*:478)'
+                            .'|modifierMedias/([^/]++)(*:509)'
+                            .'|supprimerMedias/([^/]++)(*:541)'
                         .')'
                         .'|ssages/(?'
-                            .'|afficherMessage/([^/]++)(*:462)'
+                            .'|afficherMessage/([^/]++)(*:584)'
                             .'|m(?'
-                                .'|odifierMessages/([^/]++)(*:498)'
-                                .'|essagesLu/([^/]++)(*:524)'
+                                .'|odifierMessages/([^/]++)(*:620)'
+                                .'|essagesLu/([^/]++)(*:646)'
                             .')'
-                            .'|supprimerMessages/([^/]++)(*:559)'
+                            .'|supprimerMessages/([^/]++)(*:681)'
                         .')'
                     .')'
-                    .'|odifierUtilisateur/([^/]++)(*:596)'
+                    .'|odifierUtilisateur/([^/]++)(*:718)'
                 .')'
-                .'|/rechercheUtilisateur/([^/]++)(*:635)'
-                .'|/afficherUtilisateur/([^/]++)(*:672)'
-                .'|/supprimerUtilisateur/([^/]++)(*:710)'
+                .'|/rechercheUtilisateur/([^/]++)(*:757)'
+                .'|/afficherUtilisateur/([^/]++)(*:794)'
+                .'|/supprimerUtilisateur/([^/]++)(*:832)'
                 .'|/e(?'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:759)'
-                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:802)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:881)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:924)'
                 .')'
             .')/?$}sD',
     ],
@@ -115,20 +130,23 @@ return [
         207 => [[['_route' => 'afficherContacts_index', '_controller' => 'App\\Controller\\ContactsController::afficherContacts'], ['id'], ['GET' => 0], null, false, true, null]],
         240 => [[['_route' => 'modifierContacts_index', '_controller' => 'App\\Controller\\ContactsController::modifierContacts'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         274 => [[['_route' => 'supprimerContacts_index', '_controller' => 'App\\Controller\\ContactsController::supprimerContacts'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        325 => [[['_route' => 'rechercheMedias_index', '_controller' => 'App\\Controller\\MediasController::rechercheMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        356 => [[['_route' => 'afficherMedias_index', '_controller' => 'App\\Controller\\MediasController::afficherMedias'], ['id'], ['GET' => 0], null, false, true, null]],
-        387 => [[['_route' => 'modifierMedias_index', '_controller' => 'App\\Controller\\MediasController::modifierMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        419 => [[['_route' => 'supprimerMedias_index', '_controller' => 'App\\Controller\\MediasController::supprimerMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        462 => [[['_route' => 'afficherMessage_index', '_controller' => 'App\\Controller\\MessagesController::afficherMessage'], ['id'], ['GET' => 0], null, false, true, null]],
-        498 => [[['_route' => 'modifierMessage_index', '_controller' => 'App\\Controller\\MessagesController::modifierMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        524 => [[['_route' => 'messagesLu_index', '_controller' => 'App\\Controller\\MessagesController::messageLu'], ['id'], null, null, false, true, null]],
-        559 => [[['_route' => 'supprimerMessage_index', '_controller' => 'App\\Controller\\MessagesController::supprimerMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        596 => [[['_route' => 'modifierUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::modifierUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        635 => [[['_route' => 'rechercheUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::rechercheUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        672 => [[['_route' => 'afficherUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::afficherUtilisateur'], ['id'], ['GET' => 0], null, false, true, null]],
-        710 => [[['_route' => 'supprimerUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        759 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        802 => [
+        325 => [[['_route' => 'afficherFormations_index', '_controller' => 'App\\Controller\\FormationsController::afficherFormations'], ['id'], ['GET' => 0], null, false, true, null]],
+        360 => [[['_route' => 'modifierFormations_index', '_controller' => 'App\\Controller\\FormationsController::modifierFormations'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        396 => [[['_route' => 'supprimerFormations_index', '_controller' => 'App\\Controller\\FormationsController::supprimerFormations'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        447 => [[['_route' => 'rechercheMedias_index', '_controller' => 'App\\Controller\\MediasController::rechercheMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        478 => [[['_route' => 'afficherMedias_index', '_controller' => 'App\\Controller\\MediasController::afficherMedias'], ['id'], ['GET' => 0], null, false, true, null]],
+        509 => [[['_route' => 'modifierMedias_index', '_controller' => 'App\\Controller\\MediasController::modifierMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        541 => [[['_route' => 'supprimerMedias_index', '_controller' => 'App\\Controller\\MediasController::supprimerMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        584 => [[['_route' => 'afficherMessage_index', '_controller' => 'App\\Controller\\MessagesController::afficherMessage'], ['id'], ['GET' => 0], null, false, true, null]],
+        620 => [[['_route' => 'modifierMessage_index', '_controller' => 'App\\Controller\\MessagesController::modifierMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        646 => [[['_route' => 'messagesLu_index', '_controller' => 'App\\Controller\\MessagesController::messageLu'], ['id'], null, null, false, true, null]],
+        681 => [[['_route' => 'supprimerMessage_index', '_controller' => 'App\\Controller\\MessagesController::supprimerMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        718 => [[['_route' => 'modifierUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::modifierUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        757 => [[['_route' => 'rechercheUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::rechercheUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        794 => [[['_route' => 'afficherUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::afficherUtilisateur'], ['id'], ['GET' => 0], null, false, true, null]],
+        832 => [[['_route' => 'supprimerUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        881 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        924 => [
             [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

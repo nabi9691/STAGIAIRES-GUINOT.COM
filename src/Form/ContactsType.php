@@ -28,7 +28,14 @@ class ContactsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            
+        
+        ->add('formation', ChoiceType::class, [
+            'label' => 'Votre formation :',
+            'required' => true,
+            'choices' => ["PINFO" => "PINFO", "DA" => "DA", "PREPA" => "PREPA", "CRCD" => "CRCD", "EAA" => "EAA", "DWWM" => "DWWM", "PMTA" => "PMTA", "AAI" => "AAI"],
+            'multiple' => false,
+        ])
+
         ->add('nom', TextType::class, [
             'label' => 'Le nom du contact !',
             'required' => false
@@ -43,10 +50,16 @@ class ContactsType extends AbstractType
             'required' => false,
             'widget' => 'single_text'
         ])
-        ->add('civilite', TextType::class, [
-            'label' => 'La civilité du contact :',
-            'required' => true
+                
+        ->add('civilite', ChoiceType::class, [
+            'label' => 'Votre civilité',
+            'required' => true,
+            'choices' => ["Madame" => "Madame", "Monsieur" => "Monsieur"],
+            'multiple' => false,
         ])
+
+
+
         ->add('telephone', TextType::class, [
             'label' => 'Le numéro du téléphone du contact :',
             'required' => true
@@ -79,10 +92,10 @@ class ContactsType extends AbstractType
             'label' => 'Le pays du contact :',
             'required' => true
         ])
-            ->add('status', TextType::class, [
-            'label' => 'Le status du contact :',
-            'required' => true
-        ])
+//            ->add('status', TextType::class, [
+//            'label' => 'Le status du contact :',
+//            'required' => true
+//        ])
         
         ;
         }
