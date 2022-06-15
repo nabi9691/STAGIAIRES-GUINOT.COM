@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '9644cf38e3c5de482531e964648cf623ec393349',
+        'reference' => '0ce76574462be2d30ccd41e993bdd0fb3435b83a',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '9644cf38e3c5de482531e964648cf623ec393349',
+            'reference' => '0ce76574462be2d30ccd41e993bdd0fb3435b83a',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -92,12 +92,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/doctrine-bundle' => array(
-            'pretty_version' => '2.6.3',
-            'version' => '2.6.3.0',
+            'pretty_version' => '2.7.0',
+            'version' => '2.7.0.0',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../doctrine/doctrine-bundle',
             'aliases' => array(),
-            'reference' => '527970d22b8ca6472ebd88d7c42e512550bd874e',
+            'reference' => 'd2088fc50494e4e7441fecca54732245a613eeb6',
             'dev_requirement' => false,
         ),
         'doctrine/doctrine-fixtures-bundle' => array(
@@ -245,8 +245,8 @@
             'dev_requirement' => false,
         ),
         'illuminate/collections' => array(
-            'pretty_version' => 'v8.83.15',
-            'version' => '8.83.15.0',
+            'pretty_version' => 'v8.83.16',
+            'version' => '8.83.16.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/collections',
             'aliases' => array(),
@@ -254,8 +254,8 @@
             'dev_requirement' => false,
         ),
         'illuminate/contracts' => array(
-            'pretty_version' => 'v8.83.15',
-            'version' => '8.83.15.0',
+            'pretty_version' => 'v8.83.16',
+            'version' => '8.83.16.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/contracts',
             'aliases' => array(),
@@ -263,8 +263,8 @@
             'dev_requirement' => false,
         ),
         'illuminate/macroable' => array(
-            'pretty_version' => 'v8.83.15',
-            'version' => '8.83.15.0',
+            'pretty_version' => 'v8.83.16',
+            'version' => '8.83.16.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/macroable',
             'aliases' => array(),
@@ -272,12 +272,12 @@
             'dev_requirement' => false,
         ),
         'illuminate/support' => array(
-            'pretty_version' => 'v8.83.15',
-            'version' => '8.83.15.0',
+            'pretty_version' => 'v8.83.16',
+            'version' => '8.83.16.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/support',
             'aliases' => array(),
-            'reference' => '89245b6e19017f627a35af3874ad9251b76b02cc',
+            'reference' => 'be43102d3491e8335812aa5441a1552108ddd7b5',
             'dev_requirement' => false,
         ),
         'jms/metadata' => array(
@@ -371,12 +371,12 @@
             'dev_requirement' => false,
         ),
         'monolog/monolog' => array(
-            'pretty_version' => '1.27.0',
-            'version' => '1.27.0.0',
+            'pretty_version' => '1.27.1',
+            'version' => '1.27.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../monolog/monolog',
             'aliases' => array(),
-            'reference' => '52ebd235c1f7e0d5e1b16464b695a28335f8e44a',
+            'reference' => '904713c5929655dc9b97288b69cfeedad610c9a1',
             'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
@@ -652,8 +652,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1044,12 +1044,12 @@
             'dev_requirement' => false,
         ),
         'symfony/flex' => array(
-            'pretty_version' => 'v1.19.0',
-            'version' => '1.19.0.0',
+            'pretty_version' => 'v1.19.1',
+            'version' => '1.19.1.0',
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/../symfony/flex',
             'aliases' => array(),
-            'reference' => 'c36d11d1bca0a85dde6ca4d52bd4aceeb54dbd8f',
+            'reference' => '9c612796a68de4196fff4bc159db5071aa62d428',
             'dev_requirement' => false,
         ),
         'symfony/form' => array(

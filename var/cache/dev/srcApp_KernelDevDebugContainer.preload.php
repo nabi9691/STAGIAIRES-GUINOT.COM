@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerHZ43O8J/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerIqHpdqO/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -192,8 +192,6 @@ $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\DropDatabaseDoctrineCommand
 $classes[] = 'Doctrine\DBAL\Connection';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\ConnectionFactory';
 $classes[] = 'Doctrine\DBAL\Configuration';
-$classes[] = 'Doctrine\DBAL\Logging\LoggerChain';
-$classes[] = 'Symfony\Bridge\Doctrine\Logger\DbalLogger';
 $classes[] = 'Doctrine\DBAL\Logging\Middleware';
 $classes[] = 'Symfony\Bridge\Doctrine\ContainerAwareEventManager';
 $classes[] = 'Doctrine\DBAL\Logging\DebugStack';
@@ -214,6 +212,7 @@ $classes[] = 'Doctrine\Migrations\Configuration\Migration\ExistingConfiguration'
 $classes[] = 'Doctrine\Migrations\Configuration\Configuration';
 $classes[] = 'Doctrine\Migrations\Metadata\Storage\TableMetadataStorageConfiguration';
 $classes[] = 'Doctrine\Migrations\Configuration\EntityManager\ManagerRegistryEntityManager';
+$classes[] = 'Doctrine\Bundle\DoctrineBundle\Orm\ManagerRegistryAwareEntityManagerProvider';
 $classes[] = 'Doctrine\ORM\Mapping\Driver\AnnotationDriver';
 $classes[] = 'Doctrine\ORM\EntityManager';
 $classes[] = 'Doctrine\ORM\Configuration';
