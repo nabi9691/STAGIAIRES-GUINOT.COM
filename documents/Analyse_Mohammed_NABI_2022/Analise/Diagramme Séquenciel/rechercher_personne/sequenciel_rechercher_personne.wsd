@@ -1,0 +1,52 @@
+@startuml graphic_sequenciel_rechercher_personne
+
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+
+user -> systeme : user clique sur (Rechercher)
+
+systeme --> user : le systeme affiche la zone de recherche
+
+user -> systeme : user saisit le nom de la personne qu'il recherche
+
+user -> systeme : user clique sur (rechercher)
+
+systeme --> user : le systeme affiche une liste de noms avec leur prénom s'il y en a beaucoup
+
+user -> systeme : user clique sur le nom qui l'intéresse
+
+systeme --> user : le systeme lui affiche une page de saisie pour envoyer un message à la personne
+
+
+' En cas de problème
+user -> systeme : user saisit le nom de la personne qu'il recherche
+
+user -> systeme : user clique sur (rechercher)
+
+systeme --> user : le systeme ne trouve rien et lui informe
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le renvoie à l'étape précédent
+
+' 2ème problème qui peut arriver
+systeme --> user : le systeme affiche une liste de noms avec leur prénom s'il y en a beaucoup
+
+user -> systeme : user clique sur le nom qui l'intéresse
+
+systeme --> user : le systeme constate que la personne n'est pas dans sa session et lui affiche un message qui l'invite à se connecter
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le système le renvoie à la page de connexion
+
+
+note right
+user représente l'abonné et l'admin.
+l'internaute peut rechercher quelqu'un, mais, pour le contacter, il faut qu'il s'inscrive
+end note
+@enduml

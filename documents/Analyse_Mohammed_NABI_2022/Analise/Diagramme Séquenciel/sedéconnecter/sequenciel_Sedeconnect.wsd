@@ -1,0 +1,28 @@
+@startuml graphic_sequenciel_Sedeconnecter
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+user -> systeme : user clique sur (Sedeconnecter) pour quitter sa page personnelle
+
+systeme --> user : le systeme affiche boîte de dialogue pour lui demander s'il est sûre de vouloire quitter son espace personnel
+
+user -> systeme : user clique sur (ok) pour confirmer
+
+systeme --> user : le systeme quitte la page et le renvoie à la page d'accueil
+
+' En cas de problème
+user -> systeme : user clique sur (Sedeconnecter) par erreur
+
+systeme --> user : le systeme affiche boîte de dialogue pour lui demander s'il est sûre de vouloire quitter son espace personnel
+
+user -> systeme : user clique sur (annuler) pour dire non
+
+systeme --> user : le systeme le ramène à son espace personnel
+
+note right
+    user représente l'abonné et l'admin
+end note
+@enduml

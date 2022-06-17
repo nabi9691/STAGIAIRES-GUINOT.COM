@@ -1,0 +1,60 @@
+@startuml graphic use_case_gerer_retrouvaille_damis
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+left to right direction
+package acteurs{
+    actor internaute << Human >>
+    actor abonne << Human >>
+    actor admin << Human >>
+
+    [systeme] << Application >>
+}
+
+rectangle Gestionsite{
+    usecase (Sinscrire / creer compte sur le site) as (Sinscrire)
+    usecase (se connecter) as (Seconnecter)
+    usecase (Choisir un nouveau mot de passe) as (Choisir)
+    usecase (Modifier les données saisies) as (Modifierdonnees)
+    usecase (se deconnecter) as (Sedeconnecter)
+    usecase (Rechercher stagiaire / abonné) as (Rechercher)
+    usecase (Supprimer des données) as (Supprimer)
+    usecase (Supprimer un abonne) as (Supprimerabonne)
+    usecase (rechercher message) as (Recherchermessage)
+    usecase (Creer message) as (Creermessage)
+    usecase (Supprimer message) as (Supprimermessage)
+    usecase (Supprimer son compte) as (Supprimercompte)
+    usecase (Demander moyen de contact) as (Demandermoyencontact)
+    
+}
+
+
+' Les relations :
+
+Sinscrire -> Seconnecter : l'internaute
+Seconnecter -> Sedeconnecter : l'abonné / l'admin
+Seconnecter -> Rechercher : l'abonné / l'admin
+Seconnecter -> Creermessage : l'abonné / l'admin
+Seconnecter -> Supprimermessage : l'abonné / l'admin
+Seconnecter -> Modifierdonnees : l'abonné / l'admin
+Seconnecter -> Supprimer : l'admin pour les données d'un abonné choisi
+Seconnecter -> Supprimerabonne : l'admin
+Seconnecter -> Supprimercompte : l'abonné
+Choisir -> Demandermoyencontact : l'abonné / l'admin
+
+
+
+internaute -> abonne : après être inscrit
+admin -> abonne : gérer
+systeme -> internaute : il enregistre ses informations de connexion
+systeme -> abonne : il gère toutes ses actions
+systeme -> admin : grâce à lui qu'il peut gérer les abonnés
+
+
+note right of (Gestionsite)
+    il faut s'inscrire pour accéder aux fonctionalités du site.
+    Seconnecter est l'entrée de toutes les autres actions, car elles se rélisent dans l'espace privé de l'abonné ou de l'adminend
+    le Systeme est au coeur de tout le fonctionnement.
+end note
+
+@enduml

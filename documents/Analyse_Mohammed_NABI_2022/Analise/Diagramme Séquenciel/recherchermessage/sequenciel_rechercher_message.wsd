@@ -1,0 +1,31 @@
+@startuml graphic_sequenciel_rechercher_message
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+
+user -> systeme : user clique sur (Recherchermessage)
+
+systeme --> user : le systeme affiche la zone de recherche
+
+user -> systeme : user saisit le sujet ou un mot dans le message qu'il recherche et clique sur (rechercher)
+
+systeme --> user : le systeme affiche le résultat
+
+
+' En cas de problème
+user -> systeme : user saisit le sujet ou un mot dans le message qu'il recherche et clique sur (rechercher)
+
+systeme --> user : le systeme ne trouve rien et il affiche un message d'information
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le ramène à la zone d'édition
+
+
+note right
+user représente l'abonné et l'admin.
+end note
+@enduml

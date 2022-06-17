@@ -33,7 +33,18 @@ class MessagesController extends AbstractController
             'message' => $messagesRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("dixDernierMessages", name="dixDernierMessages_index")
+     */
+    public function dixDernierMessages(MessagesRepository $messagesRepository, PaginatorInterface $pagi, Request $request): Response
+    {
+        return $this->render('messages/index.html.twig', [
+            'message' => $messagesRepository->findDixDerniersMessages(),
+        ]);
+    }
     
+
 /**
      * @Route("/formulaireMessages", name = "formulaireMessages_index", methods={"GET","POST"})
      */

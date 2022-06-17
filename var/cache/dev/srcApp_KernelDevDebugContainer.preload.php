@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/Container8URaUhy/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerAQ53Iv1/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -44,6 +44,7 @@ $classes[] = 'App\Controller\AuthentificationController';
 $classes[] = 'App\Controller\ContactsController';
 $classes[] = 'App\Controller\FormationsController';
 $classes[] = 'App\Controller\HomeController';
+$classes[] = 'App\Controller\LangagesController';
 $classes[] = 'App\Controller\MediasController';
 $classes[] = 'App\Controller\MessagesController';
 $classes[] = 'App\Controller\RegistrationController';
@@ -58,6 +59,7 @@ $classes[] = 'Symfony\Component\Mailer\Transport';
 $classes[] = 'App\Controller\UtilisateursController';
 $classes[] = 'App\Form\ContactsType';
 $classes[] = 'App\Form\FormationsFormType';
+$classes[] = 'App\Form\LangagesFormType';
 $classes[] = 'App\Form\MediasType';
 $classes[] = 'App\Form\MessagesType';
 $classes[] = 'App\Form\PersoFormType';
@@ -68,6 +70,7 @@ $classes[] = 'App\Repository\AuteursRepository';
 $classes[] = 'App\Repository\CategoriesRepository';
 $classes[] = 'App\Repository\ContactsRepository';
 $classes[] = 'App\Repository\FormationsRepository';
+$classes[] = 'App\Repository\LangagesRepository';
 $classes[] = 'App\Repository\MediasRepository';
 $classes[] = 'App\Repository\MessagesRepository';
 $classes[] = 'App\Repository\UtilisateursRepository';
@@ -206,6 +209,8 @@ $classes[] = 'App\DataFixtures\AuteursFixtures';
 $classes[] = 'App\DataFixtures\CategoriesFixtures';
 $classes[] = 'App\DataFixtures\ContactsFixtures';
 $classes[] = 'App\DataFixtures\FormationsFixtures';
+$classes[] = 'App\DataFixtures\LangagesFixtures';
+$classes[] = 'App\DataFixtures\UtilisateursFixtures';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\Proxy\ConvertMappingDoctrineCommand';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\ImportMappingDoctrineCommand';

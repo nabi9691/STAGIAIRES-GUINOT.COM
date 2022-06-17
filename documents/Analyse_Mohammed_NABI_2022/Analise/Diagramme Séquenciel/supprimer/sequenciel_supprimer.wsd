@@ -1,0 +1,36 @@
+@startuml graphic_sequenciel_Supprimer
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+user -> systeme : user sélectionne les éléments qu'il veut supprimer et clique sur (supprimer)
+
+systeme --> user : le systeme affiche boîte de dialogue pour lui demander s'il est sûre de vouloire supprimer ces éléments sélectionné
+
+user -> systeme : user clique sur (ok) pour confirmer
+
+systeme --> user : le systeme supprime la sélection et lui affiche un message de confirmation
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le ramène à son espace privé
+
+
+' En cas de problème
+user -> systeme : user sélectionne des éléments et clique sur (supprimer) par erreur
+
+systeme --> user : le systeme affiche boîte de dialogue pour lui demander s'il est sûre de vouloire supprimer ces éléments sélectionné
+
+user -> systeme : user clique sur (annuler) pour interrompre l'opération
+
+systeme --> user : le systeme annule l'opération et le ramène à son espace privé
+
+
+note right
+    user représente l'abonné et l'admin
+    l'admin peut supprimer des données interdites dans l'application pour le bien de tout le monde. il accède à l'espace de l'abonné qui a posté ces données (images ou autres).
+    un abonné ne peut supprimer que ses propre données.
+end note
+@enduml

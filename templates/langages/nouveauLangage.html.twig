@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+ Enregistrement d'un nouveau langage :
+ {% endblock %}
+
+{% block content %}
+ <br> <br>
+ 
+    <h1> Enregistrement d'un nouveau langage : </h1>
+
+    {{ include('langages/formulaireLangages.html.twig') }}<br>
+
+    <a href="{{ path('langages_index') }}">Liste des langages :</a><br>
+
+
+{% endblock %}

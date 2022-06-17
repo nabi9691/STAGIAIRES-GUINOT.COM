@@ -1,0 +1,26 @@
+@startuml graphic_sequenciel_Supprimercompte
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<abonne>>
+actor [systeme]
+
+abonne -> systeme : abonne se connecte à son espace privé
+
+abonne -> systeme : abonne clique sur (supprimer mon compte)
+
+systeme --> abonne : le systeme lui demande s'il est sûre de vouloir faire cela
+
+abonne -> systeme : abonne clique sur (oui)
+
+systeme --> abonne : le systeme lui demande à nouveau s'il est sûre de vouloir faire cela
+
+abonne -> systeme : abonne clique sur (oui je confirme)
+
+systeme  --> abonne : le systeme supprime le compte et lui affiche la confirmation
+
+abonne -> systeme : abonne clique sur (ok)
+
+systeme --> abonne : le systeme le redirige à la page d'accueil
+
+@enduml

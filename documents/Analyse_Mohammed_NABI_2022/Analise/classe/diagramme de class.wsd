@@ -1,0 +1,73 @@
+@startuml graphique_diagramme_classe
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+
+class Utilisateurs
+{
+
+    -id : int
+    -nom : string
+    -prenom : string
+    -dateNaissance : date
+    -adresse : string "numéro et nom de rue"
+    -codePostal : string
+    -ville : string
+    -pays : string
+    -période : string "la période de formation à Guinot"
+    -téléphone : string
+    -email : string
+    -login : string
+    -passWord : string
+
+    +getId():int
+}
+
+class Admins
+{
+    -id : int
+    -nom : string
+    -prenom : string
+    -email : string
+    -login : string
+    -passWord : string
+
+    +getId() : int
+}
+
+class Messages
+{
+    -id : int
+    -title : string
+    -message : string
+
+    +getId() : int
+}
+
+class Comptes
+{
+    -id : int
+    -userName : string
+    -passWord : string
+
+    +getId() : int
+}
+
+class Authentification
+{
+    +Sinscrire() : void
+    +SeConnecter() : void
+    +SeDeconnecter() : void
+}
+
+
+Authentification -> Admins
+Authentification -> Abonnes
+Comptes "1" ---- "1" Utilisateurs: appartenir
+Utilisateurs "1" ---- "*" Messages : avoir
+Utilisateurs "1" ---- "*" Messages : créer
+Admins "1" ---- "*" Messages : créer
+Admins "*" ---- "*" Utilisateurs : gérer
+
+
+@enduml

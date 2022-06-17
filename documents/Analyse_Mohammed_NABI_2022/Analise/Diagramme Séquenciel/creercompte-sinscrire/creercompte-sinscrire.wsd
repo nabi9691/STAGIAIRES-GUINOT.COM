@@ -1,0 +1,51 @@
+@startuml graphic_sequenciel_creercompte
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<internaute>>
+actor [systeme]
+
+internaute -> systeme : demande à ouvre l'application via une URL ou son mobile(url)
+
+url -> systeme : recherche la page daccueil
+systeme --> internaute : lui affiche la page d'accueil
+
+internaute -> systeme : clique sur Sinscrire pour demander la page d'inscription
+
+systeme --> internaute : affiche la page d'inscription
+
+internaute -> systeme : remplit tout ce qu'on lui demande et clique sur "valider"
+
+information -> systeme : vérifie toute la saisie transmise
+
+systeme --> internaute : affiche message de confirmation "compte cree avec succès"
+
+internaute -> systeme : l'internaute clique sur "ok"
+
+systeme --> internaute : le systeme le renvoie à la page de connexion
+
+
+' En cas de problème
+internaute -> systeme : demande à ouvre l'application via une URL ou son mobile(url)
+
+url -> systeme : recherche la page daccueil
+
+systeme --> internaute : affiche d'un message "impossible de retrouver cette page. peut-être vous n'êtes pas connecter sur internet ou veillez réessayer plus tard."
+
+' 2ème cas possible
+internaute -> systeme : clique sur Sinscrire pour demander la page d'inscription
+
+systeme --> internaute : affiche un message d'erreur "impossible de trouver cette page veuillez réessayer plus tard"
+' 3ème possibilité
+internaute -> systeme : remplit tout ce qu'on lui demande et clique sur "valider"
+
+information -> systeme : vérifie toute la saisie transmise
+
+systeme --> internaute : affiche message "les informations ne sont pas correctes, veuillez recommencer."
+
+internaute -> systeme : l'internaute clique sur "ok"
+
+systeme --> internaute : le systeme le renvoie à la page d'inscription à nouveau
+
+
+@enduml

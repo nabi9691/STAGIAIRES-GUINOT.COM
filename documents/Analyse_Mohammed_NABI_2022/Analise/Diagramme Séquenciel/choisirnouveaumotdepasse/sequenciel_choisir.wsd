@@ -1,0 +1,37 @@
+@startuml graphic_sequenciel_Choisir
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+
+user -> systeme : user clique sur le lien qu'il a reçu pour réinitialiser son mot de passe
+
+systeme --> user : le systeme affiche la page de changement de mot de passe
+
+user -> systeme : user tape son nouveau mot de passe ainsi que la confirmation de celui-ci.
+
+user -> systeme : user clique sur (enregistrer nouveau mot de passe)
+
+systeme --> user : systeme affiche un message de confirmation "nouveau mot de passe enregistré avec succès."
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le redirige à la page de connexion
+
+' En cas de problème
+user -> systeme : user tape son nouveau mot de passe ainsi que la confirmation de celui-ci
+
+user -> systeme : user clique sur (enregistrer nouveau mot de passe)
+
+systeme --> user : le systeme affiche un message de confirmation d'information d'erreur pour lui dire que le nouveau mot de passe choisi n'est pas conforme au format attendu
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le ramène à nouveau à la page de saisie du nouveau mot de passe
+
+note right
+user représente l'abonné et l'admin.
+end note
+@enduml

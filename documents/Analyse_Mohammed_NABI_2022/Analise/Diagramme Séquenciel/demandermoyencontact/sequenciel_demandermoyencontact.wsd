@@ -1,0 +1,39 @@
+@startuml graphic_sequenciel_demandermoyercontact
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+
+user -> systeme : user, depuis la page de connexion, clique sur le lien (mot de passe oublié)
+
+systeme --> user : le systeme affiche une page où il lui demande de saisir l'un des moyen de contact qu'il l'avait donné lors de son inscription
+
+user -> systeme : user tape son email ou son téléphone
+
+user -> systeme : user clique sur (envoyer)
+
+systeme --> user : systeme affiche un message lui indiquant que des instructions viennent d'être envoyées au moyen de contact qu'il vient de saisir
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le redirige à la page d'accueil
+
+' En cas de problème
+systeme --> user : le systeme affiche une page où il lui demande de saisir l'un des moyen de contact qu'il l'avait donné lors de son inscription
+
+user -> systeme : user tape son email ou son téléphone
+
+user -> systeme : user clique sur (envoyer)
+
+systeme --> user : systeme affiche un message d'erreur indiquant qu'il ne reconnaît pas le mail ou le téléphone saisi
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le renvoie à la page de demande de moyen de contact
+
+note right
+user représente l'abonné et l'admin.
+end note
+@enduml

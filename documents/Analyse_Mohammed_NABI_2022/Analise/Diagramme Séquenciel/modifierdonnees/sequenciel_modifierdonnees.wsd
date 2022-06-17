@@ -1,0 +1,41 @@
+@startuml graphic_sequenciel_modifierdonnees
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+
+user -> systeme : user, depuis son espace privé, clique sur (modifier) pour modifier des informations
+
+systeme --> user : le systeme affiche la page de modification des données
+
+user -> systeme : user modifie les informations qu'il a le droit de modifier
+
+user -> systeme : user clique sur (modifier)
+
+systeme --> user : systeme affiche un message de confirmation d'enregistrement des données avec un bouton (ok)
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le ramène à sa page privé
+
+' En cas de problème
+user -> systeme : user modifie les informations qu'il a le droit de modifier
+
+user -> systeme : user clique sur (modifier)
+
+systeme --> user : le systeme affiche un message de confirmation d'information d'erreur pour lui dire une ou plusieurs données ne sont pas bien remplies
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme le ramène à la page de modification de données
+
+
+note right
+user représente l'abonné et l'admin.
+l'admin peut être amené à modifier les données d'un abonné.
+ici, pour un abonnné, seuls le mail, l'adresse et le téléphone peuvent être modifiés.
+par contre, pour l'admin qui se trouve dans l'espace d'un abonné, toutes les zone sont modifiables.
+end note
+@enduml

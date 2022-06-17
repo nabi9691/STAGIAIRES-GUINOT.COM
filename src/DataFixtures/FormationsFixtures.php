@@ -50,11 +50,11 @@ $email = $faker->email;
             $formations
             ->setNom($faker->lastName)
             ->setPrenom($faker->firstName)
-
             ->setTelephone($faker->phoneNumber)
 ->setEmail($email)
                     ->setNomFormation($nom_formation[0])
-                                                        ->setCivilite($civilite[0])
+                                                        
+                    ->setCivilite($civilite[0])
                         ->setObjectifFormation($faker->sentence())
             ->setDateFormation(new \DateTime())
 ->setCoutFormation($cout[0])

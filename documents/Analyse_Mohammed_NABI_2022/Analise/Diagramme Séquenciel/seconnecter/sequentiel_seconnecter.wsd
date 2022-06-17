@@ -1,0 +1,41 @@
+@startuml graphic_sequenciel_Seconnecter
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+user -> systeme :clique sur (Seconnecter) pour la page de connexion
+
+Seconnecter -> systeme : recherche la page de connexion
+
+systeme --> user :  le système affiche la page de connexion
+
+user -> systeme : remplit son login et mot de passe
+
+information -> systeme : vérifie la saisie
+
+systeme --> user : affiche l'espace privé
+
+' En cas de problème
+Seconnecter -> systeme : recherche la page de connexion
+
+systeme --> user :  le système ne trouve pas la page et affige un message "impossible d'afficher la page, réessayer plus tard."
+
+
+' 2ème cas possible
+user -> systeme : remplit son login et mot de passe
+
+information -> systeme : vérifie la saisie
+
+systeme --> user : le système constate que les informations saisies ne sont pas correctes et affiche un message "vous n'avez pas saisi les bonnes informations, veuillez réessayer.""
+
+user -> systeme : user clique "ok"
+
+systeme --> user : le système le renvoie à la page de connexion
+
+
+note right
+user représente l'abonné et l'admin
+end note
+@enduml

@@ -28,6 +28,17 @@ class MessagesRepository extends ServiceEntityRepository
         ->getQuery();
     }
 
+    public function  findDixDerniersMessages()
+{
+        return $this->createQueryBuilder('m')
+->orderBy('m.creerDate', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    
 
     // /**
     //  * @return Messages[] Returns an array of Messages objects

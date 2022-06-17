@@ -1,0 +1,34 @@
+@startuml graphic_sequenciel_Supprimermessage
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<user>>
+actor [systeme]
+
+user -> systeme : user se connecte à son espace privé
+
+user -> systeme : user clique sur (message)
+
+systeme --> user : le systeme ouvre la page de message avec son menu
+
+user -> systeme : user clique sur (boite de reception)
+
+systeme --> user : le systeme lui ouvre la boîte de réception
+
+user -> systeme : user sélectionne le ou les messages qu'il veut supprimer et clique sur (supprimer)
+
+systeme --> user : le systeme lui demande s'il est sûre de vouloir supprimer cette sélection
+
+user -> systeme : user clique sur (ok)
+
+systeme --> user : le systeme supprime la sélection et l'informe
+
+user -> systeme : user clique (ok)
+
+systeme --> user : le systeme le ramène à la boîte de réception
+
+note right
+l'abonné ne peut supprimer que ses propres messages
+l'admin a droit de supprimer le ou les messages d'un ou des abonné si c'est nécessaire
+end note
+@enduml

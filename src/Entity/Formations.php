@@ -27,13 +27,16 @@ class Formations
      */
     private $prenom;
 
-    private $telephone;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $email;
 
+        /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $telephone;
 
     /**
      * @ORM\Column(type="string", length=255)

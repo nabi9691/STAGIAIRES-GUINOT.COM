@@ -1,0 +1,29 @@
+@startuml graphic_sequenciel_Creermessage
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+
+actor <<user>>
+actor [systeme]
+
+user -> systeme : user se connecte à son espace
+
+systeme --> user : le système lui affiche la page d'accueil de son espace privé
+
+user -> systeme : user clique sur (message)
+
+systeme --> user : le systeme ouvre le menu de message
+
+user -> systeme : user clique sur (nouveau message)
+
+systeme --> user : le système ouvre une page d'édition de message avec toutes les options
+
+user -> systeme : user compose son message et clique sur (envoyer)
+
+systeme --> user : le systeme envoie le message et affiche l'information
+
+user -> systeme : user clique (ok)
+
+systeme --> user : le systeme le ramène à la page d'accueil des messages
+
+@enduml

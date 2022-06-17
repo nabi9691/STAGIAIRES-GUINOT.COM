@@ -1,0 +1,36 @@
+@startuml graphic_sequenciel_Supprimerabonne
+!theme amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes
+skinparam actorStyle awesome
+
+actor <<admin>>
+actor [systeme]
+
+admin -> systeme : admin se connecte à son espace privé
+
+admin -> systeme : adminrecherche l'abonné
+
+systeme --> admin : le systeme lui affiche l'abonné en question
+
+admin -> systeme : adminclique sur (supprimer)
+
+systeme  --> admin : le systeme lui demande s'il est sûre de vouloir supprimer cet abonné?
+
+admin -> systeme : admin clique sur (ok)
+
+systeme  --> admin : le systeme supprime l'abonné et lui affiche l'information
+
+admin -> systeme : admin clique sur (ok)
+
+systeme --> admin : le systeme le ramène à son espace privé
+
+
+' En cas de problème
+admin -> systeme : adminrecherche l'abonné
+
+systeme --> admin : le systeme n'a pas trouvé l'abonné et lui informe
+
+admin -> systeme : adminclique sur (ok)
+
+systeme --> admin : le systeme le ramène à son espace privé
+
+@enduml

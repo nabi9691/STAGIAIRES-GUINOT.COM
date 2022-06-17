@@ -162,7 +162,7 @@ class FormationsController extends AbstractController
      */
     public function developpeurWEB(): Response
     {
-        return $this->render('formations/BIOInformatique/developpeurWEB.html.twig', [
+        return $this->render('formations/BIOInformatique/formationDeveloppeurWEB.html.twig', [
             ]);
     }
 
@@ -176,11 +176,11 @@ class FormationsController extends AbstractController
     }
 
 /**
-     * @Route("temoignages", name="temoignages_index", methods={"GET"})
+     * @Route("coursEnVideo", name="coursEnVideo_index", methods={"GET"})
      */
-    public function temoignages(): Response
+    public function coursEnVideo(): Response
     {
-        return $this->render('formations/BIOInformatique/temoignages.html.twig', [
+        return $this->render('formations/BIOInformatique/coursEnVideo.html.twig', [
             ]);
     }
 
@@ -199,6 +199,60 @@ class FormationsController extends AbstractController
     public function aProposBioInformatique(): Response
     {
         return $this->render('formations/BIOInformatique/aProposDeBIOInformatique.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("formationPYTHON_index", name="formationPYTHON_index", methods={"GET"})
+     */
+    public function formationPYTHON_index(): Response
+    {
+        return $this->render('formations/BIOInformatique/formationPYTHON.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("formationHTML", name="formationHTML_index", methods={"GET"})
+     */
+    public function formationHTML(): Response
+    {
+        return $this->render('formations/BIOInformatique/formationHTML.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("formationCSS", name="formationCSS_index", methods={"GET"})
+     */
+    public function formationCSS(): Response
+    {
+        return $this->render('formations/BIOInformatique/formationCSS.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("formationJAVASCRIPT", name="formationJAVASCRIPT_index", methods={"GET"})
+     */
+    public function formationJAVASCRIPT(): Response
+    {
+        return $this->render('formations/BIOInformatique/formationJAVASCRIPT.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("formationDotNet", name="formationDotNet_index", methods={"GET"})
+     */
+    public function formationDotNet(): Response
+    {
+        return $this->render('formations/BIOInformatique/formationDotNet.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("formationC++", name="formationC++_index", methods={"GET"})
+     */
+    public function formationCPlus(): Response
+    {
+        return $this->render('formations/BIOInformatique/formationC++.html.twig', [
             ]);
     }
 
