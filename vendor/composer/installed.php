@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0ce76574462be2d30ccd41e993bdd0fb3435b83a',
+        'reference' => '22f7686078130cb7dde97766f3003cd0821339cc',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0ce76574462be2d30ccd41e993bdd0fb3435b83a',
+            'reference' => '22f7686078130cb7dde97766f3003cd0821339cc',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -74,12 +74,12 @@
             'dev_requirement' => true,
         ),
         'doctrine/dbal' => array(
-            'pretty_version' => '3.3.6',
-            'version' => '3.3.6.0',
+            'pretty_version' => '3.3.7',
+            'version' => '3.3.7.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/dbal',
             'aliases' => array(),
-            'reference' => '9e7f76dd1cde81c62574fdffa5a9c655c847ad21',
+            'reference' => '9f79d4650430b582f4598fe0954ef4d52fbc0a8a',
             'dev_requirement' => false,
         ),
         'doctrine/deprecations' => array(
@@ -164,12 +164,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/orm' => array(
-            'pretty_version' => '2.12.2',
-            'version' => '2.12.2.0',
+            'pretty_version' => '2.12.3',
+            'version' => '2.12.3.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/orm',
             'aliases' => array(),
-            'reference' => '8291a7f09b12d14783ed6537b4586583d155869e',
+            'reference' => 'c05e1709e9ffb9abe8d37260a78975cc816ee385',
             'dev_requirement' => false,
         ),
         'doctrine/persistence' => array(
@@ -652,8 +652,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0',
+                0 => '1.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1044,12 +1044,12 @@
             'dev_requirement' => false,
         ),
         'symfony/flex' => array(
-            'pretty_version' => 'v1.19.1',
-            'version' => '1.19.1.0',
+            'pretty_version' => 'v1.19.2',
+            'version' => '1.19.2.0',
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/../symfony/flex',
             'aliases' => array(),
-            'reference' => '9c612796a68de4196fff4bc159db5071aa62d428',
+            'reference' => 'd1a692369be53445af6e391170b509d7f5d026cf',
             'dev_requirement' => false,
         ),
         'symfony/form' => array(

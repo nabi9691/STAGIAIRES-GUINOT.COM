@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerAQ53Iv1/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerCIjEV3P/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -210,7 +210,6 @@ $classes[] = 'App\DataFixtures\CategoriesFixtures';
 $classes[] = 'App\DataFixtures\ContactsFixtures';
 $classes[] = 'App\DataFixtures\FormationsFixtures';
 $classes[] = 'App\DataFixtures\LangagesFixtures';
-$classes[] = 'App\DataFixtures\UtilisateursFixtures';
 $classes[] = 'Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\Proxy\ConvertMappingDoctrineCommand';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Command\ImportMappingDoctrineCommand';

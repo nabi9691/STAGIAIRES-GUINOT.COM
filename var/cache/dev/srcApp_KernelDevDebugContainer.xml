@@ -658,9 +658,6 @@
     <service id="App\DataFixtures\LangagesFixtures" class="App\DataFixtures\LangagesFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
-    <service id="App\DataFixtures\UtilisateursFixtures" class="App\DataFixtures\UtilisateursFixtures" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
     <service id="App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -5609,10 +5606,6 @@
             <argument key="fixture" type="service" id="App\DataFixtures\LangagesFixtures"/>
             <argument key="groups" type="collection"/>
           </argument>
-          <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\UtilisateursFixtures"/>
-            <argument key="groups" type="collection"/>
-          </argument>
         </argument>
       </call>
     </service>
@@ -6001,8 +5994,6 @@
     <service id=".abstract.instanceof.App\DataFixtures\FormationsFixtures" class="App\DataFixtures\FormationsFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\LangagesFixtures" class="App\DataFixtures\LangagesFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\LangagesFixtures" class="App\DataFixtures\LangagesFixtures" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UtilisateursFixtures" class="App\DataFixtures\UtilisateursFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\UtilisateursFixtures" class="App\DataFixtures\UtilisateursFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FormationsFormType" class="App\Form\FormationsFormType" autowire="true" abstract="true"/>
