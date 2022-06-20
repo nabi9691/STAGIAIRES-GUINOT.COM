@@ -13,15 +13,13 @@ class AuteursUniTest extends TestCase
         $auteurs = new Auteurs();
         
         $auteurs
-        ->setNom('nom')
-                ->setPrenom('prenom')
-                ->setContenu('contenu')
-                ->setEmail('nabi@gmail.com');
-                     
-        $this->assertTrue($auteurs->getNom()==='nom');
-        $this->assertTrue($auteurs->getPrenom()==='prenom');
-        $this->assertTrue($auteurs->getContenu()==='contenu');
-        $this->assertTrue($auteurs->getEmail()==='nabi.gmail.com');
+        ->setNom('nom');
+
+        
+        
+        
+        $this->assertTrue($auteurs->getResume() === 'resume');
+        
     }
 
     public function testAuteursVide(): void
@@ -29,9 +27,9 @@ class AuteursUniTest extends TestCase
         $auteurs = new Auteurs();
         
          $this->assertEmpty($auteurs->getNom());
-        $this->assertEmpty($auteurs->getPrenom());
-        $this->assertEmpty($auteurs->getContenu());
-        $this->assertEmpty($auteurs->getEmail());
+        
+        $this->assertEmpty($auteurs->getResume());
+        
         $this->assertEmpty($auteurs->getId());  
     }
 

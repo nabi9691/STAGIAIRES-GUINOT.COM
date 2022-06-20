@@ -60,11 +60,6 @@ class Messages
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu", cascade={"persist"})
      */
-    private $medias;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Utilisateurs::class, inversedBy="message_recu", cascade={"persist"})
-     */
     private $destinataire;
     
     public function __construct()
@@ -150,17 +145,6 @@ class Messages
         return $this;
     }
 
-    public function getMedias(): ?Utilisateurs
-    {
-        return $this->medias;
-    }
-
-    public function setMedias(?Utilisateurs $medias): self
-    {
-        $this->medias = $medias;
-
-        return $this;
-    }
 
     public function getDestinataire(): ?Utilisateurs
     {

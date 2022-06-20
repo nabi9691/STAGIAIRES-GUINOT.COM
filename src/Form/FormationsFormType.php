@@ -96,8 +96,7 @@ class FormationsFormType extends AbstractType
                 'required' => true
             ])
         
-        
-        
+                
             ;   
         
             }

@@ -2,6 +2,13 @@
 
 namespace App\Entity;
 
+use App\Entity\Messages;
+use App\Entity\Medias;
+use App\Entity\Contacts;
+use App\Entity\Activites;
+//use App\Entity\;
+//use App\Entity\;
+
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use App\Repository\UtilisateursRepository;
@@ -34,7 +41,6 @@ class Utilisateurs implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $formation;
-
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -143,12 +149,12 @@ class Utilisateurs implements UserInterface
     private $medias;
 
     /**
-     * @ORM\OneToMany(targetEntity=Contacts::class, mappedBy="utilisateur")
+     * @ORM\OneToMany(targetEntity=Contacts::class, mappedBy="utilisateurs")
      */
     private $contacts;
 
     /**
-     * @ORM\OneToMany(targetEntity=Activites::class, mappedBy="utilisateur")
+     * @ORM\OneToMany(targetEntity=Activites::class, mappedBy="utilisateurs")
      */
     private $activites;
 
@@ -507,7 +513,7 @@ class Utilisateurs implements UserInterface
     {
         if (!$this->contacts->contains($contact)) {
             $this->contacts[] = $contact;
-            $contact->setUtilisateur($this);
+            $contact->setUtilisateurs($this);
         }
 
         return $this;
@@ -517,8 +523,8 @@ class Utilisateurs implements UserInterface
     {
         if ($this->contacts->removeElement($contact)) {
             // set the owning side to null (unless already changed)
-            if ($contact->getUtilisateur() === $this) {
-                $contact->setUtilisateur(null);
+            if ($contact->getUtilisateurs() === $this) {
+                $contact->setUtilisateurs(null);
             }
         }
 
@@ -537,7 +543,7 @@ class Utilisateurs implements UserInterface
     {
         if (!$this->activites->contains($activite)) {
             $this->activites[] = $activite;
-            $activite->setUtilisateur($this);
+            $activite->setUtilisateurs($this);
         }
 
         return $this;
@@ -547,8 +553,8 @@ class Utilisateurs implements UserInterface
     {
         if ($this->activites->removeElement($activite)) {
             // set the owning side to null (unless already changed)
-            if ($activite->getUtilisateur() === $this) {
-                $activite->setUtilisateur(null);
+            if ($activite->getUtilisateurs() === $this) {
+                $activite->setUtilisateurs(null);
             }
         }
 

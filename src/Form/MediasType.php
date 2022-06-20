@@ -51,7 +51,7 @@ class MediasType extends AbstractType
                  // looks for choices from this entity
                  'class' =>Categories::class,
                  // Sur quelle propriete je fais le choix
-                 'choice_label' => 'nom',
+                 'choice_label' => 'nom_categorie',
                  'mapped' => false,
 
                  // used to render a select box, check boxes or radios

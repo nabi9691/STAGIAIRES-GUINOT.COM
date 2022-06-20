@@ -24,6 +24,8 @@ class MessagesController extends AbstractController
      */
     public function index(MessagesRepository $messagesRepository, PaginatorInterface $pagi, Request $request): Response
     {
+        $this->getUser()->getUsername();
+
         $messages = $pagi->paginate(
             $messagesRepository->findWithPagination(),
             $request->query->getInt('page',1),10
@@ -152,12 +154,14 @@ class MessagesController extends AbstractController
     public function messageEnvoyer(Request $request, Messages $messages): Response
     {
         $messages = new Messages();
+        $this->getUser()->getMessageEnvoyer();
+        
         $form = $this->createForm(MessagesType::class, $messages);
         
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $messages->setExpediteur($this->getUtilisateurs());
+            $messages->setExpediteur($this->getUser());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($messages);

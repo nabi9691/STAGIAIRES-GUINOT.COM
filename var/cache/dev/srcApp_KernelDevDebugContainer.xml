@@ -583,6 +583,13 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\AuthentificationController"/>
       </call>
     </service>
+    <service id="App\Controller\CategoriesController" class="App\Controller\CategoriesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CategoriesController"/>
+      </call>
+    </service>
     <service id="App\Controller\ContactsController" class="App\Controller\ContactsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5958,6 +5965,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AuthentificationController" class="App\Controller\AuthentificationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AuthentificationController" class="App\Controller\AuthentificationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AuthentificationController" class="App\Controller\AuthentificationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CategoriesController" class="App\Controller\CategoriesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CategoriesController" class="App\Controller\CategoriesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CategoriesController" class="App\Controller\CategoriesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactsController" class="App\Controller\ContactsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactsController" class="App\Controller\ContactsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactsController" class="App\Controller\ContactsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6855,6 +6865,12 @@
     <service id=".service_locator.vdmMuyE.App\Controller\AuthentificationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\AuthentificationController"/>
       <argument>App\Controller\AuthentificationController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\CategoriesController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\CategoriesController"/>
+      <argument>App\Controller\CategoriesController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
