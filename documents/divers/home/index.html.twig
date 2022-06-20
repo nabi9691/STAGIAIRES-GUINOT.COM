@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+Bienvenu(e) sur le site : STAGIAIRES DE GUINOT !
+{% endblock %}
+
+
+
+{% block content %}
+
+ <div class="container">
+      
+<br/>
+
+<h1> Bienvenu(e) sur le site : 
+STAGIAIRES DE GUINOT ! </h1>
+
+<hr/>
+<br/>
+
+<h1>
+Retrouvez les anciens stagiaires de Guinot !    
+    </h1>
+<br/>
+<hr/>
+<br/>
+<h1> Nos stagiaires d'aujourd'hui, sont nos formateurs de demain !</h1> 
+
+  
+  
+  
+  {% if app.user and
+   app.user.medias|length > 0 %}
+        {% for medias in app.user.medias %}
+            <img src="{{ vich_uploader_asset(medias, 'imageFile') }}" alt="{{ medias.contenu }}">
+        {% endfor %}      
+    {% endif %}
+
+
+    </div>
+
+<br/><br/>
+
+
+
+
+{% endblock %}
