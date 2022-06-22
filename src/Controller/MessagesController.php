@@ -147,9 +147,8 @@ class MessagesController extends AbstractController
             return $this->redirectToRoute('message_index'); 
     }
 
-
 /**
-     * @Route("/messagesEnvoyer", name="messagesEnvoyer_index")
+     * @Route("/messagesEnvoyer", name="messagesEnvoyer_index", methods= {"GET","POST"})
      */
     public function messageEnvoyer(Request $request, Messages $messages): Response
     {
@@ -162,7 +161,7 @@ class MessagesController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $messages->setExpediteur($this->getUser());
-
+            
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($messages);
             $entityManager->flush();
@@ -182,9 +181,17 @@ class MessagesController extends AbstractController
      */
     public function messageReçu(Request $request, Messages $messages): Response
     {
+$messages = new Messages();        
+        
+$messages->setDestinataire($this->getUser());
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($messages);
+        $entityManager->flush();
+
         $this->addFlash("success","Message reçu a été effectuée avec succés !");
 
-        return $this->render('messages/messagesReçu.html.twig'[
+        return $this->render('messages/index.html.twig'[
 ]);
     }
 
@@ -203,7 +210,6 @@ class MessagesController extends AbstractController
     {
         return $this->render('messages/listeMessagesRecu.html.twig');
     }
-
 
     /**
      * @Route("/messagesLu/{id}", name="messagesLu_index")

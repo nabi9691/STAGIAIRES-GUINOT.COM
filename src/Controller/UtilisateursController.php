@@ -29,7 +29,8 @@ class UtilisateursController extends AbstractController
      */
     public function index(UtilisateursRepository $utilisateursRepository): Response
     {
-        return $this->render('utilisateurs/index.html.twig', [
+        //$this->getUser()->getUsername();
+                return $this->render('utilisateurs/index.html.twig', [
             'utilisateur' => $utilisateursRepository->findAll(),
         ]);
     }
@@ -151,7 +152,6 @@ class UtilisateursController extends AbstractController
             $entityManager->flush();
             return $this->redirectToRoute('utilisateur_index'); 
     }
-
         
 /**
      * @Route("/stagiaire", name="pageAccueilEspacePerso_index", methods={"GET","POST"})
@@ -178,17 +178,24 @@ return $this->render('utilisateurs/pageAccueilEspacePerso.html.twig', [
 }
 
 /**
-     * @Route("/expediteur", name="expediteur_index", methods={"GET","POST"})
+     * @Route("/expediteur/{id}", name="expediteur_index", methods={"GET","POST"})
      */
     public function expediteur(Request $request, Utilisateurs $utilisateurs): Response
     {
         $utilisateurs = new Utilisateurs();
+        $this->getUser()->getExpediteur();
+        
         $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
+
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $utilisateurs->setMessageEnvoyer($this->getUser());
-
+            
+            //$utilisateurs->getExpediteur()->getUser();
+            
+//            setExpediteur($this->getUser());
+            $this->getUser()->getExpediteur();
+        
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($utilisateurs);
             $entityManager->flush();
@@ -212,7 +219,7 @@ return $this->render('utilisateurs/pageAccueilEspacePerso.html.twig', [
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $utilisateurs->setMessageRecu($this->getUser());
+            $utilisateurs->setDateDeNaissance($this->getUser());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($utilisateurs);

@@ -2,15 +2,18 @@
 
 
 {% block title %}
- Enregistrement d'un nouveau message 
+Message envoyer :
  {% endblock %}
 
 {% block content %}
  <br> <br>
  
-    <h1> Enregistrement d'un nouveau message</h1>
+    <h1>
+Message envoyer :    
+     </h1>
+<br /><br />
 
-    {{ include('messages/formulaireMessage.html.twig') }}<br>
+<p>Messages envoyer :{{ app.user.messageEnvoyer|length }}</p>
 
     <a href="{{ path('message_index') }}">Liste des messages :</a><br>
 

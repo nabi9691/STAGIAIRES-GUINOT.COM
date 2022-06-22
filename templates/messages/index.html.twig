@@ -11,12 +11,17 @@
      bienvenu(e) !
      Messagerie de Guinot :
      </h1>
-
+<br /><br />
 <p>Expediteur :{{ app.user.nom }}</p>
-<p>Destinataire :{{ app.user.nom }}</p>
-    <p>Messages envoyer :{{ app.user.messageEnvoyer|length }}</p>
+<p> Prenom :{{ app.user.prenom }}</p>
+<p>Messages envoyer :{{ app.user.messageEnvoyer|length }}</p>
 <p>Messages reçu :{{ app.user.messageRecu|length }}</p>
-
+<br />
+<p>Destinataire :{{ app.user.destinataire }}</p>
+<p>Messages envoyer :{{ app.user.messageEnvoyer|length }}</p>
+<p>Messages reçu :{{ app.user.messageRecu|length }}</p>
+<br />
+        
     <br /><br />
     <hr />
     <br />

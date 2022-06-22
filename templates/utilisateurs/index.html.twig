@@ -22,7 +22,7 @@
 
 {% block content %}
 	<div class="container">
-
+<p> test : {{ dump( app.user ) }}</p>
 <a href="{{ path('nouvelUtilisateur_index') }}">Nouvelle utilisateur</a>
 
 <br/><br/>
@@ -68,16 +68,31 @@
 <td>{{ utilisateur.messageRecu }}</td>
 <td>{{ utilisateur.login }}</td>
 <td>{{ utilisateur.password }}</td>
-</tr>
+                                <td><a href="{{ path('modifierUtilisateur_index', {'id': message.id }) }}">Modifier</a></td>
+<td><a href="{{ path('afficherUtilisateur_index', {'id': message.id }) }}">afficher</a></td>
+<td><a href="{{ path('supprimerUtilisateur_index', {'id': message.id }) }}">Supprimer</a></td>
+                </tr>
+                {% else %}
+                <tr>
+                <td colspan="5">
+                    Vous n'avez pas d'utilisateurs enregistré dans votre base de données !
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-</tbody>
-{% endfor %}
-
-</table>
 </div>
 {% endblock %}
 
 <br/><br/>
 
+{% block footer %}
+<p>
+<a href="{{ path('accueil_index') }}"> Retour à la page d'accueil :</a><br>
 
+</p>
 {% endblock %}
+{% endblock %}
+
+

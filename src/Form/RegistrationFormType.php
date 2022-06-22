@@ -91,7 +91,7 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             
-            ->add('message_envoyer', EntityType::class, [
+            ->add('messageEnvoyer', EntityType::class, [
                 'label' => 'Votre message envoyer :',
                      //'placeholder' => 'Sélectionner',
                      // looks for choices from this entity
@@ -106,7 +106,7 @@ class RegistrationFormType extends AbstractType
     //            'required' => false
             ])
             
-            ->add('message_recu', EntityType::class, [
+            ->add('messageRecu', EntityType::class, [
                 'label' => 'Votre message reçu :',
                      //'placeholder' => 'Sélectionner',
                      // looks for choices from this entity
@@ -151,7 +151,8 @@ class RegistrationFormType extends AbstractType
 //                     ]),
             //     ],
             // ])
-        ;
+        
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
