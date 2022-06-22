@@ -36,43 +36,6 @@ class MediasType extends AbstractType
             'label' => 'Uploader votre image :',
             'required' => true
         ])
-        ->add('contenu', TextareaType::class)
-        ->add('date', BirthdayType::class, [
-            'label' => 'Votre date importation ',
-            'required' => false,
-            'widget' => 'single_text'
-        ])
-
-        //->add('categories', EntityType::class, [
-            //'label' => 'Catégorie du médias :',
-                 ////'placeholder' => 'Sélectionner',
-                 // looks for choices from this entity
-                 //'class' =>Categories::class,
-                 //// Sur quelle propriete je fais le choix
-                 //'choice_label' => 'nom_categorie',
-                 //'mapped' => false,
-
-                 //// used to render a select box, check boxes or radios
-             // 'multiple' => false,
-                //'expanded' => true,
-//            'required' => false
-        //])
-        
-        ->add('utilisateurs', EntityType::class, [
-            'label' => 'Utilisateur du médias :',
-                 //'placeholder' => 'Sélectionner',
-                 // looks for choices from this entity
-                 'class' =>Utilisateurs::class,
-                 // Sur quelle propriete je fais le choix
-                 'choice_label' => 'nom',
-                 'mapped' => false,
-
-                 // used to render a select box, check boxes or radios
-             // 'multiple' => false,
-                //'expanded' => true,
-//            'required' => false
-        ])
-        
         
         ;
     }

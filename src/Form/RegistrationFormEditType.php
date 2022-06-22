@@ -46,90 +46,39 @@ class RegistrationFormEditType extends AbstractType
                 'label' => 'Votre prénom',
                 'required' => false
             ])
-            ->add('dateDeNaissance', BirthdayType::class, [
-                'label' => 'Votre date de Naissance',
-                'required' => false,
-                'widget' => 'single_text'
-            ])
 
             ->add('adresse', TextType::class, [
                 'label' => 'Votre adresse :',
                 'required' => true
             ])
-            
+
+            ->add('code_postal', TextType::class, [
+                'label' => 'Votre code postal :',
+                'required' => true
+            ])
+
             ->add('villes', TextType::class, [
                 'label' => 'Votre ville :',
                 'required' => true
             ])
+
             ->add('telephone', TextType::class, [
                 'label' => 'Votre téléphone :',
                 'required' => true
             ])
-            
 
-            ->add('message_envoyer', EntityType::class, [
-                'label' => 'Votre message envoyer :',
-                     //'placeholder' => 'Sélectionner',
-                     // looks for choices from this entity
-                     'class' =>Messages::class,
-                     // Sur quelle propriete je fais le choix
-                     'choice_label' => 'titre_message',
-                     'mapped' => false,
-
-                     // used to render a select box, check boxes or radios
-                 // 'multiple' => false,
-                    //'expanded' => true,)
-    //            'required' => false
+            ->add('email', TextType::class, [
+                'label' => 'Votre Email :',
+                'required' => true
             ])
-            
-            ->add('message_recu', EntityType::class, [
-                'label' => 'Votre message reçu :',
-                     //'placeholder' => 'Sélectionner',
-                     // looks for choices from this entity
-                     'class' =>Messages::class,
-                     // Sur quelle propriete je fais le choix
-                     'choice_label' => 'titre_message',
-                     
-                     // used to render a select box, check boxes or radios
-                     'mapped' => false,
 
-                     // 'multiple' => true,
-                    //'expanded' => true,)
-    //            'required' => true
-            ])
-        
             ->add('medias', MediasType::class, [
                 'mapped' => false,
                 'by_reference' => false,
-            ])
+                'required' => false
+                ])
 
-
-            // ->add('confirmepassword', PasswordType::class, [
-                // 'mapped' => false,
-            //     'required' => true,
-            //     'label' => 'Confirmez votre mot de passe',
-            // ])
-//            ->add('email', EmailType::class, [
-//                'label' => 'Votre email'
-//            ])
-            // ->add('plainPassword', PasswordType::class, [
-            // instead of being set onto the object directly,
-            // this is read and encoded in the controller
-            //     'mapped' => false,
-            //     'attr' => ['autocomplete' => 'new-password'],
-            //     'constraints' => [
-            //         new NotBlank([
-            //             'message' => 'Please enter a password',
-            //         ]),
-//                     new Length([
-//                         'min' => 6,
-//                         'minMessage' => 'Your password should be at least {{ limit }} characters',
-//                         // max length allowed by Symfony for security reasons
-//                         'max' => 4096,
-//                     ]),
-            //     ],
-            // ])
-        ;
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

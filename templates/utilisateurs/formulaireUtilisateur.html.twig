@@ -1,6 +1,22 @@
+{% extends 'base.html.twig' %}
 
-    
-{{ form_start(formUtilisateur) }}
+{% block title %}
+Formulaire utilisateurs:
+{% endblock %}
+
+{% block content %}
+
+ <div class="container">
+      
+<br/><br/>
+<h1>
+Formulaire utilisateurs :
+</h1>
+<br/><br/>
+<hr/>
+<br/>
+
+    {{ form_start(formUtilisateur) }}
 
 Formation: {{ form_widget(formUtilisateur.formation) }} <br>
 Civilité: {{ form_widget(formUtilisateur.civilite) }} <br>
@@ -10,16 +26,34 @@ Adresse: {{ form_widget(formUtilisateur.adresse) }} <br>
 Code Postal: {{ form_widget(formUtilisateur.code_postal) }} <br>
 Ville: {{ form_widget(formUtilisateur.villes) }} <br>
 Téléphone: {{ form_widget(formUtilisateur.telephone) }} <br>
-Email: {{ form_widget(formUtilisateur.login) }} <br>
-Message envoyer: {{ form_widget(formUtilisateur.message_envoyer) }} <br>
-Message reçu: {{ form_widget(formUtilisateur.message_recu) }} <br>
-Login: {{ form_widget(formUtilisateur.login) }} <br>
-Mot de passe: {{ form_widget(formUtilisateur.password) }} <br>
-Pièce identité: {{ form_widget(formUtilisateur.medias) }} <br>
+Email: {{ form_widget(formUtilisateur.email) }} <br>
+
 
 
 <button type="submit" class="btn btn-success">envoyer</button>
 
-
       
     {{ form_end(formUtilisateur) }}
+
+</div>
+
+<br/><br/>
+{% block footer %}
+<div>
+<h1>Cliquer ici pour plus de informations !</h1>
+<a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
+<lu>
+    <li>Formations :</li>
+    <li>  Masseur-Kinésithérapeute !</li>
+    <li>  Conseiller Relation Client à Distance !</li>
+<li>  Développeur Web et Web Mobile  !</li>
+<li> 24-26 bd Chastenet de Géry </li>
+<li> 94814 Villejuif Cedex </li>
+<li> Tél : 01 46 78 01 00 </li>
+<li> Fax : 01 46 78 50 35</li>
+<li> paul   guinot@guinot.asso.fr </li>
+</lu>
+</div>
+{% endblock %}
+
+{% endblock %}

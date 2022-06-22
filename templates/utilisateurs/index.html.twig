@@ -34,8 +34,6 @@
 <th> Villes </th>
 <th> Téléphone </th>
 <th> Email </th>
-<th> Message envoyer </th>
-<th> Message reçu </th>
 <th> Modifier </th>
 <th> Afficher </th>
 <th> Supprimer </th>
@@ -55,10 +53,7 @@
 <td>{{ utilisateur.villes }}</td>
 <td>{{ utilisateur.telephone }}</td>
 <td>{{ utilisateur.email }}</td>
-<td>{{ utilisateur.messageEnvoyer|length () }}</td>
-<td>{{ utilisateur.messageRecu|length }}</td>
-
-                                <td><a href="{{ path('modifierUtilisateur_index', {'id': utilisateur.id }) }}">Modifier</a></td>
+                                                                <td><a href="{{ path('modifierUtilisateur_index', {'id': utilisateur.id }) }}">Modifier</a></td>
 <td><a href="{{ path('afficherUtilisateur_index', {'id': utilisateur.id }) }}">afficher</a></td>
 <td><a href="{{ path('supprimerUtilisateur_index', {'id': utilisateur.id }) }}">Supprimer</a></td>
                 </tr>
@@ -94,5 +89,3 @@
 {% endblock %}
 
 {% endblock %}
-
-
