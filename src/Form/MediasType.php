@@ -6,11 +6,9 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Medias;
 use App\Entity\Utilisateurs;
 
-use App\Entity\Categories;
+//use App\Entity\Categories;
 //use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-//use Symfony\Component\Form\FormBuilderInterface;
-//use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
@@ -45,20 +43,20 @@ class MediasType extends AbstractType
             'widget' => 'single_text'
         ])
 
-        ->add('categories', EntityType::class, [
-            'label' => 'Catégorie du médias :',
-                 //'placeholder' => 'Sélectionner',
+        //->add('categories', EntityType::class, [
+            //'label' => 'Catégorie du médias :',
+                 ////'placeholder' => 'Sélectionner',
                  // looks for choices from this entity
-                 'class' =>Categories::class,
-                 // Sur quelle propriete je fais le choix
-                 'choice_label' => 'nom_categorie',
-                 'mapped' => false,
+                 //'class' =>Categories::class,
+                 //// Sur quelle propriete je fais le choix
+                 //'choice_label' => 'nom_categorie',
+                 //'mapped' => false,
 
-                 // used to render a select box, check boxes or radios
+                 //// used to render a select box, check boxes or radios
              // 'multiple' => false,
                 //'expanded' => true,
 //            'required' => false
-        ])
+        //])
         
         ->add('utilisateurs', EntityType::class, [
             'label' => 'Utilisateur du médias :',

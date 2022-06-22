@@ -591,6 +591,10 @@ class Utilisateurs implements UserInterface
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->message_recu;
+    }
 
 
 }

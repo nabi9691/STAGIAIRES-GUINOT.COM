@@ -3,32 +3,20 @@
 {% block title %}Liste des utilisateurs!
 {% endblock %}
 
-{% block body %}
-	<style>
-		.contenu {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-
-		.contenu code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
-<br/><br/>
-
-
 {% block content %}
-	<div class="container">
-<p> test : {{ dump( app.user ) }}</p>
-<a href="{{ path('nouvelUtilisateur_index') }}">Nouvelle utilisateur</a>
+
+ <div class="container">
+      
 
 <br/><br/>
-		<h1>
+<h1>
 			Liste des utilisateurs :
 </h1>
+<br/><br/>
+<hr/>
+<br/>
+
+<a href="{{ path('nouvelUtilisateur_index') }}">Nouvelle utilisateur</a>
 <br/><br/>
 <hr/>
 <br/>
@@ -48,6 +36,9 @@
 <th> Email </th>
 <th> Message envoyer </th>
 <th> Message reçu </th>
+<th> Modifier </th>
+<th> Afficher </th>
+<th> Supprimer </th>
 </tr>
 </thead>
 {% for utilisateur in utilisateur %}
@@ -64,13 +55,12 @@
 <td>{{ utilisateur.villes }}</td>
 <td>{{ utilisateur.telephone }}</td>
 <td>{{ utilisateur.email }}</td>
-<td>{{ utilisateur.messageEnvoyer|length() }}</td>
-<td>{{ utilisateur.messageRecu }}</td>
-<td>{{ utilisateur.login }}</td>
-<td>{{ utilisateur.password }}</td>
-                                <td><a href="{{ path('modifierUtilisateur_index', {'id': message.id }) }}">Modifier</a></td>
-<td><a href="{{ path('afficherUtilisateur_index', {'id': message.id }) }}">afficher</a></td>
-<td><a href="{{ path('supprimerUtilisateur_index', {'id': message.id }) }}">Supprimer</a></td>
+<td>{{ utilisateur.messageEnvoyer|length () }}</td>
+<td>{{ utilisateur.messageRecu|length }}</td>
+
+                                <td><a href="{{ path('modifierUtilisateur_index', {'id': utilisateur.id }) }}">Modifier</a></td>
+<td><a href="{{ path('afficherUtilisateur_index', {'id': utilisateur.id }) }}">afficher</a></td>
+<td><a href="{{ path('supprimerUtilisateur_index', {'id': utilisateur.id }) }}">Supprimer</a></td>
                 </tr>
                 {% else %}
                 <tr>
@@ -83,16 +73,26 @@
     </table>
 
 </div>
-{% endblock %}
 
 <br/><br/>
-
 {% block footer %}
-<p>
-<a href="{{ path('accueil_index') }}"> Retour à la page d'accueil :</a><br>
-
-</p>
+<div>
+<h1>Cliquer ici pour plus de informations !</h1>
+<a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
+<lu>
+    <li>Formations :</li>
+    <li>  Masseur-Kinésithérapeute !</li>
+    <li>  Conseiller Relation Client à Distance !</li>
+<li>  Développeur Web et Web Mobile  !</li>
+<li> 24-26 bd Chastenet de Géry </li>
+<li> 94814 Villejuif Cedex </li>
+<li> Tél : 01 46 78 01 00 </li>
+<li> Fax : 01 46 78 50 35</li>
+<li> paul   guinot@guinot.asso.fr </li>
+</lu>
+</div>
 {% endblock %}
+
 {% endblock %}
 
 

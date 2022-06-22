@@ -49,11 +49,6 @@ class Medias
      */
     private $utilisateurs;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Categories::class, inversedBy="medias")
-     */
-    private $categories;
-
     public function __construct(){
         $this->date = new \DateTime();
     }
@@ -123,18 +118,6 @@ class Medias
     public function setUtilisateurs(?Utilisateurs $utilisateurs): self
     {
         $this->utilisateurs = $utilisateurs;
-
-        return $this;
-    }
-
-    public function getCategories(): ?Categories
-    {
-        return $this->categories;
-    }
-
-    public function setCategories(?Categories $categories): self
-    {
-        $this->categories = $categories;
 
         return $this;
     }

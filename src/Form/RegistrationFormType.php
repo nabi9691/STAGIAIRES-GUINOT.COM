@@ -55,7 +55,13 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Votre adresse :',
                 'required' => true
             ])
-            
+
+            ->add('code_postal', TextType::class, [
+                'label' => 'Votre code postal :',
+                'required' => true
+            ])
+
+
             ->add('villes', TextType::class, [
                 'label' => 'Votre ville :',
                 'required' => true
@@ -91,7 +97,7 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             
-            ->add('messageEnvoyer', EntityType::class, [
+            ->add('message_envoyer', EntityType::class, [
                 'label' => 'Votre message envoyer :',
                      //'placeholder' => 'Sélectionner',
                      // looks for choices from this entity
@@ -106,7 +112,7 @@ class RegistrationFormType extends AbstractType
     //            'required' => false
             ])
             
-            ->add('messageRecu', EntityType::class, [
+            ->add('message_recu', EntityType::class, [
                 'label' => 'Votre message reçu :',
                      //'placeholder' => 'Sélectionner',
                      // looks for choices from this entity
@@ -126,6 +132,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'by_reference' => false,
             ])
+            
             // ->add('confirmepassword', PasswordType::class, [
                 // 'mapped' => false,
             //     'required' => true,
