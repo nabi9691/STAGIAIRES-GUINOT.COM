@@ -2,13 +2,5 @@ body {
     background-image: url("/images/bg-image.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.bg-white {
-    background-color: #D3D3D3;
-    padding: 68px;
-}
-
-.mt-2 {
-    margin-top: .9rem;
+    
 }

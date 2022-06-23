@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerL9GIwRK/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerGx7gbQQ/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -57,6 +57,7 @@ $classes[] = 'SymfonyCasts\Bundle\VerifyEmail\Generator\VerifyEmailTokenGenerato
 $classes[] = 'Symfony\Component\Mailer\Mailer';
 $classes[] = 'Symfony\Component\Mailer\Transport\Transports';
 $classes[] = 'Symfony\Component\Mailer\Transport';
+$classes[] = 'App\Controller\TestController';
 $classes[] = 'App\Controller\UtilisateursController';
 $classes[] = 'App\Form\ContactsType';
 $classes[] = 'App\Form\FormationsFormType';
