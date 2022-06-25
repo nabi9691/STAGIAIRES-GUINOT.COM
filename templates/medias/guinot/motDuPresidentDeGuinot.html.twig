@@ -1,97 +1,229 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+        <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="/css/owl.css">
+    <link rel="stylesheet" href="/css/lightbox.css">
+    <link rel="stylesheet" href="/css/flex-slider.css">
+<!-- Additional CSS Files -->
 
-{% block title %}
-Bienvenu(e) sur la page de mot du président de Guinot !
-{% endblock %}
-
-
-{% block content %}
-
- <div class="container">
-      
-    <h1> Bienvenu(e) sur la page de mot du président de Guinot !</h1>
-    <div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
-<p>
-Mot du président
-L’année 2021 devait être la fin de cette période exceptionnelle qu’est la 
-pandémie de Covid-19, pourtant en ce début d’année 2022 il serait plus juste 
-d’admettre que l’extraordinaire s’est transformé en étrange normalité. 
-Pour l’association Paul Guinot, cela se ressent le plus fortement sur nos 
-activités de formations qualifiantes au sein de notre Etablissement et Services 
-de Réhabilitation Professionnelle, qui forme chaque année environ 150 
-stagiaires et étudiants aux métiers de masseur-kinésithérapeute, conseiller 
-relation client à distance et développeur web et web mobile.
-En effet, si la qualité des formations repose en grande partie sur 
-l’expertise de nos formateurs, les moyens à notre disposition pour adapter 
-efficacement les supports de formation aux capacités des personnes 
-déficientes visuelles sont cruciaux. Or, en cette période de crise sanitaire, la 
-nécessité d’acquérir des outils techniques de compensation et de mettre en 
-place des solutions innovantes pour le téléenseignement est d’autant plus
-renforcée. 
-Il peut paraître trivial de rappeler que les personnes aveugles ont pour 
-caractéristique de ne pas voir, mais ce simple fait est parfois oublié par leurs 
-pairs voyants qui extrapolent la cécité à d’autres limitations. Entendons-nous 
-bien : l’incapacité à traiter des informations visuelles ne veut pas dire 
-incapacité à traiter l’information. Celle-ci peut être transmise autrement que 
-par voie visuelle, par exemple par le biais de dispositif tactile, comme les plages 
-brailles, ou par voie auditive, avec les logiciels de synthèse vocale.
-Similairement, les personnes malvoyantes ne voient pas « comme tout le 
-monde », mais elles en sont capables grâce à une luminosité particulière ou un 
-logiciel d’agrandissement d’écran. Avec ces outils, la personne aveugle ou 
-malvoyante peut révéler son potentiel productif, à égalité avec la personne 
-voyante. C’est le principe même d’une société inclusive. 
-Pour financer ces outils, mais aussi les innovations liées aux technologies 
-de téléenseignement adapté – indispensable en ces temps de pandémie – nous 
-passons principalement par le biais de la taxe d’apprentissage. Celle-ci est une
-contribution obligatoire à la formation professionnelle égale à 0.68% de la 
-masse salariale, versée par les entreprises exerçant une activité industrielle, commerciale ou artisanale, soumises au droit français et assujetties à l’impôt 
-sur les sociétés, sans distinction de taille ou de revenus.
-La taxe d’apprentissage ne se justifie pas seulement par son aspect 
-pécuniaire, elle est aussi l’occasion de nouer une relation d’échange entre le 
-monde du travail et la formation - deux faces d’une même pièce. Pour notre 
-ESRP, il s’agit d’une belle opportunité pour mettre à jour nos contenus de 
-formation, afin de répondre aux critères évolutifs de l’entreprise, tout en 
-démontrant la compatibilité entre un parcours professionnel riche en milieu 
-ordinaire et les compétences de la personne en situation de handicap visuel.
-Aussi, si vous êtes salarié ou susceptible de connaitre une entreprise 
-intéressée par les activités de l’association Paul Guinot, nous vous invitons à 
-mobiliser votre réseau professionnel pour proposer le versement de la taxe 
-d’apprentissage à notre établissement, en copiant collant le texte suivant : 
-« Bonjour, Concernant le versement de la taxe d’apprentissage de 2022, je 
-souhaitais vous suggérer l’association Paul Guinot qui gère un centre de 
-formation pour les personnes aveugles et malvoyantes. Trois formations y sont 
-proposées : masseur-kinésithérapeute, développeur web et web mobile, 
-conseiller relation client à distance. Ils utilisent la taxe d’apprentissage pour 
-acheter du matériel adapté et améliorer le contenu des formations. Ainsi, en la 
-leur versant, vous contribuez directement à l’inclusion professionnelle des 
-personnes aveugles et malvoyantes. Vous pouvez leur verser ici : [lien]» 
-Si vous êtes chef d’entreprise, verser la taxe d’apprentissage de 2022 à 
-notre structure est une manière de contribuer efficacement à l’inclusion 
-professionnelle des personnes aveugles et malvoyantes en leur garantissant 
-des conditions de formation optimales.
-Je vous invite donc chaleureusement à verser la taxe d’apprentissage 2022 à 
-l’association Paul Guinot : cliquez ici
-En vous souhaitant une belle et fructueuse année 2022,
-Bachir Kerroumi
-Le Président 
+        
+        <title>Centre Guinot</title>
+    </head>
+
+<body>
+
+   
 
 
-    </p>
-    
-<br/><br/>
-{% block footer %}
-<div>
-<h3>
-Qui sommes nous !
-Cliquer ici pour plus de informations !
-</h3>
-<lu>
-    
-<li><a href="{{ path('accueil_index') }}"> Retour à la page d'accueil ! </a></li>
-    
-</lu>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          Intern-finding
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="{{ path('accueil_index') }}" class="active">Acceuil</a></li>
+                          <li class="has-sub">
+                              <a href="{{ path('introductionGuinot_index') }}">Centre Guinot</a>
+                              <ul class="sub-menu">
+                                  <li><a href="{{ path('motDuPresidentDeGuinot_index') }}">Mot du président</a></li>
+                                  <li><a href="{{ path('historiqueGuinot_index') }}">Historique du centre</a></li>
+                                  <li><a href="{{ path('formationGuinot_index') }}">Liste des formations</a></li>
+                              </ul>
+                          </li>
+                          <li class="has-sub">
+                              <a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a>
+                              <ul class="sub-menu">
+                                  <li><a href="{{ path('formations_index') }}">liste des formations</a></li>
+                                  <li><a href="{{ path('langages_index') }}">liste des langages</a></li>
+                                  
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="{{ path('message_index') }}">messagerie Public</a></li>
+                          <li class="scroll-to-section"><a href="{{ path('app_login') }}">Connexion</a></li> 
+                          <li class="scroll-to-section"><a href="{{ path('app_logout') }}">Deconnexion</a></li> 
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Centre Guinot</h6>
+          <h2>Le mot du president</h2>
+        </div>
+      </div>
     </div>
-{% endblock %}
+  </section>
 
-{% endblock %}
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <h1>Le mot du président</h1>
+                  <p class="description">
+                    L’année 2021 devait être la fin de cette période exceptionnelle qu’est la
+                    pandémie de Covid-19, pourtant en ce début d’année 2022 il serait plus juste
+                    d’admettre que l’extraordinaire s’est transformé en étrange normalité. 
+                    <br><br>
+                    Pour l’association Paul Guinot, cela se ressent le plus fortement sur nos
+                    activités de formations qualifiantes au sein de notre Etablissement et Services
+                    de Réhabilitation Professionnelle, qui forme chaque année environ 150
+                    stagiaires et étudiants aux métiers de masseur-kinésithérapeute, conseiller
+                    relation client à distance et développeur web et web mobile.
+                    <br><br>
+                    En effet, si la qualité des formations repose en grande partie sur
+                    l’expertise de nos formateurs, les moyens à notre disposition pour adapter
+                    efficacement les supports de formation aux capacités des personnes
+                    déficientes visuelles sont cruciaux. Or, en cette période de crise sanitaire, la
+                    nécessité d’acquérir des outils techniques de compensation et de mettre en
+                    place des solutions innovantes pour le téléenseignement est d’autant plus
+                    renforcée. 
+                    <br><br>
+                    Il peut paraître trivial de rappeler que les personnes aveugles ont pour
+                    caractéristique de ne pas voir, mais ce simple fait est parfois oublié par leurs
+                    pairs voyants qui extrapolent la cécité à d’autres limitations. Entendons-nous
+                    bien : l’incapacité à traiter des informations visuelles ne veut pas dire
+                    incapacité à traiter l’information. Celle-ci peut être transmise autrement que
+                    par voie visuelle, par exemple par le biais de dispositif tactile, comme les plages
+                    brailles, ou par voie auditive, avec les logiciels de synthèse vocale.
+                    Similairement, les personnes malvoyantes ne voient pas « comme tout le
+                    monde », mais elles en sont capables grâce à une luminosité particulière ou un
+                    logiciel d’agrandissement d’écran. Avec ces outils, la personne aveugle ou
+                    malvoyante peut révéler son potentiel productif, à égalité avec la personne
+                    voyante. C’est le principe même d’une société inclusive. 
+                    <br><br>
+
+                    Pour financer ces outils, mais aussi les innovations liées aux technologies
+                    de téléenseignement adapté – indispensable en ces temps de pandémie – nous
+                    passons principalement par le biais de la taxe d’apprentissage. Celle-ci est une
+                    contribution obligatoire à la formation professionnelle égale à 0.68% de la
+                    masse salariale, versée par les entreprises exerçant une activité industrielle,
+                    commerciale ou artisanale, soumises au droit français et assujetties à l’impôt
+                    sur les sociétés, sans distinction de taille ou de revenus.
+                    <br><br>
+
+                    La taxe d’apprentissage ne se justifie pas seulement par son aspect
+                    pécuniaire, elle est aussi l’occasion de nouer une relation d’échange entre le
+                    monde du travail et la formation - deux faces d’une même pièce. Pour notre
+                    ESRP, il s’agit d’une belle opportunité pour mettre à jour nos contenus de
+                    formation, afin de répondre aux critères évolutifs de l’entreprise, tout en
+                    démontrant la compatibilité entre un parcours professionnel riche en milieu
+                    ordinaire et les compétences de la personne en situation de handicap visuel.
+
+                    <br><br>
+                    Aussi, si vous êtes salarié ou susceptible de connaitre une entreprise
+                    intéressée par les activités de l’association Paul Guinot, nous vous invitons à
+                    mobiliser votre réseau professionnel pour proposer le versement de la taxe
+                    d’apprentissage à notre établissement, en copiant collant le texte suivant :
+
+                    <br><br>
+                    <em>« Bonjour, Concernant le versement de la taxe d’apprentissage de 2022, je
+                    souhaitais vous suggérer l’association Paul Guinot qui gère un centre de
+                    formation pour les personnes aveugles et malvoyantes. Trois formations y sont
+                    proposées : masseur-kinésithérapeute, développeur web et web mobile,
+                    conseiller relation client à distance. Ils utilisent la taxe d’apprentissage pour
+                    acheter du matériel adapté et améliorer le contenu des formations. Ainsi, en la
+                    leur versant, vous contribuez directement à l’inclusion professionnelle des
+                    personnes aveugles et malvoyante.</em>
+
+                    <br><br>
+                    Si vous êtes chef d’entreprise, verser la taxe d’apprentissage de 2022 à
+                    notre structure est une manière de contribuer efficacement à l’inclusion
+                    professionnelle des personnes aveugles et malvoyantes en leur garantissant
+                    des conditions de formation optimales.
+                    <br><br>
+                    En vous souhaitant une belle et fructueuse année 2022,
+                    <br><br>
+                    <b> Bachir Kerroumi </b>
+                    <br><br>
+                    <b> Le Président </b> 
+
+                  </p>
+                    
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{{ path('accueil_index') }}">Revenir à l'acceuil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <section  class="meetings-page" id="meetings">
+    <div class="footer">
+      <p>Copyright © 2022 Mohammed Nabi. All Rights Reserved. 
+          <br>Design: <a href="{{ path('accueil_index') }}">Mohammed NABI</a></p>
+    </div>
+  </section>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/isotope.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/owl-carousel.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/lightbox.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/tabs.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/video.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/slick-slider.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/custom.js') }}" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        $('select').formSelect();
+    </script>
+ 
+
+
+    {% endblock %}
+
+   
+  
+</body>
+
+</html>

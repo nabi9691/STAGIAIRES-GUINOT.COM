@@ -79,9 +79,9 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    
+// Ladministrateur général :    
     /**
-     * @Route("/register-admin", name="app_register_admin")
+     * @Route("/register-admin", name="app_register_admin_index")
      */
     public function registerAdmin(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
     {
@@ -123,8 +123,94 @@ class RegistrationController extends AbstractController
     }
 
 
+// Ladministrateur de Guinot :    
+    /**
+     * @Route("/register-admin-guinot", name="app_register_admin_guinot_index")
+     */
+    public function registerAdminGuinot(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
+    {
+         $user = new Utilisateurs();
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the password
+            $user->setPassword(
+                $userPasswordEncoder->encodePassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
+
+            $user->setRoles('ROLE_ADMIN_GUINOT');
+              $user->setIsVerified(true);
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            $this->emailVerifier->sendEmailConfirmation(
+                'app_verify_email',
+                $user,
+                (new TemplatedEmail())
+                    ->from(new Address('nabiabib31@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
+                    
+                    ->to($user->getLogin())
+                    ->subject('Veuillez confirmer votre email')
+                    ->htmlTemplate('registration/confirmation_email.html.twig')
+            );
+
+            return $this->redirectToRoute('app_login');
+        }
+
+        return $this->render('registration/register.html.twig', [
+            'registrationForm' => $form->createView(),
+        ]);
+    }
+
+    // Ladministrateur de BIOSOFT :    
+    /**
+     * @Route("/register-admin-biogesoft", name="app_register_admin_biogesoft_index")
+     */
+    public function registerAdminBiogesoft(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
+    {
+         $user = new Utilisateurs();
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the password
+            $user->setPassword(
+                $userPasswordEncoder->encodePassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
+
+            $user->setRoles('ROLE_ADMIN_BIOGESOFT');
+              $user->setIsVerified(true);
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            $this->emailVerifier->sendEmailConfirmation(
+                'app_verify_email',
+                $user,
+                (new TemplatedEmail())
+                    ->from(new Address('nabiabib31@gmail.com', 'Administrateur du site retrouvaille anciens amis'))
+                    
+                    ->to($user->getLogin())
+                    ->subject('Veuillez confirmer votre email')
+                    ->htmlTemplate('registration/confirmation_email.html.twig')
+            );
+
+            return $this->redirectToRoute('app_login');
+        }
+
+        return $this->render('registration/register.html.twig', [
+            'registrationForm' => $form->createView(),
+        ]);
+    }
+
 /**
-     * @Route("/register-stagiaire", name="app_register_stagiaire")
+     * @Route("/register-stagiaires", name="app_register_stagiaires_index")
      */
     public function registerStagiaire(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, EntityManagerInterface $entityManager): Response
     {

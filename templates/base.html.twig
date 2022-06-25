@@ -33,7 +33,6 @@
 
 <li><a href="{{ path('pageAccueilGuinot_index') }}"> INTRODUCTION SUR GUINOT ! </a></li>
 <li><a href="{{ path('pageAccueilBIOInformatique_index') }}"> Page d'accueil BIOInformatique !</a> </li>
-<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
 
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public !</a></li>
 <li><a href="{{ path('pageAccueilEspacePerso_index') }}"> accéder à mon espace personnel ! </a> </li>
@@ -44,17 +43,37 @@
 
                                 <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 
-
-
 {% if is_granted('ROLE_ADMIN') %}
 <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
+                                            <li><a href="{{ path('formations_index') }}"> Liste des formations ! </a> </li>
+<li><a href="{{ path('langages_index') }}"> Liste de nos langages ! </a> </li>
+<li><a href="{{ path('message_index') }}"> accéder au service de tchat public !</a></li>
 
 {% endif %}
 
 
+{% if is_granted('ROLE_ADMIN_GUINOT') %}
+<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs de GUINOT : </a></li>
+                                            <li><a href="{{ path('formations_index') }}"> Liste des formations de Guinot ! </a> </li>
+<li><a href="{{ path('langages_index') }}"> Liste de nos langages de Guinot ! </a> </li>
+<li><a href="{{ path('message_index') }}"> accéder au service de tchat public de Guinot !</a></li>
+<li><a href="{{ path('contacts_index') }}"> Liste des contacts de Guinot ! </a></li>
+
+{% endif %}
+
+{% if is_granted('ROLE_ADMIN_BIOGESOFT') %}
+<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs de BIOGESOFT : </a></li>
+                                            <li><a href="{{ path('formations_index') }}"> Liste des formations de BIOGESOFT ! </a> </li>
+<li><a href="{{ path('langages_index') }}"> Liste de nos langages de BIOGESOFT ! </a> </li>
+<li><a href="{{ path('message_index') }}"> accéder au service de tchat public de BIOGESOFT !</a></li>
+<li><a href="{{ path('contacts_index') }}"> Liste des contacts de Biogesoft ! </a></li>
+
+{% endif %}
+
 {% if is_granted('ROLE_STAGIAIRE') %}
 <li><a href="{{ path('pageAccueilEspacePerso_index') }}">Page d'accueil de votre espace personnel<li><a href="{{ path('medias_index') }}"> Liste des médias ! </a></li>
-<li><a href="{{ path('contacts_index') }}"> Liste des contacts ! </a></li>
+<li><a href="{{ path('contacts_index') }}"> Liste de mes contacts personnels ! </a></li>
+<li><a href="{{ path('message_index') }}"> accéder au service de tchat privé !</a></li>
 
 {% endif %}
 
@@ -68,14 +87,17 @@
 
 
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public !</a></li>
+
 <li><a href="{{ path('pageAccueilEspacePerso_index') }}"> accéder à mon espace personnel ! </a> </li>
                                             <li><a href="{{ path('formations_index') }}"> Liste de nos formations ! </a> </li>
 <li><a href="{{ path('langages_index') }}"> Liste de nos langages ! </a> </li>
 
+
+
                         <li><a href="{{ path('app_login') }}"> Se connecter </a> </li>
                     <li><a href="{{ path('app_register') }}"> Création de compte </a> </li>
 <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
-<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
+
                                             
                                             {% endif %}
 

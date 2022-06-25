@@ -176,15 +176,6 @@ class FormationsController extends AbstractController
     }
 
 /**
-     * @Route("coursEnVideo", name="coursEnVideo_index", methods={"GET"})
-     */
-    public function coursEnVideo(): Response
-    {
-        return $this->render('formations/BIOInformatique/coursEnVideo.html.twig', [
-            ]);
-    }
-
-/**
      * @Route("listeFormations", name="listeDesFormations_index", methods={"GET"})
      */
     public function listeDesFormations(): Response
@@ -256,7 +247,67 @@ class FormationsController extends AbstractController
             ]);
     }
 
+/**
+     * @Route("coursEnPresentiel", name="coursEnPresentiel_index", methods={"GET"})
+     */
+    public function coursEnPresentiel(): Response
+    {
+        return $this->render('formations/BIOInformatique/coursEnPresentiel.html.twig', [
+            ]);
+    }
 
+/**
+     * @Route("coursEnVideo", name="coursEnVideo_index", methods={"GET"})
+     */
+    public function coursEnVideo(): Response
+    {
+        return $this->render('formations/BIOInformatique/coursEnVidéo.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("coursEnPDF", name="coursEnPDF_index", methods={"GET"})
+     */
+    public function     coursEnPDF(): Response
+        {
+    return $this->render('formations/BIOInformatique/coursEnPdf.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("coursEnWord", name="coursEnWord_index", methods={"GET"})
+     */
+    public function coursEnWord(): Response  {
+        return $this->render('formations/BIOInformatique/coursEnWord.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("coursEnLignes", name="coursEnLignes_index", methods={"GET"})
+     */
+    public function coursEnLignes(): Response
+    {
+        return $this->render('formations/BIOInformatique/coursEnLigne.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("coursEnFichierZipp", name="coursEnFichierZipp_index", methods={"GET"})
+     */
+    public function coursEnFichierZipp(): Response
+    {
+        return $this->render('formations/BIOInformatique/coursEnFichierZipp.html.twig', [
+            ]);
+    }
+
+/**
+     * @Route("listeDesCours", name="listeDesCours_index", methods={"GET"})
+     */
+    public function listeDesCours(): Response
+    {
+        return $this->render('formations/BIOInformatique/listeDesCours.html.twig', [
+            ]);
+    }
 
 
 

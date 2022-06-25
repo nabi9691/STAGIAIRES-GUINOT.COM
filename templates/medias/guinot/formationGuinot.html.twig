@@ -1,54 +1,120 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+        <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="/css/owl.css">
+    <link rel="stylesheet" href="/css/lightbox.css">
+    <link rel="stylesheet" href="/css/flex-slider.css">
+<!-- Additional CSS Files -->
 
-{% block title %}
-Bienvenu(e) sur la page des formations de Guinot !
-{% endblock %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        
+        <title>Centre Guinot</title>
+    </head>
 
-<br/><br/>
+<body>
 
-{% block content %}
+   
 
- <div class="container">
-<br/><br/>
-      
-    <h1> 
-Bienvenu(e) sur la page des formations de Guinot !
 
-</h1>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          Intern-finding
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="{{ path('accueil_index') }}" class="active">Acceuil</a></li>
+                          <li class="has-sub">
+                              <a href="{{ path('pageAccueilGuinot_index') }}">Centre Guinot</a>
+                              <ul class="sub-menu">
+                                  <li><a href="{{ path('motDuPresidentDeGuinot_index') }}">Mot du président</a></li>
+                                  <li><a href="{{ path('historiqueGuinot_index') }}">Historique du centre</a></li>
+                                  <li><a href="{{ path('formationGuinot_index') }}">Liste des formations</a></li>
+                              </ul>
+                          </li>
+                          <li class="has-sub">
+                              <a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a>
+                              <ul class="sub-menu">
+                                  <li><a href="{{ path('formations_index') }}">liste des formations</a></li>
+                                  <li><a href="{{ path('langages_index') }}">liste des langages</a></li>
+                                  
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="{{ path('message_index') }}">messagerie Public</a></li>
+                          <li class="scroll-to-section"><a href="{{ path('app_login') }}">Connexion</a></li> 
+                          <li class="scroll-to-section"><a href="{{ path('app_logout') }}">Deconnexion</a></li> 
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
 
-<br/><br/>
-    
-    <div>
-    
-<h1> Liste des formations deGuinot : </h1>
-    
-    <lu>
-
-<li> NOS FORMATIONS :</li>    
-<li><a href="{{ path('conseillerGuinot_index') }}"> Conseiller Relation Client à Distance ! </a></li>
-<li><a href="{{ path('developpeurGuinot_index') }}"> Développeur Web et Web Mobile ! </a></li>
-<li><a href="{{ path('masseurGuinot_index') }}"> Masseur-Kinésithérapeute ! </a></li>
-
-</lu>
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Centre Guinot</h6>
+          <h2>Formation du centre</h2>
+        </div>
+      </div>
     </div>
-<br/><br/>
-{% block footer %}
-<div>
-<h1>Cliquer ici pour plus de informations !</h1>
-<a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
-<lu>
-    <li>Formations :</li>
-    <li>  Masseur-Kinésithérapeute !</li>
-    <li>  Conseiller Relation Client à Distance !</li>
-<li>  Développeur Web et Web Mobile  !</li>
-<li> Adresse : 24-26 bd Chastenet de Géry </li>
-<li>Code postal :  94814 Villejuif Cedex </li>
-<li> Tél : 01 46 78 01 00 </li>
-<li> Fax : 01 46 78 50 35</li>
-<li>Email :  paul   guinot@guinot.asso.fr </li>
-</lu>
-</div>
-{% endblock %}
+  </section>
 
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <h1>Liste des formations du centre Guinot</h1>
+                  <p class="description">
+                    <br><br>
+                   <a href="{{ path('conseillerGuinot_index') }}"> •  Conseiller Relation Client à Distance </a> 
+                   <br><br>
+                   <a href="{{ path('developpeurGuinot_index') }}"> •  Développeur Web et Web Mobile </a> <br><br>
+                   <a href="{{ path('masseurGuinot_index') }}"> •  Masseur-Kinésithérapeute </a><br><br>
+                
+                  </p>
+                  
+                    
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{{ path('accueil_index') }}">Revenir à l'acceuil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
-{% endblock %}
+  <section  class="meetings-page" id="meetings">
+    <div class="footer">
+      <p>Copyright © 2022 Mohammed Nabi. All Rights Reserved. 
+          <br>Design: <a href="{{ path('accueil_index') }}">Mohammed NABI</a></p>
+    </div>
+  </section>
+   

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Bienvenu(e) !
+Liste des cours :
+{% endblock %}
+
+{% block content %}
+
+ <div class="container">
+<br/><br/>
+      
+    <h1> 
+Bienvenu(e) !
+Liste des cours : 
+</h1>
+
+<br/><br/>
+    
+    <div>
+    
+<h1> 
+Liste des cours :
+</h1>
+    </div>
+    
+    <div>
+  <lu>
+    <li><a href="{{ path('coursEnVideo_index') }}"> Cours en vidéo : </a></li>
+  <li><a href="{{ path('coursEnPDF_index') }}"> Cours en PDF : </a></li>
+  <li><a href="{{ path('coursEnWord_index') }}"> Cours en Word : </a></li>
+  <li><a href="{{ path('coursEnLignes_index') }}"> Cours en lignes : </a></li>
+  <li><a href="{{ path('coursEnPresentiel_index') }}"> Cours en présentiel : </a></li>
+  <li><a href="{{ path('coursEnFichierZipp_index') }}"> Cours en fichiers zippés : </a></li>
+</lu>
+      
+ </div>
+
+<br/><br/>
+
+{% block footer %}
+<div>
+<h1>Cliquer ici pour plus de informations !</h1>
+<a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
+<lu>
+    <li>Formations :</li>
+    <li>  Masseur-Kinésithérapeute !</li>
+    <li>  Conseiller Relation Client à Distance !</li>
+<li>  Développeur Web et Web Mobile  !</li>
+<li> Adresse : 24-26 bd Chastenet de Géry </li>
+<li>Code postal :  94814 Villejuif Cedex </li>
+<li> Tél : 01 46 78 01 00 </li>
+<li> Fax : 01 46 78 50 35</li>
+<li>Email :  paul   guinot@guinot.asso.fr </li>
+</lu>
+</div>
+{% endblock %}
+
+{% endblock %}
