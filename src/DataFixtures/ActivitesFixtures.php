@@ -20,7 +20,7 @@ class ActivitesFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
         
         // Liste des activités :
-        for ($a = 1; $a < 250; $a++) 
+        for ($a = 1; $a < 10; $a++) 
         {
             $activites = new Activites();
             $civilite = ["Femme", "Homme"];

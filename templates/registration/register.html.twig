@@ -1,22 +1,39 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+     {{ include('linkCss.html.twig') }}
+        
+        
+        <title>Centre Guinot</title>
+    </head>
 
-{% block title %}
- Veuillez vous inscrire  
- {% endblock %}
+<body>
 
-{% block content %}
-    <div class="container bg-white">
+   {{ include('navbar.html.twig') }}
+
+
+ 
+
+ 
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                <div class="down-content">
+
+                  <h1 style="color: rgb(37, 79, 194);">Veuillez vous inscrire </h1>
+                  <div class="container bg-white">
 
     {% for flashError in app.flashes('verify_email_error', 'Veuillez vérifier votre Email !') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1> 
-Veuillez vous inscrire  
-     </h1>
-    <br/>
-    <hr/>
-    <br/>
 
     {{ form_start(registrationForm) }}
 
@@ -29,8 +46,8 @@ Veuillez vous inscrire
             {{ form_errors(registrationForm.code_postal) }}
             {{ form_errors(registrationForm.villes) }}
                         {{ form_errors(registrationForm.telephone) }}
-                        {{ form_errors(registrationForm.password) }}
                         {{ form_errors(registrationForm.login) }}
+                        {{ form_errors(registrationForm.password) }}
                         {{ form_errors(registrationForm.medias) }}
         </div>
 
@@ -51,11 +68,30 @@ Veuillez vous inscrire
 
 
 
-
-    <button type="submit" class="btn"> S'inscrire </button>
-    
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
     
     {{ form_end(registrationForm) }}
+  </div>
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="meetings.html">Back To Meetings List</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
 
+        
 
-{% endblock %}
+   
+  
+</body>
+
+</html>
+

@@ -25,12 +25,6 @@ class Formations
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prenom;
-
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $email;
 
         /**
@@ -43,10 +37,7 @@ class Formations
      */
     private $nom_formation;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $objectif_formation;
+  
 
         /**
      * @ORM\Column(type="date", length=255)
@@ -58,31 +49,17 @@ class Formations
      */
     private $civilite;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $status;
-
+ 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $cout_formation;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $preRequis;
+   
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $titre_professionnel;
+    
 
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $sessions;
 
 
     public function getId(): ?int
@@ -102,17 +79,7 @@ class Formations
         return $this;
     }
 
-    public function getPrenom(): ?string
-    {
-        return $this->prenom;
-    }
-
-    public function setPrenom(string $prenom): self
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
+   
 
     public function getTelephone(): ?string
     {
@@ -174,29 +141,9 @@ class Formations
         return $this;
     }
 
-    public function getStatus(): ?string
-    {
-        return $this->status;
-    }
+   
 
-    public function setStatus(string $status): self
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    public function getObjectifFormation(): ?string
-    {
-        return $this->objectif_formation;
-    }
-
-    public function setObjectifFormation(string $objectif_formation): self
-    {
-        $this->objectif_formation = $objectif_formation;
-
-        return $this;
-    }
+  
 
     public function getCoutFormation(): ?string
     {
@@ -210,42 +157,10 @@ class Formations
         return $this;
     }
 
-    public function getTitreProfessionnel(): ?string
-    {
-        return $this->titre_professionnel;
-    }
+   
 
-    public function setTitreProfessionnel(string $titre_professionnel): self
-    {
-        $this->titre_professionnel = $titre_professionnel;
+   
 
-        return $this;
-    }
-
-
-    public function getPreRequis(): ?string
-    {
-        return $this->preRequis;
-    }
-
-    public function setPreRequis(string $preRequis): self
-    {
-        $this->preRequis = $preRequis;
-
-        return $this;
-    }
-
-    public function getSessions(): ?string
-    {
-        return $this->sessions;
-    }
-
-    public function setSessions(string $sessions): self
-    {
-        $this->sessions = $sessions;
-
-        return $this;
-    }
 
 
 

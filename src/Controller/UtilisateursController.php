@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Utilisateurs;
 use App\Entity\Messages;
 
-use App\Form\RegistrationFormEditType;
+use App\Form\UtilisateursFormType;
 use App\Form\RegistrationFormType;
 use App\Form\PersoFormType;
 
@@ -54,7 +54,7 @@ class UtilisateursController extends AbstractController
     {
         $utilisateurs = new Utilisateurs();
         
-        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
+        $form = $this->createForm(UtilisateursFormType::class, $utilisateurs);
 
         $form->handleRequest($request);
 
@@ -79,7 +79,7 @@ class UtilisateursController extends AbstractController
     public function nouvelUtilisateur(Request $request, UserPasswordEncoderInterface $userPasswordEncoder): Response
     {
         $utilisateurs = new Utilisateurs();
-        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
+        $form = $this->createForm(UtilisateursFormType::class, $utilisateurs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -122,7 +122,8 @@ class UtilisateursController extends AbstractController
      */
     public function modifierUtilisateur(Request $request, Utilisateurs $utilisateurs): Response
     {
-        $form = $this->createForm(RegistrationFormEditType::class, $utilisateurs);
+        $utilisateurs = new Utilisateurs();
+        $form = $this->createForm(UtilisateursFormType::class, $utilisateurs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -185,7 +186,7 @@ return $this->render('utilisateurs/pageAccueilEspacePerso.html.twig', [
         $utilisateurs = new Utilisateurs();
         $this->getUser()->getExpediteur();
         
-        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
+        $form = $this->createForm(UtilisateursFormType::class, $utilisateurs);
 
         $form->handleRequest($request);
 
@@ -215,7 +216,7 @@ return $this->render('utilisateurs/pageAccueilEspacePerso.html.twig', [
     public function destinataire(Request $request, Utilisateurs $utilisateurs): Response
     {
         $utilisateurs = new Utilisateurs();
-        $form = $this->createForm(RegistrationFormType::class, $utilisateurs);
+        $form = $this->createForm(UtilisateursFormType::class, $utilisateurs);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){

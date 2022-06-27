@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-Bien venu sur la page d'accueil de votre espace perso !
+Bien venu sur la page d'accueil de votre espace personnel !
  {% endblock %}
 
 {% block body %}
@@ -9,18 +9,18 @@ Bien venu sur la page d'accueil de votre espace perso !
 <br/><br/>
 {% block content %}
 <div>
-    <a href="{{ path('medias_index') }}">Liste de mes médias : </a>
-<a href="{{ path('contacts_index') }}"> Liste de mes contacts :</a>
-
-<a href="{{ path('message_index') }}"> Liste de mes messages personnels :</a>
-
+    <lu>
+    <li><a href="{{ path('medias_index') }}">Liste de mes médias : </a></li>
+<li><a href="{{ path('contacts_index') }}"> Liste de mes contacts :</a></li>
+<li><a href="{{ path('message_index') }}"> Liste de mes messages personnels :</a></li>
+</lu>
     <h1>
     Bien venu ! 
     
     Page d'accueil de votre espace personnel :
 
 </h1>
-    <h3> Vous êtes dans votre page d'accueil </h3>
+    <h3> Vous êtes dans votre espace personnel !</h3>
 
     <br/><br/>
     <p> Vous pouvez gérer ici toutes les informations personnelles vous concernant. La consultation de vos messages, leur suppression ou non, la consultation de vos contacts, la recherche de nouveaux!
@@ -29,10 +29,23 @@ Bien venu sur la page d'accueil de votre espace perso !
 {% endblock %}
 
 <br><br>
-
 {% block footer %}
-<a href="{{ path('accueil_index') }}"> Retour à la page d'accueil !</a>
-
-
+<div>
+<h1>Cliquer ici pour plus de informations !</h1>
+<a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
+<lu>
+    <li>Formations :</li>
+    <li>  Masseur-Kinésithérapeute !</li>
+    <li>  Conseiller Relation Client à Distance !</li>
+<li>  Développeur Web et Web Mobile  !</li>
+<li> Adresse : 24-26 bd Chastenet de Géry </li>
+<li>Code postal :  94814 Villejuif Cedex </li>
+<li> Tél : 01 46 78 01 00 </li>
+<li> Fax : 01 46 78 50 35</li>
+<li>Email :  paul   guinot@guinot.asso.fr </li>
+</lu>
+</div>
 {% endblock %}
+
+
 {% endblock %}

@@ -20,7 +20,7 @@ class ContactsFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
         
         // Liste des contacts :
-        for ($c = 1; $c < 250; $c++) 
+        for ($c = 1; $c < 10; $c++) 
         {
             $contacts = new Contacts();
             $civilite = ["Femme", "Homme"];

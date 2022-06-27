@@ -1,0 +1,47 @@
+ <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="{{ path('accueil_index') }}" class="logo">
+                          Intern-finding
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="{{ path('accueil_index') }}" class="active">Acceuil</a></li>
+                          <li class="has-sub">
+                              <a href="{{ path('introductionGuinot_index') }}">Centre Guinot</a>
+                              <ul class="sub-menu">
+                                 <li><a href="{{ path('introductionGuinot_index') }}">Guinot</a></li>
+                                  <li><a href="{{ path('motDuPresidentDeGuinot_index') }}">Mot du président</a></li>
+                                  <li><a href="{{ path('historiqueGuinot_index') }}">Historique du centre</a></li>
+                                  <li><a href="{{ path('formationGuinot_index') }}">Liste des formations</a></li>
+                              </ul>
+                          </li>
+                          <li class="has-sub">
+                              <a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a>
+                              <ul class="sub-menu">
+                                  <li><a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a></li>
+                                  <li><a href="{{ path('listeDesFormations_index') }}">Liste des formations</a></li>
+                                  <li><a href="{{ path('formations_index') }}">Gerer formations</a></li>
+                                  <li><a href="{{ path('langages_index') }}">Gerer langages</a></li>
+                                  
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="{{ path('message_index') }}">messagerie Public</a></li>
+                          <li class="scroll-to-section"><a href="{{ path('app_login') }}">Connexion</a></li> 
+                          <li class="scroll-to-section"><a href="{{ path('app_logout') }}">Deconnexion</a></li> 
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->

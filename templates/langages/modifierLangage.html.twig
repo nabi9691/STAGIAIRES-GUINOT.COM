@@ -1,39 +1,63 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}
-Modifier un langage :
-{% endblock %}
-
-{% block content %}
-    
-    
-    <h1>
-        Modifier un langage :
-        </h1>
-
-{{ form_start(formLangages) }}
-
-Nom du stagiaire: {{ form_widget(formLangages.nom) }}<br>
-Prenom du stagiaire: {{ form_widget(formLangages.prenom) }}<br>
-Téléphone du stagiaire: {{ form_widget(formLangages.telephone) }}<br>
-Email du stagiaire: {{ form_widget(formLangages.email) }}<br>
-Nom du langage: {{ form_widget(formLangages.nom_langage) }}<br>
-Durée: {{ form_widget(formLangages.date) }} <br>
-Objectif: {{ form_widget(formLangages.objectif) }} <br>
-Coefficient: {{ form_widget(formLangages.coefficient) }} <br>
 
 
+<html>
+    <head>
+
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Biogesoft</title>
+    </head>
+
+<body>
+
+   
 
 
-<button type="submit" class="btn btn-success">envoyer</button>
+  {{ include('navbar.html.twig') }}
 
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>BioGeSoft</h6>
+          <h2>Les langage</h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      
-    {{ form_end(formLangages) }}
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1> Ajoutée un Langage </h1> <br><br>
+                   {{ include('langages/formulaireLangages.html.twig') }}
+				  
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="meetings.html">Back To Meetings List</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
 
+   
+  
+</body>
 
-
-
-    <a href="{{ path('langages_index') }}">Liste des langages :</a><br>
-
-    {% endblock %}
+</html>

@@ -24,7 +24,7 @@ class LangagesFixtures extends Fixture
             
 //         Liste des langages :
         
-    for ($l = 1; $l < 500; $l++) 
+    for ($l = 1; $l < 10; $l++) 
         {
             
             $langages = new Langages();

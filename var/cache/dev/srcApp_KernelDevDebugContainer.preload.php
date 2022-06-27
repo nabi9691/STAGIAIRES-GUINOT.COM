@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerSxnwUxY/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/Container1UJDtVs/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -39,10 +39,12 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerName
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Command\ImportUserCommand';
+$classes[] = 'App\Controller\ActivitesController';
 $classes[] = 'App\Controller\AdminsController';
 $classes[] = 'App\Controller\AuthentificationController';
 $classes[] = 'App\Controller\CategoriesController';
 $classes[] = 'App\Controller\ContactsController';
+$classes[] = 'App\Controller\CoursController';
 $classes[] = 'App\Controller\FormationsController';
 $classes[] = 'App\Controller\HomeController';
 $classes[] = 'App\Controller\LangagesController';
@@ -65,8 +67,8 @@ $classes[] = 'App\Form\LangagesFormType';
 $classes[] = 'App\Form\MediasType';
 $classes[] = 'App\Form\MessagesType';
 $classes[] = 'App\Form\PersoFormType';
-$classes[] = 'App\Form\RegistrationFormEditType';
 $classes[] = 'App\Form\RegistrationFormType';
+$classes[] = 'App\Form\UtilisateursFormType';
 $classes[] = 'App\Repository\ActivitesRepository';
 $classes[] = 'App\Repository\AuteursRepository';
 $classes[] = 'App\Repository\CategoriesRepository';
@@ -459,13 +461,13 @@ $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener'
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser';
 $classes[] = 'Symfony\Component\Serializer\Serializer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\ProblemNormalizer';
-$classes[] = 'Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\DateTimeNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\ConstraintViolationListNormalizer';
 $classes[] = 'Symfony\Component\Serializer\NameConverter\MetadataAwareNameConverter';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\DateTimeZoneNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\DateIntervalNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\DataUriNormalizer';
+$classes[] = 'Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\ArrayDenormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\ObjectNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata';

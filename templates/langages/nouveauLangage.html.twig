@@ -1,17 +1,63 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}
- Enregistrement d'un nouveau langage :
- {% endblock %}
-
-{% block content %}
- <br> <br>
- 
-    <h1> Enregistrement d'un nouveau langage : </h1>
-
-    {{ include('langages/formulaireLangages.html.twig') }}<br>
-
-    <a href="{{ path('langages_index') }}">Liste des langages :</a><br>
 
 
-{% endblock %}
+<html>
+    <head>
+
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Biogesoft</title>
+    </head>
+
+<body>
+
+   
+
+
+  {{ include('navbar.html.twig') }}
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>BioGeSoft</h6>
+          <h2>Les langage</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1> Ajoutée un Langage </h1> <br><br>
+                   {{ include('langages/formulaireLangages.html.twig') }}
+				  
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="meetings.html">Back To Meetings List</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+   
+  
+</body>
+
+</html>

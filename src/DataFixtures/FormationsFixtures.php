@@ -24,7 +24,7 @@ class FormationsFixtures extends Fixture
             
 //         Liste des formations :
         
-    for ($f = 1; $f < 500; $f++) 
+    for ($f = 1; $f < 10; $f++) 
         {
             
             $formations = new Formations();
@@ -35,33 +35,24 @@ class FormationsFixtures extends Fixture
             $civilite = ["Femme", "Homme"];
             shuffle($civilite);
             
-            $status = ['Nouveau stagiaire', 'Ancien stagiaire', 'Débutant', 'salarié','Employé', 'Retraité', 'étudiant', 'Reconversion professionnelle'];
-            shuffle($status);
 
             $nom_formation = ['PHP', 'JAVA', 'JAVASCRIPT', 'SYMFONY', 'DOTNET', 'C++', 'SQL', 'PYTHON'];
 shuffle($nom_formation);
 
-$sessions = ['Session 01', 'Session 02'];
-shuffle($sessions);
 
 
 $email = $faker->email;
 
             $formations
+            ->setCivilite($civilite[0])
             ->setNom($faker->lastName)
-            ->setPrenom($faker->firstName)
             ->setTelephone($faker->phoneNumber)
-->setEmail($email)
-                    ->setNomFormation($nom_formation[0])
-                                                        
-                    ->setCivilite($civilite[0])
-                        ->setObjectifFormation($faker->sentence())
+            ->setEmail($email)
+            ->setNomFormation($nom_formation[0])     
             ->setDateFormation(new \DateTime())
-->setCoutFormation($cout[0])
-            ->setTitreProfessionnel($faker->sentence())
-           ->setPreRequis($faker->sentence())
-            ->setSessions($sessions[0])
-                ->setStatus($status[0]);
+            ->setCoutFormation($cout[0])
+        
+           ;
             
             $manager->persist($formations);
        $manager->flush();  

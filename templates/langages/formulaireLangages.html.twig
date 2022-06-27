@@ -1,20 +1,4 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}
-Formulaire :
- {% endblock %}
-
-{% block body %}
-
-{% block content %}
-<div>
-    <h1>
-     Formulaire :
-     </h1>
-
-    <br /><br />
-    <hr />
-    <br />
 
     
 {{ form_start(formLangages) }}
@@ -35,8 +19,7 @@ Coefficient: {{ form_widget(formLangages.coefficient) }} <br>
       
     {{ form_end(formLangages) }}
 
-<h1> Veuillez renplir tous les champs :</h1>
+
 
 </div>
-{% endblock %}
-{% endblock %}
+

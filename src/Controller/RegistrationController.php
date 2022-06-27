@@ -79,7 +79,7 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-// Ladministrateur général :    
+// Administrateur général :    
     /**
      * @Route("/register-admin", name="app_register_admin_index")
      */

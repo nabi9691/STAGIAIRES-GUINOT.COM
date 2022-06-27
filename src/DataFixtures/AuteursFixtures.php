@@ -20,7 +20,7 @@ class AuteursFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
         
         // Liste des contacts :
-        for ($a = 1; $a < 250; $a++) 
+        for ($a = 1; $a < 10; $a++) 
         {
             $auteurs = new Auteurs();
             $civilite = ["Femme", "Homme"];

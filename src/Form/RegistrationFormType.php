@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Utilisateurs;
 use App\Entity\Messages;
+use App\Entity\Medias;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;

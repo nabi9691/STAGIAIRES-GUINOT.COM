@@ -20,7 +20,7 @@ class CategoriesFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
         
         // Liste des catégories :
-        for ($c = 1; $c < 250; $c++) 
+        for ($c = 1; $c < 10; $c++) 
         {
             $categories = new Categories();
             $civilite = ["Femme", "Homme"];

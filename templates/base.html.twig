@@ -31,50 +31,53 @@
                     {% if app.user %}
                     <li><a href="{{ path('accueil_index') }}"> accueil </a></li>
 
-<li><a href="{{ path('pageAccueilGuinot_index') }}"> INTRODUCTION SUR GUINOT ! </a></li>
-<li><a href="{{ path('pageAccueilBIOInformatique_index') }}"> Page d'accueil BIOInformatique !</a> </li>
-
-<li><a href="{{ path('message_index') }}"> accéder au service de tchat public !</a></li>
-<li><a href="{{ path('pageAccueilEspacePerso_index') }}"> accéder à mon espace personnel ! </a> </li>
-
-<li><a href="{{ path('formations_index') }}"> Consultez nos formations !</a></li>
-<li><a href="{{ path('langages_index') }}"> Liste de nos langages ! </a> </li>
-
-
-                                <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 
 {% if is_granted('ROLE_ADMIN') %}
+<li><a href="{{ path('pageAccueilGuinot_index') }}"> INTRODUCTION SUR GUINOT ! </a></li>
+<li><a href="{{ path('pageAccueilBIOInformatique_index') }}"> Page d'accueil BIOInformatique !</a> </li>
 <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
                                             <li><a href="{{ path('formations_index') }}"> Liste des formations ! </a> </li>
 <li><a href="{{ path('langages_index') }}"> Liste de nos langages ! </a> </li>
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public !</a></li>
-
+<li><a href="{{ path('activites_index') }}"> Liste des activités  !</a></li>
+<li><a href="{{ path('medias_index') }}"> Liste des médias !</a></li>
+                        <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 {% endif %}
 
 
 {% if is_granted('ROLE_ADMIN_GUINOT') %}
+<li><a href="{{ path('pageAccueilGuinot_index') }}"> INTRODUCTION SUR GUINOT ! </a></li>
 <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs de GUINOT : </a></li>
                                             <li><a href="{{ path('formations_index') }}"> Liste des formations de Guinot ! </a> </li>
-<li><a href="{{ path('langages_index') }}"> Liste de nos langages de Guinot ! </a> </li>
+<li><a href="{{ path('langages_index') }}"> Liste des langages de Guinot ! </a> </li>
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public de Guinot !</a></li>
 <li><a href="{{ path('contacts_index') }}"> Liste des contacts de Guinot ! </a></li>
-
+<li><a href="{{ path('activites_index') }}"> Liste des activités  de Guinot !</a></li>
+<li><a href="{{ path('medias_index') }}"> Liste des médias de Guinot !</a></li>
+                                <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 {% endif %}
+
 
 {% if is_granted('ROLE_ADMIN_BIOGESOFT') %}
+<li><a href="{{ path('pageAccueilBIOInformatique_index') }}"> Page d'accueil BIOGESOFT !</a> </li>
 <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs de BIOGESOFT : </a></li>
                                             <li><a href="{{ path('formations_index') }}"> Liste des formations de BIOGESOFT ! </a> </li>
-<li><a href="{{ path('langages_index') }}"> Liste de nos langages de BIOGESOFT ! </a> </li>
+<li><a href="{{ path('langages_index') }}"> Liste des langages de BIOGESOFT ! </a> </li>
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public de BIOGESOFT !</a></li>
 <li><a href="{{ path('contacts_index') }}"> Liste des contacts de Biogesoft ! </a></li>
-
+<li><a href="{{ path('activites_index') }}"> Liste des activités  de BIOGESOFT !</a></li>
+<li><a href="{{ path('medias_index') }}"> Liste des médias de BIOGESOFT !</a></li>
+                                <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 {% endif %}
+
 
 {% if is_granted('ROLE_STAGIAIRE') %}
 <li><a href="{{ path('pageAccueilEspacePerso_index') }}">Page d'accueil de votre espace personnel<li><a href="{{ path('medias_index') }}"> Liste des médias ! </a></li>
 <li><a href="{{ path('contacts_index') }}"> Liste de mes contacts personnels ! </a></li>
-<li><a href="{{ path('message_index') }}"> accéder au service de tchat privé !</a></li>
-
+<li><a href="{{ path('message_index') }}"> accéder à ma messagerie privée !</a></li>
+<li><a href="{{ path('activites_index') }}"> Liste de mes activités  personnelles !</a></li>
+<li><a href="{{ path('medias_index') }}"> Liste de mes médias personnels !</a></li>
+                                <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 {% endif %}
 
 
@@ -84,20 +87,10 @@
     
 <li><a href="{{ path('pageAccueilGuinot_index') }}"> INTRODUCTION SUR GUINOT ! </a></li>
 <li><a href="{{ path('pageAccueilBIOInformatique_index') }}"> Page d'accueil BIOInformatique !</a> </li>
-
-
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public !</a></li>
-
-<li><a href="{{ path('pageAccueilEspacePerso_index') }}"> accéder à mon espace personnel ! </a> </li>
-                                            <li><a href="{{ path('formations_index') }}"> Liste de nos formations ! </a> </li>
-<li><a href="{{ path('langages_index') }}"> Liste de nos langages ! </a> </li>
-
-
 
                         <li><a href="{{ path('app_login') }}"> Se connecter </a> </li>
                     <li><a href="{{ path('app_register') }}"> Création de compte </a> </li>
-<li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
-
                                             
                                             {% endif %}
 
@@ -123,43 +116,7 @@
 
   
 
-<!-- -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<!-- end bootstap nav bar-->
     {% block content %}
 
     {% endblock %}

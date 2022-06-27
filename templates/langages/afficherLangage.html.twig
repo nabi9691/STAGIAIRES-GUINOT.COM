@@ -1,24 +1,46 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+     {{ include('linkCss.html.twig') }}
+        
+        
+        <title>Centre Guinot</title>
+    </head>
 
-{% block title %}
-Afficher un langage : 
- {% endblock %}
+<body>
 
-{% block body %}
+   {{ include('navbar.html.twig') }}
 
-{% block content %}
-<div>
-    <h1>
-     bienvenu(e) !
-     Afficher un langage :
-     </h1>
 
-    <br /><br />
-    <hr />
-    <br />
+ 
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>BioGeSoft</h6>
+          <h2>La formation</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  {% block content %}
     
-    <table border="1">
-            <thead>
+
+    <table class="table table-responsive">
+                <thead class="thead-dark">
+                   
                 <tr>
                     <th> Id </th>
                 <th> Nom du stagiaire </th>
@@ -31,7 +53,9 @@ Afficher un langage :
                     <th> Coefficient </th>
                                         </tr>
             </thead>
-            <tbody>
+            
+            
+<tbody>
         <tr>
                 <td> {{ langage.id }} </td>
                 <td> {{ langage.nom }} </td>
@@ -43,20 +67,33 @@ Afficher un langage :
 <td> {{ langage.objectif }} </td>
 <td> {{ langage.coefficient }} </td>
                         </tr>
-            </tbody>
+           
+        </tbody>
     </table>
 
-</div>
-{% endblock %}
+    {% endblock %}
 
-<br/><br/>
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="meetings.html">Back To Meetings List</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
 
-{% block footer %}
-<div>
-<h1> Contactez nous ... </h1>
+        
 
-</div>
+   
+  
+</body>
 
-{% endblock %}
+</html>
 
-{% endblock %}
+
