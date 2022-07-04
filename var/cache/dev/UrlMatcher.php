@@ -23,7 +23,9 @@ return [
         '/contacts' => [[['_route' => 'contacts_index', '_controller' => 'App\\Controller\\ContactsController::index'], null, null, null, true, false, null]],
         '/contacts/formulaireContacts' => [[['_route' => 'formulaireContacts_index', '_controller' => 'App\\Controller\\ContactsController::formulaireContacts'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/contacts/nouveauContacts' => [[['_route' => 'nouveauContacts_index', '_controller' => 'App\\Controller\\ContactsController::nouveauContacts'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/cours' => [[['_route' => 'app_cours', '_controller' => 'App\\Controller\\CoursController::index'], null, null, null, false, false, null]],
+        '/cours' => [[['_route' => 'cours_index', '_controller' => 'App\\Controller\\CoursController::index'], null, ['GET' => 0, 'POST' => 1], null, true, false, null]],
+        '/cours/formulaireCours' => [[['_route' => 'formulaireCours_index', '_controller' => 'App\\Controller\\CoursController::formulaireCours'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/cours/nouveauCours' => [[['_route' => 'nouveauCours_index', '_controller' => 'App\\Controller\\CoursController::nouveauCours'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/formations' => [[['_route' => 'formations_index', '_controller' => 'App\\Controller\\FormationsController::index'], null, null, null, true, false, null]],
         '/formations/formulaireFormations' => [[['_route' => 'formulaireFormations_index', '_controller' => 'App\\Controller\\FormationsController::formulaireFormations'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/formations/nouvelleFormation' => [[['_route' => 'nouvelleFormation_index', '_controller' => 'App\\Controller\\FormationsController::nouvelleFormation'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -34,18 +36,7 @@ return [
         '/formationsformationSymfony' => [[['_route' => 'formationSymfony_index', '_controller' => 'App\\Controller\\FormationsController::formationSymfony'], null, ['GET' => 0], null, false, false, null]],
         '/formationslisteFormations' => [[['_route' => 'listeDesFormations_index', '_controller' => 'App\\Controller\\FormationsController::listeDesFormations'], null, ['GET' => 0], null, false, false, null]],
         '/formationsaProposFormations' => [[['_route' => 'aProposBioInformatique_index', '_controller' => 'App\\Controller\\FormationsController::aProposBioInformatique'], null, ['GET' => 0], null, false, false, null]],
-        '/formationsformationPYTHON_index' => [[['_route' => 'formationPYTHON_index', '_controller' => 'App\\Controller\\FormationsController::formationPYTHON_index'], null, ['GET' => 0], null, false, false, null]],
-        '/formationsformationHTML' => [[['_route' => 'formationHTML_index', '_controller' => 'App\\Controller\\FormationsController::formationHTML'], null, ['GET' => 0], null, false, false, null]],
-        '/formationsformationCSS' => [[['_route' => 'formationCSS_index', '_controller' => 'App\\Controller\\FormationsController::formationCSS'], null, ['GET' => 0], null, false, false, null]],
-        '/formationsformationJAVASCRIPT' => [[['_route' => 'formationJAVASCRIPT_index', '_controller' => 'App\\Controller\\FormationsController::formationJAVASCRIPT'], null, ['GET' => 0], null, false, false, null]],
-        '/formationsformationDotNet' => [[['_route' => 'formationDotNet_index', '_controller' => 'App\\Controller\\FormationsController::formationDotNet'], null, ['GET' => 0], null, false, false, null]],
-        '/formationsformationC++' => [[['_route' => 'formationC++_index', '_controller' => 'App\\Controller\\FormationsController::formationCPlus'], null, ['GET' => 0], null, false, false, null]],
-        '/formationscoursEnPresentiel' => [[['_route' => 'coursEnPresentiel_index', '_controller' => 'App\\Controller\\FormationsController::coursEnPresentiel'], null, ['GET' => 0], null, false, false, null]],
         '/formationscoursEnVideo' => [[['_route' => 'coursEnVideo_index', '_controller' => 'App\\Controller\\FormationsController::coursEnVideo'], null, ['GET' => 0], null, false, false, null]],
-        '/formationscoursEnPDF' => [[['_route' => 'coursEnPDF_index', '_controller' => 'App\\Controller\\FormationsController::coursEnPDF'], null, ['GET' => 0], null, false, false, null]],
-        '/formationscoursEnWord' => [[['_route' => 'coursEnWord_index', '_controller' => 'App\\Controller\\FormationsController::coursEnWord'], null, ['GET' => 0], null, false, false, null]],
-        '/formationscoursEnLignes' => [[['_route' => 'coursEnLignes_index', '_controller' => 'App\\Controller\\FormationsController::coursEnLignes'], null, ['GET' => 0], null, false, false, null]],
-        '/formationscoursEnFichierZipp' => [[['_route' => 'coursEnFichierZipp_index', '_controller' => 'App\\Controller\\FormationsController::coursEnFichierZipp'], null, ['GET' => 0], null, false, false, null]],
         '/formationslisteDesCours' => [[['_route' => 'listeDesCours_index', '_controller' => 'App\\Controller\\FormationsController::listeDesCours'], null, ['GET' => 0], null, false, false, null]],
         '/' => [
             [['_route' => 'accueil_index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null],
@@ -66,6 +57,7 @@ return [
         '/mediasformationDeveloppeurGuinot' => [[['_route' => 'developpeurGuinot_index', '_controller' => 'App\\Controller\\MediasController::developpeurGuinot'], null, ['GET' => 0], null, false, false, null]],
         '/mediasformationConseillerGuinot' => [[['_route' => 'conseillerGuinot_index', '_controller' => 'App\\Controller\\MediasController::conseillerGuinot'], null, ['GET' => 0], null, false, false, null]],
         '/mediastemoignages' => [[['_route' => 'temoignages_index', '_controller' => 'App\\Controller\\MediasController::temoignages'], null, ['GET' => 0], null, false, false, null]],
+        '/menu/bio/ge/soft' => [[['_route' => 'app_menu_bio_ge_soft', '_controller' => 'App\\Controller\\MenuBioGeSoftController::index'], null, null, null, false, false, null]],
         '/messages' => [[['_route' => 'message_index', '_controller' => 'App\\Controller\\MessagesController::index'], null, null, null, true, false, null]],
         '/messagesdixDernierMessages' => [[['_route' => 'dixDernierMessages_index', '_controller' => 'App\\Controller\\MessagesController::dixDernierMessages'], null, null, null, false, false, null]],
         '/messages/formulaireMessages' => [[['_route' => 'formulaireMessages_index', '_controller' => 'App\\Controller\\MessagesController::formulaireMessages'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -80,7 +72,6 @@ return [
         '/register-admin-biogesoft' => [[['_route' => 'app_register_admin_biogesoft_index', '_controller' => 'App\\Controller\\RegistrationController::registerAdminBiogesoft'], null, null, null, false, false, null]],
         '/register-stagiaires' => [[['_route' => 'app_register_stagiaires_index', '_controller' => 'App\\Controller\\RegistrationController::registerStagiaire'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
-        '/test' => [[['_route' => 'test_index', '_controller' => 'App\\Controller\\TestController::index'], null, null, null, false, false, null]],
         '/utilisateur' => [[['_route' => 'utilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::index'], null, ['GET' => 0], null, false, false, null]],
         '/formulaireUtilisateur' => [[['_route' => 'formulaireUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::formulaireUtilisateur'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/nouvelUtilisateur' => [[['_route' => 'nouvelUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::nouvelUtilisateur'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -113,46 +104,54 @@ return [
                     .')'
                     .'|fficherUtilisateur/([^/]++)(*:317)'
                 .')'
-                .'|/contacts/(?'
-                    .'|afficherContacts/([^/]++)(*:364)'
-                    .'|modifierContacts/([^/]++)(*:397)'
-                    .'|supprimerContacts/([^/]++)(*:431)'
+                .'|/co(?'
+                    .'|ntacts/(?'
+                        .'|afficherContacts/([^/]++)(*:367)'
+                        .'|modifierContacts/([^/]++)(*:400)'
+                        .'|supprimerContacts/([^/]++)(*:434)'
+                    .')'
+                    .'|urs/(?'
+                        .'|afficherCours/([^/]++)(*:472)'
+                        .'|modifierCours/([^/]++)(*:502)'
+                        .'|supprimerCours/([^/]++)(*:533)'
+                    .')'
                 .')'
                 .'|/formations/(?'
-                    .'|afficherFormations/([^/]++)(*:482)'
-                    .'|modifierFormations/([^/]++)(*:517)'
-                    .'|supprimerFormations/([^/]++)(*:553)'
+                    .'|afficherFormations/([^/]++)(*:585)'
+                    .'|modifierFormations/([^/]++)(*:620)'
+                    .'|supprimerFormations/([^/]++)(*:656)'
                 .')'
                 .'|/langages/(?'
-                    .'|afficherLangage/([^/]++)(*:599)'
-                    .'|modifierLangage/([^/]++)(*:631)'
-                    .'|supprimerLangage/([^/]++)(*:664)'
+                    .'|afficherLangage/([^/]++)(*:702)'
+                    .'|modifierLangage/([^/]++)(*:734)'
+                    .'|supprimerLangage/([^/]++)(*:767)'
                 .')'
                 .'|/m(?'
                     .'|e(?'
-                        .'|dias/(?'
-                            .'|recherchesMedias/([^/]++)(*:715)'
-                            .'|afficherMedias/([^/]++)(*:746)'
-                            .'|modifierMedias/([^/]++)(*:777)'
-                            .'|supprimerMedias/([^/]++)(*:809)'
+                        .'|dias(?'
+                            .'|afficherMedias/([^/]++)(*:815)'
+                            .'|/(?'
+                                .'|modifierMedias/([^/]++)(*:850)'
+                                .'|supprimerMedias/([^/]++)(*:882)'
+                            .')'
                         .')'
                         .'|ssages/(?'
-                            .'|afficherMessage/([^/]++)(*:852)'
+                            .'|afficherMessage/([^/]++)(*:926)'
                             .'|m(?'
-                                .'|odifierMessages/([^/]++)(*:888)'
-                                .'|essagesLu/([^/]++)(*:914)'
+                                .'|odifierMessages/([^/]++)(*:962)'
+                                .'|essagesLu/([^/]++)(*:988)'
                             .')'
-                            .'|supprimerMessages/([^/]++)(*:949)'
+                            .'|supprimerMessages/([^/]++)(*:1023)'
                         .')'
                     .')'
-                    .'|odifierUtilisateur/([^/]++)(*:986)'
+                    .'|odifierUtilisateur/([^/]++)(*:1061)'
                 .')'
-                .'|/rechercheUtilisateur/([^/]++)(*:1025)'
-                .'|/supprimerUtilisateur/([^/]++)(*:1064)'
+                .'|/rechercheUtilisateur/([^/]++)(*:1101)'
+                .'|/supprimerUtilisateur/([^/]++)(*:1140)'
                 .'|/e(?'
-                    .'|xpediteur/([^/]++)(*:1096)'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:1141)'
-                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:1185)'
+                    .'|xpediteur/([^/]++)(*:1172)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:1217)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:1261)'
                 .')'
             .')/?$}sD',
     ],
@@ -168,29 +167,31 @@ return [
         246 => [[['_route' => 'modifierActivites_index', '_controller' => 'App\\Controller\\ActivitesController::modifierActivites'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         281 => [[['_route' => 'supprimerActivites_index', '_controller' => 'App\\Controller\\ActivitesController::supprimerActivites'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         317 => [[['_route' => 'afficherUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::afficherUtilisateur'], ['id'], ['GET' => 0], null, false, true, null]],
-        364 => [[['_route' => 'afficherContacts_index', '_controller' => 'App\\Controller\\ContactsController::afficherContacts'], ['id'], ['GET' => 0], null, false, true, null]],
-        397 => [[['_route' => 'modifierContacts_index', '_controller' => 'App\\Controller\\ContactsController::modifierContacts'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        431 => [[['_route' => 'supprimerContacts_index', '_controller' => 'App\\Controller\\ContactsController::supprimerContacts'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        482 => [[['_route' => 'afficherFormations_index', '_controller' => 'App\\Controller\\FormationsController::afficherFormations'], ['id'], ['GET' => 0], null, false, true, null]],
-        517 => [[['_route' => 'modifierFormations_index', '_controller' => 'App\\Controller\\FormationsController::modifierFormations'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        553 => [[['_route' => 'supprimerFormations_index', '_controller' => 'App\\Controller\\FormationsController::supprimerFormations'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        599 => [[['_route' => 'afficherLangage_index', '_controller' => 'App\\Controller\\LangagesController::afficherLangage'], ['id'], ['GET' => 0], null, false, true, null]],
-        631 => [[['_route' => 'modifierLangage_index', '_controller' => 'App\\Controller\\LangagesController::modifierLangage'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        664 => [[['_route' => 'supprimerLangage_index', '_controller' => 'App\\Controller\\LangagesController::supprimerLangage'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        715 => [[['_route' => 'rechercheMedias_index', '_controller' => 'App\\Controller\\MediasController::rechercheMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        746 => [[['_route' => 'afficherMedias_index', '_controller' => 'App\\Controller\\MediasController::afficherMedias'], ['id'], ['GET' => 0], null, false, true, null]],
-        777 => [[['_route' => 'modifierMedias_index', '_controller' => 'App\\Controller\\MediasController::modifierMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        809 => [[['_route' => 'supprimerMedias_index', '_controller' => 'App\\Controller\\MediasController::supprimerMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        852 => [[['_route' => 'afficherMessage_index', '_controller' => 'App\\Controller\\MessagesController::afficherMessage'], ['id'], ['GET' => 0], null, false, true, null]],
-        888 => [[['_route' => 'modifierMessage_index', '_controller' => 'App\\Controller\\MessagesController::modifierMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        914 => [[['_route' => 'messagesLu_index', '_controller' => 'App\\Controller\\MessagesController::messageLu'], ['id'], null, null, false, true, null]],
-        949 => [[['_route' => 'supprimerMessage_index', '_controller' => 'App\\Controller\\MessagesController::supprimerMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        986 => [[['_route' => 'modifierUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::modifierUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        1025 => [[['_route' => 'rechercheUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::rechercheUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        1064 => [[['_route' => 'supprimerUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        1096 => [[['_route' => 'expediteur_index', '_controller' => 'App\\Controller\\UtilisateursController::expediteur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        1141 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        1185 => [
+        367 => [[['_route' => 'afficherContacts_index', '_controller' => 'App\\Controller\\ContactsController::afficherContacts'], ['id'], ['GET' => 0], null, false, true, null]],
+        400 => [[['_route' => 'modifierContacts_index', '_controller' => 'App\\Controller\\ContactsController::modifierContacts'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        434 => [[['_route' => 'supprimerContacts_index', '_controller' => 'App\\Controller\\ContactsController::supprimerContacts'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        472 => [[['_route' => 'afficherCours_index', '_controller' => 'App\\Controller\\CoursController::afficherCours'], ['id'], ['GET' => 0], null, false, true, null]],
+        502 => [[['_route' => 'modifierCours_index', '_controller' => 'App\\Controller\\CoursController::modifierCours'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        533 => [[['_route' => 'supprimerCours_index', '_controller' => 'App\\Controller\\CoursController::supprimerCours'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        585 => [[['_route' => 'afficherFormations_index', '_controller' => 'App\\Controller\\FormationsController::afficherFormations'], ['id'], ['GET' => 0], null, false, true, null]],
+        620 => [[['_route' => 'modifierFormations_index', '_controller' => 'App\\Controller\\FormationsController::modifierFormations'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        656 => [[['_route' => 'supprimerFormations_index', '_controller' => 'App\\Controller\\FormationsController::supprimerFormations'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        702 => [[['_route' => 'afficherLangage_index', '_controller' => 'App\\Controller\\LangagesController::afficherLangage'], ['id'], ['GET' => 0], null, false, true, null]],
+        734 => [[['_route' => 'modifierLangage_index', '_controller' => 'App\\Controller\\LangagesController::modifierLangage'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        767 => [[['_route' => 'supprimerLangage_index', '_controller' => 'App\\Controller\\LangagesController::supprimerLangage'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        815 => [[['_route' => 'afficherMedias_index', '_controller' => 'App\\Controller\\MediasController::afficherMedias'], ['id'], ['GET' => 0], null, false, true, null]],
+        850 => [[['_route' => 'modifierMedias_index', '_controller' => 'App\\Controller\\MediasController::modifierMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        882 => [[['_route' => 'supprimerMedias_index', '_controller' => 'App\\Controller\\MediasController::supprimerMedias'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        926 => [[['_route' => 'afficherMessage_index', '_controller' => 'App\\Controller\\MessagesController::afficherMessage'], ['id'], ['GET' => 0], null, false, true, null]],
+        962 => [[['_route' => 'modifierMessage_index', '_controller' => 'App\\Controller\\MessagesController::modifierMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        988 => [[['_route' => 'messagesLu_index', '_controller' => 'App\\Controller\\MessagesController::messageLu'], ['id'], null, null, false, true, null]],
+        1023 => [[['_route' => 'supprimerMessage_index', '_controller' => 'App\\Controller\\MessagesController::supprimerMessages'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1061 => [[['_route' => 'modifierUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::modifierUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1101 => [[['_route' => 'rechercheUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::rechercheUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1140 => [[['_route' => 'supprimerUtilisateur_index', '_controller' => 'App\\Controller\\UtilisateursController::supprimerUtilisateur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1172 => [[['_route' => 'expediteur_index', '_controller' => 'App\\Controller\\UtilisateursController::expediteur'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1217 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        1261 => [
             [['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

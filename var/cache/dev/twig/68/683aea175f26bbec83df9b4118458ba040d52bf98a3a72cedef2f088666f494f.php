@@ -59,14 +59,6 @@ Date: ";
         // line 7
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formMedias"]) || array_key_exists("formMedias", $context) ? $context["formMedias"] : (function () { throw new RuntimeError('Variable "formMedias" does not exist.', 7, $this->source); })()), "date", [], "any", false, false, false, 7), 'widget');
         echo " <br>
-Catégories: ";
-        // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formMedias"]) || array_key_exists("formMedias", $context) ? $context["formMedias"] : (function () { throw new RuntimeError('Variable "formMedias" does not exist.', 8, $this->source); })()), "categories", [], "any", false, false, false, 8), 'widget');
-        echo " <br>
-Utilisateurs: ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formMedias"]) || array_key_exists("formMedias", $context) ? $context["formMedias"] : (function () { throw new RuntimeError('Variable "formMedias" does not exist.', 9, $this->source); })()), "utilisateurs", [], "any", false, false, false, 9), 'widget');
-        echo " <br>
 
 
 <button type=\"submit\" class=\"btn btn-success\">envoyer</button>
@@ -74,8 +66,8 @@ Utilisateurs: ";
 
       
     ";
-        // line 16
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formMedias"]) || array_key_exists("formMedias", $context) ? $context["formMedias"] : (function () { throw new RuntimeError('Variable "formMedias" does not exist.', 16, $this->source); })()), 'form_end');
+        // line 14
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formMedias"]) || array_key_exists("formMedias", $context) ? $context["formMedias"] : (function () { throw new RuntimeError('Variable "formMedias" does not exist.', 14, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -98,7 +90,7 @@ Utilisateurs: ";
 
     public function getDebugInfo()
     {
-        return array (  78 => 16,  68 => 9,  64 => 8,  60 => 7,  56 => 6,  52 => 5,  47 => 3,  43 => 1,);
+        return array (  70 => 14,  60 => 7,  56 => 6,  52 => 5,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -110,8 +102,6 @@ Utilisateurs: ";
 Image: {{ form_widget(formMedias.imageFile) }}<br>
 Contenu: {{ form_widget(formMedias.contenu) }} <br>
 Date: {{ form_widget(formMedias.date) }} <br>
-Catégories: {{ form_widget(formMedias.categories) }} <br>
-Utilisateurs: {{ form_widget(formMedias.utilisateurs) }} <br>
 
 
 <button type=\"submit\" class=\"btn btn-success\">envoyer</button>

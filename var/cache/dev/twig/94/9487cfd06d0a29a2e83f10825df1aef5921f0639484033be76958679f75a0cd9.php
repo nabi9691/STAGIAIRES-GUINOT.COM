@@ -24,16 +24,10 @@ class __TwigTemplate_abb901730df381c9022aa60d34a68383967e7944743f0d976eb7621e13e
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'content' => [$this, 'block_content'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,69 +39,82 @@ class __TwigTemplate_abb901730df381c9022aa60d34a68383967e7944743f0d976eb7621e13e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "messages/nouveauMessage.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "messages/nouveauMessage.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        echo "<html>
+    <head>
+     ";
+        // line 3
+        echo twig_include($this->env, $context, "linkCss.html.twig");
+        echo "
         
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
         
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        <title>Enregistrement d'un nouveau message</title>
+    </head>
 
-    }
+<body>
 
-    // line 4
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+   ";
+        // line 11
+        echo twig_include($this->env, $context, "navbar.html.twig");
+        echo "
 
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                <div class=\"down-content\">
 
-        // line 5
-        echo " Enregistrement d'un nouveau message 
- ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 8
-    public function block_content($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        // line 9
-        echo " <br> <br>
- 
-    <h1> Enregistrement d'un nouveau message</h1>
-
-    ";
-        // line 13
+                  <h1 style=\"color: rgb(37, 79, 194);\">Enregistrement d'un nouveau message </h1>
+                  <div class=\"container bg-white\">
+                    ";
+        // line 27
         echo twig_include($this->env, $context, "messages/formulaireMessage.html.twig");
         echo "<br>
-
-    <a href=\"";
-        // line 15
+                </div>
+                <a href=\"";
+        // line 29
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_index");
-        echo "\">Liste des messages :</a><br>
+        echo "\">Liste des messages</a><br>
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+               <a href=\"";
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">Revenir à l'acceuil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  ";
+        // line 42
+        echo twig_include($this->env, $context, "footer.html.twig");
+        echo "
+";
+        // line 43
+        echo twig_include($this->env, $context, "scriptJS.html.twig");
+        echo "
 
+</body>
+
+</html>
 
 ";
         
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
         
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
@@ -123,29 +130,59 @@ class __TwigTemplate_abb901730df381c9022aa60d34a68383967e7944743f0d976eb7621e13e
 
     public function getDebugInfo()
     {
-        return array (  101 => 15,  96 => 13,  90 => 9,  80 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  105 => 43,  101 => 42,  89 => 33,  82 => 29,  77 => 27,  58 => 11,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("<html>
+    <head>
+     {{ include('linkCss.html.twig') }}
+        
+        
+        <title>Enregistrement d'un nouveau message</title>
+    </head>
 
+<body>
 
-{% block title %}
- Enregistrement d'un nouveau message 
- {% endblock %}
+   {{ include('navbar.html.twig') }}
 
-{% block content %}
- <br> <br>
- 
-    <h1> Enregistrement d'un nouveau message</h1>
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                <div class=\"down-content\">
 
-    {{ include('messages/formulaireMessage.html.twig') }}<br>
+                  <h1 style=\"color: rgb(37, 79, 194);\">Enregistrement d'un nouveau message </h1>
+                  <div class=\"container bg-white\">
+                    {{ include('messages/formulaireMessage.html.twig') }}<br>
+                </div>
+                <a href=\"{{ path('message_index') }}\">Liste des messages</a><br>
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+               <a href=\"{{ path('accueil_index') }}\">Revenir à l'acceuil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
 
-    <a href=\"{{ path('message_index') }}\">Liste des messages :</a><br>
+</body>
 
+</html>
 
-{% endblock %}
 ", "messages/nouveauMessage.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\messages\\nouveauMessage.html.twig");
     }
 }

@@ -20,7 +20,7 @@ class UtilisateursFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
         
         // Liste des utilisateurs :
-        for ($i = 1; $i < 20; $i++) 
+        for ($u = 1; $u < 20; $u++) 
         {
             $utilisateurs = new Utilisateurs();
             $civilite = ["Femme", "Homme"];
@@ -36,8 +36,7 @@ $email = $faker->email;
                 ->setCivilite($civilite[0])
                 ->setNom($faker->lastName)
                 ->setPrenom($faker->firstName)
-        
-                ->setDateDeNaissance(new \DateTime())
+                        ->setDateDeNaissance(new \DateTime())
         ->setAdresse($faker->address)
         ->setEmail($email)
         ->setIsVerified(true)
@@ -47,14 +46,13 @@ $email = $faker->email;
                                 ->setCodePostal($faker->postcode)
                 ->setPays($faker->city)
                 ->setTelephone($faker->phoneNumber)
-                //->setPeriode($faker->date())
                     ->setStatus($status[0])
                 ->setRoles($roles[0]);
                                     
             $manager->persist($utilisateurs);
     
         // Liste des messages :
-        for ($j=1; $j<20 ; $j++ ) 
+        for ($m=1; $m<20 ; $m++ ) 
     {
         $status = ['Nouveau Message', 'Ancien message', 'Message Privé', 'Message Annonyme', 'Message Archivé', 'Message Professionnel', 'Message Publicitaire'];
         shuffle($status);

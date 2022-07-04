@@ -24,16 +24,10 @@ class __TwigTemplate_2d40a4dacb9bda78aa656844e8f1245a2e2d5050f33c73b41835d41c63c
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'content' => [$this, 'block_content'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,69 +39,94 @@ class __TwigTemplate_2d40a4dacb9bda78aa656844e8f1245a2e2d5050f33c73b41835d41c63c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "medias/nouveauMedias.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "medias/nouveauMedias.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+        // line 1
+        echo "
 
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-    }
-
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        // line 4
-        echo " Enregistrement d'un médias :
- ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 7
-    public function block_content($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        // line 8
-        echo " <br> <br>
- 
-    <h1> Enregistrement d'un médias : </h1>
+<html>
+    <head>
 
     ";
-        // line 12
+        // line 6
+        echo twig_include($this->env, $context, "linkCss.html.twig");
+        echo "    
+        
+        <title>Médias</title>
+    </head>
+
+<body>
+
+   
+
+
+  ";
+        // line 16
+        echo twig_include($this->env, $context, "navbar.html.twig");
+        echo "
+
+  <section class=\"heading-page header-text\" id=\"top\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <h6>BioGeSoft</h6>
+          <h2>Mes médias </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                     <div class=\"down-content\">
+                  <h1> Ajoutée un médias</h1> <br><br>
+                   ";
+        // line 41
         echo twig_include($this->env, $context, "medias/formulaireMedias.html.twig");
-        echo "<br>
+        echo "
+\t\t\t\t  
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+                 <a href=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">Revenir à l'accueil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ ";
+        // line 56
+        echo twig_include($this->env, $context, "footer.html.twig");
+        echo "
+";
+        // line 57
+        echo twig_include($this->env, $context, "scriptJS.html.twig");
+        echo "
 
-    <a href=\"";
-        // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("medias_index");
-        echo "\">Liste des médiats :</a><br>
+   
+  
+</body>
 
-
+</html>
 ";
         
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
         
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
@@ -123,28 +142,74 @@ class __TwigTemplate_2d40a4dacb9bda78aa656844e8f1245a2e2d5050f33c73b41835d41c63c
 
     public function getDebugInfo()
     {
-        return array (  101 => 14,  96 => 12,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  116 => 57,  112 => 56,  99 => 46,  91 => 41,  63 => 16,  50 => 6,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
 
-{% block title %}
- Enregistrement d'un médias :
- {% endblock %}
+<html>
+    <head>
 
-{% block content %}
- <br> <br>
- 
-    <h1> Enregistrement d'un médias : </h1>
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Médias</title>
+    </head>
 
-    {{ include('medias/formulaireMedias.html.twig') }}<br>
+<body>
 
-    <a href=\"{{ path('medias_index') }}\">Liste des médiats :</a><br>
+   
 
 
-{% endblock %}
+  {{ include('navbar.html.twig') }}
+
+  <section class=\"heading-page header-text\" id=\"top\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <h6>BioGeSoft</h6>
+          <h2>Mes médias </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                     <div class=\"down-content\">
+                  <h1> Ajoutée un médias</h1> <br><br>
+                   {{ include('medias/formulaireMedias.html.twig') }}
+\t\t\t\t  
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+                 <a href=\"{{ path('accueil_index') }}\">Revenir à l'accueil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+   
+  
+</body>
+
+</html>
 ", "medias/nouveauMedias.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\medias\\nouveauMedias.html.twig");
     }
 }

@@ -24,16 +24,10 @@ class __TwigTemplate_99a0040fdd12ff8d42b0d022243600d163ce5096ab6214612a04967c9ce
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'content' => [$this, 'block_content'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,133 +39,78 @@ class __TwigTemplate_99a0040fdd12ff8d42b0d022243600d163ce5096ab6214612a04967c9ce
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "contacts/modifierContacts.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "contacts/modifierContacts.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        echo "<html>
+    <head>
+    ";
+        // line 3
+        echo twig_include($this->env, $context, "linkCss.html.twig");
+        echo " 
         
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+        <title>Modifier un contact</title>
+    </head>
 
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+<body>
 
-    }
-
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        // line 4
-        echo "Modifier un contact :
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 7
-    public function block_content($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        // line 8
-        echo "    
-    
-    <h1>
-        Modifier un contact :
-        </h1>
+   
 
 ";
-        // line 14
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 14, $this->source); })()), 'form_start');
+        // line 12
+        echo twig_include($this->env, $context, "navbar.html.twig");
         echo "
 
-Formations: ";
-        // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 16, $this->source); })()), "formation", [], "any", false, false, false, 16), 'widget');
-        echo "<br>
-Nom: ";
-        // line 17
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 17, $this->source); })()), "nom", [], "any", false, false, false, 17), 'widget');
-        echo "<br>
-Prénom: ";
-        // line 18
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 18, $this->source); })()), "prenom", [], "any", false, false, false, 18), 'widget');
-        echo " <br>
-Date de naissance: ";
-        // line 19
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 19, $this->source); })()), "date", [], "any", false, false, false, 19), 'widget');
-        echo " <br>
-Civilité: ";
-        // line 20
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 20, $this->source); })()), "civilite", [], "any", false, false, false, 20), 'widget');
-        echo " <br>
-Téléphone: ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 21, $this->source); })()), "telephone", [], "any", false, false, false, 21), 'widget');
-        echo " <br>
-Email: ";
-        // line 22
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 22, $this->source); })()), "email", [], "any", false, false, false, 22), 'widget');
-        echo " <br>
-Fax: ";
-        // line 23
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 23, $this->source); })()), "fax", [], "any", false, false, false, 23), 'widget');
-        echo " <br>
-Adresse: ";
-        // line 24
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 24, $this->source); })()), "adresse", [], "any", false, false, false, 24), 'widget');
-        echo " <br>
-Code-Postal: ";
-        // line 25
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 25, $this->source); })()), "codePostal", [], "any", false, false, false, 25), 'widget');
-        echo " <br>
-Villes: ";
-        // line 26
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 26, $this->source); })()), "villes", [], "any", false, false, false, 26), 'widget');
-        echo " <br>
-Départements: ";
+
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                     <div class=\"down-content\">
+                  <h1>Modifier un contact</h1> <br><br>
+                  ";
         // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 27, $this->source); })()), "departements", [], "any", false, false, false, 27), 'widget');
-        echo " <br>
-Pays: ";
-        // line 28
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 28, $this->source); })()), "pays", [], "any", false, false, false, 28), 'widget');
-        echo " <br>
-
-
-
-<button type=\"submit\" class=\"btn btn-success\">envoyer</button>
-
-
-      
-    ";
-        // line 36
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formContacts"]) || array_key_exists("formContacts", $context) ? $context["formContacts"] : (function () { throw new RuntimeError('Variable "formContacts" does not exist.', 36, $this->source); })()), 'form_end');
+        echo twig_include($this->env, $context, "contacts/formulaireContacts.html.twig");
         echo "
 
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+                <a href=\"";
+        // line 32
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
+  ";
+        // line 43
+        echo twig_include($this->env, $context, "footer.html.twig");
+        echo "
+  ";
+        // line 44
+        echo twig_include($this->env, $context, "scriptJS.html.twig");
+        echo "
+  
+</body>
 
-
-
-    ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
+</html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
@@ -187,53 +126,58 @@ Pays: ";
 
     public function getDebugInfo()
     {
-        return array (  162 => 36,  151 => 28,  147 => 27,  143 => 26,  139 => 25,  135 => 24,  131 => 23,  127 => 22,  123 => 21,  119 => 20,  115 => 19,  111 => 18,  107 => 17,  103 => 16,  98 => 14,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  103 => 44,  99 => 43,  85 => 32,  77 => 27,  59 => 12,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("<html>
+    <head>
+    {{ include('linkCss.html.twig') }} 
+        
+        <title>Modifier un contact</title>
+    </head>
 
-{% block title %}
-Modifier un contact :
-{% endblock %}
+<body>
 
-{% block content %}
-    
-    
-    <h1>
-        Modifier un contact :
-        </h1>
+   
 
-{{ form_start(formContacts) }}
-
-Formations: {{ form_widget(formContacts.formation) }}<br>
-Nom: {{ form_widget(formContacts.nom) }}<br>
-Prénom: {{ form_widget(formContacts.prenom) }} <br>
-Date de naissance: {{ form_widget(formContacts.date) }} <br>
-Civilité: {{ form_widget(formContacts.civilite) }} <br>
-Téléphone: {{ form_widget(formContacts.telephone) }} <br>
-Email: {{ form_widget(formContacts.email) }} <br>
-Fax: {{ form_widget(formContacts.fax) }} <br>
-Adresse: {{ form_widget(formContacts.adresse) }} <br>
-Code-Postal: {{ form_widget(formContacts.codePostal) }} <br>
-Villes: {{ form_widget(formContacts.villes) }} <br>
-Départements: {{ form_widget(formContacts.departements) }} <br>
-Pays: {{ form_widget(formContacts.pays) }} <br>
+{{ include('navbar.html.twig') }}
 
 
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                     <div class=\"down-content\">
+                  <h1>Modifier un contact</h1> <br><br>
+                  {{ include('contacts/formulaireContacts.html.twig') }}
 
-<button type=\"submit\" class=\"btn btn-success\">envoyer</button>
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+                <a href=\"{{ path('accueil_index') }}\">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
+  {{ include('footer.html.twig') }}
+  {{ include('scriptJS.html.twig') }}
+  
+</body>
 
-      
-    {{ form_end(formContacts) }}
-
-
-
-
-
-    {% endblock %}
-", "contacts/modifierContacts.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\contacts\\modifierContacts.html.twig");
+</html>", "contacts/modifierContacts.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\contacts\\modifierContacts.html.twig");
     }
 }

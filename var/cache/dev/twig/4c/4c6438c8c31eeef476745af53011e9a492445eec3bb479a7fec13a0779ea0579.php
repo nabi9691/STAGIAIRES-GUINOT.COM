@@ -207,7 +207,10 @@ class __TwigTemplate_0c83bfd1519e9deb9b2afb06bb6bce99e6a7fe872d3d9ebd65a56ff0cfc
                 </div>
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
-                <a href=\"meetings.html\">Back To Meetings List</a>
+                <a href=\"";
+        // line 78
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">Revenir à l'acceuil</a>
               </div>
             </div>
           </div>
@@ -254,7 +257,7 @@ class __TwigTemplate_0c83bfd1519e9deb9b2afb06bb6bce99e6a7fe872d3d9ebd65a56ff0cfc
 
     public function getDebugInfo()
     {
-        return array (  225 => 88,  221 => 87,  204 => 73,  194 => 66,  190 => 65,  186 => 64,  182 => 63,  178 => 62,  174 => 61,  170 => 60,  166 => 59,  162 => 58,  158 => 57,  154 => 56,  146 => 51,  142 => 50,  138 => 49,  134 => 48,  130 => 47,  126 => 46,  122 => 45,  118 => 44,  114 => 43,  110 => 42,  106 => 41,  100 => 38,  96 => 36,  87 => 34,  83 => 33,  58 => 11,  47 => 3,  43 => 1,);
+        return array (  228 => 88,  224 => 87,  212 => 78,  204 => 73,  194 => 66,  190 => 65,  186 => 64,  182 => 63,  178 => 62,  174 => 61,  170 => 60,  166 => 59,  162 => 58,  158 => 57,  154 => 56,  146 => 51,  142 => 50,  138 => 49,  134 => 48,  130 => 47,  126 => 46,  122 => 45,  118 => 44,  114 => 43,  110 => 42,  106 => 41,  100 => 38,  96 => 36,  87 => 34,  83 => 33,  58 => 11,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -336,7 +339,7 @@ class __TwigTemplate_0c83bfd1519e9deb9b2afb06bb6bce99e6a7fe872d3d9ebd65a56ff0cfc
                 </div>
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
-                <a href=\"meetings.html\">Back To Meetings List</a>
+                <a href=\"{{ path('accueil_index') }}\">Revenir à l'acceuil</a>
               </div>
             </div>
           </div>

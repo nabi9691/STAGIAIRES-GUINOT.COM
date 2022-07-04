@@ -3,7 +3,7 @@
      {{ include('linkCss.html.twig') }}
         
         
-        <title>Centre Guinot</title>
+        <title>BioGeSoft</title>
     </head>
 
 <body>
@@ -44,13 +44,12 @@
                 <tr>
                     <th> Id </th>
                 <th> Nom du stagiaire </th>
-<th> Prénom du stagiaire </th>
-                <th> Téléphone </th>
-                <th> Email </th>
+
+
                                         <th> Nom du langage </th>
                     <th> Durée </th>
 <th> Objectif </th>
-                    <th> Coefficient </th>
+                    
                                         </tr>
             </thead>
             
@@ -59,13 +58,12 @@
         <tr>
                 <td> {{ langage.id }} </td>
                 <td> {{ langage.nom }} </td>
-<td> {{ langage.prenom }} </td>
-<td> {{ langage.telephone }} </td>
-<td> {{ langage.email }} </td>
+
+
                 <td> {{ langage.nomLangage }} </td>
 <td> {{ langage.date|date("d/m/Y") }} </td>
 <td> {{ langage.objectif }} </td>
-<td> {{ langage.coefficient }} </td>
+
                         </tr>
            
         </tbody>
@@ -76,7 +74,7 @@
                 </div>
             <div class="col-lg-12">
               <div class="main-button-red">
-                <a href="meetings.html">Back To Meetings List</a>
+                 <a href="{{ path('accueil_index') }}">Revenir à l'acceuil</a>
               </div>
             </div>
           </div>

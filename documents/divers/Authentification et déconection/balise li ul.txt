@@ -1,0 +1,10 @@
+                          <li class="has-sub">
+                              <a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a>
+                              <ul class="sub-menu">
+
+                                  <li><a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a></li>
+                                  <li><a href="{{ path('listeDesFormations_index') }}">Liste des formations</a></li>
+                                  <li><a href="{{ path('formations_index') }}"> Gestion des formations </a></li>
+                                  <li><a href="{{ path('langages_index') }}">Gestion des langages </a></li>
+                                                                </ul>
+                          </li>

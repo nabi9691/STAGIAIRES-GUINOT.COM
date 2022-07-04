@@ -1,17 +1,52 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
 
-{% block title %}
- Enregistrement d'un Utilisateurs :
- {% endblock %}
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Enregistrement d'un utilisateurs :</title>
+    </head>
 
-{% block content %}
- <br> <br>
- 
-    <h1> Enregistrement d'un utilisateurs :</h1>
+<body>
 
-    {{ include('utilisateurs/formulaireUtilisateur.html.twig') }}<br>
-
-    <a href="{{ path('utilisateur_index') }}">Liste des Utilisateurs</a><br>
+   
 
 
-{% endblock %}
+  {{ include('navbar.html.twig') }}
+
+  
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1> Enregistrement d'un utilisateurs :</h1> <br><br>
+                 {{ include('utilisateurs/formulaireUtilisateur.html.twig') }}
+				  
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+               <a href="{{ path('accueil_index') }}">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+   
+  
+</body>
+
+</html>

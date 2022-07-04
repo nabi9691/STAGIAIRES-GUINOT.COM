@@ -31,17 +31,6 @@ class MediasController extends AbstractController
         ]);
     }
 
-/**
-     * @Route("/recherchesMedias/{id}", name="rechercheMedias_index", methods={"GET","POST"})
-     */
-    public function rechercheMedias(MediasRepository $mediasRepository): Response
-    {
-        //'medias' => $medias->findBy();
-    return $this->render('medias/rechercheMedias.html.twig', [
-        //'id' => $medias ->getId(),
-        //'medias' => $medias,
-    ]);
-}
     
 /**
      * @Route("/formulaireMedias", name = "formulaireMedias_index", methods={"GET","POST"})
@@ -99,7 +88,7 @@ class MediasController extends AbstractController
     }
 
     /**
-     * @Route("/afficherMedias/{id}", name="afficherMedias_index", methods={"GET"})
+     * @Route("afficherMedias/{id}", name="afficherMedias_index", methods={"GET"})
      */
     public function afficherMedias(Medias $medias): Response
     {

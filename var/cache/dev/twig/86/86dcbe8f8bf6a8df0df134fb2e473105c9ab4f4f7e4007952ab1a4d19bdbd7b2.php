@@ -46,35 +46,14 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
         // line 3
         echo twig_include($this->env, $context, "linkCss.html.twig");
         echo "
-        <title>Acceuil</title>
+        <title>Accueil</title>
     </head>
 
 <body>
 
-  <!-- Sub Header -->
-  <div class=\"sub-header\">
-    <div class=\"container\">
-      <div class=\"row\">
-        <div class=\"col-lg-8 col-sm-8\">
-          <div class=\"left-content\">
-            <p>Ce site web a été <em> Mohammed NABI</em> dans le cadre de sa formation</p>
-          </div>
-        </div>
-        <div class=\"col-lg-4 col-sm-4\">
-          <div class=\"right-icons\">
-            <ul>
-              <li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>
-              <li><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>
-              <li><a href=\"#\"><i class=\"fa fa-behance\"></i></a></li>
-              <li><a href=\"#\"><i class=\"fa fa-linkedin\"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 ";
-        // line 31
+        // line 10
         echo twig_include($this->env, $context, "navbar.html.twig");
         echo "
 
@@ -94,7 +73,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
               <p>Retrouvez les anciens stagiaires de Guinot ! </br> Nos stagiaires d'aujourd'hui, sont nos formateurs de demain !  </p>
               <div class=\"main-button-red\">
                   <div class=\"scroll-to-section\"><a href=\"";
-        // line 48
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("introductionGuinot_index");
         echo "\">Pour plus d'information sur le centre Guinot!</a></div>
               </div>
@@ -114,51 +93,51 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
           
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-01.png\" alt=\"\">
+                <img src=\"/images/service-icon-01.png\" alt=\"Best Education\">
               </div>
               <div class=\"down-content\">
-                <h4>Best Education</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>La Meilleure Education</h4>
+                <p>le meilleur programme</p>
               </div>
             </div>
             
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-02.png\" alt=\"\">
+                <img src=\"/images/service-icon-02.png\" alt=\"Best Teachers\">
               </div>
               <div class=\"down-content\">
-                <h4>Best Teachers</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Les meilleurs proffesseurs</h4>
+                <p>Proffesseurs reconnues mondialement et tous doctorant</p>
               </div>
             </div>
             
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-03.png\" alt=\"\">
+                <img src=\"/images/service-icon-03.png\" alt=\"Best Students\">
               </div>
               <div class=\"down-content\">
-                <h4>Best Students</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4> Les meilleurs Etudiants</h4>
+                <p> Des etudiants internationaux et avec un niveau elever  </p>
               </div>
             </div>
             
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-02.png\" alt=\"\">
+                <img src=\"/images/service-icon-02.png\" alt=\"Online Meeting\">
               </div>
               <div class=\"down-content\">
-                <h4>Online Meeting</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>un reseau Almuni</h4>
+                <p>un reseau connecté pour les étudiants et les anciens etudiants</p>
               </div>
             </div>
             
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-03.png\" alt=\"\">
+                <img src=\"/images/service-icon-03.png\" alt=\"Best Networking\">
               </div>
               <div class=\"down-content\">
-                <h4>Best Networking</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Un haut debit de connexion</h4>
+                <p>Une connexion parmis l'une des meilleurs qualités</p>
               </div>
             </div>
             
@@ -175,7 +154,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
       <div class=\"row\">
         <div class=\"col-lg-12\">
           <div class=\"section-heading\">
-            <h2>Our Popular Courses</h2>
+            <h2>Nos cours populaires</h2>
           </div>
         </div>
         <div class=\"col-lg-12\">
@@ -183,7 +162,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-01.jpg\" alt=\"Course One\">
               <div class=\"down-content\">
-                <h4>Morbi tincidunt elit vitae justo rhoncus</h4>
+                <h4>Cours de symfony</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -205,7 +184,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-02.jpg\" alt=\"Course Two\">
               <div class=\"down-content\">
-                <h4>Curabitur molestie dignissim purus vel</h4>
+                <h4>Cours de programmation Web</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -225,7 +204,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-03.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Nulla at ipsum a mauris egestas tempor</h4>
+                <h4>Cours en Algorithmique</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -246,7 +225,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-04.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Aenean molestie quis libero gravida</h4>
+                <h4>Cours en Anglais</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -268,7 +247,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-01.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Lorem ipsum dolor sit amet adipiscing elit</h4>
+                <h4>Cours en Francais</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -290,7 +269,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-02.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>TemplateMo is the best website for Free CSS</h4>
+                <h4>Cours en Java</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -312,7 +291,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-03.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Web Design Templates at your finger tips</h4>
+                <h4>Cours en designer</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -334,7 +313,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-04.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Please visit our website again</h4>
+                <h4>Cours en Photoshop</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -356,7 +335,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-01.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Responsive HTML Templates for you</h4>
+                <h4>Cours en Boostrap Css</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -378,7 +357,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-02.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Download Free CSS Layouts for your business</h4>
+                <h4>Cours en JavaScript</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -400,7 +379,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-03.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Morbi in libero blandit lectus cursus</h4>
+                <h4>Cours en Python</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -422,7 +401,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-04.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Curabitur molestie dignissim purus</h4>
+                <h4>Cours en theorie des graphe</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -453,20 +432,20 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
         <div class=\"col-lg-6\">
           <div class=\"row\">
             <div class=\"col-lg-12\">
-              <h2>A Few Facts About Our University</h2>
+              <h2>Quelques faits sur notre université</h2>
             </div>
             <div class=\"col-lg-6\">
               <div class=\"row\">
                 <div class=\"col-12\">
                   <div class=\"count-area-content percentage\">
                     <div class=\"count-digit\">94</div>
-                    <div class=\"count-title\">Succesed Students</div>
+                    <div class=\"count-title\">Reussite des etudiants</div>
                   </div>
                 </div>
                 <div class=\"col-12\">
                   <div class=\"count-area-content\">
                     <div class=\"count-digit\">126</div>
-                    <div class=\"count-title\">Current Teachers</div>
+                    <div class=\"count-title\">Enseignants actuels</div>
                   </div>
                 </div>
               </div>
@@ -476,13 +455,13 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
                 <div class=\"col-12\">
                   <div class=\"count-area-content new-students\">
                     <div class=\"count-digit\">2345</div>
-                    <div class=\"count-title\">New Students</div>
+                    <div class=\"count-title\">Nouveaux etudiants</div>
                   </div>
                 </div> 
                 <div class=\"col-12\">
                   <div class=\"count-area-content\">
                     <div class=\"count-digit\">32</div>
-                    <div class=\"count-title\">Awards</div>
+                    <div class=\"count-title\">Prix</div>
                   </div>
                 </div>
               </div>
@@ -500,11 +479,11 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
 
  
      ";
-        // line 451
+        // line 430
         echo twig_include($this->env, $context, "footer.html.twig");
         echo "
 ";
-        // line 452
+        // line 431
         echo twig_include($this->env, $context, "scriptJS.html.twig");
         echo "
    
@@ -532,7 +511,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
 
     public function getDebugInfo()
     {
-        return array (  508 => 452,  504 => 451,  98 => 48,  78 => 31,  47 => 3,  43 => 1,);
+        return array (  487 => 431,  483 => 430,  77 => 27,  57 => 10,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -540,33 +519,12 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
         return new Source("<html>
     <head>
       {{ include('linkCss.html.twig') }}
-        <title>Acceuil</title>
+        <title>Accueil</title>
     </head>
 
 <body>
 
-  <!-- Sub Header -->
-  <div class=\"sub-header\">
-    <div class=\"container\">
-      <div class=\"row\">
-        <div class=\"col-lg-8 col-sm-8\">
-          <div class=\"left-content\">
-            <p>Ce site web a été <em> Mohammed NABI</em> dans le cadre de sa formation</p>
-          </div>
-        </div>
-        <div class=\"col-lg-4 col-sm-4\">
-          <div class=\"right-icons\">
-            <ul>
-              <li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>
-              <li><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>
-              <li><a href=\"#\"><i class=\"fa fa-behance\"></i></a></li>
-              <li><a href=\"#\"><i class=\"fa fa-linkedin\"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 {{ include('navbar.html.twig') }}
 
   <!-- ***** Main Banner Area Start ***** -->
@@ -602,51 +560,51 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
           
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-01.png\" alt=\"\">
+                <img src=\"/images/service-icon-01.png\" alt=\"Best Education\">
               </div>
               <div class=\"down-content\">
-                <h4>Best Education</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>La Meilleure Education</h4>
+                <p>le meilleur programme</p>
               </div>
             </div>
             
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-02.png\" alt=\"\">
+                <img src=\"/images/service-icon-02.png\" alt=\"Best Teachers\">
               </div>
               <div class=\"down-content\">
-                <h4>Best Teachers</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Les meilleurs proffesseurs</h4>
+                <p>Proffesseurs reconnues mondialement et tous doctorant</p>
               </div>
             </div>
             
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-03.png\" alt=\"\">
+                <img src=\"/images/service-icon-03.png\" alt=\"Best Students\">
               </div>
               <div class=\"down-content\">
-                <h4>Best Students</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4> Les meilleurs Etudiants</h4>
+                <p> Des etudiants internationaux et avec un niveau elever  </p>
               </div>
             </div>
             
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-02.png\" alt=\"\">
+                <img src=\"/images/service-icon-02.png\" alt=\"Online Meeting\">
               </div>
               <div class=\"down-content\">
-                <h4>Online Meeting</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>un reseau Almuni</h4>
+                <p>un reseau connecté pour les étudiants et les anciens etudiants</p>
               </div>
             </div>
             
             <div class=\"item\">
               <div class=\"icon\">
-                <img src=\"/images/service-icon-03.png\" alt=\"\">
+                <img src=\"/images/service-icon-03.png\" alt=\"Best Networking\">
               </div>
               <div class=\"down-content\">
-                <h4>Best Networking</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Un haut debit de connexion</h4>
+                <p>Une connexion parmis l'une des meilleurs qualités</p>
               </div>
             </div>
             
@@ -663,7 +621,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
       <div class=\"row\">
         <div class=\"col-lg-12\">
           <div class=\"section-heading\">
-            <h2>Our Popular Courses</h2>
+            <h2>Nos cours populaires</h2>
           </div>
         </div>
         <div class=\"col-lg-12\">
@@ -671,7 +629,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-01.jpg\" alt=\"Course One\">
               <div class=\"down-content\">
-                <h4>Morbi tincidunt elit vitae justo rhoncus</h4>
+                <h4>Cours de symfony</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -693,7 +651,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-02.jpg\" alt=\"Course Two\">
               <div class=\"down-content\">
-                <h4>Curabitur molestie dignissim purus vel</h4>
+                <h4>Cours de programmation Web</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -713,7 +671,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-03.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Nulla at ipsum a mauris egestas tempor</h4>
+                <h4>Cours en Algorithmique</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -734,7 +692,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-04.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Aenean molestie quis libero gravida</h4>
+                <h4>Cours en Anglais</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -756,7 +714,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-01.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Lorem ipsum dolor sit amet adipiscing elit</h4>
+                <h4>Cours en Francais</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -778,7 +736,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-02.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>TemplateMo is the best website for Free CSS</h4>
+                <h4>Cours en Java</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -800,7 +758,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-03.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Web Design Templates at your finger tips</h4>
+                <h4>Cours en designer</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -822,7 +780,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-04.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Please visit our website again</h4>
+                <h4>Cours en Photoshop</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -844,7 +802,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-01.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Responsive HTML Templates for you</h4>
+                <h4>Cours en Boostrap Css</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -866,7 +824,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-02.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Download Free CSS Layouts for your business</h4>
+                <h4>Cours en JavaScript</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -888,7 +846,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-03.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Morbi in libero blandit lectus cursus</h4>
+                <h4>Cours en Python</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -910,7 +868,7 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
             <div class=\"item\">
               <img src=\"/images/course-04.jpg\" alt=\"\">
               <div class=\"down-content\">
-                <h4>Curabitur molestie dignissim purus</h4>
+                <h4>Cours en theorie des graphe</h4>
                 <div class=\"info\">
                   <div class=\"row\">
                     <div class=\"col-8\">
@@ -941,20 +899,20 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
         <div class=\"col-lg-6\">
           <div class=\"row\">
             <div class=\"col-lg-12\">
-              <h2>A Few Facts About Our University</h2>
+              <h2>Quelques faits sur notre université</h2>
             </div>
             <div class=\"col-lg-6\">
               <div class=\"row\">
                 <div class=\"col-12\">
                   <div class=\"count-area-content percentage\">
                     <div class=\"count-digit\">94</div>
-                    <div class=\"count-title\">Succesed Students</div>
+                    <div class=\"count-title\">Reussite des etudiants</div>
                   </div>
                 </div>
                 <div class=\"col-12\">
                   <div class=\"count-area-content\">
                     <div class=\"count-digit\">126</div>
-                    <div class=\"count-title\">Current Teachers</div>
+                    <div class=\"count-title\">Enseignants actuels</div>
                   </div>
                 </div>
               </div>
@@ -964,13 +922,13 @@ class __TwigTemplate_476528dca790da02a1fa2eaccba5ea9d326218da8f383b18a61c3b8604b
                 <div class=\"col-12\">
                   <div class=\"count-area-content new-students\">
                     <div class=\"count-digit\">2345</div>
-                    <div class=\"count-title\">New Students</div>
+                    <div class=\"count-title\">Nouveaux etudiants</div>
                   </div>
                 </div> 
                 <div class=\"col-12\">
                   <div class=\"count-area-content\">
                     <div class=\"count-digit\">32</div>
-                    <div class=\"count-title\">Awards</div>
+                    <div class=\"count-title\">Prix</div>
                   </div>
                 </div>
               </div>

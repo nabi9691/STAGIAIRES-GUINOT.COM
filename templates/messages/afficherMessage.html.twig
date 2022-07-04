@@ -1,18 +1,46 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+     {{ include('linkCss.html.twig') }}
+        
+        
+        <title>Centre Guinot</title>
+    </head>
 
-{% block title %}
+<body>
 
-afficher message :
-{% endblock %}
+   {{ include('navbar.html.twig') }}
 
-{% block content %}
-    <h1>
-    Afficher message :
-    </h1>
 
-<table border="1">
-            <thead>
-                <tr>
+ 
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>BioGeSoft</h6>
+          <h2>La formation</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  {% block content %}
+    
+
+    <table class="table table-responsive">
+                <thead class="thead-dark">
+                    <tr>
                     <th> Id </th>
                     <th> Titre du message </th>
                     <th> Contenu du message </th>
@@ -20,9 +48,10 @@ afficher message :
                     <th> Si le message est lu </th>
                     <th> Expediteur </th>
                     <th> Destinataire </th>
-</tr>
-            </thead>
-<tbody>
+                    </tr>
+                </thead>
+            
+ <tbody>
 <tr>
                                 <td> {{ message.id }} </td>
 <td> {{ message.titreMessage }} </td>
@@ -33,10 +62,33 @@ afficher message :
                 <td> {{ message.destinataire.nom }} </td>
                 </tr>
 <tr>
-<td><a href="{{ path('message_index') }}"> Retour à la liste des messages :</a></td><br>
-
 </tr>
 </tbody>
     </table>
-    
+    <a href="{{ path('message_index') }}"> Retour à la liste des messages :</a>
+</div>
     {% endblock %}
+
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{{ path('accueil_index') }}">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+        
+
+   
+  
+</body>
+
+</html>
+

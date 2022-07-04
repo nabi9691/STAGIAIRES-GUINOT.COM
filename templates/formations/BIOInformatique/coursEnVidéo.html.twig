@@ -1,71 +1,48 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+       {{ include('linkCss.html.twig') }} 
+        
+        <title>Centre Guinot</title>
+    </head>
 
-{% block title %}
-Bienvenu(e) !
-Liste des cours en vidéo :
-{% endblock %}
+<body>
 
-{% block content %}
+   
 
- <div class="container">
-<br/><br/>
-      
-    <h1> 
-Bienvenu(e) !
-Cours vidéo N : 
-</h1>
+{{ include('navbar.html.twig') }}
+  
 
-<br/><br/>
-    
-    <div>
-    
-<h1> 
-Liste des cours en vidéo :
-</h1>
-    
-    <div>
-    <a href="https://youtu.be/kQS41p1B9ks">
-Cours sur Symfony :</a>
-    <p>
-    Symfony est un ensemble de composants réutilisable
-et un Framework  web php
-un ensemble d'outils pour nous facilité à effectuer des taches la création et la conseption d'une application web.
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1>Voici le cours </h1>
+                  <p class="description">
+                    <b>Votre cours : </b> 
+                    
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{{ path('accueil_index') }}">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
 
-    </p>
-    <br/><br/>
-    
-<a href="https://youtu.be/SG7GgcnR1F4">Introduction à API Platform dans un projet Symfony !</a>
-<p>
-Introduction à API Platform dans un projet Symfony
-</p>
-<br/><br/>
-    
-    <a href="https://youtu.be/SG7GgcnR1F4">CREER UNE API AVEC SYMFONY 5 - EPISODE 1 - LE SERIALIZER !</a>
-<p>
-CREER UNE API AVEC SYMFONY 5 - EPISODE 1 - LE SERIALIZER
-</p>
-<br/><br/>
-    
- </div>
 
-<br/><br/>
+  
+</body>
 
-{% block footer %}
-<div>
-<h1>Cliquer ici pour plus de informations !</h1>
-<a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
-<lu>
-    <li>Formations :</li>
-    <li>  Masseur-Kinésithérapeute !</li>
-    <li>  Conseiller Relation Client à Distance !</li>
-<li>  Développeur Web et Web Mobile  !</li>
-<li> Adresse : 24-26 bd Chastenet de Géry </li>
-<li>Code postal :  94814 Villejuif Cedex </li>
-<li> Tél : 01 46 78 01 00 </li>
-<li> Fax : 01 46 78 50 35</li>
-<li>Email :  paul   guinot@guinot.asso.fr </li>
-</lu>
-</div>
-{% endblock %}
-
-{% endblock %}
+</html>

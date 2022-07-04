@@ -1,0 +1,95 @@
+<html>
+    <head>
+     {{ include('linkCss.html.twig') }}
+        
+        
+        <title>BioGeSoft</title>
+    </head>
+
+<body>
+
+   {{ include('navbar.html.twig') }}
+
+
+ 
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>BioGeSoft</h6>
+          <h2>La formation</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  {% block content %}
+    
+
+    <table class="table table-responsive">
+                <thead class="thead-dark">
+                   
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Civilité </th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Titre du cours</th>
+                    <th scope="col">Résumé</th>
+                    <th scope="col">Type du cours</th>
+                    <th scope="col">Date du cours</th>
+                                            </tr>
+            </thead>
+            
+            
+<tbody>
+        <tr>
+                <td> {{ cours.id }} </td>
+<td> {{ cours.civilite }} </td>
+                <td> {{ cours.nom }} </td>
+<td> {{ cours.titreCours }} </td>
+<td> {{ cours.resume }} </td>
+<td> {{ cours.typeCours }} </td>
+<td> {{ cours.dateCours|date("d/m/Y") }} </td>
+                        </tr>
+           
+        </tbody>
+    </table>
+
+    {% endblock %}
+
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                 <a href="{{ path('accueil_index') }}">Revenir à l'accueil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+        
+
+   
+  
+</body>
+
+</html>
+
+

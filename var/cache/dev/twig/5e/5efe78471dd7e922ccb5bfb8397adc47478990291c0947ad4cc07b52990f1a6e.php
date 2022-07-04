@@ -108,7 +108,10 @@ class __TwigTemplate_ad50f75b31edc46ac283fd8760d5a39bc3e74cb25cc7e2de4f6638f0977
                 </div>
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
-                <a href=\"meetings.html\">Back To Meetings List</a>
+                <a href=\"";
+        // line 60
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">REVENIR À L'ACCEUIL</a>
               </div>
             </div>
           </div>
@@ -153,7 +156,7 @@ class __TwigTemplate_ad50f75b31edc46ac283fd8760d5a39bc3e74cb25cc7e2de4f6638f0977
 
     public function getDebugInfo()
     {
-        return array (  126 => 70,  122 => 69,  103 => 53,  58 => 11,  47 => 3,  43 => 1,);
+        return array (  129 => 70,  125 => 69,  113 => 60,  103 => 53,  58 => 11,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -217,7 +220,7 @@ class __TwigTemplate_ad50f75b31edc46ac283fd8760d5a39bc3e74cb25cc7e2de4f6638f0977
                 </div>
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
-                <a href=\"meetings.html\">Back To Meetings List</a>
+                <a href=\"{{ path('accueil_index') }}\">REVENIR À L'ACCEUIL</a>
               </div>
             </div>
           </div>

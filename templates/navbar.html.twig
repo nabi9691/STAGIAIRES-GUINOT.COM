@@ -1,3 +1,76 @@
+ 
+ <div class="sub-header">
+    <div class="container">
+      <div class="row">
+    {% if app.user %}
+    
+
+        
+              
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="col-12">
+                        <div class="right-icons">
+                            <ul>
+                            <li><a href=""> Espace Admin : </a></li>
+                            <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a></li>
+                            <li><a href="{{ path('contacts_index') }}"> Liste des contacts </a></li>
+                            <li><a href="{{ path('formations_index') }}"> Liste des formations </a> </li>
+                            <li><a href="{{ path('langages_index') }}"> Liste des langages </a> </li>
+                        
+                            <li><a href="{{ path('activites_index') }}"> Liste des activités </a></li>
+                            <li><a href="{{ path('medias_index') }}"> Liste des médias </a></li>
+                            </ul>
+                        {% endif %}
+
+                        {% if is_granted('ROLE_ADMIN_GUINOT') %}
+                            <div class="col-12">
+                            <div class="right-icons">
+                                <ul>
+                            <li><a href=""> Espace Admin_Guinot : </a></li>
+                            <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a></li>
+                            <li><a href="{{ path('formations_index') }}"> Liste des formations </a> </li>
+                            <li><a href="{{ path('contacts_index') }}"> Liste des contacts  </a></li>
+                            <li><a href="{{ path('activites_index') }}"> Liste des activités  </a></li>
+                            <li><a href="{{ path('medias_index') }}"> Liste des médias </a></li>
+                            </ul>
+                        {% endif %}
+
+                        {% if is_granted('ROLE_ADMIN_BIOGESOFT') %}
+                            <div class="col-12">
+                            <div class="right-icons">
+                                <ul>
+                            <li><a href=""> Espace Admin_BIOGESOFT : </a></li>
+                            <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs </a></li>
+                            <li><a href="{{ path('listeDesFormations_index') }}"> Liste des formations </a> </li>
+                            <li><a href="{{ path('langages_index') }}"> Liste des langages </a> </li>
+                            <a href="{{ path('cours_index') }}">Gestion des cours </a> <br>
+                            <li><a href="{{ path('contacts_index') }}"> Liste des contacts  </a></li>
+                            <li><a href="{{ path('activites_index') }}"> Liste des activités  </a></li>
+                            <li><a href="{{ path('medias_index') }}"> Liste des médias </a></li>
+                            </ul>
+                        {% endif %}
+
+                        {% if is_granted('ROLE_STAGIAIRE') %}
+                            <div class="col-12">
+                            <div class="right-icons">
+                                <ul>
+                            <li><a href="{{ path('pageAccueilEspacePerso_index') }}"> Espace Stagiaire : </a></li>
+                            <li><a href="{{ path('contacts_index') }}"> Liste de mes contacts </a>
+                            <li><a href="{{ path('activites_index') }}"> Liste de mes activités </a></li>
+                            <li><a href="{{ path('medias_index') }}"> Liste de mes médias </a></li>             
+                            </ul>
+                        {% endif %}
+                        {% endif %}
+
+               
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
  <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
       <div class="container">
@@ -11,29 +84,25 @@
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li class="scroll-to-section"><a href="{{ path('accueil_index') }}" class="active">Acceuil</a></li>
-                          <li class="has-sub">
-                              <a href="{{ path('introductionGuinot_index') }}">Centre Guinot</a>
-                              <ul class="sub-menu">
-                                 <li><a href="{{ path('introductionGuinot_index') }}">Guinot</a></li>
-                                  <li><a href="{{ path('motDuPresidentDeGuinot_index') }}">Mot du président</a></li>
-                                  <li><a href="{{ path('historiqueGuinot_index') }}">Historique du centre</a></li>
-                                  <li><a href="{{ path('formationGuinot_index') }}">Liste des formations</a></li>
-                              </ul>
-                          </li>
-                          <li class="has-sub">
-                              <a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a>
-                              <ul class="sub-menu">
-                                  <li><a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a></li>
-                                  <li><a href="{{ path('listeDesFormations_index') }}">Liste des formations</a></li>
-                                  <li><a href="{{ path('formations_index') }}">Gerer formations</a></li>
-                                  <li><a href="{{ path('langages_index') }}">Gerer langages</a></li>
-                                  
-                              </ul>
-                          </li>
-                          <li class="scroll-to-section"><a href="{{ path('message_index') }}">messagerie Public</a></li>
-                          <li class="scroll-to-section"><a href="{{ path('app_login') }}">Connexion</a></li> 
-                          <li class="scroll-to-section"><a href="{{ path('app_logout') }}">Deconnexion</a></li> 
+                          
+                    {% if app.user %}
+                            <li class="scroll-to-section"><a href="{{ path('accueil_index') }}" class="active">Accueil</a></li>
+                            <li class="scroll-to-section"><a href="{{ path('afficherMedias_index') }}" >Menu Guinot</a></li>
+                            <li class="scroll-to-section"><a href="{{ path('app_menu_bio_ge_soft') }}">Biogesoft</a></li>
+                            <li class="scroll-to-section"><a href="{{ path('message_index') }}">messagerie Public</a></li> 
+                            <li class="scroll-to-section"><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+
+
+                {% else %}
+                        <li class="scroll-to-section"><a href="{{ path('accueil_index') }}" class="active">Accueil</a></li>
+                        <li class="scroll-to-section"><a href="{{ path('afficherMedias_index') }}" >Menu Guinot</a></li>
+                        <li class="scroll-to-section"><a href="{{ path('app_menu_bio_ge_soft') }}">Biogesoft</a></li>
+                        <li class="scroll-to-section"><a href="{{ path('message_index') }}">messagerie Public</a></li>
+                        <li class="scroll-to-section"><a href="{{ path('app_login') }}">Connexion</a></li> 
+                        <li class="scroll-to-section"><a href="{{ path('app_logout') }}">Deconnexion</a></li> 
+                                                    
+                    {% endif %}
+
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
@@ -45,3 +114,6 @@
       </div>
   </header>
   <!-- ***** Header Area End ***** -->
+  
+
+ 

@@ -87,12 +87,15 @@ class __TwigTemplate_caecbdfa99e36d7497f44196de13b23a18ba8f99ec7d31adfee5a66168c
                   ";
         // line 38
         $this->displayBlock('content', $context, $blocks);
-        // line 79
+        // line 80
         echo "
                 </div>
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
-                <a href=\"meetings.html\">Back To Meetings List</a>
+                <a href=\"";
+        // line 84
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">REVENIR À L'ACCEUIL</a>
               </div>
             </div>
           </div>
@@ -102,11 +105,11 @@ class __TwigTemplate_caecbdfa99e36d7497f44196de13b23a18ba8f99ec7d31adfee5a66168c
   </section>
   
   ";
-        // line 92
+        // line 93
         echo twig_include($this->env, $context, "footer.html.twig");
         echo "
 ";
-        // line 93
+        // line 94
         echo twig_include($this->env, $context, "scriptJS.html.twig");
         echo "
 
@@ -209,6 +212,7 @@ class __TwigTemplate_caecbdfa99e36d7497f44196de13b23a18ba8f99ec7d31adfee5a66168c
            
         </tbody>
     </table>
+    </div>
 
     ";
         
@@ -231,7 +235,7 @@ class __TwigTemplate_caecbdfa99e36d7497f44196de13b23a18ba8f99ec7d31adfee5a66168c
 
     public function getDebugInfo()
     {
-        return array (  205 => 71,  201 => 70,  197 => 69,  193 => 68,  189 => 67,  185 => 66,  181 => 65,  177 => 64,  173 => 63,  169 => 62,  165 => 61,  141 => 39,  131 => 38,  110 => 93,  106 => 92,  91 => 79,  89 => 38,  59 => 11,  48 => 3,  44 => 1,);
+        return array (  208 => 71,  204 => 70,  200 => 69,  196 => 68,  192 => 67,  188 => 66,  184 => 65,  180 => 64,  176 => 63,  172 => 62,  168 => 61,  144 => 39,  134 => 38,  113 => 94,  109 => 93,  97 => 84,  91 => 80,  89 => 38,  59 => 11,  48 => 3,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -312,13 +316,14 @@ class __TwigTemplate_caecbdfa99e36d7497f44196de13b23a18ba8f99ec7d31adfee5a66168c
            
         </tbody>
     </table>
+    </div>
 
     {% endblock %}
 
                 </div>
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
-                <a href=\"meetings.html\">Back To Meetings List</a>
+                <a href=\"{{ path('accueil_index') }}\">REVENIR À L'ACCEUIL</a>
               </div>
             </div>
           </div>

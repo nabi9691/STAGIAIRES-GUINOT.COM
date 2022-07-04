@@ -1,0 +1,18 @@
+
+    
+{{ form_start(formCours) }}
+
+Civilité: {{ form_widget(formCours.civilite) }} <br>
+Nom: {{ form_widget(formCours.nom) }}<br>
+Titre du cours: {{ form_widget(formCours.titre_cours) }}<br>
+Résumé du cours: {{ form_widget(formCours.resume) }}<br>
+Type du cours: {{ form_widget(formCours.type_cours) }}<br>
+Date du cours: {{ form_widget(formCours.date_cours) }} <br>
+
+
+
+<button type="submit" class="btn btn-success">envoyer</button>
+
+
+      
+    {{ form_end(formCours) }}

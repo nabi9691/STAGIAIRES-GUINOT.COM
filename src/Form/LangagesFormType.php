@@ -34,20 +34,6 @@ class LangagesFormType extends AbstractType
             'required' => false
         ])
         
-        ->add('prenom', TextType::class, [
-            'label' => 'Le Le prénom du stagiaire :',
-            'required' => false
-        ])
-
-        ->add('telephone', TextType::class, [
-            'label' => 'Le numéro du téléphone du stagiaire :',
-            'required' => true
-        ])
-        ->add('email', TextType::class, [
-            'label' => 'Email du stagiaire :',
-            'required' => true
-        ])
-
                 ->add('nom_langage', ChoiceType::class, [
                 'label' => 'Votre langage :',
                 'required' => true,
@@ -66,12 +52,7 @@ class LangagesFormType extends AbstractType
                 'widget' => 'single_text'
             ])
         
-            ->add('coefficient', ChoiceType::class, [
-                'label' => 'Le coefficient de votre langage :',
-                'required' => true,
-                'choices' => ["1" => "1", "2" => "2", "3" => "3", "4" => "4", "5" => "5", "6" => "6"],'multiple' => false,
-            ])
-            
+                
             ;   
         
             }

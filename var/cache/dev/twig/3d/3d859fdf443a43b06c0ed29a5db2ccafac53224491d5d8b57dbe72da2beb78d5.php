@@ -51,9 +51,9 @@ Nom: ";
         // line 5
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 5, $this->source); })()), "nom", [], "any", false, false, false, 5), 'widget');
         echo "<br>
-Contenu: ";
+Résumé: ";
         // line 6
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 6, $this->source); })()), "contenu", [], "any", false, false, false, 6), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 6, $this->source); })()), "resume", [], "any", false, false, false, 6), 'widget');
         echo " <br>
 Date: ";
         // line 7
@@ -104,7 +104,7 @@ Status: ";
 {{ form_start(formActivites) }}
 
 Nom: {{ form_widget(formActivites.nom) }}<br>
-Contenu: {{ form_widget(formActivites.contenu) }} <br>
+Résumé: {{ form_widget(formActivites.resume) }} <br>
 Date: {{ form_widget(formActivites.date) }} <br>
 Status: {{ form_widget(formActivites.status) }} <br>
 

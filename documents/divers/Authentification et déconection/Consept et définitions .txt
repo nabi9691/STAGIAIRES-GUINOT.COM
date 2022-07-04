@@ -1,0 +1,1 @@
+L'action de connexion recevra comme premier argument via l'injection de dépendance une AuthenticationUtilsinstance, un objet à partir duquel vous pouvez obtenir des informations à partir de l'exemple, la dernière erreur d'authentification et le nom d'utilisateur fourni sur le formulaire.

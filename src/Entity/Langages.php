@@ -2,8 +2,7 @@
 
 namespace App\Entity;
 
-
-use App\Entity\Formations;
+//use App\Entity\Formations;
 use App\Repository\LangagesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,29 +22,8 @@ class Langages
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $prenom;
-
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $email;
-
-        /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $telephone;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Formations::class)
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $formations;
-
+    
+    
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -61,11 +39,15 @@ class Langages
      */
     private $objectif;
 
-    /**
+        /**
      * @ORM\Column(type="string", length=255)
      */
-    private $coefficient;
+    private $cout_formation;
 
+        /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $status;
 
     public function getId(): ?int
     {
@@ -83,43 +65,6 @@ class Langages
 
         return $this;
     }
-
-    public function getPrenom(): ?string
-    {
-        return $this->prenom;
-    }
-
-    public function setPrenom(string $prenom): self
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    public function getTelephone(): ?string
-    {
-        return $this->telephone;
-    }
-
-    public function setTelephone(string $telephone): self
-    {
-        $this->telephone = $telephone;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
 
     public function getNomLangage(): ?string
     {
@@ -157,16 +102,38 @@ class Langages
         return $this;
     }
 
-
-
-    public function getFormations(): ?Formations
+    public function getStatus(): ?string
     {
-        return $this->formations;
+        return $this->status;
     }
 
-    public function setFormations(?Formations $formations): self
+    public function setStatus(string $status): self
     {
-        $this->formations = $formations;
+        $this->status = $status;
+
+        return $this;
+    }
+
+    public function getCoutFormation(): ?string
+    {
+        return $this->cout_formation;
+    }
+
+    public function setCoutFormation(string $cout_formation): self
+    {
+        $this->cout_formation = $cout_formation;
+
+        return $this;
+    }
+
+    public function getTitreProfessionnel(): ?string
+    {
+        return $this->titre_professionnel;
+    }
+
+    public function setTitreProfessionnel(string $titre_professionnel): self
+    {
+        $this->titre_professionnel = $titre_professionnel;
 
         return $this;
     }
@@ -182,8 +149,5 @@ class Langages
 
         return $this;
     }
-
-
-
 
 }

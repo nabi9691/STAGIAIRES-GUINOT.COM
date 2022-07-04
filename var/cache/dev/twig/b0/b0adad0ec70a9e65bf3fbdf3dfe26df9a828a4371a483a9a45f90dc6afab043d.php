@@ -43,16 +43,10 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
         // line 1
         echo "<html>
     <head>
-        <!-- Additional CSS Files -->
-    <link rel=\"stylesheet\" href=\"css/fontawesome.css\">
-    <link rel=\"stylesheet\" href=\"/css/templatemo-edu-meeting.css\">
-    <link rel=\"stylesheet\" href=\"/css/owl.css\">
-    <link rel=\"stylesheet\" href=\"/css/lightbox.css\">
-    <link rel=\"stylesheet\" href=\"/css/flex-slider.css\">
-<!-- Additional CSS Files -->
-
-<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
-        
+     ";
+        // line 3
+        echo twig_include($this->env, $context, "linkCss.html.twig");
+        echo " 
         
         <title>Centre Guinot</title>
     </head>
@@ -60,93 +54,10 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
 <body>
 
    
-
-
-  <!-- ***** Header Area Start ***** -->
-  <header class=\"header-area header-sticky\">
-      <div class=\"container\">
-          <div class=\"row\">
-              <div class=\"col-12\">
-                  <nav class=\"main-nav\">
-                      <!-- ***** Logo Start ***** -->
-                      <a href=\"index.html\" class=\"logo\">
-                          Intern-finding
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class=\"nav\">
-                          <li class=\"scroll-to-section\"><a href=\"";
-        // line 35
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
-        echo "\" class=\"active\">Acceuil</a></li>
-                          <li class=\"has-sub\">
-                              <a href=\"";
-        // line 37
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("introductionGuinot_index");
-        echo "\">Centre Guinot</a>
-                              <ul class=\"sub-menu\">
-                                 <li><a href=\"";
-        // line 39
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("introductionGuinot_index");
-        echo "\">Guinot</a></li>
-                                  <li><a href=\"";
-        // line 40
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("motDuPresidentDeGuinot_index");
-        echo "\">Mot du président</a></li>
-                                  <li><a href=\"";
-        // line 41
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("historiqueGuinot_index");
-        echo "\">Historique du centre</a></li>
-                                  <li><a href=\"";
-        // line 42
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formationGuinot_index");
-        echo "\">Liste des formations</a></li>
-                              </ul>
-                          </li>
-                          <li class=\"has-sub\">
-                              <a href=\"";
-        // line 46
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pageAccueilBIOInformatique_index");
-        echo "\">Biogesoft</a>
-                              <ul class=\"sub-menu\">
-                                  <li><a href=\"";
-        // line 48
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pageAccueilBIOInformatique_index");
-        echo "\">Biogesoft</a></li>
-                                  <li><a href=\"";
-        // line 49
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations_index");
-        echo "\">liste des formations</a></li>
-                                  <li><a href=\"";
-        // line 50
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("langages_index");
-        echo "\">liste des langages</a></li>
-                                  
-                              </ul>
-                          </li>
-                          <li class=\"scroll-to-section\"><a href=\"";
-        // line 54
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_index");
-        echo "\">messagerie Public</a></li>
-                          <li class=\"scroll-to-section\"><a href=\"";
-        // line 55
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\">Connexion</a></li> 
-                          <li class=\"scroll-to-section\"><a href=\"";
-        // line 56
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        echo "\">Deconnexion</a></li> 
-                      </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+";
+        // line 11
+        echo twig_include($this->env, $context, "navbar.html.twig");
+        echo "
 
   <section class=\"heading-page header-text\" id=\"top\">
     <div class=\"container\">
@@ -234,7 +145,7 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
                 <a href=\"";
-        // line 154
+        // line 98
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
         echo "\">Revenir à l'acceuil</a>
               </div>
@@ -247,16 +158,18 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
   
   
 
-  <section  class=\"meetings-page\" id=\"meetings\">
-    <div class=\"footer\">
-      <p>Copyright © 2022 Mohammed Nabi. All Rights Reserved. 
-          <br>Design: <a href=\"";
-        // line 168
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
-        echo "\">Mohammed NABI</a></p>
-    </div>
-  </section>
-   
+  ";
+        // line 109
+        echo twig_include($this->env, $context, "footer.html.twig");
+        echo "
+";
+        // line 110
+        echo twig_include($this->env, $context, "scriptJS.html.twig");
+        echo "
+
+</body>
+
+</html>
 
 
 
@@ -271,9 +184,9 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
 
 
         ";
-        // line 185
+        // line 128
         $this->displayBlock('scripts', $context, $blocks);
-        // line 205
+        // line 148
         echo "
    
   
@@ -288,7 +201,7 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
 
     }
 
-    // line 185
+    // line 128
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -298,37 +211,37 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 186
+        // line 129
         echo "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js\"></script>
     <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
     <script src=\"";
-        // line 190
+        // line 133
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/isotope.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 191
+        // line 134
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/owl-carousel.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 192
+        // line 135
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/lightbox.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 193
+        // line 136
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/tabs.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 194
+        // line 137
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/video.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 195
+        // line 138
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/slick-slider.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 196
+        // line 139
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/custom.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     
@@ -359,23 +272,14 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
 
     public function getDebugInfo()
     {
-        return array (  332 => 196,  328 => 195,  324 => 194,  320 => 193,  316 => 192,  312 => 191,  308 => 190,  302 => 186,  292 => 185,  277 => 205,  275 => 185,  255 => 168,  238 => 154,  137 => 56,  133 => 55,  129 => 54,  122 => 50,  118 => 49,  114 => 48,  109 => 46,  102 => 42,  98 => 41,  94 => 40,  90 => 39,  85 => 37,  80 => 35,  44 => 1,);
+        return array (  245 => 139,  241 => 138,  237 => 137,  233 => 136,  229 => 135,  225 => 134,  221 => 133,  215 => 129,  205 => 128,  190 => 148,  188 => 128,  167 => 110,  163 => 109,  149 => 98,  59 => 11,  48 => 3,  44 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<html>
     <head>
-        <!-- Additional CSS Files -->
-    <link rel=\"stylesheet\" href=\"css/fontawesome.css\">
-    <link rel=\"stylesheet\" href=\"/css/templatemo-edu-meeting.css\">
-    <link rel=\"stylesheet\" href=\"/css/owl.css\">
-    <link rel=\"stylesheet\" href=\"/css/lightbox.css\">
-    <link rel=\"stylesheet\" href=\"/css/flex-slider.css\">
-<!-- Additional CSS Files -->
-
-<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
-        
+     {{ include('linkCss.html.twig') }} 
         
         <title>Centre Guinot</title>
     </head>
@@ -383,54 +287,7 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
 <body>
 
    
-
-
-  <!-- ***** Header Area Start ***** -->
-  <header class=\"header-area header-sticky\">
-      <div class=\"container\">
-          <div class=\"row\">
-              <div class=\"col-12\">
-                  <nav class=\"main-nav\">
-                      <!-- ***** Logo Start ***** -->
-                      <a href=\"index.html\" class=\"logo\">
-                          Intern-finding
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class=\"nav\">
-                          <li class=\"scroll-to-section\"><a href=\"{{ path('accueil_index') }}\" class=\"active\">Acceuil</a></li>
-                          <li class=\"has-sub\">
-                              <a href=\"{{ path('introductionGuinot_index') }}\">Centre Guinot</a>
-                              <ul class=\"sub-menu\">
-                                 <li><a href=\"{{ path('introductionGuinot_index') }}\">Guinot</a></li>
-                                  <li><a href=\"{{ path('motDuPresidentDeGuinot_index') }}\">Mot du président</a></li>
-                                  <li><a href=\"{{ path('historiqueGuinot_index') }}\">Historique du centre</a></li>
-                                  <li><a href=\"{{ path('formationGuinot_index') }}\">Liste des formations</a></li>
-                              </ul>
-                          </li>
-                          <li class=\"has-sub\">
-                              <a href=\"{{ path('pageAccueilBIOInformatique_index') }}\">Biogesoft</a>
-                              <ul class=\"sub-menu\">
-                                  <li><a href=\"{{ path('pageAccueilBIOInformatique_index') }}\">Biogesoft</a></li>
-                                  <li><a href=\"{{ path('formations_index') }}\">liste des formations</a></li>
-                                  <li><a href=\"{{ path('langages_index') }}\">liste des langages</a></li>
-                                  
-                              </ul>
-                          </li>
-                          <li class=\"scroll-to-section\"><a href=\"{{ path('message_index') }}\">messagerie Public</a></li>
-                          <li class=\"scroll-to-section\"><a href=\"{{ path('app_login') }}\">Connexion</a></li> 
-                          <li class=\"scroll-to-section\"><a href=\"{{ path('app_logout') }}\">Deconnexion</a></li> 
-                      </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+{{ include('navbar.html.twig') }}
 
   <section class=\"heading-page header-text\" id=\"top\">
     <div class=\"container\">
@@ -528,13 +385,12 @@ class __TwigTemplate_c61119d7641864b75988d73f6d03607aec2521411e894188b86f05884af
   
   
 
-  <section  class=\"meetings-page\" id=\"meetings\">
-    <div class=\"footer\">
-      <p>Copyright © 2022 Mohammed Nabi. All Rights Reserved. 
-          <br>Design: <a href=\"{{ path('accueil_index') }}\">Mohammed NABI</a></p>
-    </div>
-  </section>
-   
+  {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+</body>
+
+</html>
 
 
 

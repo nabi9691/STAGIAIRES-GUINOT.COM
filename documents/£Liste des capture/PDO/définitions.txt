@@ -1,0 +1,15 @@
+mode procédural de programmation, 
+1. programmation orientée objet 
+réutiliser le code 
+conception de l'algorithme plus claire et organisée. 
+Un code modulaire. 
+design patterns 
+ objet 
+Attributs
+Méthodes
+classe 
+instance 
+déclaration et l'instanciation 
+conventions 
+
+

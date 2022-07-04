@@ -29,7 +29,7 @@ class Medias
 
      /**
       * @Vich\UploadableField(mapping="document_images", fileNameProperty="imageName")
-          * @ORM\JoinColumn(nullable=false)
+          * @ORM\JoinColumn(nullable=true)
 */
     private $imageFile;
 

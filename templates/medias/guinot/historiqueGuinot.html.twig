@@ -1,15 +1,6 @@
 <html>
     <head>
-        <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="css/fontawesome.css">
-    <link rel="stylesheet" href="/css/templatemo-edu-meeting.css">
-    <link rel="stylesheet" href="/css/owl.css">
-    <link rel="stylesheet" href="/css/lightbox.css">
-    <link rel="stylesheet" href="/css/flex-slider.css">
-<!-- Additional CSS Files -->
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
+     {{ include('linkCss.html.twig') }} 
         
         <title>Centre Guinot</title>
     </head>
@@ -17,54 +8,7 @@
 <body>
 
    
-
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                          Intern-finding
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li class="scroll-to-section"><a href="{{ path('accueil_index') }}" class="active">Acceuil</a></li>
-                          <li class="has-sub">
-                              <a href="{{ path('introductionGuinot_index') }}">Centre Guinot</a>
-                              <ul class="sub-menu">
-                                 <li><a href="{{ path('introductionGuinot_index') }}">Guinot</a></li>
-                                  <li><a href="{{ path('motDuPresidentDeGuinot_index') }}">Mot du président</a></li>
-                                  <li><a href="{{ path('historiqueGuinot_index') }}">Historique du centre</a></li>
-                                  <li><a href="{{ path('formationGuinot_index') }}">Liste des formations</a></li>
-                              </ul>
-                          </li>
-                          <li class="has-sub">
-                              <a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a>
-                              <ul class="sub-menu">
-                                  <li><a href="{{ path('pageAccueilBIOInformatique_index') }}">Biogesoft</a></li>
-                                  <li><a href="{{ path('formations_index') }}">liste des formations</a></li>
-                                  <li><a href="{{ path('langages_index') }}">liste des langages</a></li>
-                                  
-                              </ul>
-                          </li>
-                          <li class="scroll-to-section"><a href="{{ path('message_index') }}">messagerie Public</a></li>
-                          <li class="scroll-to-section"><a href="{{ path('app_login') }}">Connexion</a></li> 
-                          <li class="scroll-to-section"><a href="{{ path('app_logout') }}">Deconnexion</a></li> 
-                      </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+{{ include('navbar.html.twig') }}
 
   <section class="heading-page header-text" id="top">
     <div class="container">
@@ -162,13 +106,12 @@
   
   
 
-  <section  class="meetings-page" id="meetings">
-    <div class="footer">
-      <p>Copyright © 2022 Mohammed Nabi. All Rights Reserved. 
-          <br>Design: <a href="{{ path('accueil_index') }}">Mohammed NABI</a></p>
-    </div>
-  </section>
-   
+  {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+</body>
+
+</html>
 
 
 

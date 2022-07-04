@@ -1,33 +1,63 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}
-Modifier un médias :
-{% endblock %}
-
-{% block content %}
-    
-    
-    <h1>
-        Modifier un médias :
-        </h1>
-
-{{ form_start(formMedias) }}
-
-Image: {{ form_widget(formMedias.imageFile) }}<br>
-Contenu: {{ form_widget(formMedias.contenu) }} <br>
-Date: {{ form_widget(formMedias.date) }} <br>
-Catégories: {{ form_widget(formMedias.categories) }} <br>
 
 
+<html>
+    <head>
 
-<button type="submit" class="btn btn-success">envoyer</button>
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Médias</title>
+    </head>
+
+<body>
+
+   
 
 
-      
-    {{ form_end(formMedias) }}
+  {{ include('navbar.html.twig') }}
 
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>BioGeSoft</h6>
+          <h2>Mes médias </h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1> Ajoutée un médias</h1> <br><br>
+                   {{ include('medias/formulaireMedias.html.twig') }}
+				  
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                 <a href="{{ path('accueil_index') }}">Revenir à l'accueil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
 
+   
+  
+</body>
 
-
-    {% endblock %}
+</html>

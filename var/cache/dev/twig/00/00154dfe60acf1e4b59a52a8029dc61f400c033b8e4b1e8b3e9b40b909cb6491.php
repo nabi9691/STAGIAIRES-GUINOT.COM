@@ -24,16 +24,10 @@ class __TwigTemplate_45d4844cd94c6c53c4d5545060b0b5eabf755ada04d2dffc39bad0ffa62
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'content' => [$this, 'block_content'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,69 +39,83 @@ class __TwigTemplate_45d4844cd94c6c53c4d5545060b0b5eabf755ada04d2dffc39bad0ffa62
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "contacts/nouveauContacts.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "contacts/nouveauContacts.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-    }
-
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        // line 4
-        echo " Enregistrement d'un nouveau contact :
- ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 7
-    public function block_content($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        // line 8
-        echo " <br> <br>
- 
-    <h1> Enregistrement d'un nouveau contact : </h1>
+        // line 1
+        echo "
+<html>
+    <head>
 
     ";
-        // line 12
+        // line 5
+        echo twig_include($this->env, $context, "linkCss.html.twig");
+        echo "    
+        
+        <title>Enregistrement d'un utilisateurs :</title>
+    </head>
+
+<body>
+
+   
+
+
+  ";
+        // line 15
+        echo twig_include($this->env, $context, "navbar.html.twig");
+        echo "
+
+  
+
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                     <div class=\"down-content\">
+                  <h1> Enregistrement d'un nouveau contact</h1> <br><br>
+                 ";
+        // line 31
         echo twig_include($this->env, $context, "contacts/formulaireContacts.html.twig");
         echo "<br>
-
-    <a href=\"";
-        // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contacts_index");
-        echo "\">Liste des contacts :</a><br>
-
-
+\t\t\t\t  
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+               <a href=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ ";
+        // line 46
+        echo twig_include($this->env, $context, "footer.html.twig");
+        echo "
 ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        // line 47
+        echo twig_include($this->env, $context, "scriptJS.html.twig");
+        echo "
 
+   
+  
+</body>
+
+</html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
@@ -123,28 +131,63 @@ class __TwigTemplate_45d4844cd94c6c53c4d5545060b0b5eabf755ada04d2dffc39bad0ffa62
 
     public function getDebugInfo()
     {
-        return array (  101 => 14,  96 => 12,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  106 => 47,  102 => 46,  89 => 36,  81 => 31,  62 => 15,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
+<html>
+    <head>
 
-{% block title %}
- Enregistrement d'un nouveau contact :
- {% endblock %}
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Enregistrement d'un utilisateurs :</title>
+    </head>
 
-{% block content %}
- <br> <br>
- 
-    <h1> Enregistrement d'un nouveau contact : </h1>
+<body>
 
-    {{ include('contacts/formulaireContacts.html.twig') }}<br>
-
-    <a href=\"{{ path('contacts_index') }}\">Liste des contacts :</a><br>
+   
 
 
-{% endblock %}
-", "contacts/nouveauContacts.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\contacts\\nouveauContacts.html.twig");
+  {{ include('navbar.html.twig') }}
+
+  
+
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                     <div class=\"down-content\">
+                  <h1> Enregistrement d'un nouveau contact</h1> <br><br>
+                 {{ include('contacts/formulaireContacts.html.twig') }}<br>
+\t\t\t\t  
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+               <a href=\"{{ path('accueil_index') }}\">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+   
+  
+</body>
+
+</html>", "contacts/nouveauContacts.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\contacts\\nouveauContacts.html.twig");
     }
 }

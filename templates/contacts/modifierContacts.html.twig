@@ -1,42 +1,48 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+    {{ include('linkCss.html.twig') }} 
+        
+        <title>Modifier un contact</title>
+    </head>
 
-{% block title %}
-Modifier un contact :
-{% endblock %}
+<body>
 
-{% block content %}
-    
-    
-    <h1>
-        Modifier un contact :
-        </h1>
+   
 
-{{ form_start(formContacts) }}
-
-Formations: {{ form_widget(formContacts.formation) }}<br>
-Nom: {{ form_widget(formContacts.nom) }}<br>
-Prénom: {{ form_widget(formContacts.prenom) }} <br>
-Date de naissance: {{ form_widget(formContacts.date) }} <br>
-Civilité: {{ form_widget(formContacts.civilite) }} <br>
-Téléphone: {{ form_widget(formContacts.telephone) }} <br>
-Email: {{ form_widget(formContacts.email) }} <br>
-Fax: {{ form_widget(formContacts.fax) }} <br>
-Adresse: {{ form_widget(formContacts.adresse) }} <br>
-Code-Postal: {{ form_widget(formContacts.codePostal) }} <br>
-Villes: {{ form_widget(formContacts.villes) }} <br>
-Départements: {{ form_widget(formContacts.departements) }} <br>
-Pays: {{ form_widget(formContacts.pays) }} <br>
+{{ include('navbar.html.twig') }}
 
 
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1>Modifier un contact</h1> <br><br>
+                  {{ include('contacts/formulaireContacts.html.twig') }}
 
-<button type="submit" class="btn btn-success">envoyer</button>
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{{ path('accueil_index') }}">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
+  {{ include('footer.html.twig') }}
+  {{ include('scriptJS.html.twig') }}
+  
+</body>
 
-      
-    {{ form_end(formContacts) }}
-
-
-
-
-
-    {% endblock %}
+</html>

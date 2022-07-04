@@ -1,17 +1,53 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}
- Enregistrement d'un nouveau contact :
- {% endblock %}
+<html>
+    <head>
 
-{% block content %}
- <br> <br>
- 
-    <h1> Enregistrement d'un nouveau contact : </h1>
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Enregistrement d'un utilisateurs :</title>
+    </head>
 
-    {{ include('contacts/formulaireContacts.html.twig') }}<br>
+<body>
 
-    <a href="{{ path('contacts_index') }}">Liste des contacts :</a><br>
+   
 
 
-{% endblock %}
+  {{ include('navbar.html.twig') }}
+
+  
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1> Enregistrement d'un nouveau contact</h1> <br><br>
+                 {{ include('contacts/formulaireContacts.html.twig') }}<br>
+				  
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+               <a href="{{ path('accueil_index') }}">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+   
+  
+</body>
+
+</html>

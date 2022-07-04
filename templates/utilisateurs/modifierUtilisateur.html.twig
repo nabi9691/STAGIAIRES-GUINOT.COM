@@ -1,28 +1,30 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+    {{ include('linkCss.html.twig') }} 
+        
+        <title>Modifier un utilisateur</title>
+    </head>
 
-{% block title %}
-Modifier un utilisateur :
-{% endblock %}
+<body>
 
-{% block content %}
-    
- <div class="container">
-    
-    <h1>
-        Modifier un utilisateur :
-        </h1>
+   
 
-{{ form_start(formUtilisateur) }}
+{{ include('navbar.html.twig') }}
 
-Formation: {{ form_widget(formUtilisateur.formation) }} <br>
-Civilité: {{ form_widget(formUtilisateur.civilite) }} <br>
-Nom: {{ form_widget(formUtilisateur.nom) }}<br>
-Prénom: {{ form_widget(formUtilisateur.prenom) }} <br>
-Adresse: {{ form_widget(formUtilisateur.adresse) }} <br>
-Code Postal: {{ form_widget(formUtilisateur.code_postal) }} <br>
-Ville: {{ form_widget(formUtilisateur.villes) }} <br>
-Téléphone: {{ form_widget(formUtilisateur.telephone) }} <br>
-Email: {{ form_widget(formUtilisateur.email) }} <br>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1>Modifier un utilisateur</h1> <br><br>
+                  {{ include('utilisateurs/formulaireUtilisateur.html.twig') }}
 
 
 
@@ -31,28 +33,24 @@ Email: {{ form_widget(formUtilisateur.email) }} <br>
 
       
     {{ form_end(formUtilisateur) }}
+				  
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{{ path('accueil_index') }}">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
+  {{ include('footer.html.twig') }}
+  {{ include('scriptJS.html.twig') }}
+  
+</body>
 
-
-</div>
-
-<br/><br/>
-{% block footer %}
-<div>
-<h1>Cliquer ici pour plus de informations !</h1>
-<a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
-<lu>
-    <li>Formations :</li>
-    <li>  Masseur-Kinésithérapeute !</li>
-    <li>  Conseiller Relation Client à Distance !</li>
-<li>  Développeur Web et Web Mobile  !</li>
-<li> 24-26 bd Chastenet de Géry </li>
-<li> 94814 Villejuif Cedex </li>
-<li> Tél : 01 46 78 01 00 </li>
-<li> Fax : 01 46 78 50 35</li>
-<li> paul   guinot@guinot.asso.fr </li>
-</lu>
-</div>
-{% endblock %}
-
-    {% endblock %}
+</html>

@@ -24,18 +24,11 @@ class __TwigTemplate_21c4abe533e1bbec400ea91c44cb3216877e8ae32b857a7a32576d097ec
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
-            'content' => [$this, 'block_content'],
-            'footer' => [$this, 'block_footer'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+            'content' => [$this, 'block_content'],
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -47,71 +40,101 @@ class __TwigTemplate_21c4abe533e1bbec400ea91c44cb3216877e8ae32b857a7a32576d097ec
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "contacts/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "contacts/index.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-    }
-
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        // line 4
-        echo "Liste des contacts : 
- ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 7
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        // line 8
+        // line 1
         echo "
+
+<html>
+    <head>
+     ";
+        // line 5
+        echo twig_include($this->env, $context, "linkCss.html.twig");
+        echo " 
+        
+        <title>Admin</title>
+    </head>
+
+<body>
+
+   
+
 ";
-        // line 9
+        // line 14
+        echo twig_include($this->env, $context, "navbar.html.twig");
+        echo "
+
+  <section class=\"heading-page header-text\" id=\"top\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <h6>Admin</h6>
+          <h2>Gerer la liste des contacts</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                <div class=\"down-content\">
+                  <h1>Admin</h1><br>
+                <a href=\"";
+        // line 39
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nouveauContacts_index");
+        echo "\">Ajouter Un Nouveau contact ! </a>
+                <br><br>
+                  ";
+        // line 41
         $this->displayBlock('content', $context, $blocks);
-        // line 78
+        // line 99
+        echo "                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+                <a href=\"";
+        // line 102
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+   ";
+        // line 113
+        echo twig_include($this->env, $context, "footer.html.twig");
         echo "
-<br/><br/>
+  ";
+        // line 114
+        echo twig_include($this->env, $context, "scriptJS.html.twig");
+        echo "
+ 
+
+</body>
+
+</html>
 
 ";
-        // line 81
-        $this->displayBlock('footer', $context, $blocks);
-        // line 83
-        echo "
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
     }
 
-    // line 9
+    // line 41
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -121,129 +144,112 @@ class __TwigTemplate_21c4abe533e1bbec400ea91c44cb3216877e8ae32b857a7a32576d097ec
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 10
-        echo "<div>
-    <h1>
-     bienvenu(e) !
-     Liste des contacts :
-     </h1>
-
-    <br /><br />
-    <hr />
-    <br />
-    <a href=\"";
-        // line 19
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nouveauContacts_index");
-        echo "\">Ajouter Un Nouveau contact ! </a>
-<br /><br />
-    
-    <table border=\"1\">
-            
-            <thead>
+        // line 42
+        echo "    
+                <table class=\"table table-responsive\">
+               <thead>
                 <tr>
-                    <th> Id </th>
-                    <th> Formations </th>
-                    <th> Nom </th>
-                    <th> Prénom </th>
-                    <th> Date de naissance </th>
-                    <th> Téléphone </th>
-                                        <th> Email </th>
-                    <th> Fax : </th>
-<th> Civilité </th>
-                                        <th> Adresse </th>
-                    <th> Code-Postal </th>
-                    <th> Villes </th>
-                <th> Départements </th>
-                    <th> Pays </th>                    
-                    <th> Modifier </th>
-<th> Afficher </th>
-<th> Supprimer </t  h>
-</tr>
-            </thead>
-            ";
-        // line 45
+                <th> Id </th>
+                
+                <th>Nom  </th>
+                <th> Prénom </th> 
+                <th> Date </th>
+                <th> Téléphone </th>
+                 <th> Email </th>
+                 <th> Fax </th>
+                 <th>Civilité  </th>
+                <th>Adresse  </th>
+                <th> Code Postal </th>
+                <th> Villes </th>
+                <th> Departement </th>
+                 <th> Pays </th>
+               
+                <th> Modifier </th>
+                <th> Afficher </th>
+                <th> Supprimer </th>
+                </tr>
+                </thead>
+       ";
+        // line 66
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["contact"]);
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["contact"]) {
-            // line 46
+            // line 67
             echo "<tbody>
         <tr>
                 <td> ";
-            // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 48), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 69), "html", null, true);
             echo " </td>
+               
                 <td> ";
-            // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "formation", [], "any", false, false, false, 49), "html", null, true);
-            echo " </td>
-                <td> ";
-            // line 50
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "nom", [], "any", false, false, false, 50), "html", null, true);
+            // line 71
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "nom", [], "any", false, false, false, 71), "html", null, true);
             echo " </td>
                 
                 <td> ";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "prenom", [], "any", false, false, false, 52), "html", null, true);
+            // line 73
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "prenom", [], "any", false, false, false, 73), "html", null, true);
             echo " </td>
                 <td> ";
-            // line 53
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "date", [], "any", false, false, false, 53), "d/m/Y"), "html", null, true);
+            // line 74
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "date", [], "any", false, false, false, 74), "d/m/Y"), "html", null, true);
             echo " </td>
 <td> ";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "telephone", [], "any", false, false, false, 54), "html", null, true);
+            // line 75
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "telephone", [], "any", false, false, false, 75), "html", null, true);
             echo " </td>
 <td> ";
-            // line 55
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "email", [], "any", false, false, false, 55), "html", null, true);
+            // line 76
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "email", [], "any", false, false, false, 76), "html", null, true);
             echo " </td>
 <td> ";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "fax", [], "any", false, false, false, 56), "html", null, true);
+            // line 77
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "fax", [], "any", false, false, false, 77), "html", null, true);
             echo " </td>
 <td> ";
-            // line 57
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "civilite", [], "any", false, false, false, 57), "html", null, true);
+            // line 78
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "civilite", [], "any", false, false, false, 78), "html", null, true);
             echo " </td>
 <td> ";
-            // line 58
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "adresse", [], "any", false, false, false, 58), "html", null, true);
+            // line 79
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "adresse", [], "any", false, false, false, 79), "html", null, true);
             echo " </td>
 <td> ";
-            // line 59
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "codePostal", [], "any", false, false, false, 59), "html", null, true);
+            // line 80
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "codePostal", [], "any", false, false, false, 80), "html", null, true);
             echo " </td>
                 <td> ";
-            // line 60
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "villes", [], "any", false, false, false, 60), "html", null, true);
+            // line 81
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "villes", [], "any", false, false, false, 81), "html", null, true);
             echo " </td>
 <td> ";
-            // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "departements", [], "any", false, false, false, 61), "html", null, true);
+            // line 82
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "departements", [], "any", false, false, false, 82), "html", null, true);
             echo " </td>
 <td> ";
-            // line 62
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "pays", [], "any", false, false, false, 62), "html", null, true);
+            // line 83
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "pays", [], "any", false, false, false, 83), "html", null, true);
             echo " </td>
-
 <td><a href=\"";
-            // line 64
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifierContacts_index", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 64)]), "html", null, true);
+            // line 84
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifierContacts_index", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 84)]), "html", null, true);
             echo "\">Modifier</a></td>
 <td><a href=\"";
-            // line 65
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("afficherContacts_index", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 65)]), "html", null, true);
+            // line 85
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("afficherContacts_index", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 85)]), "html", null, true);
             echo "\">afficher</a></td>
 <td><a href=\"";
-            // line 66
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("supprimerContacts_index", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 66)]), "html", null, true);
+            // line 86
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("supprimerContacts_index", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 86)]), "html", null, true);
             echo "\">Supprimer</a></td>
+                </tr>
                 ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 68
+            // line 89
             echo "                <td colspan=\"5\">
                     Vous n'avez pas de contacts enregistré dans votre base de données !
                 </td>
@@ -253,30 +259,12 @@ class __TwigTemplate_21c4abe533e1bbec400ea91c44cb3216877e8ae32b857a7a32576d097ec
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['contact'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 73
+        // line 94
         echo "        </tbody>
     </table>
 
 </div>
 ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 81
-    public function block_footer($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
-
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -297,60 +285,81 @@ class __TwigTemplate_21c4abe533e1bbec400ea91c44cb3216877e8ae32b857a7a32576d097ec
 
     public function getDebugInfo()
     {
-        return array (  271 => 81,  257 => 73,  247 => 68,  240 => 66,  236 => 65,  232 => 64,  227 => 62,  223 => 61,  219 => 60,  215 => 59,  211 => 58,  207 => 57,  203 => 56,  199 => 55,  195 => 54,  191 => 53,  187 => 52,  182 => 50,  178 => 49,  174 => 48,  170 => 46,  165 => 45,  136 => 19,  125 => 10,  115 => 9,  104 => 83,  102 => 81,  97 => 78,  95 => 9,  92 => 8,  82 => 7,  71 => 4,  61 => 3,  38 => 1,);
+        return array (  263 => 94,  253 => 89,  245 => 86,  241 => 85,  237 => 84,  233 => 83,  229 => 82,  225 => 81,  221 => 80,  217 => 79,  213 => 78,  209 => 77,  205 => 76,  201 => 75,  197 => 74,  193 => 73,  188 => 71,  183 => 69,  179 => 67,  174 => 66,  148 => 42,  138 => 41,  120 => 114,  116 => 113,  102 => 102,  97 => 99,  95 => 41,  90 => 39,  62 => 14,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
 
-{% block title %}
-Liste des contacts : 
- {% endblock %}
+<html>
+    <head>
+     {{ include('linkCss.html.twig') }} 
+        
+        <title>Admin</title>
+    </head>
 
-{% block body %}
+<body>
 
-{% block content %}
-<div>
-    <h1>
-     bienvenu(e) !
-     Liste des contacts :
-     </h1>
+   
 
-    <br /><br />
-    <hr />
-    <br />
-    <a href=\"{{ path('nouveauContacts_index') }}\">Ajouter Un Nouveau contact ! </a>
-<br /><br />
+{{ include('navbar.html.twig') }}
+
+  <section class=\"heading-page header-text\" id=\"top\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <h6>Admin</h6>
+          <h2>Gerer la liste des contacts</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                <div class=\"down-content\">
+                  <h1>Admin</h1><br>
+                <a href=\"{{ path('nouveauContacts_index') }}\">Ajouter Un Nouveau contact ! </a>
+                <br><br>
+                  {% block content %}
     
-    <table border=\"1\">
-            
-            <thead>
+                <table class=\"table table-responsive\">
+               <thead>
                 <tr>
-                    <th> Id </th>
-                    <th> Formations </th>
-                    <th> Nom </th>
-                    <th> Prénom </th>
-                    <th> Date de naissance </th>
-                    <th> Téléphone </th>
-                                        <th> Email </th>
-                    <th> Fax : </th>
-<th> Civilité </th>
-                                        <th> Adresse </th>
-                    <th> Code-Postal </th>
-                    <th> Villes </th>
-                <th> Départements </th>
-                    <th> Pays </th>                    
-                    <th> Modifier </th>
-<th> Afficher </th>
-<th> Supprimer </t  h>
-</tr>
-            </thead>
-            {% for contact in contact %}
+                <th> Id </th>
+                
+                <th>Nom  </th>
+                <th> Prénom </th> 
+                <th> Date </th>
+                <th> Téléphone </th>
+                 <th> Email </th>
+                 <th> Fax </th>
+                 <th>Civilité  </th>
+                <th>Adresse  </th>
+                <th> Code Postal </th>
+                <th> Villes </th>
+                <th> Departement </th>
+                 <th> Pays </th>
+               
+                <th> Modifier </th>
+                <th> Afficher </th>
+                <th> Supprimer </th>
+                </tr>
+                </thead>
+       {% for contact in contact %}
 <tbody>
         <tr>
                 <td> {{ contact.id }} </td>
-                <td> {{ contact.formation }} </td>
+               
                 <td> {{ contact.nom }} </td>
                 
                 <td> {{ contact.prenom }} </td>
@@ -364,10 +373,10 @@ Liste des contacts :
                 <td> {{ contact.villes }} </td>
 <td> {{ contact.departements }} </td>
 <td> {{ contact.pays }} </td>
-
 <td><a href=\"{{ path('modifierContacts_index', {'id': contact.id }) }}\">Modifier</a></td>
 <td><a href=\"{{ path('afficherContacts_index', {'id': contact.id }) }}\">afficher</a></td>
 <td><a href=\"{{ path('supprimerContacts_index', {'id': contact.id }) }}\">Supprimer</a></td>
+                </tr>
                 {% else %}
                 <td colspan=\"5\">
                     Vous n'avez pas de contacts enregistré dans votre base de données !
@@ -379,13 +388,28 @@ Liste des contacts :
 
 </div>
 {% endblock %}
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+                <a href=\"{{ path('accueil_index') }}\">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
-<br/><br/>
+   {{ include('footer.html.twig') }}
+  {{ include('scriptJS.html.twig') }}
+ 
 
-{% block footer %}
-{% endblock %}
+</body>
 
-{% endblock %}
+</html>
+
 ", "contacts/index.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\contacts\\index.html.twig");
     }
 }

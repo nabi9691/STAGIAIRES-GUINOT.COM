@@ -1,46 +1,65 @@
-{% extends 'base.html.twig' %}
+<html>
+    <head>
+     {{ include('linkCss.html.twig') }}  
+        
+        <title>Médias</title>
+    </head>
 
-{% block title %}
-Liste des médias : 
- {% endblock %}
+<body>
 
-{% block content %}
-<div>
-    <h1>
-     bienvenu(e) !
-     Liste des médias :
-     </h1>
+   
+{{ include('navbar.html.twig') }}
 
-    <br /><br />
-    <hr />
-    <br />
-    <a href="{{ path('nouveauMedias_index') }}">Ajouter Un Nouveau Médias ! </a>
-<br /><br />
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>BioGeSoft</h6>
+          <h2>Gérer la liste des médias</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="BioGeSoft">
+                </div>
+                <div class="down-content">
+                  <h1>BioGeSoft</h1><br>
+                  <a href="{{ path('nouveauMedias_index') }}">Ajouter Un Nouveau médias ! </a>
+<br 
+                <br><br>
+                  {% block content %}
     
-    
-    <table border="1">
+                <table class="table table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titre du média </th>
+                    <th scope="col">Contenu</th>
+                    <th scope="col">Date d'inportation  </th>
+
+                    <th scope="col">Modifier</th>
+                    <th scope="col">Afficher</th>
+                    <th scope="col">Supprimer</th>
+                    </tr>
+                </thead>
             
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th> Titre </th>
-                    <th> Contenu </th>
-                    <th> Date </th>
-                                <th> Utilisateur </th>
-                <th> Modifier </th>
-<th> Afficher </th>
-<th> Supprimer </t  h>
-</tr>
-            </thead>
             {% for medias in medias %}
 <tbody>
         <tr>
                 <td> {{ medias.id }} </td>
-                <td> {{ medias.imageFile }} </td>
+<td> {{ medias.imageFile }} </td>
                 <td> {{ medias.contenu }} </td>
-                <td> {{ medias.date|date("d/m/Y") }} </td>
-<td> {{ medias.utilisateurs }} </td>
-                                <td><a href="{{ path('modifierMedias_index', {'id': medias.id }) }}">Modifier</a></td>
+<td> {{ medias.date|date("d/m/Y") }} </td>
+<td><a href="{{ path('modifierMedias_index', {'id': medias.id }) }}">Modifier</a></td>
 <td><a href="{{ path('afficherMedias_index', {'id': medias.id }) }}">afficher</a></td>
 <td><a href="{{ path('supprimerMedias_index', {'id': medias.id }) }}">Supprimer</a></td>
                 {% else %}
@@ -49,28 +68,33 @@ Liste des médias :
                 </td>
             </tr>
             {% endfor %}
+           
         </tbody>
     </table>
 
 </div>
-<br/><br/>
-
-{% block footer %}
-<div>
-<h1>Cliquer ici pour plus de informations !</h1>
-<a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
-<lu>
-    <li>Formations :</li>
-    <li>  Masseur-Kinésithérapeute !</li>
-    <li>  Conseiller Relation Client à Distance !</li>
-<li>  Développeur Web et Web Mobile  !</li>
-<li> 24-26 bd Chastenet de Géry </li>
-<li> 94814 Villejuif Cedex </li>
-<li> Tél : 01 46 78 01 00 </li>
-<li> Fax : 01 46 78 50 35</li>
-<li> paul   guinot@guinot.asso.fr </li>
-</lu>
-</div>
 {% endblock %}
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                 <a href="{{ path('accueil_index') }}">Revenir à l'acceuil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
-{% endblock %}
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
+
+</body>
+
+</html>
+
+
+
+

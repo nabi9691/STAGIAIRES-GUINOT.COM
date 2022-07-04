@@ -115,23 +115,23 @@ Liste des cours :
         echo "\"> Cours en vidéo : </a></li>
   <li><a href=\"";
         // line 30
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnPDF_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnVideo_index");
         echo "\"> Cours en PDF : </a></li>
   <li><a href=\"";
         // line 31
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnWord_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnVideo_index");
         echo "\"> Cours en Word : </a></li>
   <li><a href=\"";
         // line 32
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnLignes_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnVideo_index");
         echo "\"> Cours en lignes : </a></li>
   <li><a href=\"";
         // line 33
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnPresentiel_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnVideo_index");
         echo "\"> Cours en présentiel : </a></li>
   <li><a href=\"";
         // line 34
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnFichierZipp_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coursEnVideo_index");
         echo "\"> Cours en fichiers zippés : </a></li>
 </lu>
       
@@ -237,11 +237,11 @@ Liste des cours :
     <div>
   <lu>
     <li><a href=\"{{ path('coursEnVideo_index') }}\"> Cours en vidéo : </a></li>
-  <li><a href=\"{{ path('coursEnPDF_index') }}\"> Cours en PDF : </a></li>
-  <li><a href=\"{{ path('coursEnWord_index') }}\"> Cours en Word : </a></li>
-  <li><a href=\"{{ path('coursEnLignes_index') }}\"> Cours en lignes : </a></li>
-  <li><a href=\"{{ path('coursEnPresentiel_index') }}\"> Cours en présentiel : </a></li>
-  <li><a href=\"{{ path('coursEnFichierZipp_index') }}\"> Cours en fichiers zippés : </a></li>
+  <li><a href=\"{{ path('coursEnVideo_index') }}\"> Cours en PDF : </a></li>
+  <li><a href=\"{{ path('coursEnVideo_index') }}\"> Cours en Word : </a></li>
+  <li><a href=\"{{ path('coursEnVideo_index') }}\"> Cours en lignes : </a></li>
+  <li><a href=\"{{ path('coursEnVideo_index') }}\"> Cours en présentiel : </a></li>
+  <li><a href=\"{{ path('coursEnVideo_index') }}\"> Cours en fichiers zippés : </a></li>
 </lu>
       
  </div>

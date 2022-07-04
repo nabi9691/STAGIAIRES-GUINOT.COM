@@ -47,7 +47,7 @@ class Messages
     private $creer_date;
 
         /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=false)
      */
     private $si_messageLu = 0;
 

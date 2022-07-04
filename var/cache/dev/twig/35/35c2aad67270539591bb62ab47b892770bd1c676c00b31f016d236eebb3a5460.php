@@ -49,7 +49,7 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
         echo "
         
         
-        <title>Centre Guinot</title>
+        <title>BioGeSoft</title>
     </head>
 
 <body>
@@ -87,12 +87,15 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
                   ";
         // line 38
         $this->displayBlock('content', $context, $blocks);
-        // line 75
+        // line 73
         echo "
                 </div>
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
-                <a href=\"meetings.html\">Back To Meetings List</a>
+                 <a href=\"";
+        // line 77
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">Revenir à l'acceuil</a>
               </div>
             </div>
           </div>
@@ -102,11 +105,11 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
   </section>
   
   ";
-        // line 88
+        // line 86
         echo twig_include($this->env, $context, "footer.html.twig");
         echo "
 ";
-        // line 89
+        // line 87
         echo twig_include($this->env, $context, "scriptJS.html.twig");
         echo "
 
@@ -147,13 +150,12 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
                 <tr>
                     <th> Id </th>
                 <th> Nom du stagiaire </th>
-<th> Prénom du stagiaire </th>
-                <th> Téléphone </th>
-                <th> Email </th>
+
+
                                         <th> Nom du langage </th>
                     <th> Durée </th>
 <th> Objectif </th>
-                    <th> Coefficient </th>
+                    
                                         </tr>
             </thead>
             
@@ -161,41 +163,28 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
 <tbody>
         <tr>
                 <td> ";
-        // line 60
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 60, $this->source); })()), "id", [], "any", false, false, false, 60), "html", null, true);
+        // line 59
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 59, $this->source); })()), "id", [], "any", false, false, false, 59), "html", null, true);
         echo " </td>
                 <td> ";
-        // line 61
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 61, $this->source); })()), "nom", [], "any", false, false, false, 61), "html", null, true);
+        // line 60
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 60, $this->source); })()), "nom", [], "any", false, false, false, 60), "html", null, true);
         echo " </td>
-<td> ";
-        // line 62
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 62, $this->source); })()), "prenom", [], "any", false, false, false, 62), "html", null, true);
-        echo " </td>
-<td> ";
+
+
+                <td> ";
         // line 63
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 63, $this->source); })()), "telephone", [], "any", false, false, false, 63), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 63, $this->source); })()), "nomLangage", [], "any", false, false, false, 63), "html", null, true);
         echo " </td>
 <td> ";
         // line 64
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 64, $this->source); })()), "email", [], "any", false, false, false, 64), "html", null, true);
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 64, $this->source); })()), "date", [], "any", false, false, false, 64), "d/m/Y"), "html", null, true);
         echo " </td>
-                <td> ";
+<td> ";
         // line 65
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 65, $this->source); })()), "nomLangage", [], "any", false, false, false, 65), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 65, $this->source); })()), "objectif", [], "any", false, false, false, 65), "html", null, true);
         echo " </td>
-<td> ";
-        // line 66
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 66, $this->source); })()), "date", [], "any", false, false, false, 66), "d/m/Y"), "html", null, true);
-        echo " </td>
-<td> ";
-        // line 67
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 67, $this->source); })()), "objectif", [], "any", false, false, false, 67), "html", null, true);
-        echo " </td>
-<td> ";
-        // line 68
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["langage"]) || array_key_exists("langage", $context) ? $context["langage"] : (function () { throw new RuntimeError('Variable "langage" does not exist.', 68, $this->source); })()), "coefficient", [], "any", false, false, false, 68), "html", null, true);
-        echo " </td>
+
                         </tr>
            
         </tbody>
@@ -222,7 +211,7 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
 
     public function getDebugInfo()
     {
-        return array (  197 => 68,  193 => 67,  189 => 66,  185 => 65,  181 => 64,  177 => 63,  173 => 62,  169 => 61,  165 => 60,  142 => 39,  132 => 38,  110 => 89,  106 => 88,  91 => 75,  89 => 38,  59 => 11,  48 => 3,  44 => 1,);
+        return array (  185 => 65,  181 => 64,  177 => 63,  171 => 60,  167 => 59,  145 => 39,  135 => 38,  113 => 87,  109 => 86,  97 => 77,  91 => 73,  89 => 38,  59 => 11,  48 => 3,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -232,7 +221,7 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
      {{ include('linkCss.html.twig') }}
         
         
-        <title>Centre Guinot</title>
+        <title>BioGeSoft</title>
     </head>
 
 <body>
@@ -273,13 +262,12 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
                 <tr>
                     <th> Id </th>
                 <th> Nom du stagiaire </th>
-<th> Prénom du stagiaire </th>
-                <th> Téléphone </th>
-                <th> Email </th>
+
+
                                         <th> Nom du langage </th>
                     <th> Durée </th>
 <th> Objectif </th>
-                    <th> Coefficient </th>
+                    
                                         </tr>
             </thead>
             
@@ -288,13 +276,12 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
         <tr>
                 <td> {{ langage.id }} </td>
                 <td> {{ langage.nom }} </td>
-<td> {{ langage.prenom }} </td>
-<td> {{ langage.telephone }} </td>
-<td> {{ langage.email }} </td>
+
+
                 <td> {{ langage.nomLangage }} </td>
 <td> {{ langage.date|date(\"d/m/Y\") }} </td>
 <td> {{ langage.objectif }} </td>
-<td> {{ langage.coefficient }} </td>
+
                         </tr>
            
         </tbody>
@@ -305,7 +292,7 @@ class __TwigTemplate_85f877b15047d476b3038c7642670e18f973aee616c0613bdf30f8a9321
                 </div>
             <div class=\"col-lg-12\">
               <div class=\"main-button-red\">
-                <a href=\"meetings.html\">Back To Meetings List</a>
+                 <a href=\"{{ path('accueil_index') }}\">Revenir à l'acceuil</a>
               </div>
             </div>
           </div>

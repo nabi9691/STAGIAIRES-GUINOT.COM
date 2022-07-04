@@ -1,0 +1,8 @@
+# app/config/packages/security.yaml
+security:
+    firewalls:
+        main:
+            logout:
+                path: app_logout
+                # where to redirect after logout ?? You can specify the target property
+                # target: app_any_route 

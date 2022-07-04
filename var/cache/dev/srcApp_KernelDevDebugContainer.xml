@@ -639,6 +639,13 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MediasController"/>
       </call>
     </service>
+    <service id="App\Controller\MenuBioGeSoftController" class="App\Controller\MenuBioGeSoftController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MenuBioGeSoftController"/>
+      </call>
+    </service>
     <service id="App\Controller\MessagesController" class="App\Controller\MessagesController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -652,13 +659,6 @@
       <argument type="service" id="App\Security\EmailVerifier"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\RegistrationController"/>
-      </call>
-    </service>
-    <service id="App\Controller\TestController" class="App\Controller\TestController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\TestController"/>
       </call>
     </service>
     <service id="App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" public="true" autowire="true" autoconfigure="true">
@@ -680,13 +680,22 @@
     <service id="App\DataFixtures\ContactsFixtures" class="App\DataFixtures\ContactsFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
+    <service id="App\DataFixtures\CoursFixtures" class="App\DataFixtures\CoursFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
+    </service>
     <service id="App\DataFixtures\FormationsFixtures" class="App\DataFixtures\FormationsFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
     <service id="App\DataFixtures\LangagesFixtures" class="App\DataFixtures\LangagesFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
+    <service id="App\Form\ActivitesFormType" class="App\Form\ActivitesFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CoursFormType" class="App\Form\CoursFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\FormationsFormType" class="App\Form\FormationsFormType" autowire="true" autoconfigure="true">
@@ -723,6 +732,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ContactsRepository" class="App\Repository\ContactsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CoursRepository" class="App\Repository\CoursRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1181,7 +1194,9 @@
         <argument>Vich\UploaderBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ActivitesFormType</argument>
         <argument>App\Form\ContactsType</argument>
+        <argument>App\Form\CoursFormType</argument>
         <argument>App\Form\FormationsFormType</argument>
         <argument>App\Form\LangagesFormType</argument>
         <argument>App\Form\MediasType</argument>
@@ -1525,7 +1540,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.M4dcWM1"/>
+      <argument type="service" id=".service_locator.HAlEao8"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4542,7 +4557,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.oTnaLHi"/>
+      <argument type="service" id=".service_locator..1b7ukj"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5627,6 +5642,10 @@
             <argument key="groups" type="collection"/>
           </argument>
           <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\CoursFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+          <argument type="collection">
             <argument key="fixture" type="service" id="App\DataFixtures\FormationsFixtures"/>
             <argument key="groups" type="collection"/>
           </argument>
@@ -6010,15 +6029,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MediasController" class="App\Controller\MediasController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MediasController" class="App\Controller\MediasController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MediasController" class="App\Controller\MediasController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MenuBioGeSoftController" class="App\Controller\MenuBioGeSoftController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MenuBioGeSoftController" class="App\Controller\MenuBioGeSoftController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MenuBioGeSoftController" class="App\Controller\MenuBioGeSoftController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MessagesController" class="App\Controller\MessagesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MessagesController" class="App\Controller\MessagesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MessagesController" class="App\Controller\MessagesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TestController" class="App\Controller\TestController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TestController" class="App\Controller\TestController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\TestController" class="App\Controller\TestController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UtilisateursController" class="App\Controller\UtilisateursController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6030,12 +6049,18 @@
     <service id=".abstract.instanceof.App\DataFixtures\CategoriesFixtures" class="App\DataFixtures\CategoriesFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\ContactsFixtures" class="App\DataFixtures\ContactsFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\ContactsFixtures" class="App\DataFixtures\ContactsFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\CoursFixtures" class="App\DataFixtures\CoursFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\CoursFixtures" class="App\DataFixtures\CoursFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\FormationsFixtures" class="App\DataFixtures\FormationsFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\FormationsFixtures" class="App\DataFixtures\FormationsFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\LangagesFixtures" class="App\DataFixtures\LangagesFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\LangagesFixtures" class="App\DataFixtures\LangagesFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ActivitesFormType" class="App\Form\ActivitesFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ActivitesFormType" class="App\Form\ActivitesFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactsType" class="App\Form\ContactsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CoursFormType" class="App\Form\CoursFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CoursFormType" class="App\Form\CoursFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FormationsFormType" class="App\Form\FormationsFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FormationsFormType" class="App\Form\FormationsFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LangagesFormType" class="App\Form\LangagesFormType" autowire="true" abstract="true"/>
@@ -6058,6 +6083,8 @@
     <service id=".abstract.instanceof.App\Repository\CategoriesRepository" class="App\Repository\CategoriesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactsRepository" class="App\Repository\ContactsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactsRepository" class="App\Repository\ContactsRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CoursRepository" class="App\Repository\CoursRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CoursRepository" class="App\Repository\CoursRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FormationsRepository" class="App\Repository\FormationsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\FormationsRepository" class="App\Repository\FormationsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LangagesRepository" class="App\Repository\LangagesRepository" autowire="true" abstract="true"/>
@@ -6393,6 +6420,25 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.Ktx7Ec7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="coursRepository" type="service_closure" id="App\Repository\CoursRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator._Q1ZlJB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="cours" type="service_closure" id=".errored..service_locator._Q1ZlJB.App\Entity\Cours"/>
+      </argument>
+    </service>
+    <service id=".service_locator.rxBRXia" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="cours" type="service_closure" id=".errored..service_locator.rxBRXia.App\Entity\Cours"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.l8FYL3h" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6509,7 +6555,7 @@
         <argument key="session" type="service_closure" id="session"/>
       </argument>
     </service>
-    <service id=".service_locator.DfrMHpg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.fk8gBy3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ActivitesController::afficherActivites" type="service_closure" id=".service_locator.b0IslNt"/>
@@ -6521,6 +6567,10 @@
         <argument key="App\Controller\ContactsController::index" type="service_closure" id=".service_locator.Zx7Hkwx"/>
         <argument key="App\Controller\ContactsController::modifierContacts" type="service_closure" id=".service_locator.vxM1_A_"/>
         <argument key="App\Controller\ContactsController::supprimerContacts" type="service_closure" id=".service_locator.3yWhCqw"/>
+        <argument key="App\Controller\CoursController::afficherCours" type="service_closure" id=".service_locator._Q1ZlJB"/>
+        <argument key="App\Controller\CoursController::index" type="service_closure" id=".service_locator.Ktx7Ec7"/>
+        <argument key="App\Controller\CoursController::modifierCours" type="service_closure" id=".service_locator._Q1ZlJB"/>
+        <argument key="App\Controller\CoursController::supprimerCours" type="service_closure" id=".service_locator.rxBRXia"/>
         <argument key="App\Controller\FormationsController::afficherFormations" type="service_closure" id=".service_locator.QN01NT9"/>
         <argument key="App\Controller\FormationsController::index" type="service_closure" id=".service_locator.l8FYL3h"/>
         <argument key="App\Controller\FormationsController::modifierFormations" type="service_closure" id=".service_locator.QN01NT9"/>
@@ -6532,7 +6582,6 @@
         <argument key="App\Controller\MediasController::afficherMedias" type="service_closure" id=".service_locator._mdDs6T"/>
         <argument key="App\Controller\MediasController::index" type="service_closure" id=".service_locator.oMQ0V5G"/>
         <argument key="App\Controller\MediasController::modifierMedias" type="service_closure" id=".service_locator._mdDs6T"/>
-        <argument key="App\Controller\MediasController::rechercheMedias" type="service_closure" id=".service_locator.oMQ0V5G"/>
         <argument key="App\Controller\MediasController::supprimerMedias" type="service_closure" id=".service_locator.90EGaAF"/>
         <argument key="App\Controller\MessagesController::afficherMessage" type="service_closure" id=".service_locator.K.CkPf1"/>
         <argument key="App\Controller\MessagesController::dixDernierMessages" type="service_closure" id=".service_locator.fYBJDQn"/>
@@ -6568,6 +6617,10 @@
         <argument key="App\Controller\ContactsController:index" type="service_closure" id=".service_locator.Zx7Hkwx"/>
         <argument key="App\Controller\ContactsController:modifierContacts" type="service_closure" id=".service_locator.vxM1_A_"/>
         <argument key="App\Controller\ContactsController:supprimerContacts" type="service_closure" id=".service_locator.3yWhCqw"/>
+        <argument key="App\Controller\CoursController:afficherCours" type="service_closure" id=".service_locator._Q1ZlJB"/>
+        <argument key="App\Controller\CoursController:index" type="service_closure" id=".service_locator.Ktx7Ec7"/>
+        <argument key="App\Controller\CoursController:modifierCours" type="service_closure" id=".service_locator._Q1ZlJB"/>
+        <argument key="App\Controller\CoursController:supprimerCours" type="service_closure" id=".service_locator.rxBRXia"/>
         <argument key="App\Controller\FormationsController:afficherFormations" type="service_closure" id=".service_locator.QN01NT9"/>
         <argument key="App\Controller\FormationsController:index" type="service_closure" id=".service_locator.l8FYL3h"/>
         <argument key="App\Controller\FormationsController:modifierFormations" type="service_closure" id=".service_locator.QN01NT9"/>
@@ -6579,7 +6632,6 @@
         <argument key="App\Controller\MediasController:afficherMedias" type="service_closure" id=".service_locator._mdDs6T"/>
         <argument key="App\Controller\MediasController:index" type="service_closure" id=".service_locator.oMQ0V5G"/>
         <argument key="App\Controller\MediasController:modifierMedias" type="service_closure" id=".service_locator._mdDs6T"/>
-        <argument key="App\Controller\MediasController:rechercheMedias" type="service_closure" id=".service_locator.oMQ0V5G"/>
         <argument key="App\Controller\MediasController:supprimerMedias" type="service_closure" id=".service_locator.90EGaAF"/>
         <argument key="App\Controller\MessagesController:afficherMessage" type="service_closure" id=".service_locator.K.CkPf1"/>
         <argument key="App\Controller\MessagesController:dixDernierMessages" type="service_closure" id=".service_locator.fYBJDQn"/>
@@ -6667,10 +6719,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.M4dcWM1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.HAlEao8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ActivitesFormType" type="service_closure" id="App\Form\ActivitesFormType"/>
         <argument key="App\Form\ContactsType" type="service_closure" id="App\Form\ContactsType"/>
+        <argument key="App\Form\CoursFormType" type="service_closure" id="App\Form\CoursFormType"/>
         <argument key="App\Form\FormationsFormType" type="service_closure" id="App\Form\FormationsFormType"/>
         <argument key="App\Form\LangagesFormType" type="service_closure" id="App\Form\LangagesFormType"/>
         <argument key="App\Form\MediasType" type="service_closure" id="App\Form\MediasType"/>
@@ -6851,13 +6905,14 @@
         <argument key="vich_uploader.listener.upload.document_images" type="service_closure" id="vich_uploader.listener.upload.document_images"/>
       </argument>
     </service>
-    <service id=".service_locator.oTnaLHi" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator..1b7ukj" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ActivitesRepository" type="service_closure" id="App\Repository\ActivitesRepository"/>
         <argument key="App\Repository\AuteursRepository" type="service_closure" id="App\Repository\AuteursRepository"/>
         <argument key="App\Repository\CategoriesRepository" type="service_closure" id="App\Repository\CategoriesRepository"/>
         <argument key="App\Repository\ContactsRepository" type="service_closure" id="App\Repository\ContactsRepository"/>
+        <argument key="App\Repository\CoursRepository" type="service_closure" id="App\Repository\CoursRepository"/>
         <argument key="App\Repository\FormationsRepository" type="service_closure" id="App\Repository\FormationsRepository"/>
         <argument key="App\Repository\LangagesRepository" type="service_closure" id="App\Repository\LangagesRepository"/>
         <argument key="App\Repository\MediasRepository" type="service_closure" id="App\Repository\MediasRepository"/>
@@ -6977,6 +7032,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\MenuBioGeSoftController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\MenuBioGeSoftController"/>
+      <argument>App\Controller\MenuBioGeSoftController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\MessagesController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MessagesController"/>
       <argument>App\Controller\MessagesController</argument>
@@ -6986,12 +7047,6 @@
     <service id=".service_locator.vdmMuyE.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
       <argument>App\Controller\RegistrationController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.vdmMuyE" method="withContext"/>
-    </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\TestController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\TestController"/>
-      <argument>App\Controller\TestController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -7147,12 +7202,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.DfrMHpg"/>
+      <argument type="service" id=".service_locator.fk8gBy3"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.DfrMHpg"/>
+      <argument type="service" id=".service_locator.fk8gBy3"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -7166,6 +7221,8 @@
     <service id=".errored..service_locator.T7ta2S8.App\Entity\Activites" class="App\Entity\Activites"/>
     <service id=".errored..service_locator.vxM1_A_.App\Entity\Contacts" class="App\Entity\Contacts"/>
     <service id=".errored..service_locator.3yWhCqw.App\Entity\Contacts" class="App\Entity\Contacts"/>
+    <service id=".errored..service_locator._Q1ZlJB.App\Entity\Cours" class="App\Entity\Cours"/>
+    <service id=".errored..service_locator.rxBRXia.App\Entity\Cours" class="App\Entity\Cours"/>
     <service id=".errored..service_locator.QN01NT9.App\Entity\Formations" class="App\Entity\Formations"/>
     <service id=".errored..service_locator.eEb02Dq.App\Entity\Formations" class="App\Entity\Formations"/>
     <service id=".errored..service_locator.G33HQ.4.App\Entity\Langages" class="App\Entity\Langages"/>
@@ -7594,7 +7651,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.DfrMHpg"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.fk8gBy3"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
@@ -7610,7 +7667,7 @@
     <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
     <service id="Symfony\Component\String\Slugger\SluggerInterface" alias="slugger"/>
     <service id=".service_locator.tHpW6v3" alias=".service_locator.Y7gDuDN" public="false"/>
-    <service id=".service_locator.gGYrHm1" alias=".service_locator.M4dcWM1" public="false"/>
+    <service id=".service_locator.dg59tj7" alias=".service_locator.HAlEao8" public="false"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default" public="false"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>

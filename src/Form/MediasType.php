@@ -34,9 +34,23 @@ class MediasType extends AbstractType
             
         ->add('imageFile', FileType::class, [
             'label' => 'Uploader votre image :',
-            'required' => true
+            'required' => false
         ])
-        
+
+        ->add('contenu', TextType::class, [
+            'label' => 'Le contenu du médias :',
+            'required' => false
+        ])
+
+
+
+        ->add('date', BirthdayType::class, [
+            'label' => 'La date de votre cours :',
+            'required' => false,
+            'widget' => 'single_text'
+        ])
+
+
         ;
     }
 

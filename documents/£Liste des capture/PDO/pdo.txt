@@ -1,0 +1,351 @@
+CONTENUMENU
+RECHERCHER : mots-clés
+OK
+ACCUEIL
+ACTUALITÉS
+TUTORIELS
+SCRIPTS
+FORUMS
+INSCRIPTION
+LIVRE D'OR
+CONTACT
+Les classes et objets
+Par Emacs
+26 commentaires
+62265 lectures
+RSS -  Atom
+La programmation par objet ( POO ) a été intégrée au langage PHP dans sa version 4. Mais à cette époque, le modèle objet de PHP était beaucoup trop sommaire. Nous ne pouvions réellement parler de programmation orientée objet. Les développeurs de PHP se sont alors penchés sur la question et ont amélioré ce modèle objet qui, depuis la version 5, n'a plus rien à envier aux autres langages objets comme Java ou C++.
+Ce premier cours sur la programmation orientée objet sera une première découverte et une présentation de la syntaxe d'écriture de classes. Nous aborderons dans un premier temps les avantages relatifs à une approche par objet. Puis nous définirons les notions de classes, d'objets, d'instance et de type avant de nous lancer pleinement dans l'écriture de nos premières classes.
+Quels sont les avantages et inconvénients d'une approche objet ?
+La programmation orientée objet offre de nombreux avantages. Parmi eux :
+La possibilité de réutiliser le code dans différents projets. Les classes ainsi créées pourront avoir une nouvelle vie dans une application tierce.
+Une conception de l'algorithme plus claire et organisée. Le programmeur identifie chaque élément de son programme comme un objet ayant son contexte, ses propriétés et des actions qui lui sont propres.
+Un code modulaire. Chaque type d'objet possède son propre contexte et ne peut agir avec d'autres suivant des interfaces bien précises. Cela permet d'isoler chaque module et d'en créer séparemment de nouveaux qui viendront s'ajouter à l'application.Cette approche est particulièrement employée dans le cas de projets répartis entre pusieurs développeurs.
+Possibilité de s'adapter aux design patterns (motifs de conception) pour une meilleure structuration du code.
+Il existe cependant quelques inconvénients à l'utilisation de la programmation par objet :
+Une application orientée objet mal conceptualisée sera difficilement maintenable et modulaire.
+La programmation par objet nécessite généralement plus de ressources et de temps d'exécution qu'un code procédural.
+Remarque : la programmation par objet n'est pas synonyme de bonne programmation. Il existe d'excellents développeurs capables de produire du bon code procédural, maintenable, structuré et modulaire. Mais il existe aussi des développeurs en programmation objet qui produisent du mauvais code suite à un manque de conceptualisation.
+Qu'est-ce qu'un objet ?
+Définition
+Un « objet » est une représentation d'une chose matérielle ou immatérielle du réel à laquelle on associe des propriétés et des actions.
+Par exemple : une voiture, une personne, un animal, un nombre ou bien un compte bancaire peuvent être vus comme des objets.
+Attributs
+Les « attributs » (aussi appelés « données membres ») sont les caractères propres à un objet.
+Une personne, par exemple, possèdent différents attributs qui lui sont propres comme le nom, le prénom, la couleur des yeux, le sexe, la couleur des cheveux, la taille...
+Méthodes
+Les « méthodes » sont les actions applicables à un objet.
+Un objet personne, par exemple, dispose des actions suivantes : manger, dormir, boire, marcher, courir...
+Qu'est-ce-qu'une classe ?
+Une « classe » est un modèle de données définissant la structure commune à tous les objets qui seront créés à partir d'elle. Plus concrètement, nous pouvons percevoir une classe comme un moule grâce auquel nous allons créer autant d'objets de même type et de même structure qu'on le désire.
+Par exemple, pour modéliser n'importe quelle personne, nous pourrions écrire une classe Personne dans laquelle nous définissons les attributs (couleurs des yeux, couleurs des cheveux, taille, sexe...) et méthodes (marcher, courir, manger, boire...) communs à tout être humain.
+Qu'est-ce-qu'une instance ?
+Une instance est une représentation particulière d'une classe.
+Lorsque l'on crée un objet, on réalise ce que l'on appelle une « instance de la classe ». C'est à dire que du moule, on en extrait un nouvel objet qui dispose de ses attributs et de ses méthodes. L'objet ainsi créé aura pour type le nom de la classe.
+Par exemple, les objets Hugo, Romain, Nicolas, Daniel sont des instances (objets) de la classe Personne.
+Remarque : une classe n'est pas un objet. C'est un abus de langage de dire qu'une classe et un objet sont identiques.
+Déclaration d'une classe
+Nous venons de définir le vocabulaire propre à la programmation orientée objet. Entrons à présent dans le vif du sujet, c'est à dire la déclaration et l'instanciation d'une classe. Nous allons déclarer une classe Personne qui nous permettra ensuite de créer autant d'instances (objets) de cette classe que nous le souhaitons.
+Syntaxe de déclaration d'une classe
+Le code suivant présente une manière de déclarer et de structurer correctement une classe. Nous vous conseillons vivement de suivre ces conventions d'écriture.
+Déclaration d'une classe PHP 5
+<?php
+  class NomDeMaClasse
+  {
+    // Attributs
+    // Constantes
+    // Méthodes  
+  }
+?>
+Voici par exemple ce que cela donne avec notre exemple :
+Exemple de la classe Personne
+<?php
+  class Personne
+  {
+    // Attributs
+    public $nom;
+    public $prenom;
+    public $dateDeNaissance;
+    public $taille;
+    public $sexe;
+    // Constantes
+    const NOMBRE_DE_BRAS = 2;
+    const NOMBRE_DE_JAMBES = 2;
+    const NOMBRE_DE_YEUX = 2;
+    const NOMBRE_DE_PIEDS = 2;
+    const NOMBRE_DE_MAINS = 2;
+    // Méthodes  
+    public function __construct() { }
+    public function boire()
+    {
+      echo 'La personne boit<br/>';
+    }
+    public function manger()
+    {
+      echo 'La personne mange<br/>';
+    }
+  }
+Remarque : par convention, on écrit le nom d'une classe en « Upper Camel Case », c'est à dire que tous les mots sont accrochés et chaque première lettre de chaque mot est écrit en capital.
+Comme vous pouvez le constater, nous avons déclaré 5 attributs publics, 5 constantes, 1 méthode constructeur et 2 méthodes classiques. Détaillons chaque élément.
+Les attributs
+Comme nous l'avons expliqué au début de ce cours, les attributs sont les caractéristiques propres d'un objet. Toute personne possède un nom, un prenom, une date de naissance, une taille, un sexe... Tous ces éléments caractérisent un être humain.
+Par cet exemple, nous déclarons les attributs de notre classe public. Nous expliquerons dans un tutoriel suivant les trois niveaux de visibilité (public, private et protected) qui peuvent être appliqués à un attribut.
+Le mot-clé public permet de rendre l'attribut accessible depuis l'extérieur de la classe. Ce n'est pas une bonne pratique à adopter mais pour ce premier tutoriel nous l'utiliserons tel quel pour faciliter la compréhension.
+En programmation orientée objet, un attribut n'est ni plus ni moins qu'une variable.
+Notez également que nous avons juste déclaré les attributs. En revanche, aucun type ni aucune valeur ne leur ont été attribués. Ils sont donc par défaut initialisés à la valeur NULL.
+Remarque : deux classes différentes peuvent avoir les même attibuts sans risque de conflit.
+Les constantes
+Il est aussi possible de déclarer des constantes propres à la classe. Contrairement au mode procédural de programmation, une constante est déclarée avec le mot-clé const.
+Remarque : une constante doit être déclarée et initialisée avec sa valeur en même temps.
+Le constructeur
+Le constructeur est une méthode particulière. C'est elle qui est appelée implicitement à la création de l'objet (instanciation).
+Dans notre exemple, le constructeur n'a ni paramètre ni instruction. Le programmeur est libre de définir des paramètres obligatoires à passer au constructeur ainsi qu'un groupe d'instructions à exécuter à l'instanciation de la classe. Nous nous en passerons pour simplifier notre exemple.
+Remarque : en PHP, la surcharge de constructeur et de méthodes n'est pas possible. On ne peut définir qu'une seule et unique fois la même méthode.
+Les méthodes
+Les méthodes sont les actions que l'on peut appliquer à un objet. Il s'agit en fait de fonctions qui peuvent prendre ou non des paramètres et retourner ou non des valeurs / objets. S'agissant d'actions, nous vous conseillons de les nommer avec un verbe à l'infinitif.
+Elles se déclarent de la même manière que des fonctions traditionnelles.
+Au même titre que les attributs, on déclare une méthode avec un niveau de visibilité. Le mot-clé public
+indique que l'on pourra appliquer la méthode en dehors de la classe, c'est à dire sur l'objet lui même.
+Remarque : deux classes différentes peuvent avoir les mêmes méthodes sans risque de conflit.
+Utilisation des classes et des objets
+Notre classe est désormais prête mais ne sert à rien tout seule. Comme nous l'avons expliqué plus haut, une classe est perçue comme un moule capable de réaliser autant d'objets de même type et de même structure qu'on le souhaite. Nous allons donc présenter maintenant la phase de concrètisation d'une classe.
+Instanciation d'une classe
+L'instanciation d'une classe est la phase de création des objets issus de cette classe. Lorsque l'on instancie une classe, on utilise le mot-clé new suivant du nom de la classe. Cette instruction appelle la méthode constructeur ( __construct() ) qui construit l'objet et le place en mémoire. Voici un exemple qui illustre 4 instances différentes de la classes Personne.
+Création d'objets de type Personne
+<?php
+  $personne1 = new Personne();
+  $personne2 = new Personne();
+  $personne3 = new Personne();
+  $personne4 = new Personne();
+Un objet est en fait une variable dont le type est celui de la classe qui est instanciée.
+Remarque : si nous avions défini des paramètres dans la méthode constructeur de notre classe, nous aurions du les indiquer entre les parenthèses au moment de l'instance. Par exemple : $personne1 = new Personne('Hamon','Hugo');
+Accès aux attributs
+Accès en écriture
+Nous venons de créer 4 objets de même type et de même structure. Dans l'état actuel, ce sont des clones car leurs attributs respectifs sont tous déclarés mais ne sont pas initialisés. Nous affectons à présent des valeurs à chacun des attributs de chaque objet.
+Utilisation des attributs d'un objet
+<?php
+  // Définition des attributs de la personne 1
+  $personne1->nom = 'Hamon';
+  $personne1->prenom = 'Hugo';
+  $personne1->dateDeNaissance = '02-07-1987';
+  $personne1->taille = '180';
+  $personne1->sexe = 'M';
+  // Définition des attributs de la personne 2
+  $personne2->nom = 'Dubois';
+  $personne2->prenom = 'Michelle';
+  $personne2->dateDeNaissance = '18-11-1968';
+  $personne2->taille = '166';
+  $personne2->sexe = 'F';
+  // Définition des attributs de la personne 3
+  $personne3->nom = 'Durand';
+  $personne3->prenom = 'Béatrice';
+  $personne3->dateDeNaissance = '02-08-1975';
+  $personne3->taille = '160';
+  $personne3->sexe = 'F';
+  // Définition des attributs de la personne 4
+  $personne4->nom = 'Martin';
+  $personne4->prenom = 'Pierre';
+  $personne4->dateDeNaissance = '23-05-1993';
+  $personne4->taille = '155';
+  $personne4->sexe = 'M';
+Nous avons maintenant des objets ayant chacun des caractèristiques différentes.
+Dans notre exemple, nous accèdons directement à la valeur de l'attribut. Cela est possible car nous avons défini l'attribut comme étant public. Si nous avions déclaré l'attribut avec les mots-clés private ou protected, nous aurions du utiliser un autre mécanisme pour accéder à sa valeur ou bien la mettre à jour. Nous verrons cela dans un prochain cours.
+Accès en lecture
+La lecture de la valeur d'un attribut d'un objet se fait exactement de la même manière que pour une variable traditionnelle. Le code suivant présente comment afficher le nom et le prénom de la personne 1.
+Affichage du nom et du prénom de la personne 1
+<?php
+  echo 'Personne 1 :<br/><br/>';
+  echo 'Nom : ', $personne1->nom ,'<br/>';
+  echo 'Prénom : ', $personne1->prenom;
+L'exécution de ce programme produit le résultat suivant sur la sortie standard :
+Résultat d'exécution du code
+Personne 1 :
+Nom : Hamon
+Prénom : Hugo 
+Accès aux constantes
+L'accès aux constantes ne peut se faire qu'en lecture via l'opérateur :: . L'exemple suivant illustre la lecture d'une constante de la classe Personne.
+Accès à une constante
+<?php
+  echo 'Chaque personne a ', Personne::NOMBRE_DE_YEUX ,' yeux.';
+?>
+L'exécution de ce code affiche la chaine suivante sur la sortie standard :
+Résultat de l'exécution du code
+Chaque personne a 2 yeux. 
+Remarque : si l'on tente de redéfinir la valeur d'une constante, PHP génèrera une erreur de ce type :
+Erreur générée en cas de redéfinition de constante
+Parse error: syntax error, unexpected '=' in /Users/Emacs/Sites/Demo/Autres/Personne.php on line 36
+Accès aux méthodes
+Avant de clore ce tutoriel, il ne nous reste plus qu'à présenter l'utilisation des méthodes. Leur utilisation est exactement la même que pour les attributs. Rappellez-vous, nous avions défini deux méthodes pour notre classe Personne. Il s'agit des méthodes boire() et manger(). Toutes deux affichent une chaine de caractères sur la sortie standard lorsqu'elles sont exécutées.
+Reprenons nos 4 objets précédents. Nous simulons que ces 4 personnes sont à table et qu'elles dînent. Simultanément les deux premières personnes boivent le contenu d'un verre pendant que les deux autres mangent. Cela se représente donc par l'appel de la méthode boire() sur les objets personne1 et personne2, puis par l'appel de la méthode manger() sur les objets personne3 et personne4.
+Appel de méthode sur des objets
+<?php
+  $personne1->boire();
+  $personne2->boire();
+  $personne3->manger();
+  $personne4->manger();
+?>
+Après exécution, le résultat est le suivant :
+Résulat de l'exécution du code
+La personne boit
+La personne boit
+La personne mange
+La personne mange
+Remarque : comme pour le constructeur, si nos méthodes avaient eu besoin de paramètres en entrée, nous les aurions indiqués au moment de l'appel entre les parenthèses de la fonction.
+Conclusion
+A l'issue de ce premier tutoriel d'initiation à la programmation orientée objet en PHP5, nous avons expliqué les notions d'objet, de classe et d'instance. Puis nous avons créé notre première classe contenant attributs, constantes et méthodes. Ensuite, nous avons instancié notre classe pour fabriquer 4 objets auxquels nous avons mis à jour les valeurs des attributs. Enfin, nous nous sommes intéressés à l'appel de méthodes pour chacun de nos objets.
+Les prochains tutoriels de ce chapitre sur la programmation orientée objet présentera les notions de visibilité, des attributs et méthodes, la référencement à l'objet en cours, les méthodes et constantes magiques, l'héritage, les interfaces, les exceptions...
+Visibilité des propriétés et des méthodes »
+Les commentaires
+1. Par `Haku le 17/11/2007 15:04
+"Les développeurs de PHP se sont alors penchés sur la question et ont amélioré ce modèle objet qui, depuis la version 5, n'a plus rien à envier aux autres langages objets comme Java ou C++."
+
+Pas très réaliste cette affirmation, beaucoup de choses manque encore au modèle objet de PHP.
+La surcharge de méthode en fonction du nombre d'argument (et du type, mais bon, comme PHP n'est pas fortement typé, on peut toujours attendre), la surcharge d'opérateur (plutôt ennuyeux de devoir passer par des méthodes pour faire une somme de deux objets), les méthodes virtuelles, amies, etc.
+Bref il manque encore un tas de truc pour que l'OO en PHP soit complet.
+
+Et je ne parle même pas de l'inutilité du polymorphisme en PHP dû au manque de typage fort et à la présence d'un conteneur universel bien plus puissant que les tableaux du c ou les ArrayList() du java : les array().
+2. Par Emacs le 17/11/2007 15:52
+Bonjour Haku,
+
+Il est vrai qu'il manque encore pas mal de choses au modèle objet de PHP5. Toutes les possibilités de surcharge de constructeur, méthodes et opérateurs ne sont pas prises en charge pour le moment. Peut-être que ça viendra dans les prochaines versions. La notion d'évènements n'existe pas non plus en natif dans PHP bien que l'on arrive à la simuler.
+
+Néanmoins, ce modèle OO PHP 5 apporte un confort non négligeable en terme de programmation orientée objet que l'on n'avait pas évidemment en PHP 4. J'affirme toujours que ce modèle objet n'a plus vraiment rien à envier (certes malgré ses limites au niveau des surcharges non prises en charge) aux langages purement objet car il permet de réaliser des applications robustes et adaptées au web. C'est le cas par exemple des frameworks Symfony ou Zend.
+3. Par `Haku le 18/11/2007 00:02
+Il est certain que le passage à PHP5 apporte un énorme plus à l'orienté objet (je me permettrais même de dire que faire de l'OO avec PHP4 ou inférieur, c'est ridicule et ça dénote plus une mauvaise compréhension de l'OO qu'une maitrise de celle-ci).
+
+Il est vrai que l'OO PHP5 apporte un certain confort, notamment avec les interfaces, les classes abstraites, la possibilité de parcourir un objet avec foreach() (ce qui permet de créer simplement un itérateur très efficace), etc.
+
+Mais alors, c'est la comparaison elle-même qui est en cause. L'OO de PHP est encore bien incomplète face à l'OO du C++ ou du Java, cependant, vu l'utilisation de PHP pour le web, ce manque n'est pas déterminant et ne nous prive pas de trop de choses, et là je suis d'accord avec toi.
+4. Par Cyrano le 08/12/2007 13:47
+Je me permets d'apporter un (léger) bémol aux observations, certes justifiées, de Haku : certes la comparaison est bancale. Mais faire cette comparaison est en soi un peu futile. Ces différents langages n'ont pas les mêmes destinations.
+Si on me parlait de construire un client lourd en PHP, je m'interrogerais sérieusement sur l'intérêt de ce choix. En revanche pour construire une application Internet, même critique, le PHP m'apparaîtrait comme plus appropriée. Chaque langage est plus ou moins pratique selon l'objectif poursuivi et je serais davantage tenté par un questionnement sur l'exploitation de chacun pour les faire collaborer selon les besoins. Les langages, orientés objet ou non, peuvent en général collaborer, chacun étant plus approprié que les autres pour un point spécifique de l'application envisagée.
+
+La programmation Objet n'est en outre qu'une méthodologie. Certains aspects de cette manière de faire sont plus ou moins développés selon le langage. Pour ce qui est du modèle objet de PHP5, je dirais que par rapport au but poursuivi, ça ouvre quand même des perspectives assez énormes même pour des applications web très critiques.
+
+Et en marge de cette digression, compliments Emacs, ça va éclairer le chemin de bien des débutants qui s'interrogent sur les mystères de la POO 
+5. Par Emacs le 11/12/2007 00:09
+Il est certain que PHP a encore un peu de retard sur son modèle objet par rapport aux grands classiques Java et C++.
+
+Mais comme tu le dis si bien Cyrano, PHP est destiné avant tout au web et non aux clients lourds. (Bien qu'outre mesure il soit possible de développer des applications lourdes avec l'API PHP GTK mais je doute aussi du bien fondé d'un tel choix pour ce genre de projet).
+
+Donc qui dit "Web" sous-entend alors développement dans des temps relativement cours (quelques mois à 1 année pour la majorité des sites Internet) ainsi que des projets relativement éphémères qui ne cessent de se renouveller. Ce qui m'en amène à dire que l'utilisation massive de la POO dans un projet web peut s'avérer efficace en terme de structuration globale de l'application (si la conception est bien bâtie) mais qu'en terme de coûts, elle l'est beaucoup moins. En effet, pour une même application, cela coûtera plus de temps à un développeur d'écrire des classes et les contrôleurs de son application que de coder directement ces derniers avec une approche procédurale. Et en entreprise, chaque ligne de code = du temps de développement, de test et de maintenance, ce qui implique une hausse significative (et parfois non justifiée) du coût du projet !
+
+Une approche orientée objet peut finalement s'avérer inappropriée dans l'accomplissement de certains projets web (blogs, site vitrine, site à faible trafic...). En revanche, je suis convaincu de son utilité dans des applications web plus importantes (sites de ventes en ligne par exemple) impliquant plusieurs équipes de développement, plusieurs technologies, de la sécurité... mais ayant aussi pour objectif de rester pérènes sur la toile. Je pense que c'est notamment pour répondre à ces problématiques que PHP à mis en place un modèle objet proche de Java pour permettre aux développeurs professionnels de croire en la puissance de ce langage ; et de pouvoir bâtir des applications robustes et structurées. Au final, nous pouvons constater que cet objectif est clairement atteint en s'intéressant à des projets comme les frameworks Symfony, Zend, Copix ou encore Jelix qui usent pleinement des spécificités de la programmation orientée objet et de certains design patterns. En dehors de ces applications naissent aussi des librairies OO particulièrement utiles développées par des programmeurs agguéris dont certains arrivent parfois tout droit des langages objets purs 
+
+En mot de la fin, je vous dis encore "Merci" pour vos compliments 
+
+Hugo.
+6. Par saturn1 le 18/01/2008 12:37
+Sa sert à quoi ? public function __construct() { }
+7. Par Emacs le 18/01/2008 14:09
+C'est le constructeur de ta classe. C'est la fonction qui sera appellée automatiquement quand tu feras un "new NomDeTaClasse()" dans ton programme.
+8. Par Valter le 23/03/2008 17:29
+Effectivement, sans constructeur ta classe ne peut pas, hum, se construire 
+9. Par Anas le 08/04/2008 18:21
+un trucs qui sera peu être intéressant surtout pour les débutants c'est de faire un tuto. sur la traduction d'un diagramme de classe en code php5. en tous cas vos tuto son très bon pour moi myammm 
+10. Par Emacs le 08/04/2008 21:31
+Oui pourquoi pas ! Une approche UML -> PHP 5 pourrait être envisagée comme idée de tutoriel 
+
+Merci pour ton commentaire Anas !
+11. Par msg_dracula le 30/05/2008 18:16
+Merci pour le tutoriel tres clair et qui m'aide à passer en douceur à la POO.
+
+J'ai découvert ton blog via le site du zéro via un post que j'avais créé pour régler une petite question sur le sujet.
+
+Tout me semble plus clair au fil des jours et des documentations que je peut glaner sur le web.
+12. Par damaskinos le 14/07/2008 23:57
+Pour UML à php, voir l'extension UML2PHP5 de dia. Elle permet de générer une class à partir du modèle UML. Voici le lien http://uml2php5.zpmag.com/
+13. Par Trisk le 04/08/2008 15:13
+Bonjour!!!
+Merci encore pour ce tuto qui a put mettre au clair la POO car tout les autres tuto et code que j'ai chopé sur le net (pour mon cas qui est l'écriture de fichiers .ini) était avec l'ancienne version.Donc j'avais un peu de mal !!!!
+
+Merci encore !!!!et continué comme ça !!
+
+P.S: si quelqu'un a un tuto pour l'écriture de fichier .ini en POO PHP5 je suis preneur 
+14. Par Jérémy_B le 10/08/2008 00:27
+Bonjour,
+
+Excellent tutoriel, comme tous les autres. J'ai lu sur un autre site ce que c'était que la POO, et je peux t'affirmer que ce tutoriel est un très bon complément.Une explication très claire, un code aussi claire et très bien présenté..
+
+Je vais m'empresser de lire la suite !
+
+Merci beaucoup.
+
+PS : Dans " Déclaration d'une classe --> Les attributs --> 1er paragraphe ", et plus précisément dans cette phrase : " Tous ces éléments caractèrise un être humain. ", c'est " caractérisent " ! Voila, c'est pas bien grave.
+15. Par Emacs le 10/08/2008 14:29
+Merci beaucoup Jérémy pour tes compliments. Des nouveaux tutoriels de POO sont en préparation et vont bientôt arriver. Je corrige cette petite faute d'orthographe  Merci.
+16. Par Tef le 02/01/2009 14:26
+Bonjour,
+Déjà bravo pour ce site !! Enfin je peux apprendre le POO avec des mots compréhensibles par les novices 
+Je me refais les exemples de tête pour voir si je comprends bien toute la logique. Mais j'ai une erreur sur cette ligne :
+echo 'Chaque personne a ', Personne::NOMBRE_DE_YEUX ,' yeux.';
+
+J'ai tapé exactement la même chose et j'ai cette erreur :
+Parse error: parse error, expecting `','' or `';'' in C:\wamp\www\dev_objet\cours1.php on line 46
+
+Je comprends pas : est-ce qu'il y a un truc à activer dans le php. INI ? Quand je mets en commentaire la ligne, j'ai plus l'erreur...
+
+En tout cas, bravo !
+17. Par Hugo le 05/03/2009 20:48
+Si j'ai bien compris, les deux underscore "__" précédent le mot-clé construct sont indispensables pour construire la classe d'une part, mais également pour permettre d'identifier le constructeur ?
+
+Et pour accéder aux constantes d'une classe, il faut utiliser cette fois-ci "::" avant le nom en majuscule de la constante concernée ?
+
+Merci d'avance d'une réponse.
+18. Par Gros le 05/04/2009 15:20
+Limpide.
+Explications claires et net. Tout compris. A noter que ton tutu débutant sur PHP m'a facilité la tache aussi...
+Un truc qui serai sympatique, c'est de regrouper tes cours et d'assembler les pdf par sessions de cours comme sur developper.com ce qui pourrait être pratique.
+19. Par Emacs le 06/04/2009 02:22
+@Gros : merci pour les compliments. J'ai en projet d'améliorer prochainement Apprendre-PHP.com, et je pense que je vais intégrer ta remarque. 
+20. Par juju le 12/04/2009 12:20
+Avant de lire cette introduction je ne comprenait pas la POO
+Merci à toi pour ce cours simple mais très interessant
+21. Par Dime le 09/05/2009 03:00
+Merci pour le tutoriel, je suis impatient de le continuer jusqu'au bout voulant m'initier à la POO.
+Il est vrai que ça peut faciliter, connaissant pas mal de chose sur la programmation "normale" c'est intéressant de se pencher sur une autre "façon".
+
+Merci, bye.
+22. Par Lemattoue le 01/07/2009 14:24
+Merci ce tuto est tres bien expliquer c'est le seul ou jai vraiment tout compris sur la POO. 
+23. Par Thibow le 10/07/2009 10:01
+Merci pour ce tutoriel !
+Excellent, facile de compréhension, bien écrit ... merci 
+24. Par Ritter Jack le 11/08/2009 16:31
+Très bon tuto qui m'a grandement aider pour mes études !
+
+Un grand merci à Emacs !
+25. Par Ritter Jack le 11/08/2009 17:19
+Dans le 2éme code, il faudrait rajouter ?> même si c'est pas trop grave 
+26. Par maniT4c le 22/09/2009 23:02
+Merci beaucoup pour ce tuto très clair, la lecture est agréable je file vite lire les suivants 
+ID
+ 
+MDP
+ 
+OK
+JOIN
+ID/MDP?
+Cours & tutoriels
+Introduction à PHP
+Environnements de...
+Les bases
+Les images
+La POO
+Les design patterns
+Sécurité PHP
+Les frameworks
+Bonnes pratiques
+Développement avancé...
+Exemples concrets
+Serveurs Web
+Evènements PHP
+Livres utiles
+2212119763 ie=UTF8&tag=appphp-…
+Partenaires
+Job PHP
+Emplois PHP
+Le PHP Facile
+Copyright © 2022 - Apprendre-PHP.com - Tous droits réservés - Reproduction interdite même partielle - haut de page
+
+Webdesign par KAC - Intégration XHTML / CSS par Neovov - Développement par Emacs & Palleas.

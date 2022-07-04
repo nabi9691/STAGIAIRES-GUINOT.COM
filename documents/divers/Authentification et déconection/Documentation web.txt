@@ -1,0 +1,365 @@
+consentement aux cookies
+LUMIÈRE
+SOMBRE
+avec
+faites de la publicité avec nous
+À propos de
+Contactez-nous
+ourcodeworld 
+ourcodeworld 
+ourcodeworld 
+carlos-fernando-delgado-maldon… 
+ourcodeworld sub_confirmation=… 
+ourcodeworld 
+Logo Notre monde de codes
+ 
+ 
+ 
+Latin espagnol
+login 
+ 
+SymfonyName
+Comment implémenter votre propre système d'authentification des utilisateurs dans Symfony 4.3 : Partie 3 (Création d'un formulaire de connexion et d'une route de déconnexion)
+Carlos Delgado
+Carlos Delgado
+01 décembre 2019
+16.7K vues
+sdkcarlos 
+carlos-fernando-delgado-maldon… 
+Apprenez à créer votre propre système d'authentification pour Symfony 4 à partir de zéro. Dans cette partie, vous apprendrez à créer à partir de rien le formulaire de connexion et la route de déconnexion pour vos utilisateurs.
+Comment implémenter votre propre système d'authentification des utilisateurs dans Symfony 4.3 : Partie 3 (Création d'un formulaire de connexion et d'une route de déconnexion)
+Dans notre article précédent, nous vous avons montré comment créer un formulaire d'inscription pour ajouter de nouveaux utilisateurs dans votre application. Évidemment, les utilisateurs doivent se connecter à l'application s'ils ont déjà un compte sur votre application, il aura donc une session et des informations d'identification pendant qu'il visite votre site Web.
+Symfony 4 rend cela très facile à réaliser et nous vous expliquerons brièvement comment créer les routes de connexion et de déconnexion :
+1. Créer un itinéraire de connexion
+Dans un premier temps, nous devrons créer une route où l'utilisateur accédera au formulaire de connexion. Créez le SecurityController.phpfichier avec le contenu suivant dans le répertoire du contrôleur de votre application ( /src/Controller/) :
+<?php
+
+// src/Controller/SecurityController.php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+
+class SecurityController extends AbstractController
+{
+    /**
+     * @Route("/login", name="app_login")
+     */
+    public function login(AuthenticationUtils $authenticationUtils): Response
+    {
+        // Get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        
+        // Retrive the last email entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('security/login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error
+        ]);
+    }
+}
+Copier l'extrait
+L'action de connexion recevra comme premier argument via l'injection de dépendance une AuthenticationUtilsinstance, un objet à partir duquel vous pouvez obtenir des informations à partir de l'exemple, la dernière erreur d'authentification et le nom d'utilisateur fourni sur le formulaire.
+2. Créer un authentificateur de formulaire de connexion
+Ensuite, vous devrez créer la classe d'authentification qui étend la AbstractFormLoginAuthenticator classe de base, ce qui facilite l'authentification de connexion par formulaire. Cette classe recevra dans le constructeur 4 composants clés requis dans ce module, à savoir le gestionnaire d'entités (pour créer des requêtes), l'interface du routeur (pour créer des routes), le gestionnaire de jetons CSRF (vérifier si le formulaire était valide) et l'encodeur de mot de passe (pour vérifier si l'authentification est valide).
+Cet authentificateur est exécuté (après avoir été enregistré à l'étape 3), lorsque la méthode supports renvoie true. Dans ce cas, il sera déclenché lorsque la route actuelle est l'app_login et la méthode est POST (lorsque le formulaire a été soumis) :
+<?php
+
+// src/Security/LoginFormAuthenticator.php
+namespace App\Security;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
+use Symfony\Component\Security\Core\Exception\InvalidCsrfTokenException;
+use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
+use Symfony\Component\Security\Csrf\CsrfToken;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
+use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
+use Symfony\Component\Security\Http\Util\TargetPathTrait;
+
+class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
+{
+    use TargetPathTrait;
+
+    private $entityManager;
+    private $router;
+    private $csrfTokenManager;
+    private $passwordEncoder;
+
+    public function __construct(EntityManagerInterface $entityManager, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->entityManager = $entityManager;
+        $this->router = $router;
+        $this->csrfTokenManager = $csrfTokenManager;
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
+    public function supports(Request $request)
+    {
+        return 'app_login' === $request->attributes->get('_route')
+            && $request->isMethod('POST');
+    }
+
+    public function getCredentials(Request $request)
+    {
+        $credentials = [
+            'email' => $request->request->get('email'),
+            'password' => $request->request->get('password'),
+            'csrf_token' => $request->request->get('_csrf_token'),
+        ];
+        $request->getSession()->set(
+            Security::LAST_USERNAME,
+            $credentials['email']
+        );
+
+        return $credentials;
+    }
+
+    public function getUser($credentials, UserProviderInterface $userProvider)
+    {
+        $token = new CsrfToken('authenticate', $credentials['csrf_token']);
+        if (!$this->csrfTokenManager->isTokenValid($token)) {
+            throw new InvalidCsrfTokenException();
+        }
+
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);
+
+        if (!$user) {
+            // fail authentication with a custom error
+            throw new CustomUserMessageAuthenticationException('Email could not be found.');
+        }
+
+        return $user;
+    }
+
+    public function checkCredentials($credentials, UserInterface $user)
+    {
+        return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
+    }
+
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+    {
+        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+            return new RedirectResponse($targetPath);
+        }
+
+        // For example : return new RedirectResponse($this->router->generate('some_route'));
+        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+    }
+
+    protected function getLoginUrl()
+    {
+        return $this->router->generate('app_login');
+    }
+}
+Copier l'extrait
+Notez que vous devez gérer dans cette classe, en particulier sur le rappel onAuthenticationSuccess, ce qui se passe maintenant avec l'utilisateur. Habituellement, vous devez simplement le rediriger vers la page d'index de votre application ou quelque chose, alors assurez-vous de modifier le code du rappel en fonction de vos besoins, par exemple, au lieu de lever l'exception, redirigez simplement vers notre route d'index :
+public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+{
+    if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+        return new RedirectResponse($targetPath);
+    }
+
+    //  Redirect user to homepage
+    return new RedirectResponse($this->router->generate('app_index'));
+}
+Copier l'extrait
+3. Enregistrez l'authentificateur de garde
+L'authentificateur existe déjà, mais vous devez l'enregistrer dans le pare-feu principal :
+# app/config/packages/security.yaml
+security:
+    firewalls:
+        main:
+            anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+Copier l'extrait
+Ce faisant, la classe sera enregistrée et réagira lorsque la méthode supports de la classe retournera true.
+4. Créer une vue de connexion
+Enfin, mais non moins important, dans la route de connexion, nous rendons une vue Twig, à savoir login.html.twig, qui n'a pas encore été créée et contiendra le balisage suivant (stocké dans /app/templates/security/):
+{# /app/templates/security/login.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<form method="post">
+    {# If there's any error, display it to the user #}
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <h1>Please sign in</h1>
+    
+    {# Email Input #}
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+    
+    {# Password Input #}
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    
+    {# CSRF Token Input #}
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Sign in
+    </button>
+</form>
+{% endblock %}
+Copier l'extrait
+5. Accès et connexion
+Une fois la vue créée, si vous essayez d'accéder à la route  mywebsite.com/login, vous verrez le formulaire de connexion :
+Formulaire de connexion
+Fournissez les informations d'identification d'un utilisateur enregistré via le formulaire d'inscription créé dans la partie 2 de cet article. Si vous y avez spécifié une route de redirection, tout fonctionnera correctement et vous serez redirigé vers cette route et vous verrez dans les outils de développement que vous êtes authentifié :
+Formulaire d'authentification de l'utilisateur
+Et c'est tout pour la partie connexion !
+6. Créer un itinéraire de déconnexion
+Maintenant, votre utilisateur devrait également pouvoir fermer la session s'il s'est connecté, vous devez donc exposer une route de déconnexion. Vous pouvez le créer dans le même SecurityController où la route de connexion a également été créée, vous pouvez donc l'ajouter, une simple action vide nommée logout :
+<?php
+
+// src/Controller/SecurityController.php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+
+class SecurityController extends AbstractController
+{
+    /**
+     * @Route("/logout", name="app_logout")
+     */
+    public function logout(): Response
+    {
+        // controller can be blank: it will never be executed!
+    }
+}
+Copier l'extrait
+Notez que la route aura un identifiant utilisé à l'étape suivante, pour activer la fonction de déconnexion du système d'authentification.
+7. Activer la déconnexion
+Maintenant que la route de déconnexion existe, vous devez la spécifier dans le pare-feu principal sur le security.yamlfichier :
+# app/config/packages/security.yaml
+security:
+    firewalls:
+        main:
+            logout:
+                path: app_logout
+                # where to redirect after logout ?? You can specify the target property
+                # target: app_any_route 
+Copier l'extrait
+Vous pouvez également spécifier dans ce bloc où rediriger l'utilisateur après la déconnexion. Une fois que vous avez enregistré cet itinéraire, en accédant à l'itinéraire mywebsite.com/logout après vous être connecté, la session sera supprimée et l'utilisateur devra se reconnecter à l'application.
+LISEZ TOUTES LES PARTIES DU TUTORIEL "COMMENT METTRE EN ŒUVRE VOTRE PROPRE SYSTÈME D'AUTHENTIFICATION UTILISATEUR DANS SYMFONY 4.3"
+■ Partie 1 : Création d'une classe d'utilisateurs personnalisée .
+■ Partie 2 : Création d'un formulaire d'inscription d'utilisateur .
+■ Partie 3 : Création d'un formulaire de connexion et d'un itinéraire de déconnexion .
+LIENS D'INTÉRÊT POUR CE TUTORIEL
+■ https://symfony.com/doc/current/security.html
+Bon codage!
+ 
+symfony
+symfony 4
+connexion
+Se déconnecter
+s'identifier
+ Partagez cet article
+sharer u=https%3A%2F%2Fourcode… 
+send text=https%3A%2F%2Fourcod… 
+share url=https%3A%2F%2Fourcod… 
+shareArticle mini=true&url=htt… 
+bookmarklet &url=https%3A%2F%2… 
+Carlos Delgado
+Carlos Delgado
+Auteur
+Intéressé par la programmation depuis l'âge de 14 ans, Carlos est un programmeur autodidacte et fondateur et auteur de la plupart des articles de Our Code World.
+sdkcarlos 
+carlos-fernando-delgado-maldon… 
+1 commentaire
+Ajoutez votre commentaire
+Devenir une personne plus sociale
+Anglais États-Unis
+Lire en anglais
+Latin espagnol
+Lire en espagnol
+Chercher
+ 
+ 
+Chercher
+Articles Liés
+Comment implémenter votre propre système d'authentification des utilisateurs dans Symfony 4.3 : Partie 3 (Création d'un formulaire de connexion et d'une route de déconnexion)
+Comment implémenter votre propre système d'authentification des utilisateurs dans Symfony 4.3 : Partie 3 (Création d'un formulaire de connexion et d'une route de déconnexion)
+01 décembre 2019
+16.7K vues
+Comment implémenter votre propre système d'authentification utilisateur dans Symfony 4.3 : Partie 2 (Création d'un formulaire d'inscription utilisateur)
+Comment implémenter votre propre système d'authentification utilisateur dans Symfony 4.3 : Partie 2 (Création d'un formulaire d'inscription utilisateur)
+01 décembre 2019
+9.6K vues
+Créer un formulaire de contact simple avec FormType dans Symfony 3
+Créer un formulaire de contact simple avec FormType dans Symfony 3
+29 juillet 2016
+29.4K vues
+Comment rediriger un utilisateur vers une page spécifique selon son rôle dans Symfony 2.8 en utilisant un EventListener
+Comment rediriger un utilisateur vers une page spécifique selon son rôle dans Symfony 2.8 en utilisant un EventListener
+27 mai 2018
+16.5K vues
+Implémentation de google reCAPTCHA sur un formulaire dans symfony 3
+Implémentation de google reCAPTCHA sur un formulaire dans symfony 3
+04 mai 2016
+27.2K vues
+Comment implémenter un système utilisateur avec FOSUserBundle dans Symfony > 2.8
+Comment implémenter un système utilisateur avec FOSUserBundle dans Symfony > 2.8
+27 mars 2016
+18.7K vues
+Publicité
+ 
+ 
+Publicité
+ 
+Suivez-nous
+ourcodeworld 
+ourcodeworld 
+ourcodeworld 
+carlos-fernando-delgado-maldon… 
+ourcodeworld sub_confirmation=… 
+Publicité
+ 
+Commanditaires
+Crédit d'océan numérique gratuit
+Télécharger des modèles de sites Web gratuits
+Augmentez les revenus de votre site Web
+Augmentez les revenus de votre site Web
+Une application d'édition de code gratuite pour Android
+Un service en ligne gratuit pour supprimer l'arrière-plan de vos images
+Suivez-nous
+ourcodeworld 
+ourcodeworld 
+ourcodeworld 
+carlos-fernando-delgado-maldon… 
+ourcodeworld sub_confirmation=… 
+ourcodeworld 
+Notre logo mondial de code
+Contactez-nous
+faites de la publicité avec nous
+À propos de
+Tous droits réservés © 2015 - 2022
+ 
+Nous sommes solidaires de l'Ukraine

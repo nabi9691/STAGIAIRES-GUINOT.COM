@@ -1,0 +1,269 @@
+Partie 3 (Création d'un formulaire de connexion et d'une route de déconnexion)
+Dans notre article précédent, nous vous avons montré comment créer un formulaire d'inscription pour ajouter de nouveaux utilisateurs dans votre application. Évidemment, les utilisateurs doivent se connecter à l'application s'ils ont déjà un compte sur votre application, il aura donc une session et des informations d'identification pendant qu'il visite votre site Web.
+Symfony 4 rend cela très facile à réaliser et nous vous expliquerons brièvement comment créer les routes de connexion et de déconnexion :
+1. Créer un itinéraire de connexion
+Dans un premier temps, nous devrons créer une route où l'utilisateur accédera au formulaire de connexion. Créez le SecurityController.phpfichier avec le contenu suivant dans le répertoire du contrôleur de votre application ( /src/Controller/) :
+<?php
+
+// src/Controller/SecurityController.php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+
+class SecurityController extends AbstractController
+{
+    /**
+     * @Route("/login", name="app_login")
+     */
+    public function login(AuthenticationUtils $authenticationUtils): Response
+    {
+        // Get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        
+        // Retrive the last email entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('security/login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error
+        ]);
+    }
+}
+Copier l'extrait
+L'action de connexion recevra comme premier argument via l'injection de dépendance une AuthenticationUtilsinstance, un objet à partir duquel vous pouvez obtenir des informations à partir de l'exemple, la dernière erreur d'authentification et le nom d'utilisateur fourni sur le formulaire.
+2. Créer un authentificateur de formulaire de connexion
+As next, you will need to create the authenticator class that extends the AbstractFormLoginAuthenticator base class, that makes the form login authentication easier. This class will receive in the constructor 4 key components required in this module, namely the entity manager (to create queries), the router interface (to create routes), the CSRF Token manager (check if the form was valid) and the password encoder (to check if the authentication is valid).
+This authenticator is executed (after registered in the step 3), when the supports method returns true. In this case, it will be triggered when the current route is the app_login and the method is POST (when the form has been submitted):
+<?php
+
+// src/Security/LoginFormAuthenticator.php
+namespace App\Security;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
+use Symfony\Component\Security\Core\Exception\InvalidCsrfTokenException;
+use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
+use Symfony\Component\Security\Csrf\CsrfToken;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
+use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
+use Symfony\Component\Security\Http\Util\TargetPathTrait;
+
+class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
+{
+    use TargetPathTrait;
+
+    private $entityManager;
+    private $router;
+    private $csrfTokenManager;
+    private $passwordEncoder;
+
+    public function __construct(EntityManagerInterface $entityManager, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->entityManager = $entityManager;
+        $this->router = $router;
+        $this->csrfTokenManager = $csrfTokenManager;
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
+    public function supports(Request $request)
+    {
+        return 'app_login' === $request->attributes->get('_route')
+            && $request->isMethod('POST');
+    }
+
+    public function getCredentials(Request $request)
+    {
+        $credentials = [
+            'email' => $request->request->get('email'),
+            'password' => $request->request->get('password'),
+            'csrf_token' => $request->request->get('_csrf_token'),
+        ];
+        $request->getSession()->set(
+            Security::LAST_USERNAME,
+            $credentials['email']
+        );
+
+        return $credentials;
+    }
+
+    public function getUser($credentials, UserProviderInterface $userProvider)
+    {
+        $token = new CsrfToken('authenticate', $credentials['csrf_token']);
+        if (!$this->csrfTokenManager->isTokenValid($token)) {
+            throw new InvalidCsrfTokenException();
+        }
+
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);
+
+        if (!$user) {
+            // fail authentication with a custom error
+            throw new CustomUserMessageAuthenticationException('Email could not be found.');
+        }
+
+        return $user;
+    }
+
+    public function checkCredentials($credentials, UserInterface $user)
+    {
+        return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
+    }
+
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+    {
+        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+            return new RedirectResponse($targetPath);
+        }
+
+        // For example : return new RedirectResponse($this->router->generate('some_route'));
+        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+    }
+
+    protected function getLoginUrl()
+    {
+        return $this->router->generate('app_login');
+    }
+}
+Copy snippet
+Note that you need to handle in this class, specifically on the onAuthenticationSuccess callback, what happens with the user now. Usually, you should just redirect him to the index page of your application or something, so be sure to modify the code of the callback according to your needs, for example, instead of throwing the exception, just redirect to our index route:
+public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+{
+    if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+        return new RedirectResponse($targetPath);
+    }
+
+    //  Redirect user to homepage
+    return new RedirectResponse($this->router->generate('app_index'));
+}
+Copy snippet
+3. Register Guard Authenticator
+The authenticator exists already, however you need to register it in the main firewall:
+# app/config/packages/security.yaml
+security:
+    firewalls:
+        main:
+            anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+Copy snippet
+Doing this, the class will be registered and will react when the supports method of the class returns true.
+4. Create Login View
+Lastly but not less important, in the login route we render a Twig view namely login.html.twig, thas has been not created yet and will contain the following markup (stored in /app/templates/security/):
+{# /app/templates/security/login.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<form method="post">
+    {# If there's any error, display it to the user #}
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <h1>Please sign in</h1>
+    
+    {# Email Input #}
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+    
+    {# Password Input #}
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    
+    {# CSRF Token Input #}
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Sign in
+    </button>
+</form>
+{% endblock %}
+Copy snippet
+5. Access and Login
+Once the view has been created, if you try to access the route mywebsite.com/login you will see the login form:
+Formulaire de connexion
+Provide some credentials of an user registered through the registration form created in the part 2 of this article. If you specified in there a redirect route, everything will work properly and you will be redirected to that route and you will see in the dev tools that you are authenticated:
+Formulaire d'authentification de l'utilisateur
+And that's all about the login part !
+6. Create Logout Route
+Now, your user should be able to close the session as well if he signed-in, so you need to expose a logout route. You can create it in the same SecurityController where the login route has been created as well, so you can add it, a simple empty action named logout:
+<?php
+
+// src/Controller/SecurityController.php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+
+class SecurityController extends AbstractController
+{
+    /**
+     * @Route("/logout", name="app_logout")
+     */
+    public function logout(): Response
+    {
+        // controller can be blank: it will never be executed!
+    }
+}
+Copy snippet
+Note that the route will have an identifier used on the next step, to enable the logout feature of the authentication system.
+7. Enable Logout
+Now that the logout route exists, you need to specify it into the main firewall on the security.yaml file:
+# app/config/packages/security.yaml
+security:
+    firewalls:
+        main:
+            logout:
+                path: app_logout
+                # where to redirect after logout ?? You can specify the target property
+                # target: app_any_route 
+Copy snippet
+You can specify in this block as well where to redirect the user after logging out. Once you register this route, accessing the route mywebsite.com/logout after logging in, the session will be removed and the user will need to login to the app once again.
+READ ALL THE PARTS OF THE TUTORIAL "HOW TO IMPLEMENT YOUR OWN USER AUTHENTICATION SYSTEM IN SYMFONY 4.3"
+■ Part 1: Creating a Custom User Class.
+■ Part 2: Creating an User Registration Form.
+■ Part 3: Creating a Login Form and Logout Route.
+LIENS D'INTÉRÊT POUR CE TUTORIEL
+■ https://symfony.com/doc/current/security.html
+Bon codage!
+ 
+symfony
+symfony 4
+connexion
+Se déconnecter
+s'identifier
+ Partagez cet article
+sharer u=https%3A%2F%2Fourcode… 
+send text=https%3A%2F%2Fourcod… 
+share url=https%3A%2F%2Fourcod… 
+shareArticle mini=true&url=htt… 
+bookmarklet &url=https%3A%2F%2… 
+Carlos Delgado
+Carlos Delgado
+Auteur
+Intéressé par la programmation depuis l'âge de 14 ans, Carlos est un programmeur autodidacte et fondateur et auteur de la plupart des articles de Our Code World.
+sdkcarlos 
+carlos-fernando-delgado-maldon… 
+1 commentaire
+Ajoutez votre commentaire
+Devenir une personne plus sociale

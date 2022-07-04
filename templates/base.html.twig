@@ -35,39 +35,38 @@
 {% if is_granted('ROLE_ADMIN') %}
 <li><a href="{{ path('pageAccueilGuinot_index') }}"> INTRODUCTION SUR GUINOT ! </a></li>
 <li><a href="{{ path('pageAccueilBIOInformatique_index') }}"> Page d'accueil BIOInformatique !</a> </li>
-<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs : </a></li>
-                                            <li><a href="{{ path('formations_index') }}"> Liste des formations ! </a> </li>
-<li><a href="{{ path('langages_index') }}"> Liste de nos langages ! </a> </li>
+<li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs de guinot: </a></li>
+ <li><a href="{{ path('formations_index') }}"> Liste des formations de Guinot ! </a> </li>
+<li><a href="{{ path('langages_index') }}"> Liste des langages de BioGeSoft ! </a> </li>
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public !</a></li>
 <li><a href="{{ path('activites_index') }}"> Liste des activités  !</a></li>
 <li><a href="{{ path('medias_index') }}"> Liste des médias !</a></li>
-                        <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
+<li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 {% endif %}
 
 
 {% if is_granted('ROLE_ADMIN_GUINOT') %}
 <li><a href="{{ path('pageAccueilGuinot_index') }}"> INTRODUCTION SUR GUINOT ! </a></li>
 <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs de GUINOT : </a></li>
-                                            <li><a href="{{ path('formations_index') }}"> Liste des formations de Guinot ! </a> </li>
-<li><a href="{{ path('langages_index') }}"> Liste des langages de Guinot ! </a> </li>
-<li><a href="{{ path('message_index') }}"> accéder au service de tchat public de Guinot !</a></li>
+<li><a href="{{ path('formations_index') }}"> Liste des formations de Guinot ! </a> </li>
+<li><a href="{{ path('message_index') }}"> accéder au service de tchat public </a></li>
 <li><a href="{{ path('contacts_index') }}"> Liste des contacts de Guinot ! </a></li>
-<li><a href="{{ path('activites_index') }}"> Liste des activités  de Guinot !</a></li>
+<li><a href="{{ path('activites_index') }}"> Liste des activités  </a></li>
 <li><a href="{{ path('medias_index') }}"> Liste des médias de Guinot !</a></li>
-                                <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
+  <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 {% endif %}
 
 
 {% if is_granted('ROLE_ADMIN_BIOGESOFT') %}
 <li><a href="{{ path('pageAccueilBIOInformatique_index') }}"> Page d'accueil BIOGESOFT !</a> </li>
 <li><a href="{{ path('utilisateur_index') }}"> Liste des utilisateurs de BIOGESOFT : </a></li>
-                                            <li><a href="{{ path('formations_index') }}"> Liste des formations de BIOGESOFT ! </a> </li>
+<li><a href="{{ path('listeDesFormations_index') }}"> Liste des formations de BIOGESOFT ! </a> </li>
 <li><a href="{{ path('langages_index') }}"> Liste des langages de BIOGESOFT ! </a> </li>
 <li><a href="{{ path('message_index') }}"> accéder au service de tchat public de BIOGESOFT !</a></li>
 <li><a href="{{ path('contacts_index') }}"> Liste des contacts de Biogesoft ! </a></li>
 <li><a href="{{ path('activites_index') }}"> Liste des activités  de BIOGESOFT !</a></li>
 <li><a href="{{ path('medias_index') }}"> Liste des médias de BIOGESOFT !</a></li>
-                                <li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
+<li><a href="{{ path('app_logout') }}"> se déconnecter </a></li>
 {% endif %}
 
 
@@ -83,7 +82,6 @@
 
                     {% else %}
 <li><a href="{{ path('accueil_index') }}"> accueil </a></li>
-<li><a href="{{ path('test_index') }}"> Ceci est un test ! </a></li>
     
 <li><a href="{{ path('pageAccueilGuinot_index') }}"> INTRODUCTION SUR GUINOT ! </a></li>
 <li><a href="{{ path('pageAccueilBIOInformatique_index') }}"> Page d'accueil BIOInformatique !</a> </li>
@@ -104,7 +102,7 @@
                         
                         {% if 'login' == app.request.attributes.get('_route') %}
 
-<li><a href="{{ path('accueil_index') }}"> accueil </a></li>
+            <li><a href="{{ path('accueil_index') }}"> accueil </a></li>
 
 
 
@@ -115,130 +113,3 @@
     </nav>
 
   
-
-
-    {% block content %}
-
-    {% endblock %}
-
-    {% block scripts %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/isotope.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/owl-carousel.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/lightbox.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/tabs.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/video.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/slick-slider.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/custom.js') }}" type="text/javascript"></script>
-    
-    <script type="text/javascript">
-        $('select').formSelect();
-    </script>
-    {% endblock %}
-    
-
-    
-    
-    {% block footer %}
-<!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
-    <section class="d-flex justify-content-center justify-content-lg-between p-2 "> </section>
-   
-  
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Stagiaire de Guinot
-            </h6>
-            <p>
-              <a href="{{ path('historiqueGuinot_index') }}"> Qui somme nous ?</a></li>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Formations 
-            </h6>
-            <p>
-              <a  class="text-reset">Développeur Web et Web Mobile</a>
-            </p>
-            <p>
-              <a  class="text-reset">Conseiller Relation Client à Distance</a>
-            </p>
-            <p>
-              <a  class="text-reset">Masseur-Kinésithérapeute</a>
-            </p>
-            <p>
-              <a  class="text-reset">Intelligence Artificielle</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Liens Utiles
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Pricing</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Settings</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Contact
-            </h6>
-            <p><i class="fas fa-home me-3"></i> 24-26 bd Chastenet de Géry, 94814 Villejuif Cedex</p>
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              paul.guinot@guinot.asso.fr
-            </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 46 78 01 00</p>
-            <p><i class="fas fa-print me-3"></i> + 01 46 78 01 00</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright:
-      <a class="text-reset fw-bold" href="">MohammedNabi.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-
-  
-{% endblock %}
-</body>
-
-</html>

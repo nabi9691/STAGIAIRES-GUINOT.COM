@@ -1,32 +1,49 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}
-Liste des activités : 
- {% endblock %}
+<html>
+    <head>
+     {{ include('linkCss.html.twig') }} 
+        
+        <title>Admin</title>
+    </head>
 
-{% block body %}
+<body>
 
-{% block content %}
-<div>
-    <h1>
-     bienvenu(e) !
-     Liste des activités :
-     </h1>
+   
+{{ include('navbar.html.twig') }}
 
-    <br /><br />
-    <hr />
-    <br />
-    <a href="{{ path('nouvelleActivites_index') }}">Ajouter Une Nouvelle activités ! </a>
-<br /><br />
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Admin</h6>
+          <h2>Gerer la liste des activités</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <h1>Admin</h1><br>
+                <a href="{{ path('nouvelleActivites_index') }}">Ajouter Une Nouvelle activités ! </a>
+                <br><br>
+                  {% block content %}
     
-    
-    <table border="1">
-            
-            <thead>
-                <tr>
+                <table class="table table-responsive">
+               <thead>
+                  <tr>
                     <th>Id</th>
-                    <th> Titre </th>
-                    <th> Contenu </th>
+<th> Nom </th>
+                    <th> Résumé </th>
                     <th> Date </th>
                                         <th> Status </th>
                 <th> Modifier </th>
@@ -34,13 +51,14 @@ Liste des activités :
 <th> Supprimer </t  h>
 </tr>
             </thead>
-            {% for activite in activite %}
+         {% for activite in activite %}
+
 <tbody>
-        <tr>
+ <tr>
                 <td> {{ activite.id }} </td>
                 <td> {{ activite.nom }} </td>
-                <td> {{ activite.contenu }} </td>
-                <td> {{ activite.date|date("d/m/Y") }} </td>
+             <td> {{ activite.resume }} </td>
+                             <td> {{ activite.date|date("d/m/Y") }} </td>
 <td> {{ activite.status  }} </td>
 
                 <td><a href="{{ path('modifierActivites_index', {'id': activite.id }) }}">Modifier</a></td>
@@ -58,10 +76,25 @@ Liste des activités :
 
 </div>
 {% endblock %}
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{{ path('accueil_index') }}">REVENIR À L'ACCEUIL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
-<br/><br/>
+   {{ include('footer.html.twig') }}
+  {{ include('scriptJS.html.twig') }}
+ 
 
-{% block footer %}
-{% endblock %}
+</body>
 
-{% endblock %}
+</html>
+

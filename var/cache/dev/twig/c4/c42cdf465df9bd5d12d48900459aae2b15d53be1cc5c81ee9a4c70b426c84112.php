@@ -24,16 +24,10 @@ class __TwigTemplate_21c53ee996349ae9b62f3aee84b653f6d308fddde4aca85f25e9044f8c6
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'content' => [$this, 'block_content'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,98 +39,94 @@ class __TwigTemplate_21c53ee996349ae9b62f3aee84b653f6d308fddde4aca85f25e9044f8c6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "activites/modifierActivites.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "activites/modifierActivites.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+        // line 1
+        echo "
 
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+<html>
+    <head>
 
-    }
-
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        // line 4
-        echo "Modifier une activité :
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 7
-    public function block_content($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        // line 8
+    ";
+        // line 6
+        echo twig_include($this->env, $context, "linkCss.html.twig");
         echo "    
-    
-    <h1>
-        Modifier une activités :
-        </h1>
-
-";
-        // line 14
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 14, $this->source); })()), 'form_start');
-        echo "
-
-Nom de l'activité: ";
-        // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 16, $this->source); })()), "nom", [], "any", false, false, false, 16), 'widget');
-        echo "<br>
-Contenu: ";
-        // line 17
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 17, $this->source); })()), "contenu", [], "any", false, false, false, 17), 'widget');
-        echo " <br>
-Date: ";
-        // line 18
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 18, $this->source); })()), "date", [], "any", false, false, false, 18), 'widget');
-        echo " <br>
-Status: ";
-        // line 19
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 19, $this->source); })()), "status", [], "any", false, false, false, 19), 'widget');
-        echo " <br>
-
-
-
-
-<button type=\"submit\" class=\"btn btn-success\">envoyer</button>
-
-
-      
-    ";
-        // line 28
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formActivites"]) || array_key_exists("formActivites", $context) ? $context["formActivites"] : (function () { throw new RuntimeError('Variable "formActivites" does not exist.', 28, $this->source); })()), 'form_end');
-        echo "
-
-
-
-
-
-    ";
         
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        <title>Activités</title>
+    </head>
 
+<body>
+
+   
+
+
+  ";
+        // line 16
+        echo twig_include($this->env, $context, "navbar.html.twig");
+        echo "
+
+  <section class=\"heading-page header-text\" id=\"top\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <h6>BioGeSoft</h6>
+          <h2>Mes activités !</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                     <div class=\"down-content\">
+                  <h1> Ajoutée une activité </h1> <br><br>
+                   ";
+        // line 41
+        echo twig_include($this->env, $context, "activites/formulaireActivites.html.twig");
+        echo "
+\t\t\t\t  
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+                 <a href=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil_index");
+        echo "\">Revenir à l'acceuil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ ";
+        // line 56
+        echo twig_include($this->env, $context, "footer.html.twig");
+        echo "
+";
+        // line 57
+        echo twig_include($this->env, $context, "scriptJS.html.twig");
+        echo "
+
+   
+  
+</body>
+
+</html>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
@@ -152,45 +142,74 @@ Status: ";
 
     public function getDebugInfo()
     {
-        return array (  127 => 28,  115 => 19,  111 => 18,  107 => 17,  103 => 16,  98 => 14,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  116 => 57,  112 => 56,  99 => 46,  91 => 41,  63 => 16,  50 => 6,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
 
-{% block title %}
-Modifier une activité :
-{% endblock %}
+<html>
+    <head>
 
-{% block content %}
-    
-    
-    <h1>
-        Modifier une activités :
-        </h1>
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Activités</title>
+    </head>
 
-{{ form_start(formActivites) }}
+<body>
 
-Nom de l'activité: {{ form_widget(formActivites.nom) }}<br>
-Contenu: {{ form_widget(formActivites.contenu) }} <br>
-Date: {{ form_widget(formActivites.date) }} <br>
-Status: {{ form_widget(formActivites.status) }} <br>
+   
 
 
+  {{ include('navbar.html.twig') }}
 
+  <section class=\"heading-page header-text\" id=\"top\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <h6>BioGeSoft</h6>
+          <h2>Mes activités !</h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<button type=\"submit\" class=\"btn btn-success\">envoyer</button>
+  <section class=\"meetings-page\" id=\"meetings\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-lg-12\">
+          <div class=\"row\">
+            <div class=\"col-lg-12\">
+              <div class=\"meeting-single-item\">
+                <div class=\"thumb\">
+                  <img src=\"/images/single-meeting.jpg\" alt=\"\">
+                </div>
+                     <div class=\"down-content\">
+                  <h1> Ajoutée une activité </h1> <br><br>
+                   {{ include('activites/formulaireActivites.html.twig') }}
+\t\t\t\t  
+                </div>
+            <div class=\"col-lg-12\">
+              <div class=\"main-button-red\">
+                 <a href=\"{{ path('accueil_index') }}\">Revenir à l'acceuil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
 
+   
+  
+</body>
 
-      
-    {{ form_end(formActivites) }}
-
-
-
-
-
-    {% endblock %}
+</html>
 ", "activites/modifierActivites.html.twig", "C:\\wamp64\\www\\STAGIAIRES-GUINOT.COM\\templates\\activites\\modifierActivites.html.twig");
     }
 }

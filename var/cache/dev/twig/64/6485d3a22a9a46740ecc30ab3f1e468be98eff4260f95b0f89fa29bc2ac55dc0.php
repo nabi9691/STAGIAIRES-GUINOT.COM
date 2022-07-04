@@ -52,33 +52,17 @@ Nom du stagiaire: ";
         // line 6
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 6, $this->source); })()), "nom", [], "any", false, false, false, 6), 'widget');
         echo "<br>
-Prenom du stagiaire: ";
-        // line 7
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 7, $this->source); })()), "prenom", [], "any", false, false, false, 7), 'widget');
-        echo "<br>
-Téléphone du stagiaire: ";
-        // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 8, $this->source); })()), "telephone", [], "any", false, false, false, 8), 'widget');
-        echo "<br>
-Email du stagiaire: ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 9, $this->source); })()), "email", [], "any", false, false, false, 9), 'widget');
-        echo "<br>
 Nom du langage: ";
-        // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 10, $this->source); })()), "nom_langage", [], "any", false, false, false, 10), 'widget');
+        // line 7
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 7, $this->source); })()), "nom_langage", [], "any", false, false, false, 7), 'widget');
         echo "<br>
 Durée: ";
-        // line 11
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 11, $this->source); })()), "date", [], "any", false, false, false, 11), 'widget');
+        // line 8
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 8, $this->source); })()), "date", [], "any", false, false, false, 8), 'widget');
         echo " <br>
 Objectif: ";
-        // line 12
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 12, $this->source); })()), "objectif", [], "any", false, false, false, 12), 'widget');
-        echo " <br>
-Coefficient: ";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 13, $this->source); })()), "coefficient", [], "any", false, false, false, 13), 'widget');
+        // line 9
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 9, $this->source); })()), "objectif", [], "any", false, false, false, 9), 'widget');
         echo " <br>
 
 
@@ -87,8 +71,8 @@ Coefficient: ";
 
       
     ";
-        // line 20
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 20, $this->source); })()), 'form_end');
+        // line 16
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formLangages"]) || array_key_exists("formLangages", $context) ? $context["formLangages"] : (function () { throw new RuntimeError('Variable "formLangages" does not exist.', 16, $this->source); })()), 'form_end');
         echo "
 
 
@@ -116,7 +100,7 @@ Coefficient: ";
 
     public function getDebugInfo()
     {
-        return array (  91 => 20,  81 => 13,  77 => 12,  73 => 11,  69 => 10,  65 => 9,  61 => 8,  57 => 7,  53 => 6,  48 => 4,  43 => 1,);
+        return array (  75 => 16,  65 => 9,  61 => 8,  57 => 7,  53 => 6,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -127,13 +111,9 @@ Coefficient: ";
 {{ form_start(formLangages) }}
 
 Nom du stagiaire: {{ form_widget(formLangages.nom) }}<br>
-Prenom du stagiaire: {{ form_widget(formLangages.prenom) }}<br>
-Téléphone du stagiaire: {{ form_widget(formLangages.telephone) }}<br>
-Email du stagiaire: {{ form_widget(formLangages.email) }}<br>
 Nom du langage: {{ form_widget(formLangages.nom_langage) }}<br>
 Durée: {{ form_widget(formLangages.date) }} <br>
 Objectif: {{ form_widget(formLangages.objectif) }} <br>
-Coefficient: {{ form_widget(formLangages.coefficient) }} <br>
 
 
 <button type=\"submit\" class=\"btn btn-success\">envoyer</button>

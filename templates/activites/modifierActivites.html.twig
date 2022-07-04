@@ -1,34 +1,63 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}
-Modifier une activité :
-{% endblock %}
-
-{% block content %}
-    
-    
-    <h1>
-        Modifier une activités :
-        </h1>
-
-{{ form_start(formActivites) }}
-
-Nom de l'activité: {{ form_widget(formActivites.nom) }}<br>
-Contenu: {{ form_widget(formActivites.contenu) }} <br>
-Date: {{ form_widget(formActivites.date) }} <br>
-Status: {{ form_widget(formActivites.status) }} <br>
 
 
+<html>
+    <head>
+
+    {{ include('linkCss.html.twig') }}    
+        
+        <title>Activités</title>
+    </head>
+
+<body>
+
+   
 
 
-<button type="submit" class="btn btn-success">envoyer</button>
+  {{ include('navbar.html.twig') }}
 
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>BioGeSoft</h6>
+          <h2>Mes activités !</h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      
-    {{ form_end(formActivites) }}
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <img src="/images/single-meeting.jpg" alt="">
+                </div>
+                     <div class="down-content">
+                  <h1> Ajoutée une activité </h1> <br><br>
+                   {{ include('activites/formulaireActivites.html.twig') }}
+				  
+                </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                 <a href="{{ path('accueil_index') }}">Revenir à l'acceuil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+ {{ include('footer.html.twig') }}
+{{ include('scriptJS.html.twig') }}
 
+   
+  
+</body>
 
-
-
-
-    {% endblock %}
+</html>

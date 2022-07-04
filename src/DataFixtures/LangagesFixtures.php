@@ -49,21 +49,19 @@ $email = $faker->email;
 
             $langages
             ->setNom($faker->lastName)
-            ->setPrenom($faker->firstName)
-            ->setTelephone($faker->phoneNumber)
-->setEmail($email)
+//            ->setTelephone($faker->phoneNumber)
+//->setEmail($email)
                     ->setNomLangage($nom_langage[0])
                                                         //->setCivilite($civilite[0])
                         ->setObjectif($faker->sentence())
             ->setDate(new \DateTime())
-//->setCoutFormation($cout[0])
-->setCoefficient($coefficient[0]);
-            
-//->setTitreProfessionnel($faker->sentence())
+->setCoutFormation($cout[0])
+->setCoefficient($coefficient[0])
+            //->setTitreProfessionnel($faker->sentence())
            //->setPreRequis($faker->sentence())
             //->setSessions($sessions[0])
-                //->setStatus($status[0]);
-            
+                ->setStatus($status[0])
+            ;
             $manager->persist($langages);
        $manager->flush();  
     }   

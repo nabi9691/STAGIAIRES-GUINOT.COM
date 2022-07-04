@@ -72,6 +72,21 @@ class UtilisateursFormType extends AbstractType
                 'required' => true
             ])
 
+            ->add('password', PasswordType::class, [
+                'mapped' => false,
+               'required' => true,
+               'label' => 'Entrez votre mot de passe',
+               'constraints' => [
+                   new Length([
+                       'min' => 6,
+                       'minMessage' => 'ça suffit {{ limit }} caractères !',
+                       // max length allowed by Symfony for security reasons
+                       'max' => 4096,
+                   ]),
+               ]
+           ])
+           
+
             ->add('medias', MediasType::class, [
                 'mapped' => false,
                 'by_reference' => false,
